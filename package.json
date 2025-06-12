@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss scss/main.css -o static/css/main.css && hugo",
+    "sass": "sass assets/scss/main.scss assets/scss/main.css",
+    "postcss": "postcss assets/scss/main.css -o assets/static/css/main.css",
+    "build": "npm run sass && npm run postcss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
