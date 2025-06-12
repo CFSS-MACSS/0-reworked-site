@@ -50,7 +50,7 @@ That said, there are also things it does not do as well as R:
 
 At the end of the day, I don't think it is a debate between learning R vs. Python. Frankly to be a desirable (and therefore highly-compensated) data scientist [you should learn both languages.](https://blog.usejournal.com/python-vs-and-r-for-data-science-833b48ccc91d) R and Python complement each other, and even R/Python luminaries such as [Hadley Wickham](https://twitter.com/hadleywickham) and [Wes McKinney](https://ursalabs.org/) promote the benefits of both languages:
 
-{{< x site="twitter" user="jakevdp" id="855035652710309890" >}}
+`{{< x site="twitter" user="jakevdp" id="855035652710309890" >}}`
 
 
 This course could be taught exclusively in Python (as it was in previous incarnations) or a combination of R and Python. From my past experience, I think the best introduction to computer programming focuses on a single language. Learning two languages simultaneously is extremely difficult. It is better to stick with a single language and syntax. Once you complete this course, you will have the basic skills necessary to learn Python on your own.
