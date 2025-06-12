@@ -153,19 +153,85 @@ etc.
 When presenting tabular data (aka `dplyr::summarize()`), make sure you
 format it correctly. Use the `kable()` function from the `knitr` package
 to format the table for the final document. For instance, this is a
-poorly presented table summarizing where gun deaths occurred:
+poorly presented table:
 
-    # calculate total gun deaths by location
-    #count(mass_shootings, location_type)
+    # calculate total children 
+    count(gss_wages, childs)
+
+    ## # A tibble: 10 × 2
+    ##    childs     n
+    ##     <dbl> <int>
+    ##  1      0 16906
+    ##  2      1  9864
+    ##  3      2 15375
+    ##  4      3  9590
+    ##  5      4  4905
+    ##  6      5  2246
+    ##  7      6  1138
+    ##  8      7   626
+    ##  9      8   858
+    ## 10     NA   189
 
 Instead, use `kable()` to format the table, add a caption, and label the
 columns:
 
-    # count(mass_shootings, location_type) %>%
-    #   kable(
-    #     caption = "Mass shootings in the United States by location",
-    #     col.names = c("Location", "Number of incidents")
-    #  )
+    count(gss_wages, childs) %>%
+       kable(
+         caption = "Number of children across respondents",
+         col.names = c("Total number of children", "Number of respondents")
+      )
+
+<table>
+<caption>Number of children across respondents</caption>
+<thead>
+<tr>
+<th style="text-align: right;">Total number of children</th>
+<th style="text-align: right;">Number of respondents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16906</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9864</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">15375</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9590</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4905</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2246</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1138</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">626</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">858</td>
+</tr>
+<tr>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">189</td>
+</tr>
+</tbody>
+</table>
 
 Run `?kable` in the console to see how additional options.
 
@@ -174,23 +240,14 @@ Run `?kable` in the console to see how additional options.
 To submit the assignment, simply push to your repository the last
 version of your assignment before the deadline. Then copy your
 repository URL (e.g., `https://github.com/css-fall22/a2-brinasab`) and
-submit it to Canvas under HW02 before the deadline.
+submit it to Canvas under A2 before the deadline.
 
 Your assignment should be submitted as a R Markdown document `.Rmd`.
 Need a refresher on R Markdown? [Read
 this](http://rmarkdown.rstudio.com/lesson-1.html) or
 [this](http://r4ds.had.co.nz/r-markdown.html).
 
-Make sure to stage-commit-push: \* `mass-shootings.Rmd` (the main file
-you will add your code to) \* `mass-shootings.md` (you will generate
-this from the .Rmd by simply knitting it) \* `mass-shootings_files/`
-(this folder contains all the graphs you generated in your `.Rmd`)
-
-As part of your submission, write 1-2 paragraphs of reflections on what
-was hard/easy about this homework, problems you solved and how, helpful
-resources you consulted, etc. Please, list the first and last name of
-eventual collaborators with whom you worked with to complete this
-assignment.
+Make sure to stage-commit-push ALL of your files
 
 <!--
 Please notice for this assignment we expect you to do some more work in terms of formatting and reproducibility: submit a homework that fully complies with the [Homework Guidelines](/faq/homework-guidelines/#homework-workflow).
