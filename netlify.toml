@@ -1,5 +1,4 @@
   [build]
-  base = "0-reworked-site"
   publish = "public"
   command = "hugo --gc --minify -b $URL"
 
