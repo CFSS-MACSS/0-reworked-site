@@ -6,7 +6,8 @@ weight: 2
 description: Assingment 2 due 6/23/25
 publishdate: 2019-04-01
 output:
-  html_document
+  md_document:
+    preserve_yaml: true
 
 type: docs
 aliases: ["/a2-explore-data.html"]
