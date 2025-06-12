@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework assignments on CFSS: Computing for the Social Sciences</title>
+    <link>http://localhost:1313/homework/</link>
+    <description>Recent content in Homework assignments on CFSS: Computing for the Social Sciences</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Oct 2025 13:30:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/homework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HW01: Practice editing .md and .Rmd</title>
+      <link>http://localhost:1313/homework/edit-readme/</link>
+      <pubDate>Thu, 29 Sep 2022 13:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/homework/edit-readme/</guid>
+      <description>Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.</description>
+    </item>
+    <item>
+      <title>HW02: Exploring and visualizing data</title>
+      <link>http://localhost:1313/homework/explore-data/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homework/explore-data/</guid>
+      <description>Transform and explore a cleaned dataset on gun deaths in the United States.</description>
+    </item>
+    <item>
+      <title>HW03: Wrangling and visualizing data</title>
+      <link>http://localhost:1313/homework/wrangle-data/</link>
+      <pubDate>Tue, 27 Jun 2023 13:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/homework/wrangle-data/</guid>
+      <description>Wrangle and explore messy datasets in practical research environments.</description>
+    </item>
+    <item>
+      <title>HW04: Programming in R</title>
+      <link>http://localhost:1313/homework/programming/</link>
+      <pubDate>Fri, 21 Oct 2022 13:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/homework/programming/</guid>
+      <description>Practice programming techniques in R.</description>
+    </item>
+    <item>
+      <title>HW05: Debugging and practice working with functions</title>
+      <link>http://localhost:1313/homework/debugging-rmarkdown/</link>
+      <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/homework/debugging-rmarkdown/</guid>
+      <description>Resolve code errors and practice writing and using functions with social science data.</description>
+    </item>
+    <item>
+      <title>HW06: Generating reproducible social science research</title>
+      <link>http://localhost:1313/homework/reproducible-research/</link>
+      <pubDate>Mon, 10 Jul 2023 13:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/homework/reproducible-research/</guid>
+      <description>Synthesize everything we have learned thus far.</description>
+    </item>
+    <item>
+      <title>HW07: Collecting and analyzing data from the web</title>
+      <link>http://localhost:1313/homework/webdata/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homework/webdata/</guid>
+      <description>Collect data from the web and analyze it.</description>
+    </item>
+    <item>
+      <title>HW08: Analyzing textual data</title>
+      <link>http://localhost:1313/homework/text-analysis/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/homework/text-analysis/</guid>
+      <description>Collect text data and analyze it.</description>
+    </item>
+  </channel>
+</rss>

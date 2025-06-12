@@ -1,0 +1,91 @@
+---
+date: "2022-09-25T00:00:00-05:00"
+draft: false
+weight: 10
+title: "General Questions & Info"
+toc: true
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
+#aliases: ["/hw00_peer-review.html"]
+---
+
+## General description
+
+This course is open to any graduate (or advanced undergraduate) at the University of Chicago. We draw from a wide range of departments such as Information Science, Sociology, Psychology, Political Science, etc. Typically these students are looking to learn basic computational and analytic skills they can apply to master's projects or dissertation research.
+
+If you have never programmed before or don't know what the [shell](/setup/shell/) is, **prepare for a different way of approaching problems**. This class will prove to be very beneficial if you stick with it, but that will require you to commit for the full quarter. I do not presume any prior programming experience, so everyone starts from the same knowledge level. I guarantee that the first few weeks and assignments will be rough - but the good news is that they will be rough for everyone! Your classmates are struggling with you and you can lean on one another to get through the worst part of the learning curve.
+
+
+## Textbooks/Readings
+
+### Required 
+
+* [R for Data Science](http://r4ds.had.co.nz/) -- Garrett Grolemund and Hadley Wickham. We will be reading several chapters from this book. The open-source online version is available for free; the hardcover version available for purchase online.
+
+
+### Additional resources
+
+* [ggplot2: Elegant Graphics for Data Analysis, 3rd Edition](https://ggplot2-book.org/) -- Hadley Wickham. Excellent resource for the [`ggplot2`](https://cran.r-project.org/web/packages/ggplot2/index.html) graphics library.
+* [Advanced R](https://adv-r.hadley.nz/) -- Hadley Wickham. A deep dive into R as a programming language, not just a tool for data science.
+* [An Introduction to Statistical Learning: with Applications in R](https://www.statlearning.com/) -- Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani. A thorough introduction to statistical learning and machine learning methods, focusing on the fundamentals of how these methods work and the assumptions that go into them. See also [ISLR `tidymodels` Labs](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/). This site demonstrates how to implement all the labs.
+* [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/) - printable cheat sheets for common R tasks and features.
+    
+## What do I need for this course?
+
+**We will program every day** Class sessions are a mix of lecture, demonstration, and live coding. Be prepared to follow along and be engaged.
+
+By the end of the first class, you should make sure you can access the following software:
+
+* [R](https://www.r-project.org/) - the easiest approach is to select a [pre-compiled binary appropriate for your operating system](https://cran.rstudio.com/).
+* [RStudio's IDE](https://www.rstudio.com/products/RStudio/) - this is a powerful user interface for programming in R.
+* [Git](https://git-scm.com/) - Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) which is used to manage projects and track changes in computer files. Once installed, it can be integrated into RStudio to manage your course assignments and other projects.
+
+Comprehensive instructions for downloading and setting up this software can be found [here](/setup/).
+
+## How will I be evaluated?
+
+Students will complete a series of (roughly) weekly programming assignments linked to class materials.Each assignment will be evaluated by myself or a TA.
+
+Assignments will initially come with starter code, or an initial version of the program where you need to fill in the blanks to make it work. As the quarter moves on and your skills become more developed, less help upfront will be provided. 
+
+While students are encouraged to assist one another in debugging programs and solving problems in these assignments, it is imperative students also learn how to do this for themselves. That is, **students need to understand, write, and submit their own work.**
+
+For further information see:
+* [Evaluation criteria for homework](/faq/homework-evaluations/)
+* [How to properly ask for help](/faq/asking-questions/)
+
+
+
+<!-- <!-- -->
+<!-- As part of this course you will be reviewing, commenting on, and marking other students' assignments. This is a mandatory part of the course: failure to complete peer reviews will result in a mark down on your final grade. -->
+
+<!-- ## Expectations for peer reviewer -->
+
+<!-- * Identify three **specific things** your peer did well -->
+<!-- * Identify three **specific things** the student could improve upon (and ideally provide a suggested approach or solution) -->
+
+<!-- ## How to do peer review well -->
+
+<!-- * Give thoughtful, constructive and considerate comments -->
+<!-- * Be specific and concise -->
+<!-- * Use [the rubric](/faq/homework-evaluations/) for ideas about criteria to evaluate and comment on -->
+<!-- * Try to learn something new and, if you succeed, point that out -->
+<!-- * If you can't find anything to praise or that you found helpful, then at least offer some suggestions in a kind way -->
+<!-- * See [here](https://help.github.com/articles/reviewing-proposed-changes-in-a-pull-request/) for useful instructions on how to initiate and submit reviews using GitHub's built-in tools -->
+<!-- * To ensure reproducibility, you might find it useful to clone your classmate's repo and attempt to run their script(s). If you cannot execute them, then the code is not reproducible. Also be aware your classmates will hold you to a similar standard. -->
+
+<!-- ## How to do peer review bad -->
+
+<!-- * Your review is so generic that it's hard to determine which assignment you're reviewing -->
+<!-- * Your review is mean -->
+<!-- * You can't find anything to praise/learn and yet you don't offer any suggestions either -->
+
+<!-- Performing good peer review is difficult! In graduate school we are taught to criticize and tear down others' work and find the flaws. We need to be better at this and not just criticize, but highlight good aspects and suggest how to improve the work. This is still a habit I am struggling to break, so start working on it now before you leave grad school. -->
+
+<!-- ## Acknowledgments -->
+
+<!-- <!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} --> -->
+<!-- <!-- ``` --> -->
+<!-- --> -->

@@ -1,0 +1,982 @@
+---
+title: "Control Structures"
+author: "MACSS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+source(here::here("R", "slide-opts.R"))
+xaringanExtra::use_panelset()
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+library(tidyverse)
+library(rcis)
+library(countdown)
+library(modeldata)
+library(here)
+
+set.seed(1234)
+theme_set(theme_minimal(base_size = 16))
+```
+
+class: inverse, middle
+
+# Overview of control structures in R 
+
+<!-- dropped from here vectors and lists, moved them to the data structure lecture 
+added here conditional statements and more on iteration -->
+
+---
+
+## Control Structures in R
+
+All programs we have written so far can be seen as a finite and fixed sequence of commands.
+
+**Control structures** allow us to vary our commands by controlling their flow of execution. How? by adding some “logic” into our R code, rather than executing the same R code every time.
+
+---
+
+## Control Structures in R
+
+The main control structures are:
+
+* **`if... else` statements**: test one or more condition(s) and act on it/them
+* **`for` loop**: execute a loop a fixed number of times
+* **`while` loop**: execute a loop while a condition is true
+
+See Chapter 13 “Control Structures” in *R programming for Data Science* and Chapter 21 “Iteration” in *R for Data Science* for more in-depth info.
+
+---
+
+class: inverse, middle
+
+# Conditional Statements: if... else
+
+---
+
+### If-else 
+
+If-else tests a condition and act on it depending on whether the condition is TRUE or FALSE.
+
+.small[
+Syntax:
+```
+if (condition to be evaluated) {
+    action performed when condition is TRUE
+} 
+else {
+    action performed when condition is FALSE
+}
+```
+
+Example:
+```{r}
+age <- 14
+if (age > 16) {
+  print("You are elegible to get a driving license")
+} else {
+  print("You cannot drive")
+}
+```
+]
+
+<!-- available options for size in descending order are:
+Huge > huge > LARGE > Large > large > normalsize > small > footnotesize > scriptsize > tiny -->
+
+---
+
+### If-else 
+
+Example: What is the output of this code?
+```{r, echo = TRUE, results = "hide"}
+y <- 10
+if (y < 20) {
+  x <- "Too low" 
+} else {
+  x <- "Too high"
+}
+```
+
+--
+
+```{r, echo = FALSE}
+y <- 10
+if (y < 20) {
+  x <- "Too low" 
+} else {
+  x <- "Too high"
+}
+x
+```
+
+---
+
+### If-else 
+
+Example: What is the output of this code?
+```{r, echo = TRUE, results = "hide"}
+my_numbers <- c(3,4,5,"6",7)
+
+if (!is.numeric(my_numbers)) {
+  print("At least one argument is not numeric. Only provide numbers.")
+} else {
+  print("All numeric elements")
+}
+```
+
+--
+
+```{r, echo = FALSE}
+my_numbers <- c(3,4,5,"6",7)
+
+if(!is.numeric(my_numbers)) {
+  print("At least one argument is not numeric. Only provide numbers.")
+} else {
+  print("All numeric elements")
+}
+```
+
+
+---
+
+### If, else if, else
+
+We can expand the basic if-else structure to incorporate multiple tests using **`else if`**
+
+
+Syntax:
+```
+if (condition 1) {
+    action 1 performed when condition 1 is TRUE
+} 
+else if (condition 2) {  
+    action 2 performed when condition 2 is TRUE
+}
+else {
+    action performed when condition 2 is FALSE
+}
+```
+
+---
+
+### If, else if, else
+
+Example:
+```{r}
+x <- 0
+
+# check if x is positive, negative, or zero
+if (x > 0) {
+  print("x is a positive number")
+} else if (x < 0) {
+  print("x is a negative number")
+} else {
+  print("x is zero")
+}
+```
+
+---
+
+### Nested if-else
+
+We can also write nested if-else statement to specify **conditions inside conditions**
+
+.small[
+```{r}
+x <- 15
+
+# check if x is positive
+if (x > 0) {
+  if (x %% 2 == 0) {  # execute only if x is positive: check if x is even or odd with %%
+    print("x is a positive even number")
+  } else {
+    print("x is a positive odd number")
+  }
+  
+# execute only if x is not positive
+} else {
+  if (x %% 2 == 0) {
+    print("x is a negative even number")
+  } else {
+    print("x is a negative odd number")
+  }
+}
+```
+]
+
+<!-- modulo is the reminder after dividing one number by another. Here 15 : 2 = 7, but 1 is the reminder, thus the number is odd -->
+
+---
+
+### ifelse()
+
+R accepts `if()` and `else()` statements, but also statements using the built-in **`ifelse()`**  
+
+.small[
+Syntax:
+```
+ifelse (condition to be evaluated,
+    action performed when condition is TRUE,
+    action performed when condition is FALSE)
+}
+```
+
+Example:
+```{r}
+y <- 3
+ifelse(sqrt(16) > y, 
+       sqrt(16),
+       0)
+```
+] 
+
+Notice, there is also a `dplyr` version of `ifelse()`, called `if_else()`: [see documentation here](https://dplyr.tidyverse.org/reference/if_else.html)
+
+---
+
+### ifelse()
+
+Example: What is the output of this code?
+```{r, echo = TRUE, results = "hide"}
+numbers <- c(10, 6, 7)
+ifelse(numbers %% 2 == 1, 
+       "odd",
+       "even")
+```
+
+--
+```{r, echo = FALSE}
+numbers <- c(10, 6, 7)
+ifelse(numbers %% 2 == 1,
+       "odd",  
+       "even")
+```
+
+Our input is a vector, not a single number, thus the code will evaluate each element of the vector. 
+
+Notice the `%%` operator outputs the remainder from a division (e.g., 7 : 2 = 3 with remainder 1, thus the number is odd).
+
+---
+
+### ifelse()
+
+Example: What is the output of this code?
+```{r, echo = TRUE, results = "hide"}
+qualify <- data.frame("Athlet" = c("Noah", "Julio", "Nick", "Maria"), 
+                      "Scores" = c(32, 37, 28, 30))
+
+ifelse(qualify$"Scores" > 30, "Admitted", "Rejected")
+```
+
+--
+Example: What is the output of this code?
+```{r, echo = FALSE}
+qualify <- data.frame("Athlet" = c("Noah", "Julio", "Nick", "Maria"), 
+                      "Scores" = c(32, 37, 28, 30))
+
+ifelse(qualify$"Scores" > 30, "Admitted", "Rejected")
+```
+
+
+
+<!--
+More on this:
+https://docs.ycrc.yale.edu/r-novice-gapminder/07-control-flow/
+Comparing ifelse() and for loop:
+https://www.r-bloggers.com/2020/02/if-else-and-ifelse/
+-->
+
+---
+
+class: inverse, middle
+
+# Practice writing if... else statements
+
+---
+Practice Qs:
+
+```{r, eval=FALSE}
+ifelse(sqrt(9)<2,sqrt(9),0)
+```
+
+```{r}
+x=12
+if(is.numeric(x)) y=x*2
+```
+
+```{r, eval=FALSE}
+x=letters[20]
+if (is.numeric(x)){ 
+  print('is numeric') 
+} else { 
+  (is.character(x)) 
+  print('is character')
+}
+```
+
+**Task** flip the results from above
+---
+
+class: inverse, middle
+
+# Iteration: For loops
+
+---
+
+### For loops
+
+For loops are the most common looping construct. Used to **iterate over the elements of an object** (list, vector, etc.) and apply some statement(s) to each of them (e.g., we do something with that element)
+
+Syntax:
+```
+for (item in sequence of items) {
+    statement(s)    
+}
+```
+
+Example:
+```{r}
+for (item in 1:3){
+  print(item)
+}
+```
+
+---
+
+### For loops 
+
+Example:
+```{r}
+for (item in 1:3){
+  print(item)
+}
+```
+
+Let's unpack this example:
+* the statement we are executing here is simple: we print `item` using the `print()` function
+* `item` is a placeholder: at each iteration of the loop, the element `item` varies 
+* the number of repetitions of the statement block depends on the number of items in the sequence of numbers that we provide, in this example 3
+* `item` can be labeled anything else, R does not care as long as you are consistent
+
+---
+
+### For loops
+
+Another example:
+```{r}
+for (i in 1:3){
+  print(i)
+  print("Hello")
+  sum <- i + 100
+  print(sum)
+}
+```
+
+<!-- What is this loop doing? Have someone describing it 
+what happens if I add a print(i) at the end outside the loop: prints last i-->
+
+
+---
+
+### Nested for loops
+
+- The **outer loop** takes control of the number of complete repetitions of the inner loop
+- The **inner loop** is executed N-times for every execution of the outer loop
+
+```{r}
+for (i in 1:3) {
+  print(i)
+  for (j in c("a", "b")) {
+    print(j)
+  }
+}
+```
+
+<!--
+for (i in 1:3) {
+  print(i)
+  for (j in c('a', 'b')) {
+    print(i)
+    print(paste(i, "outer"))
+    print(j)
+    print(paste(i,j))
+  }
+}
+-->
+
+---
+
+### Same operation without and with a for loop on a data frame
+
+Get the data:
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+data(penguins)
+
+head(penguins)
+```
+
+---
+
+### Same operation without and with a for loop on a data frame
+
+Perform some basic cleaning:
+```{r}
+penguins_clean <- 
+  select(penguins, 3:6) %>%
+  drop_na()
+head(penguins_clean)
+```
+
+
+---
+
+### Same operation without and with a for loop on a data frame
+
+Calculate the mean value per each column **without a loop**:
+```{r, collapse = TRUE}
+mean(penguins_clean$bill_length_mm)
+mean(penguins_clean$bill_depth_mm)
+mean(penguins_clean$flipper_length_mm)
+mean(penguins_clean$body_mass_g)
+```
+
+Use the mean function, and apply it to each column of the data frame. Notice we can use the `$` sign to access columns within a data frame. This works but is a lot of copying/pasting...
+
+--
+
+How can we do the same using a iterative operation, e.g. **with a for loop**? 
+
+In-class demo (the code is included in the shared in-class practice folder for today)
+
+---
+
+### Same operation without and with a for loop on a data frame
+
+Calculate the mean value per each column **with a for loop**:
+```{r}
+# initialize empty vector to store results
+output <- vector(mode = "double", length = ncol(penguins_clean))
+
+# loop 
+for (i in seq_along(penguins_clean)) {
+  output[[i]] <- mean(penguins_clean[[i]])
+}
+output
+```
+
+--
+
+For loops include three components: 
+* output (to store results; pre-allocating the output with a given length makes the loop much faster)
+* sequence (what goes in the for loop)
+* body (the statements to be executed every time through the loop) 
+
+---
+
+### Preallocation
+
+<!-- This explains why we are pre-allocating in the first place, why we do so with a vector, and it also might answer Diana question last time about storing results in a tibble or data frame
+having an object that is already of the same length of the output, where we are just plugging in 
+individual values (this increases speed) rather the more naive approach in which we store with an 
+empty vector or an empty other object (e.g. a dataframe) of length zero, and then append or add on
+each of the values as we calculate them
+
+For example, let's take this mpg data (built in dataframe in R about auto, we do not really care about the content of the data here); here what we are doing is creating duplicates of that dataframe 100 times and we are then putting them together into a single data frame. 
+
+Without preallocation: we can create an empty dataframe (here with the tibble function), iterate over 100 times, take this empty dataframe and combine the rows of it with the rows of the original dataframe, and replace the original object with the new copy and save in output (so we are appending 100 rows every time we iterate!) 
+
+If we do proper preallocation: we create a list of 100 empty elements, every time we store the results in the list, then we use the bind_rows() functions at the end
+
+The first approach does not preallocate by creating an empty space to store the output, the second does. See the difference in time of execution. From 80 milliseconds to less than 3. So you can see how inefficient is not to allocate since most of our data will have more than 100 rows!
+
+-->
+
+.panelset[
+.panel[.panel-name[Code]
+```r
+# no preallocation
+mpg_no_preall <- tibble()
+for(i in 1:100){
+  mpg_no_preall <- bind_rows(mpg_no_preall, mpg)
+}
+
+# with preallocation using a list
+mpg_preall <- vector(mode = "list", length = 100)
+for(i in 1:100){
+  mpg_preall[[i]] <- mpg
+}
+mpg_preall <- bind_rows(mpg_preall)
+```
+]
+
+.panel[.panel-name[Plot]
+```{r}
+#| out.width = "70%",
+#| echo = FALSE
+# load microbenchmark library to time code
+library(microbenchmark)
+# bind together 100 copies of mpg
+times <- microbenchmark(
+  `No preallocation` = {
+    mpg_no_preall <- tibble()
+    
+    for(i in 1:100){
+      mpg_no_preall <- bind_rows(mpg_no_preall, mpg)
+    }
+  },
+  `Preallocation` = {
+    mpg_preall <- vector(mode = "list", length = 100)
+    
+    for(i in 1:100){
+      mpg_preall[[i]] <- mpg
+    }
+    
+    mpg_preall <- bind_rows(mpg_preall)
+  }
+)
+autoplot(times)
+```
+]
+]
+
+
+---
+
+class: inverse, middle
+
+# Practice writing for loops
+
+---
+
+class: inverse, middle
+
+# Iteration: While loops
+
+---
+
+### While loops
+
+* A while loop begins by evaluating a condition 
+* If the condition is TRUE, R executes the loop body
+* Once the loop body is executed, R starts over: the condition is evaluated again, and so forth, until the condition is FALSE  
+* At that point, the while loop exits
+
+---
+
+### While loops
+
+Syntax:
+```
+while (condition to be evaluated) {
+statement(s)
+}
+```
+
+Example:
+```{r}
+counter <- 1
+
+while(counter <= 4) {
+  print(counter)
+  counter <- counter + 1
+}
+```
+
+<!-- 
+set the counter outside the loop, usually to 1
+set a condition to be evaluated: here the condition says the counter has to be smaller or equal to 4
+if the condition is TRUE, the loop is executed, here all we ask is to print(counter)
+thus the first time it prints 1
+but if we leave it as it is (without the last line of code), the while loops will keep going infinitely: we need a way to break the loop
+thus we increment our counter inside the loop by redefining it as counter + 1
+-->
+---
+
+
+### While loops
+
+Let's take the same example, but print `counter` also at the end: Why are the results different?
+```{r}
+counter <- 1
+
+while(counter <= 3) {
+  print(counter)
+  counter <- counter + 1
+  print(counter)
+}
+```
+
+---
+
+### While loops
+
+Let's take the same example, but do not increment our `counter` variable: What do you predict it will happen?
+
+```
+counter <- 1
+while(counter < 3){
+  print(counter)
+}
+```
+--
+
+Infinite loop!
+<!-- show this in class -->
+
+---
+
+### While loops
+
+Example: What is the output of this code?
+```{r}
+counter <- 1
+while(counter < 4){
+  print(counter)
+  multiply <- counter * 100
+  print(multiply)
+  counter <- counter + 1
+  print(counter)
+}
+```
+
+---
+
+### While loops
+
+While loops are best used **when you do not know how long the input sequence should run for**. For example, you might want to loop until you get three heads in a row in a random sequence of numbers. You can’t do that with a for loop.
+
+
+While loops usually require a **"count variable"** to be set outside the loop.
+
+While are **less common than for loops**, that's why we do not go in-depth.
+
+---
+
+class: inverse, middle
+
+# Iteration: For loops alternatives in R 
+
+### Iteration with `map_*()` functions
+### Iteration with `across()`
+
+---
+
+## Map functions
+
+<!-- As we have seen in the slides and practice, we kind of have to write a lot of code for a for loop, for example to calculate a straightforward operation like the mean or median etc. so R gives us a shortcut: map functions which come from the purrr package in R and are much more compact (go to the documentation page)
+-->
+
+R provides alternatives to for loops: **`for` loops are good, but `map()` functions may be even better!** 
+
+They come from the `purr` package in R https://purrr.tidyverse.org/
+
+There are **different `map()` functions** depending on the type of output you want to create -- notice this is the same thing in the for loop when we specify the mode of our output vector:
+
+- `map()` makes a list
+- `map_lgl()` makes a logical vector
+- `map_int()` makes an integer vector
+- `map_dbl()` makes a double vector
+- `map_chr()` makes a character vector
+
+---
+
+## Map functions
+
+Let's see an example using the built-in [`mtcars` data frame](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars):
+```{r}
+data(mtcars)
+head(mtcars)
+```
+
+---
+
+## Map functions
+
+Pick the `map()` function you need and specify two main arguments (for more see documentation): 
+* what you are iterating over
+* what you are calculating
+
+```{r}
+map_dbl(mtcars, median)
+map_dbl(mtcars, mean, na.rm = TRUE)
+```
+
+---
+
+## Map functions
+
+We can use `map()` functions also with the `%>%` operator:
+
+```{r}
+mtcars %>%
+  map_dbl(mean, na.rm = TRUE)
+```
+
+---
+
+## Across function
+
+We’ve seen how to use loops and `map()` functions to solve the same task. **Let's review one final method: the `across()` function**.
+
+Notice:
+* `across()` comes from the `dplyr` package
+* `map()` functions come from the `purr` package
+
+Advantages:
+* `across()` makes it easy to apply the same transformation to multiple columns in a data frame
+* since it comes from `dplyr()`, it is well integrated with `dplyr` verbs!
+
+---
+
+### Single column
+
+Using the `dplyr` verb `summarize()`, we can easily calculate the mean of one column without the help of `map()` or `across()`. Here we calculate the mean of `mpg` using the built-in `mtcars` data:
+```{r cp-mean-single-column}
+mtcars %>%
+  summarize(miles_gallon = mean(mpg))
+```
+
+---
+
+### Multiple columns
+
+We can extend the same operation to multiple columns, as follows:
+```{r}
+mtcars %>%
+  summarize(
+    miles_gallon = mean(mpg),
+    cylinders = mean(cyl),
+    displacement = mean(disp),
+    horsepower = mean(hp),
+    rear_axle_ratio = mean(drat),
+    weight = mean(wt)
+  )
+```
+This works... but we can do this same operator more efficiently using `across()`
+
+---
+
+## `dplyr::across()`
+
+`across()` has two main arguments:
+
+* `.cols`: columns you want to operate on; can select columns by position, name, and type
+* `.fns`: is a function or list of functions to apply to each column
+
+We now review some examples of `across()` in conjunction with its favorite verb, `summarize()` 
+
+Check the documentation for more examples and applications: https://dplyr.tidyverse.org/reference/across.html
+
+---
+
+### `summarize()`, `across()`, and `everything()`
+
+.panelset[
+.panel[.panel-name[Single function]
+```{r summarize-across-everything}
+# calculate the mean on all columns of mtcars, use everything() to select all variables
+mtcars %>%
+  summarize(across(.cols = everything(), 
+                   .fns = mean, na.rm = TRUE))
+```
+]
+
+.panel[.panel-name[Multiple functions]
+```{r summarize-across-everything-fns}
+# to apply multiple summaries, store the functions in a list
+mtcars %>%
+  summarize(across(everything(),
+                   .fns = list(min, max)))
+```
+]
+
+.panel[.panel-name[Multiple named functions]
+```{r summarize-across-everything-fns-named}
+# provide names to variables, to clearly distinguish each summarized variable
+mtcars %>%
+  summarize(across(everything(), 
+                   .fns = list(min = min, max = max)))
+```
+]
+
+.panel[.panel-name[Grouped by]
+```{r summarize-across-everything-group-by}
+# use with group_by() to calculate the mean of all columns for each group
+mtcars %>%
+  group_by(cyl) %>%
+  summarize(across(everything(), 
+                   .fns = mean, na.rm = TRUE))
+```
+]
+]
+
+<!-- https://willhipson.netlify.app/post/dplyr_across/dplyr_across/ -->
+
+---
+
+## More examples using the [`worldbank` data](https://data.worldbank.org/)
+
+```{r worldbank}
+data("worldbank", package = "rcis")
+worldbank
+```
+
+---
+
+### `summarize()`, `across()`, and `where()`
+
+.panelset[
+.panel[.panel-name[Single condition]
+```{r summarize-across-where}
+# use across() with where() to pick variables based on type (e.g. is.numeric(), etc.)
+worldbank %>% 
+  group_by(country) %>%
+  summarize(across(.cols = where(is.numeric), .fns = mean, na.rm = TRUE))
+```
+]
+
+.panel[.panel-name[Compound condition]
+```{r summarize-across-compound}
+# or pick variables based on type and whose name begins with "perc"
+worldbank %>%
+  group_by(country) %>%
+  summarize(across(
+    .cols = where(is.numeric) & starts_with("perc"),
+    .fn = mean, na.rm = TRUE
+  ))
+```
+]
+
+]
+
+---
+
+### `across()` and `filter()`
+
+To use `across()` with `filter()`, we need an extra step: `if_any()` or `if_all()`
+
+```{r filter-if-any, echo = TRUE, results = "hide"}
+# if_any() keeps rows where the predicate is true for at least one column
+worldbank %>%
+  filter(if_any(everything(), ~ !is.na(.x)))
+```
+
+```{r filter-if-all, echo = TRUE, results = "hide"}
+# if_all() keeps rows where the predicate is true for all selected columns
+worldbank %>%
+  filter(if_all(everything(), ~ !is.na(.x)))
+```
+
+
+---
+
+class: inverse, middle
+
+# Practice writing `map_*()` functions and `across()` iteration
+
+
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.

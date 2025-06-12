@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data wrangling: relational data</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="MACSS 30500   University of Chicago" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Data wrangling: relational data
+]
+.author[
+### MACSS 30500 <br /> University of Chicago
+]
+
+---
+
+
+
+
+
+
+
+
+class: inverse, middle
+
+# Relational data structures
+
+---
+# Agenda
+
+* Recap
+* Relational data
+* Practice from webpage
+* Factors
+
+
+---
+## Recap
+
+* Loading data
+* Plotting
+* PIPES!
+
+---
+
+## Introduction to relational data
+
+A **relational database** can be defined as a set of multiple tables that are linked based on data common to them. 
+
+&lt;!--
+Data you need for the analysis is not and cannot be stored in one single table 
+but it is split across tables; usually two but potentially more
+--&gt;
+
+--
+
+* These tables answer research questions only when combined together. 
+
+* The important elements in the analysis are not defined by individual rows or columns in one table, but they emerge from the relations between tables.
+
+---
+
+## Example 
+
+Example of a relational database: `library(nycflights13)` from R for Data Science, Chapter 13.
+
+Five tables: 
+* `flights` flights info
+* `airlines` info about the full name of airplane company, identified the career abbreviated code
+* `airports` info about each airport, identified by the faa airport code
+* `planes` info about each plane, identified by its tailnum
+* `weather` info about the weather at each NYC airport for each hour
+
+---
+
+## Example
+
+Graphical representation of the relations among the tables in `nycflights13`:
+
+&lt;img src="relational-nycflights.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+To understand diagrams like this, remember that each relation always concerns a **pair of tables**. Even if you have several tables in your relational database, relations are defined between a pair.
+
+---
+
+## Formal definitions 
+
+A **KEY** of a table is a subset of columns (or attributes). There are two types of keys:
+
+* **PRIMARY KEY**
+uniquely identifies an observation in its own table; e.g. `tailnum` is the primary key of the `planes` table
+
+* **FOREIGN KEY**
+matches the primary key of another table; e.g. `tailnum` is a foreign key of the `flights` plane (it appears in the flights table where it matches each flight to a unique plane)
+
+&lt;!--
+A variable can be both a primary key and a foreign key. For example, origin is part of the weather primary key, and is also a foreign key for the airports table. 
+--&gt;
+
+--
+
+A relation is defined between a **pair of tables**: a primary key and the corresponding foreign key in another table form a **relation**.
+
+&lt;!--
+Relations can be
+* one-to-one
+* one-to-many: each flight has one plane, but each plane has many flights
+* many-to-many
+--&gt;
+
+---
+
+class: inverse, middle
+
+#  Tools for combining tables: Mutating joins
+
+---
+&lt;!--- there are mutating and filtering joins ---&gt;
+
+## Mutating joins
+
+**inner join**: keeps observations that appear in both tables
+
+outer join: keeps observations that appear in at least one of the tables
+  * **left join**: keeps all observations in left table
+  * **right join**: keeps all observations in right table
+  * **full join**: keeps all observations
+
+--
+
+Venn diagram of mutating joins:
+
+&lt;img src="join-venn.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## inner_join()
+
+Keeps observations that appear in both tables. Unmatched rows: not included in the result
+
+.pull-left[
+
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+&lt;img src="join-inner.png" width="120%" style="display: block; margin: auto;" /&gt;
+
+```
+inner_join(x, y, by = "key")
+
+# with pipes
+x %&gt;% 
+  inner_join(y, by = "key")
+  
+# if two cols do not have same name
+inner_join(x, y, by = c("a" = "b")) 
+  
+```
+
+]
+
+&lt;!-- by convention, x is assigned as the first dataframe or left one, and y as the second or right one; the by argument specifies that we are joining it based on the key column (which you cannot see from the drawing but its the column name of the colored columns in each x and y). Compare this to the left_join() operation which is another form of mutating join
+--&gt;
+
+---
+
+## left_join()
+
+Keeps all observations in the left table (x), even if there is not a match in y
+
+.pull-left[
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="join-outer-left.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+```
+left_join(x, y, by = "key")
+```
+
+] 
+
+---
+
+## right_join()
+
+Keeps all observations in the right table (y), even if there is not a match in x
+
+.pull-left[
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="join-outer-right.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+```
+right_join(x, y, by = "key")
+```
+
+] 
+
+&lt;!-- same thing as left join but reversing the order of the data frame or table
+typically right join is utilized less because by convention we think as the primary 
+data for these kind of operations as the left or x table 
+--&gt;
+
+---
+
+## full_join()
+
+Keeps all observations, matches and non-matches
+
+&lt;!-- more missing values --&gt;
+
+.pull-left[
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="join-outer-full.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+```
+full_join(x, y, by = "key")
+```
+
+] 
+
+---
+
+class: inverse, middle
+
+#  Tools for combining tables: Filtering joins
+
+---
+
+## Filtering joins
+
+- **semi_join**: keeps all observations in x that have a match in y
+- **anti_join** drops all observations in x that have a match in y
+
+Essentially the filtering operation uses information from the second data frame (y) to filter the first data frame (x).
+
+---
+
+## semi_join()
+
+Keeps all observations in x that have a match in y. Only keeps columns from x
+
+.pull-left[
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="join-semi.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+```
+semi_join(x, y, by = "key")
+```
+
+] 
+
+
+---
+
+## anti_join()
+
+Drops all observations in x that have a match in y. Only keeps columns from x
+
+.pull-left[
+
+&lt;img src="join-setup.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="join-anti.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+```
+anti_join(x, y, by = "key")
+```
+]
+
+---
+
+class: inverse, middle
+
+# Practice working with relational data
+### Download the exercises from the website
+
+---
+
+class: inverse, middle
+
+# Factors
+
+---
+
+## Factors
+
+* Used for **categorical (discrete) variables**
+* Factors store categorical variables values as numbers rather than as characters (e.g., Likert scale)
+* Historically used for purposes of efficiency
+* Best used to sort categorical variables other than alphabetically (e.g., 1 to 5 rather than alphabetically)
+* `forcats` in `tidyverse` to manipulate factors
+
+---
+
+## Character vector
+
+Define a character vectors with four months and sort it:
+
+
+```r
+(x1 &lt;- c("Dec", "Apr", "Jan", "Mar"))
+```
+
+```
+## [1] "Dec" "Apr" "Jan" "Mar"
+```
+
+```r
+sort(x1)
+```
+
+```
+## [1] "Apr" "Dec" "Jan" "Mar"
+```
+
+Notice the default behavior of R is sorting character vectors alphabetically. As humans, we understand that's not the a very meaningful way to sort months. Instead, we might want to sort months chronologically. To tell that to R, we need to convert them to factors.
+
+&lt;!--
+note we use sort() because this is a standalone vector, 
+while we used arrange() when working with dataframes
+--&gt;
+
+---
+
+### Step 1: Levels
+
+To convert a character vector to a factor, the first thing to do is to define all possible values that the variable can take. We do so by creating another character vector:
+
+
+```r
+month_levels &lt;- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+```
+
+---
+
+### Step 2: Factor
+
+We then use the `factor()` or the `parse_factor()` function to convert this character vector into a factor, and apply the given order to it:
+
+
+```r
+(y1 &lt;- factor(x1, levels = month_levels))
+```
+
+```
+## [1] Dec Apr Jan Mar
+## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
+
+```r
+parse_factor(x1, levels = month_levels)
+```
+
+```
+## [1] Dec Apr Jan Mar
+## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
+
+---
+
+### Step 3: Sort
+
+Finally, we sort the new factor vector `y1`, exactly like we did for the original character vector `x1`:
+
+
+```r
+# sort y1: chronologically correctly
+sort(y1)
+```
+
+```
+## [1] Jan Mar Apr Dec
+## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
+
+```r
+# sort x1: alphabetically sorted
+sort(x1)
+```
+
+```
+## [1] "Apr" "Dec" "Jan" "Mar"
+```
+
+---
+
+## Different levels/labels
+
+Another situation you might encounter, is that rather than working directly with character vectors, you might find their numerical representation:
+
+
+```r
+(x2 &lt;- c(12, 4, 1, 3))
+```
+
+```
+## [1] 12  4  1  3
+```
+
+Define levels and labels separately: 
+
+
+```r
+y2 &lt;- factor(x2,
+  levels = seq(from = 1, to = 12),
+  labels = month_levels
+)
+y2
+```
+
+```
+## [1] Dec Apr Jan Mar
+## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+```
+
+---
+
+## `forcats` package
+
+Provides a suite of tools that solve common problems with factors. Some examples include:
+
+- `fct_reorder()`: Reordering a factor by another variable
+- `fct_infreq()`: Reordering a factor by the frequency of values
+- `fct_relevel()`: Changing the order of a factor by hand
+- `fct_lump()`: Collapsing the least/most frequent values of a factor into “other”
+
+Documentation and Cheat Sheet: https://forcats.tidyverse.org/
+
+&lt;!-- show hw3 work with factors --&gt;
+---
+
+class: inverse, middle
+
+# Practice working with factors
+### Download the exercises from the website
+
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "magula",
+"highlightLines": true,
+"highlightLanguage": "r",
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
