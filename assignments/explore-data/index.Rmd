@@ -6,7 +6,8 @@ weight: 2
 description: Assingment 2 due 6/23/25
 publishdate: 2019-04-01
 output:
-  html_document
+  md_document:
+    preserve_yaml: true
 
 type: docs
 aliases: ["/a2-explore-data.html"]
@@ -81,64 +82,6 @@ We are using a sample of GSS data. To learn more, [see this dataset description 
 1. Generate a bar chart that identifies the total number of children by each education category. The bars should be sorted from highest to lowest.
 
 
-```{r, eval = FALSE, echo = FALSE}
-# Load necessary libraries
-library(dplyr)
-library(ggplot2)
-library(knitr)
-library(stevedata)
-
-data(gss_wages)
-
-# Step 1: Load and describe the dataframe
-# Assuming gss_wages is already loaded into your environment
-# Basic summary
-summary(gss_wages)
-str(gss_wages)
-
-# Step 2: Summarize number of women and men per education category
-gender_education_summary <- gss_wages %>%
-  group_by(educcat, gender) %>%
-  summarise(count = n(), .groups = 'drop') %>%
-  tidyr::pivot_wider(names_from = gender, values_from = count, values_fill = 0)
-
-# Display formatted table
-kable(gender_education_summary, caption = "Number of Women and Men per Education Category")
-
-# Step 3: Bar chart - number of children per education category
-children_by_education <- gss_wages %>%
-  group_by(educcat) %>%
-  summarise(total_children = sum(childs, na.rm = TRUE)) %>%
-  arrange(desc(total_children))
-
-# Create bar chart
-ggplot(children_by_education, aes(x = reorder(educcat, -total_children), y = total_children)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
-  labs(title = "Total Number of Children by Education Category",
-       x = "Education Category",
-       y = "Total Number of Children") +
-  theme_minimal()
-
-# Step 4: Boxplot of wages by race
-ggplot(gss_wages, aes(x = occrecode, y = realrinc)) +
-  geom_boxplot(fill = "lightgreen") +
-  labs(title = "Wages by Race",
-       x = "Race",
-       y = "Wage") +
-  theme_minimal()
-
-```
-
-```{r, eval = FALSE, echo = FALSE}
-
-ggplot(gss_wages, aes(x = reorder(occrecode, realrinc, FUN = median, na.rm = TRUE), y = realrinc)) +
-  geom_boxplot(fill = "lightgreen") +
-  labs(title = "Wages by Occupation",
-       x = "Occupation",
-       y = "Real Income (realrinc)") +
-  theme_minimal()  
-
-```
 
 ### More open-ended questions
 
@@ -173,27 +116,28 @@ This is just a starting point. Consider adopting your own color scales, [taking 
 
 ### Formatting tables
 
-When presenting tabular data (aka `dplyr::summarize()`), make sure you format it correctly. Use the `kable()` function from the `knitr` package to format the table for the final document. For instance, this is a poorly presented table summarizing where gun deaths occurred:
+When presenting tabular data (aka `dplyr::summarize()`), make sure you format it correctly. Use the `kable()` function from the `knitr` package to format the table for the final document. For instance, this is a poorly presented table:
 
 ```{r packages, message = FALSE}
 library(tidyverse)
 library(knitr)
-library(c3s2)
+library(stevedata)
+data(gss_wages)
 ```
 
 ```{r table-bad, echo = TRUE}
-# calculate total gun deaths by location
-#count(mass_shootings, location_type)
+# calculate total children 
+count(gss_wages, childs)
 ```
 
 Instead, use `kable()` to format the table, add a caption, and label the columns:
 
 ```{r table-good, format = "asis", echo = TRUE}
-# count(mass_shootings, location_type) %>%
-#   kable(
-#     caption = "Mass shootings in the United States by location",
-#     col.names = c("Location", "Number of incidents")
-#  )
+count(gss_wages, childs) %>%
+   kable(
+     caption = "Number of children across respondents",
+     col.names = c("Total number of children", "Number of respondents")
+  )
 ```
 
 Run `?kable` in the console to see how additional options.
@@ -201,16 +145,12 @@ Run `?kable` in the console to see how additional options.
 
 # Submit the assignment
 
-To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/a2-brinasab`) and submit it to Canvas under HW02 before the deadline.
+To submit the assignment, simply push to your repository the last version of your assignment before the deadline. Then copy your repository URL (e.g., `https://github.com/css-fall22/a2-brinasab`) and submit it to Canvas under A2 before the deadline.
 
 Your assignment should be submitted as a R Markdown document `.Rmd`. Need a refresher on R Markdown? [Read this](http://rmarkdown.rstudio.com/lesson-1.html) or [this](http://r4ds.had.co.nz/r-markdown.html). 
 
-Make sure to stage-commit-push:
-* `mass-shootings.Rmd` (the main file you will add your code to)
-* `mass-shootings.md` (you will generate this from the .Rmd by simply knitting it)
-* `mass-shootings_files/` (this folder contains all the graphs you generated in your `.Rmd`)
+Make sure to stage-commit-push ALL of your files
 
-As part of your submission, write 1-2 paragraphs of reflections on what was hard/easy about this homework, problems you solved and how, helpful resources you consulted, etc. Please, list the first and last name of eventual collaborators with whom you worked with to complete this assignment.
 
 <!--
 Please notice for this assignment we expect you to do some more work in terms of formatting and reproducibility: submit a homework that fully complies with the [Homework Guidelines](/faq/homework-guidelines/#homework-workflow).
