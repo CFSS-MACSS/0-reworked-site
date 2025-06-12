@@ -1,90 +1,502 @@
-<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>A3: Wrangling and visualizing data | CFSS: Computing for the Social Sciences</title><meta name=description content="Assignment 3 due 6/27/25"><meta property="og:url" content="https://cfssmacss.netlify.app/assignments/wrangle-data/"><meta property="og:site_name" content="CFSS: Computing for the Social Sciences"><meta property="og:title" content="A3: Wrangling and visualizing data"><meta property="og:description" content="Assignment 3 due 6/27/25"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="assignments"><meta property="article:published_time" content="2023-06-27T13:30:00-06:00"><meta property="article:modified_time" content="2023-06-27T13:30:00-06:00"><meta itemprop=name content="A3: Wrangling and visualizing data"><meta itemprop=description content="Assignment 3 due 6/27/25"><meta itemprop=datePublished content="2023-06-27T13:30:00-06:00"><meta itemprop=dateModified content="2023-06-27T13:30:00-06:00"><meta itemprop=wordCount content="1324"><meta name=twitter:card content="summary"><meta name=twitter:title content="A3: Wrangling and visualizing data"><meta name=twitter:description content="Assignment 3 due 6/27/25"><link rel=preload href=/scss/main.min.596a97f2b2ba247e192475a4cf1dc3e955530cd98849fbac591242700cdf185b.css as=style integrity="sha256-WWqX8rK6JH4ZJHWkzx3D6VVTDNmISfusWRJCcAzfGFs=" crossorigin=anonymous><link href=/scss/main.min.596a97f2b2ba247e192475a4cf1dc3e955530cd98849fbac591242700cdf185b.css rel=stylesheet integrity="sha256-WWqX8rK6JH4ZJHWkzx3D6VVTDNmISfusWRJCcAzfGFs=" crossorigin=anonymous><script src=https://code.jquery.com/jquery-3.7.1.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin=anonymous></script></head><body class=td-page><header><nav class="td-navbar js-navbar-scroll" data-bs-theme=dark><div class="container-fluid flex-column flex-md-row"><a class=navbar-brand href=/><span class="navbar-brand__logo navbar-logo"></span><span class=navbar-brand__name>CFSS: Computing for the Social Sciences</span></a><div class="td-navbar-nav-scroll ms-md-auto" id=main_navbar><ul class=navbar-nav><li class=nav-item><a class=nav-link href=/><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/syllabus/><span>Syllabus</span></a></li><li class=nav-item><a class=nav-link href=/schedule/><span>Schedule</span></a></li><li class=nav-item><a class=nav-link href=/assignments/><span>Assignments</span></a></li></ul></div><div class="d-none d-lg-block"></div></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type=button data-bs-toggle=collapse data-bs-target=#td-section-nav aria-controls=td-section-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="td-sidebar-nav collapse" id=td-section-nav><ul class="td-sidebar-nav__section pe-md-3 ul-0"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m--li><a href=/ title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-><span>Home</span></a><ul class=ul-1><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-setup-li><a href=/setup/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setup><span>Start here: Software Options</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-setupgit-li><a href=/setup/git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupgit><span>Git</span></a><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitwhat-is-git-li><a href=/setup/git/what-is-git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitwhat-is-git><span>What is Git?</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-li><a href=/setup/git/git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit><span>Install Git</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-clients-li><a href=/setup/git/git-clients/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-clients><span>Git clients</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-configure-li><a href=/setup/git/git-configure/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-configure><span>Configure Git</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-with-rstudio-li><a href=/setup/git/git-with-rstudio/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-with-rstudio><span>Using Git within RStudio</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-setupr-li><a href=/setup/r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupr><span>R/RStudio</span></a><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprwhat-is-r-li><a href=/setup/r/what-is-r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprwhat-is-r><span>Why R?</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprr-li><a href=/setup/r/r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprr><span>Setup R</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprr-server-li><a href=/setup/r/r-server/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprr-server><span>Accessing RStudio Workbench</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupshell-li><a href=/setup/shell/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupshell><span>What is the Shell?</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-syllabus-li><a href=/syllabus/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-syllabus><span>Syllabus</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-faq-li><a href=/faq/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-faq><span>FAQ</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqabout-the-course-li><a href=/faq/about-the-course/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqabout-the-course><span>General Questions & Info</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqhomework-evaluations-li><a href=/faq/homework-evaluations/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqhomework-evaluations><span>Homework Rubric</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqasking-questions-li><a href=/faq/asking-questions/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqasking-questions><span>How to ask for help</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-schedule-li><a href=/schedule/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-schedule><span>Schedule of Topics</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulejuneteenth-li><a href=/schedule/juneteenth/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulejuneteenth><span>Juneteenth (observed)</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleapplication-program-interface-li><a href=/schedule/application-program-interface/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleapplication-program-interface><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulebuild-better-workflow-li><a href=/schedule/build-better-workflow/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulebuild-better-workflow><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleclassification-topic-models-li><a href=/schedule/classification-topic-models/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleclassification-topic-models><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-communication-li><a href=/schedule/data-communication/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-communication><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-structures-li><a href=/schedule/data-structures/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-structures><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-transformation-li><a href=/schedule/data-transformation/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-transformation><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledebugging-li><a href=/schedule/debugging/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledebugging><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledistributed-learning-li><a href=/schedule/distributed-learning/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledistributed-learning><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleexploratory-data-analysis-li><a href=/schedule/exploratory-data-analysis/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleexploratory-data-analysis><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleextended-git-workflows-li><a href=/schedule/extended-git-workflows/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleextended-git-workflows><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulefall-break-li><a href=/schedule/fall-break/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulefall-break><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulegit-and-github-li><a href=/schedule/git-and-github/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulegit-and-github><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulegrammar-of-graphics-li><a href=/schedule/grammar-of-graphics/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulegrammar-of-graphics><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulehyperparameter-tuning-li><a href=/schedule/hyperparameter-tuning/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulehyperparameter-tuning><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleindependence-day-li><a href=/schedule/independence-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleindependence-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleintro-li><a href=/schedule/intro/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleintro><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulelabor-day-li><a href=/schedule/labor-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulelabor-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulememorial-day-li><a href=/schedule/memorial-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulememorial-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulemlk-day-li><a href=/schedule/mlk-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulemlk-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleno-class-misc-li><a href=/schedule/no-class-misc/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleno-class-misc><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulepipes-functions-li><a href=/schedule/pipes-functions/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulepipes-functions><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduler-markdown-li><a href=/schedule/r-markdown/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduler-markdown><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulerelational-data-factors-li><a href=/schedule/relational-data-factors/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulerelational-data-factors><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereprex-git-li><a href=/schedule/reprex-git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereprex-git><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereproducible-documents-li><a href=/schedule/reproducible-documents/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereproducible-documents><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereproducible-workflow-li><a href=/schedule/reproducible-workflow/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereproducible-workflow><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleshiny-server-li><a href=/schedule/shiny-server/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleshiny-server><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleshiny-ui-li><a href=/schedule/shiny-ui/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleshiny-ui><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulespatial-viz-i-li><a href=/schedule/spatial-viz-i/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulespatial-viz-i><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulespatial-viz-ii-li><a href=/schedule/spatial-viz-ii/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulespatial-viz-ii><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulestat-learn-classification-li><a href=/schedule/stat-learn-classification/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulestat-learn-classification><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulestat-learn-li><a href=/schedule/stat-learn/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulestat-learn><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletext-data-li><a href=/schedule/text-data/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletext-data><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulethanksgiving-li><a href=/schedule/thanksgiving/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulethanksgiving><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletidy-data-li><a href=/schedule/tidy-data/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletidy-data><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletidyeval-li><a href=/schedule/tidyeval/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletidyeval><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulevectors-iteration-li><a href=/schedule/vectors-iteration/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulevectors-iteration><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleweb-scraping-li><a href=/schedule/web-scraping/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleweb-scraping><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulework-with-models-li><a href=/schedule/work-with-models/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulework-with-models><span></span></a></li></ul></li></ul></li></ul></nav></div></aside><aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"></div><div class=td-toc><nav id=TableOfContents><ul><li><a href=#description-of-the-data-supreme-court-database>Description of the data: Supreme Court Database</a></li><li><a href=#questions>Questions</a><ul><li></li></ul></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 ps-md-5" role=main><nav aria-label=breadcrumb class=td-breadcrumbs><ol class=breadcrumb><li class=breadcrumb-item><a href=/assignments/>Assignments</a></li><li class="breadcrumb-item active" aria-current=page>A3: Wrangling and visualizing data</li></ol></nav><div class=td-content><h1>A3: Wrangling and visualizing data</h1><div class=lead>Assignment 3 due 6/27/25</div><header class=article-meta></header><h1 id=overview>Overview</h1><p>The goal of this assignment is to practice wrangling and exploring
-social science data in a research context.</p><p><strong>NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)</strong> # Accessing
-the <code>hw03</code> repository</p><ul><li>Go <a href=https://classroom.github.com/a/IPLnbCzi>to this link</a> to accept
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>A3: Wrangling and visualizing data | CFSS: Computing for the Social Sciences</title>
+<meta name="description" content="Assignment 3 due 6/27/25">
+<meta property="og:url" content="http://localhost:1313/assignments/wrangle-data/">
+  <meta property="og:site_name" content="CFSS: Computing for the Social Sciences">
+  <meta property="og:title" content="A3: Wrangling and visualizing data">
+  <meta property="og:description" content="Assignment 3 due 6/27/25">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assignments">
+    <meta property="article:published_time" content="2023-06-27T13:30:00-06:00">
+    <meta property="article:modified_time" content="2023-06-27T13:30:00-06:00">
+
+  <meta itemprop="name" content="A3: Wrangling and visualizing data">
+  <meta itemprop="description" content="Assignment 3 due 6/27/25">
+  <meta itemprop="datePublished" content="2023-06-27T13:30:00-06:00">
+  <meta itemprop="dateModified" content="2023-06-27T13:30:00-06:00">
+  <meta itemprop="wordCount" content="1324">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A3: Wrangling and visualizing data">
+  <meta name="twitter:description" content="Assignment 3 due 6/27/25">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">CFSS: Computing for the Social Sciences</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/"><span>Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/syllabus/"><span>Syllabus</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/schedule/"><span>Schedule</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assignments/"><span>Assignments</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setup-li">
+  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupgit-li">
+  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
+  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-li">
+  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-clients-li">
+  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-configure-li">
+  <a href="/setup/git/git-configure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="">Configure Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-with-rstudio-li">
+  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupr-li">
+  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
+  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-server-li">
+  <a href="/setup/r/r-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr-server"><span class="">Accessing RStudio Workbench</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupshell-li">
+  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
+  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
+  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
+  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
+  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
+  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
+  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulejuneteenth-li">
+  <a href="/schedule/juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulejuneteenth"><span class="">Juneteenth (observed)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleapplication-program-interface-li">
+  <a href="/schedule/application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleapplication-program-interface"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
+  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleclassification-topic-models-li">
+  <a href="/schedule/classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleclassification-topic-models"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
+  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-structures-li">
+  <a href="/schedule/data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-structures"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-transformation-li">
+  <a href="/schedule/data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-transformation"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledebugging-li">
+  <a href="/schedule/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledebugging"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
+  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleexploratory-data-analysis-li">
+  <a href="/schedule/exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleexploratory-data-analysis"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
+  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
+  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
+  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegrammar-of-graphics-li">
+  <a href="/schedule/grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegrammar-of-graphics"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
+  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
+  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleintro-li">
+  <a href="/schedule/intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleintro"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
+  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
+  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
+  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
+  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulepipes-functions-li">
+  <a href="/schedule/pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulepipes-functions"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduler-markdown-li">
+  <a href="/schedule/r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduler-markdown"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulerelational-data-factors-li">
+  <a href="/schedule/relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulerelational-data-factors"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereprex-git-li">
+  <a href="/schedule/reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereprex-git"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-documents-li">
+  <a href="/schedule/reproducible-documents/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-documents"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-workflow-li">
+  <a href="/schedule/reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
+  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
+  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
+  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
+  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
+  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
+  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletext-data-li">
+  <a href="/schedule/text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletext-data"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
+  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidy-data-li">
+  <a href="/schedule/tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidy-data"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
+  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulevectors-iteration-li">
+  <a href="/schedule/vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulevectors-iteration"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleweb-scraping-li">
+  <a href="/schedule/web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleweb-scraping"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
+  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#description-of-the-data-supreme-court-database">Description of the data: Supreme Court Database</a></li>
+    <li><a href="#questions">Questions</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/assignments/">Assignments</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    A3: Wrangling and visualizing data</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>A3: Wrangling and visualizing data</h1>
+	<div class="lead">Assignment 3 due 6/27/25</div>
+	<header class="article-meta">
+		
+  </header>
+	<h1 id="overview">Overview</h1>
+<p>The goal of this assignment is to practice wrangling and exploring
+social science data in a research context.</p>
+<p><strong>NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)</strong> # Accessing
+the <code>hw03</code> repository</p>
+<ul>
+<li>Go <a href="https://classroom.github.com/a/IPLnbCzi">to this link</a> to accept
 and create your private <code>hw3</code> repository on GitHub. Once you do so,
 your repository will be built in a few seconds. It follows the naming
-convention <code>hw3-&lt;USERNAME></code></li><li>Once the your repository has been created, click on the link you see,
-which will take you to your repository.</li><li>Finally, clone the repository to your computer (or R workbench)
-following the process below.</li></ul><h1 id=cloning-your-hw03-repository>Cloning your <code>hw03</code> repository</h1><p>After you have accessed the <code>hw03</code> repository (see above), follow the
-<a href=/homework/edit-readme/>same steps you completed for <code>hw01</code></a> to clone
-the repository.</p><h1 id=general-workflow>General workflow</h1><p>Your general workflow will be:</p><ul><li>Accept the repo and clone it (see above)</li><li>Make changes locally to the files in RStudio</li><li>Save your changes</li><li>Stage-Commit-Push: stage and commit your changes to your local Git
+convention <code>hw3-&lt;USERNAME&gt;</code></li>
+<li>Once the your repository has been created, click on the link you see,
+which will take you to your repository.</li>
+<li>Finally, clone the repository to your computer (or R workbench)
+following the process below.</li>
+</ul>
+<h1 id="cloning-your-hw03-repository">Cloning your <code>hw03</code> repository</h1>
+<p>After you have accessed the <code>hw03</code> repository (see above), follow the
+<a href="/homework/edit-readme/">same steps you completed for <code>hw01</code></a> to clone
+the repository.</p>
+<h1 id="general-workflow">General workflow</h1>
+<p>Your general workflow will be:</p>
+<ul>
+<li>Accept the repo and clone it (see above)</li>
+<li>Make changes locally to the files in RStudio</li>
+<li>Save your changes</li>
+<li>Stage-Commit-Push: stage and commit your changes to your local Git
 repo; then push them online to GitHub. You can complete these steps
 using the Git GUI integrated into RStudio. In general, you do not want
 to directly modify your online GitHub repo (if you do so, remember to
 pull first); instead modify your local Git repo, then
-stage-commit-push your changes up to your online GitHub repo.</li></ul><h1 id=part-1-tidying-messy-data>PART 1: Tidying messy data</h1><p>In the <code>rcis</code> package, there is a data frame called <code>dadmom</code>.</p><pre><code>## # A tibble: 3 x 5
+stage-commit-push your changes up to your online GitHub repo.</li>
+</ul>
+<h1 id="part-1-tidying-messy-data">PART 1: Tidying messy data</h1>
+<p>In the <code>rcis</code> package, there is a data frame called <code>dadmom</code>.</p>
+<pre><code>## # A tibble: 3 x 5
 ##   famid named  incd namem  incm
 ##   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
 ## 1     1 Bill  30000 Bess  15000
 ## 2     2 Art   22000 Amy   18000
 ## 3     3 Paul  25000 Pat   50000
-</code></pre><p>Tidy this data frame so that it adheres to the tidy data principles:</p><ol><li>Each variable must have its own column.</li><li>Each observation must have its own row.</li><li>Each value must have its own cell.</li></ol><p>Your final product (tidy data frame) should look like this:</p><pre><code>##   famid parent name   inc
+</code></pre>
+<p>Tidy this data frame so that it adheres to the tidy data principles:</p>
+<ol>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
+</ol>
+<p>Your final product (tidy data frame) should look like this:</p>
+<pre><code>##   famid parent name   inc
 ## 1     1      d Bill 30000
 ## 2     1      m Bess 15000
 ## 3     2      d  Art 22000
 ## 4     2      m  Amy 18000
 ## 5     3      d Paul 25000
 ## 6     3      m  Pat 50000
-</code></pre><p>You can accomplish this task using a single or multiple piped operations
+</code></pre>
+<p>You can accomplish this task using a single or multiple piped operations
 using only <code>tidyr</code> functions. Code that does not use any <code>tidyr</code>
-functions is not acceptable. Check the <a href=/syllabus/data-wrangling-tidy-data>Data wrangling: tidy
+functions is not acceptable. Check the <a href="/syllabus/data-wrangling-tidy-data">Data wrangling: tidy
 data</a> lecture, readings, and
-in-class exercises before starting this part.</p><p>Once you have tidied the data frame, generate a plot using the exact
+in-class exercises before starting this part.</p>
+<p>Once you have tidied the data frame, generate a plot using the exact
 code provided in your repo. If you tidied the data frame correctly, you
 will not have to make any changes to that code. If errors arise, it
-means the data has not been tidied correctly.</p><h1 id=part-2-wrangling-and-visualizing-messyish-data>PART 2: Wrangling and visualizing messy(ish) data</h1><h2 id=description-of-the-data-supreme-court-database>Description of the data: Supreme Court Database</h2><p>The <a href=http://scdb.wustl.edu/>Supreme Court Database</a> contains detailed
+means the data has not been tidied correctly.</p>
+<h1 id="part-2-wrangling-and-visualizing-messyish-data">PART 2: Wrangling and visualizing messy(ish) data</h1>
+<h2 id="description-of-the-data-supreme-court-database">Description of the data: Supreme Court Database</h2>
+<p>The <a href="http://scdb.wustl.edu/">Supreme Court Database</a> contains detailed
 information of every published decision of the U.S. Supreme Court since
 its creation in 1791. It is perhaps the most utilized database in the
-study of judicial politics.</p><p>In the <code>hw03</code> repository, you will find two data files:</p><ol><li><code>scdb-case.csv</code></li><li><code>scdb-vote.csv</code></li></ol><p>These contain the exact same data you would obtain if you downloaded the
+study of judicial politics.</p>
+<p>In the <code>hw03</code> repository, you will find two data files:</p>
+<ol>
+<li><code>scdb-case.csv</code></li>
+<li><code>scdb-vote.csv</code></li>
+</ol>
+<p>These contain the exact same data you would obtain if you downloaded the
 files from the original website, but reformatted to be stored as
 relational data files. That is, <code>scdb-case.csv</code> contains all
 <strong>case-level</strong> variables, whereas <code>scdb-vote.csv</code> contains all
-<strong>vote-level</strong> variables.</p><p>The data is structured in a tidy fashion.</p><ul><li><code>scdb-case.csv</code> contains one row for every case and one column for
-every variable</li><li><code>scdb-vote.csv</code> contains one row for every vote by a justice in every
-case and one column for every variable</li></ul><p>The current dataset contains information on every case decided from the
+<strong>vote-level</strong> variables.</p>
+<p>The data is structured in a tidy fashion.</p>
+<ul>
+<li><code>scdb-case.csv</code> contains one row for every case and one column for
+every variable</li>
+<li><code>scdb-vote.csv</code> contains one row for every vote by a justice in every
+case and one column for every variable</li>
+</ul>
+<p>The current dataset contains information on every case decided from the
 1791-2020 terms.[1] There are several ID variables which are useful for
 other types of research: for our purposes, the only ID variable you need
 to concern yourself with is <code>caseIssuesId</code>. Variables you will want to
-familiarize yourself with include:</p><ul><li><code>chief</code></li><li><code>dateDecision</code></li><li><code>decisionDirection</code></li><li><code>decisionType</code></li><li><code>declarationUncon</code></li><li><code>direction</code></li><li><code>issueArea</code></li><li><code>justice</code></li><li><code>justiceName</code></li><li><code>majority</code></li><li><code>majVotes</code></li><li><code>minVotes</code></li><li><code>term</code></li></ul><div class="alert alert-info" role=alert><pre><code>note
-</code></pre></div><h2 id=questions>Questions</h2><p>Once you import the data files, use your data wrangling and
-visualization skills to answer the following questions.</p><p>For each question, also provide 1-2 paragraphs of written interpretation
+familiarize yourself with include:</p>
+<ul>
+<li><code>chief</code></li>
+<li><code>dateDecision</code></li>
+<li><code>decisionDirection</code></li>
+<li><code>decisionType</code></li>
+<li><code>declarationUncon</code></li>
+<li><code>direction</code></li>
+<li><code>issueArea</code></li>
+<li><code>justice</code></li>
+<li><code>justiceName</code></li>
+<li><code>majority</code></li>
+<li><code>majVotes</code></li>
+<li><code>minVotes</code></li>
+<li><code>term</code></li>
+</ul>
+<div class="alert alert-info" role="alert">
+<pre><code>note
+</code></pre>
+</div>
+<h2 id="questions">Questions</h2>
+<p>Once you import the data files, use your data wrangling and
+visualization skills to answer the following questions.</p>
+<p>For each question, also provide 1-2 paragraphs of written interpretation
 of your results. Graphs and/or tables alone will not be sufficient to
 answer these questions. The interpretation should be descriptive (e.g.,
 this graph shows x and y) and substantive (e.g., what do the results
-show substantially, what can we infer or conclude from the graph, etc.).</p><p>Pay careful attention to the unit of analysis required to answer each
+show substantially, what can we infer or conclude from the graph, etc.).</p>
+<p>Pay careful attention to the unit of analysis required to answer each
 question. Some questions only require case-level variables, others only
 require vote-level variables, and some may require combining the two
 data frames together. Be sure to choose an appropriate relational join
-function as necessary.</p><h4 id=1-what-percentage-of-cases-in-each-term-are-decided-by-a-one-vote-margin-ie5-4-4-3-etc>1. What percentage of cases in each term are decided by a one-vote margin (i.e. 5-4, 4-3, etc.)?</h4><h4 id=2-how-often-the-justices-who-are-currently-serving-on-the-supreme-court-have-voted-in-the-conservative-direction-in-cases-of-criminal-procedure-civil-rights-economic-activity-and-federal-taxation>2. How often the justices who are currently serving on the Supreme Court, have voted in the conservative direction in cases of criminal procedure, civil rights, economic activity, and federal taxation?</h4><ul><li>Select only the justices who are currently serving on the Supreme
-Court <a href=https://www.supremecourt.gov/about/biographies.aspx>see here</a>:
+function as necessary.</p>
+<h4 id="1-what-percentage-of-cases-in-each-term-are-decided-by-a-one-vote-margin-ie5-4-4-3-etc">1. What percentage of cases in each term are decided by a one-vote margin (i.e. 5-4, 4-3, etc.)?</h4>
+<h4 id="2-how-often-the-justices-who-are-currently-serving-on-the-supreme-court-have-voted-in-the-conservative-direction-in-cases-of-criminal-procedure-civil-rights-economic-activity-and-federal-taxation">2. How often the justices who are currently serving on the Supreme Court, have voted in the conservative direction in cases of criminal procedure, civil rights, economic activity, and federal taxation?</h4>
+<ul>
+<li>Select only the justices who are currently serving on the Supreme
+Court <a href="https://www.supremecourt.gov/about/biographies.aspx">see here</a>:
 John G. Roberts, Clarence Thomas, Samuel A. Alito, Sonia Sotomayor,
 Elena Kagan, Neil M. Gorsuch, Brett M. Kavanaugh, Amy Coney Barrett
 (Ketanji Brown Jackson is not in the data as she was only recently
-nominated).</li><li>Calculate how often they have voted in the conservative direction in
+nominated).</li>
+<li>Calculate how often they have voted in the conservative direction in
 cases involving criminal procedure, civil rights, economic activity,
-and federal taxation.</li><li>Produce two graphs with your results: one faceted by justice, the
-other by issue area.</li></ul><h4 id=3-which-justices-are-most-likely-to-agree-with-the-courts-declaration-that-an-act-of-congress-a-state-or-territorial-law-or-a-municipal-ordinance-is-unconstitutional>3. Which justices are most likely to agree with the Court’s declaration that an act of Congress, a state or territorial law, or a municipal ordinance is unconstitutional?</h4><ul><li>Identify all cases where the Court declared something unconstitutional
+and federal taxation.</li>
+<li>Produce two graphs with your results: one faceted by justice, the
+other by issue area.</li>
+</ul>
+<h4 id="3-which-justices-are-most-likely-to-agree-with-the-courts-declaration-that-an-act-of-congress-a-state-or-territorial-law-or-a-municipal-ordinance-is-unconstitutional">3. Which justices are most likely to agree with the Court’s declaration that an act of Congress, a state or territorial law, or a municipal ordinance is unconstitutional?</h4>
+<ul>
+<li>Identify all cases where the Court declared something unconstitutional
 and determine the ten justices who most and least frequently agreed
 with this outcome as a percentage of all votes cast by the justice in
-these cases.</li><li>Filter out any justice with fewer than 30 votes in cases where the
-Court’s outcome declares something unconstitutional.</li></ul><h4 id=4-for-each-term-he-served-on-the-court-in-what-percentage-of-cases-was-justice-antonin-scalia-in-the-majority>4. For each term he served on the Court, in what percentage of cases was Justice Antonin Scalia in the majority?</h4><h4 id=5-in-each-term-what-percentage-of-cases-were-decided-in-the-conservative-direction-and-in-the-liberal-direction>5. In each term, what percentage of cases were decided in the conservative direction? And in the liberal direction?</h4><h1 id=submit-the-assignment>Submit the assignment</h1><p>To submit the assignment, simply push to your repository the last
-version of your assignment before the deadline.</p><p>Then copy your repository URL (e.g.,
+these cases.</li>
+<li>Filter out any justice with fewer than 30 votes in cases where the
+Court’s outcome declares something unconstitutional.</li>
+</ul>
+<h4 id="4-for-each-term-he-served-on-the-court-in-what-percentage-of-cases-was-justice-antonin-scalia-in-the-majority">4. For each term he served on the Court, in what percentage of cases was Justice Antonin Scalia in the majority?</h4>
+<h4 id="5-in-each-term-what-percentage-of-cases-were-decided-in-the-conservative-direction-and-in-the-liberal-direction">5. In each term, what percentage of cases were decided in the conservative direction? And in the liberal direction?</h4>
+<h1 id="submit-the-assignment">Submit the assignment</h1>
+<p>To submit the assignment, simply push to your repository the last
+version of your assignment before the deadline.</p>
+<p>Then copy your repository URL (e.g.,
 <code>https://github.com/cfss-hmwks/hw3-jmclip</code>) and submit it to Canvas
-under HW03 before the deadline.</p><p>Make sure to stage-commit-push:</p><ul><li><code>dadmom.Rmd</code> (the main file you will add your code to)</li><li><code>dadmom.md</code> (you will generate this file from the .Rmd by simply
-knitting it)</li><li><code>scouts.Rmd</code> (the main file you will add your code to)</li><li><code>scotus.md</code> (you will generate this file from the .Rmd by simply
-knitting it)</li><li>the folders with all the graphs you generated in your .Rmd files</li></ul><h1 id=rubric>Rubric</h1><p>Needs improvement: Doesn’t complete all components. Code contain errors
+under HW03 before the deadline.</p>
+<p>Make sure to stage-commit-push:</p>
+<ul>
+<li><code>dadmom.Rmd</code> (the main file you will add your code to)</li>
+<li><code>dadmom.md</code> (you will generate this file from the .Rmd by simply
+knitting it)</li>
+<li><code>scouts.Rmd</code> (the main file you will add your code to)</li>
+<li><code>scotus.md</code> (you will generate this file from the .Rmd by simply
+knitting it)</li>
+<li>the folders with all the graphs you generated in your .Rmd files</li>
+</ul>
+<h1 id="rubric">Rubric</h1>
+<p>Needs improvement: Doesn’t complete all components. Code contain errors
 and/or is not clearly written and/or not documented. Uses the same type
 of plot for each graph, or doesn’t use plots appropriate for the
 variables being analyzed. No record of commits other than the final push
-to GitHub.</p><p>Satisfactory: Solid effort. Hits all the elements. Finished all
+to GitHub.</p>
+<p>Satisfactory: Solid effort. Hits all the elements. Finished all
 components of the assignment with only minor deficiencies. Easy to
-follow (both the code and the output).</p><p>Excellent: Finished all components of the assignment correctly and used
+follow (both the code and the output).</p>
+<p>Excellent: Finished all components of the assignment correctly and used
 efficient code to complete the exercises. Code is well-documented (both
 self-documented and with additional comments as necessary). Graphs and
 tables are properly choosen and labeled. Use multiple commits to back up
 and show a progression in the work. Analysis and interpretation of
-results are clear and easy to follow.</p><p>For further details, see the <a href=/faq/homework-evaluations/>general
-rubric</a> we adopt for grading.</p><h1 id=acknowledgments>Acknowledgments</h1><ul><li>This page has been developed starting from Sabrina Nardin and Benjamin
+results are clear and easy to follow.</p>
+<p>For further details, see the <a href="/faq/homework-evaluations/">general
+rubric</a> we adopt for grading.</p>
+<h1 id="acknowledgments">Acknowledgments</h1>
+<ul>
+<li>This page has been developed starting from Sabrina Nardin and Benjamin
 Soltoff’s “Computing for the Social Sciences” course materials,
-licensed under the CC BY-NC 4.0 Creative Commons License.</li></ul><p>[1] Terms run from October through June, so the 2020 term contains cases
-decided from October 2020 - June 2021.</p></div></main></div></div><!doctype html><html><head><meta charset=utf-8><meta http-equiv=Content-Style-Type content="text/css"><title></title><meta name=Generator content="Cocoa HTML Writer"><meta name=CocoaVersion content="2299.7"><style type=text/css>p.p1{margin:0px;font:12px Times;-webkit-text-stroke:#000000}p.p2{margin:0px 0px 12px;font:12px Times;color:#0000e9;-webkit-text-stroke:#0000e9}li.li3{margin:0px;font:12px Times;-webkit-text-stroke:#000000;min-height:14px}span.s1{font-kerning:none}span.s2{font:10px Times;font-kerning:none}span.s3{text-decoration:underline;font-kerning:none}ul.ul1{list-style-type:disc}</style></head><body><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span><span class=s2>© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class=s1> <span class=Apple-converted-space> </span></span></p><p class=p1><span class=s1></span></p></body></html></div><script src=/js/main.min.0e22e4306907fbeadc1b0c467f61f4683be2ba222d4f5ea0ee4e90019a6f7200.js integrity="sha256-DiLkMGkH++rcGwxGf2H0aDviuiItT16g7k6QAZpvcgA=" crossorigin=anonymous></script><script defer src=/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js integrity="sha256-c0eKfUgHaYrtfjVesj+YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin=anonymous></script><script src=/js/tabpane-persist.js></script></body></html>
+licensed under the CC BY-NC 4.0 Creative Commons License.</li>
+</ul>
+<p>[1] Terms run from October through June, so the 2020 term contains cases
+decided from October 2020 - June 2021.</p>
+
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 10.0px Times; font-kerning: none}
+    span.s3 {text-decoration: underline ; font-kerning: none}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span><span class="s2">© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class="s1">   <span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span></p>
+</body>
+</html>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>
