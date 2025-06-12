@@ -1,6 +1,8 @@
-[build]
+  [build]
+  base = "course-site"
   publish = "public"
-  command = "hugo"
+  command = "hugo --gc --minify -b $URL"
 
 [context.production.environment]
   HUGO_VERSION = "0.125.0" # Change to your desired Hugo version
+
