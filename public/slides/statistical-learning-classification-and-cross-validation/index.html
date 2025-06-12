@@ -1,0 +1,1207 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>CFSS: Computing for the Social Sciences</title>
+<meta name="description" content="&lt;!DOCTYPE html&gt; Statistical learning: classification and cross-validation class: center, middle, inverse, title-slide .title[ # Statistical learning: classification and cross-validation ] .author[ ### &lt;a href=&#34;https://info5940.infosci.cornell.edu&#34;&gt;MACS 30500">
+<meta property="og:url" content="http://localhost:1313/slides/statistical-learning-classification-and-cross-validation/">
+  <meta property="og:site_name" content="CFSS: Computing for the Social Sciences">
+  <meta property="og:title" content="CFSS: Computing for the Social Sciences">
+  <meta property="og:description" content="&lt;!DOCTYPE html&gt; Statistical learning: classification and cross-validation class: center, middle, inverse, title-slide .title[ # Statistical learning: classification and cross-validation ] .author[ ### &lt;a href=&#34;https://info5940.infosci.cornell.edu&#34;&gt;MACS 30500">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="slides">
+
+  <meta itemprop="name" content="CFSS: Computing for the Social Sciences">
+  <meta itemprop="description" content="&lt;!DOCTYPE html&gt; Statistical learning: classification and cross-validation class: center, middle, inverse, title-slide .title[ # Statistical learning: classification and cross-validation ] .author[ ### &lt;a href=&#34;https://info5940.infosci.cornell.edu&#34;&gt;MACS 30500">
+  <meta itemprop="wordCount" content="25">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CFSS: Computing for the Social Sciences">
+  <meta name="twitter:description" content="&lt;!DOCTYPE html&gt; Statistical learning: classification and cross-validation class: center, middle, inverse, title-slide .title[ # Statistical learning: classification and cross-validation ] .author[ ### &lt;a href=&#34;https://info5940.infosci.cornell.edu&#34;&gt;MACS 30500">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">CFSS: Computing for the Social Sciences</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/"><span>Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/syllabus/"><span>Syllabus</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/schedule/"><span>Schedule</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assignments/"><span>Assignments</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        <!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Statistical learning: classification and cross-validation</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="MACS 30500   University of Chicago" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/lucy-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Statistical learning: classification and cross-validation
+]
+.author[
+### <a href="https://info5940.infosci.cornell.edu">MACS 30500</a> <br /> University of Chicago
+]
+
+---
+
+
+
+
+.center[
+
+![](https://eight2late.files.wordpress.com/2016/02/7214525854_733237dd83_z1.jpg?w=700)
+
+]
+
+---
+
+.center[
+
+![:scale 35%](https://s-media-cache-ak0.pinimg.com/564x/0b/87/df/0b87df1a54474716384f8ec94b52eab9.jpg)
+
+]
+
+---
+
+.center[
+![:scale 50%](http://data.iwastesomuchtime.com/November-26-2012-17-34-05-cookie.gif)
+
+]
+
+---
+
+# Interpreting a decision tree
+
+
+
+&lt;img src="index_files/figure-html/titanic_tree-1.png" width="864" /&gt;
+
+---
+
+# A more complex tree
+
+&lt;img src="index_files/figure-html/titanic_tree_full-1.png" width="864" /&gt;
+
+---
+
+# A more complex-ier tree
+
+&lt;img src="index_files/figure-html/titanic_tree_complicated-1.png" width="864" /&gt;
+
+---
+
+# Benefits/drawbacks to decision trees
+
++ Easy to explain
++ Easy to interpret/visualize
++ Good for qualitative predictors
+
+- Lower accuracy rates
+- Non-robust
+
+---
+
+# Random forests
+
+![](https://c402277.ssl.cf1.rackcdn.com/photos/946/images/story_full_width/forests-why-matter_63516847.jpg?1345534028)
+
+---
+
+# Sampling 
+
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+--
+
+.pull-left[
+
+##### Sampling without replacement
+
+
+```
+## [[1]]
+##  [1]  6  4 10  3  7  1  5  8  9  2
+## 
+## [[2]]
+##  [1]  1  6  9  2 10  8  4  5  7  3
+## 
+## [[3]]
+##  [1]  5  9  7  8  1  2  3  4 10  6
+## 
+## [[4]]
+##  [1]  1  7  6  5  3  8  2  4 10  9
+## 
+## [[5]]
+##  [1]  1  8  6  2  3  7 10  4  5  9
+```
+
+]
+
+--
+
+.pull-right[
+
+##### Sampling with replacement
+
+
+```
+## [[1]]
+##  [1]  3  4  1 10  7  5  1  2  5  9
+## 
+## [[2]]
+##  [1]  8  1 10  5  3  7  3  1 10  3
+## 
+## [[3]]
+##  [1]  9 10  3  1 10  1  7  3  6  3
+## 
+## [[4]]
+##  [1]  8  3  6  3  5 10 10  3  6  5
+## 
+## [[5]]
+##  [1] 10  6  6  6  1 10  3  1  5  9
+```
+
+]
+
+---
+
+# Random forests
+
+* Bootstrapping
+* Reduces variance
+* Bagging
+* Random forest
+    * Reliability
+
+---
+
+# Estimating statistical models using `caret`
+
+* Not part of `tidyverse` (yet)
+* Aggregator of hundreds of statistical learning algorithms
+* Provides a single unified interface to disparate range of functions
+    * Similar to `scikit-learn` for Python
+
+---
+
+# `train()`
+
+
+```r
+library(caret)
+
+titanic_clean &lt;- titanic %&gt;%
+  drop_na(Survived, Age)
+
+caret_glm &lt;- train(Survived ~ Age, data = titanic_clean,
+                   method = "glm",
+                   family = binomial,
+                   trControl = trainControl(method = "none"))
+summary(caret_glm)
+```
+
+```
+## 
+## Call:
+## NULL
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.1488  -1.0361  -0.9544   1.3159   1.5908  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)  
+## (Intercept) -0.05672    0.17358  -0.327   0.7438  
+## Age         -0.01096    0.00533  -2.057   0.0397 *
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 964.52  on 713  degrees of freedom
+## Residual deviance: 960.23  on 712  degrees of freedom
+## AIC: 964.23
+## 
+## Number of Fisher Scoring iterations: 4
+```
+
+---
+
+# Estimating a random forest
+
+
+
+
+```r
+titanic_rf &lt;- train(Survived ~ ., data = titanic_rf_data,
+                    method = "rf",
+                    ntree = 200,
+                    trControl = trainControl(method = "oob"))
+titanic_rf
+```
+
+```
+## Random Forest 
+## 
+## 714 samples
+##   7 predictor
+##   2 classes: 'Died', 'Survived' 
+## 
+## No pre-processing
+## Resampling results across tuning parameters:
+## 
+##   mtry  Accuracy   Kappa    
+##   2     0.8151261  0.6038002
+##   5     0.8039216  0.5885946
+##   9     0.7885154  0.5589455
+## 
+## Accuracy was used to select the optimal model using the largest value.
+## The final value used for the model was mtry = 2.
+```
+
+---
+
+# Structure of `train()` object
+
+
+```
+## List of 25
+##  $ method      : chr "rf"
+##  $ modelInfo   :List of 15
+##  $ modelType   : chr "Classification"
+##  $ results     :'data.frame':	3 obs. of  3 variables:
+##  $ pred        : NULL
+##  $ bestTune    :'data.frame':	1 obs. of  1 variable:
+##  $ call        : language train.formula(form = Survived ~ ., data = titanic_rf_data, method = "rf",      ntree = 200, trControl = trainCont| __truncated__
+##  $ dots        :List of 1
+##  $ metric      : chr "Accuracy"
+##  $ control     :List of 26
+##  $ finalModel  :List of 23
+##   ..- attr(*, "class")= chr "randomForest"
+##  $ preProcess  : NULL
+##  $ trainingData: tibble [714 × 8] (S3: tbl_df/tbl/data.frame)
+##  $ ptype       : tibble [0 × 7] (S3: tbl_df/tbl/data.frame)
+##  $ resample    : NULL
+##  $ resampledCM : NULL
+##  $ perfNames   : chr [1:2] "Accuracy" "Kappa"
+##  $ maximize    : logi TRUE
+##  $ yLimits     : NULL
+##  $ times       :List of 3
+##  $ levels      : chr [1:2] "Died" "Survived"
+##   ..- attr(*, "ordered")= logi FALSE
+##  $ terms       :Classes 'terms', 'formula'  language Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked
+##   .. ..- attr(*, "variables")= language list(Survived, Pclass, Sex, Age, SibSp, Parch, Fare, Embarked)
+##   .. ..- attr(*, "factors")= int [1:8, 1:7] 0 1 0 0 0 0 0 0 0 0 ...
+##   .. .. ..- attr(*, "dimnames")=List of 2
+##   .. ..- attr(*, "term.labels")= chr [1:7] "Pclass" "Sex" "Age" "SibSp" ...
+##   .. ..- attr(*, "order")= int [1:7] 1 1 1 1 1 1 1
+##   .. ..- attr(*, "intercept")= int 1
+##   .. ..- attr(*, "response")= int 1
+##   .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; 
+##   .. ..- attr(*, "predvars")= language list(Survived, Pclass, Sex, Age, SibSp, Parch, Fare, Embarked)
+##   .. ..- attr(*, "dataClasses")= Named chr [1:8] "factor" "numeric" "factor" "numeric" ...
+##   .. .. ..- attr(*, "names")= chr [1:8] "Survived" "Pclass" "Sex" "Age" ...
+##  $ coefnames   : chr [1:9] "Pclass" "Sexmale" "Age" "SibSp" ...
+##  $ contrasts   :List of 2
+##  $ xlevels     :List of 2
+##  - attr(*, "class")= chr [1:2] "train" "train.formula"
+```
+
+---
+
+# Model statistics
+
+
+```r
+titanic_rf$finalModel
+```
+
+```
+## 
+## Call:
+##  randomForest(x = x, y = y, ntree = 200, mtry = min(param$mtry,      ncol(x))) 
+##                Type of random forest: classification
+##                      Number of trees: 200
+## No. of variables tried at each split: 2
+## 
+##         OOB estimate of  error rate: 18.49%
+## Confusion matrix:
+##          Died Survived class.error
+## Died      390       34  0.08018868
+## Survived   98      192  0.33793103
+```
+
+---
+
+# Results of a single tree
+
+
+```r
+randomForest::getTree(titanic_rf$finalModel, labelVar = TRUE)
+```
+
+```
+##     left daughter right daughter split var split point status prediction
+## 1               2              3     Parch     0.50000      1       &lt;NA&gt;
+## 2               4              5   Sexmale     0.50000      1       &lt;NA&gt;
+## 3               6              7     SibSp     2.50000      1       &lt;NA&gt;
+## 4               8              9 EmbarkedS     0.50000      1       &lt;NA&gt;
+## 5              10             11 EmbarkedQ     0.50000      1       &lt;NA&gt;
+## 6              12             13   Sexmale     0.50000      1       &lt;NA&gt;
+## 7              14             15     SibSp     4.50000      1       &lt;NA&gt;
+## 8              16             17       Age    22.50000      1       &lt;NA&gt;
+## 9              18             19    Pclass     2.50000      1       &lt;NA&gt;
+## 10             20             21    Pclass     1.50000      1       &lt;NA&gt;
+## 11             22             23       Age    30.00000      1       &lt;NA&gt;
+## 12             24             25    Pclass     2.50000      1       &lt;NA&gt;
+## 13             26             27      Fare    23.41250      1       &lt;NA&gt;
+## 14             28             29     Parch     1.50000      1       &lt;NA&gt;
+## 15              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 16             30             31 EmbarkedQ     0.50000      1       &lt;NA&gt;
+## 17              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 18             32             33       Age    37.00000      1       &lt;NA&gt;
+## 19             34             35      Fare     7.70000      1       &lt;NA&gt;
+## 20              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 21             36             37       Age    32.25000      1       &lt;NA&gt;
+## 22             38             39      Fare     7.74585      1       &lt;NA&gt;
+## 23              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 24              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 25             40             41      Fare    20.66250      1       &lt;NA&gt;
+## 26             42             43    Pclass     2.50000      1       &lt;NA&gt;
+## 27             44             45    Pclass     2.50000      1       &lt;NA&gt;
+## 28              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 29             46             47   Sexmale     0.50000      1       &lt;NA&gt;
+## 30             48             49       Age    17.50000      1       &lt;NA&gt;
+## 31              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 32              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 33             50             51     SibSp     1.50000      1       &lt;NA&gt;
+## 34              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 35             52             53       Age    25.50000      1       &lt;NA&gt;
+## 36             54             55 EmbarkedC     0.50000      1       &lt;NA&gt;
+## 37             56             57     SibSp     0.50000      1       &lt;NA&gt;
+## 38              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 39              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 40             58             59     SibSp     1.50000      1       &lt;NA&gt;
+## 41              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 42              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 43             60             61     SibSp     0.50000      1       &lt;NA&gt;
+## 44             62             63     SibSp     1.50000      1       &lt;NA&gt;
+## 45              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 46             64             65      Fare    31.33125      1       &lt;NA&gt;
+## 47             66             67      Fare    31.33125      1       &lt;NA&gt;
+## 48             68             69       Age    15.50000      1       &lt;NA&gt;
+## 49              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 50              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 51              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 52              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 53             70             71       Age    38.00000      1       &lt;NA&gt;
+## 54             72             73     SibSp     1.50000      1       &lt;NA&gt;
+## 55             74             75       Age    29.50000      1       &lt;NA&gt;
+## 56             76             77 EmbarkedC     0.50000      1       &lt;NA&gt;
+## 57              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 58             78             79 EmbarkedS     0.50000      1       &lt;NA&gt;
+## 59              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 60             80             81       Age    24.75000      1       &lt;NA&gt;
+## 61             82             83 EmbarkedC     0.50000      1       &lt;NA&gt;
+## 62             84             85     Parch     1.50000      1       &lt;NA&gt;
+## 63              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 64             86             87       Age    14.00000      1       &lt;NA&gt;
+## 65              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 66              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 67             88             89       Age     6.00000      1       &lt;NA&gt;
+## 68              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 69              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 70              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 71             90             91     SibSp     0.50000      1       &lt;NA&gt;
+## 72             92             93    Pclass     2.50000      1       &lt;NA&gt;
+## 73              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 74              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 75              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 76             94             95    Pclass     2.50000      1       &lt;NA&gt;
+## 77              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 78              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 79             96             97     Parch     1.50000      1       &lt;NA&gt;
+## 80              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 81              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 82              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 83              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 84             98             99     SibSp     0.50000      1       &lt;NA&gt;
+## 85            100            101 EmbarkedS     0.50000      1       &lt;NA&gt;
+## 86              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 87              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 88              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 89              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 90              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 91              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 92            102            103       Age    30.50000      1       &lt;NA&gt;
+## 93            104            105       Age    30.75000      1       &lt;NA&gt;
+## 94            106            107       Age    57.00000      1       &lt;NA&gt;
+## 95              0              0      &lt;NA&gt;     0.00000     -1       Died
+## 96            108            109       Age    27.50000      1       &lt;NA&gt;
+## 97              0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 98            110            111 EmbarkedC     0.50000      1       &lt;NA&gt;
+## 99            112            113    Pclass     1.50000      1       &lt;NA&gt;
+## 100             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 101           114            115    Pclass     1.50000      1       &lt;NA&gt;
+## 102           116            117     SibSp     0.50000      1       &lt;NA&gt;
+## 103             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 104           118            119     SibSp     0.50000      1       &lt;NA&gt;
+## 105           120            121      Fare     7.91040      1       &lt;NA&gt;
+## 106             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 107           122            123       Age    64.00000      1       &lt;NA&gt;
+## 108             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 109             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 110             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 111           124            125       Age    23.50000      1       &lt;NA&gt;
+## 112             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 113             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 114             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 115             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 116           126            127       Age    21.00000      1       &lt;NA&gt;
+## 117             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 118             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 119             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 120             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 121           128            129       Age    31.50000      1       &lt;NA&gt;
+## 122             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 123             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 124             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 125             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 126             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 127             0              0      &lt;NA&gt;     0.00000     -1       Died
+## 128             0              0      &lt;NA&gt;     0.00000     -1   Survived
+## 129             0              0      &lt;NA&gt;     0.00000     -1       Died
+```
+
+---
+
+# Variable importance
+
+&lt;img src="index_files/figure-html/rf_import-1.png" width="864" /&gt;
+
+---
+
+# Exercise: depression and voting
+
+.center[
+
+![:scale 45%](https://i.pinimg.com/564x/24/81/96/24819625c9636fcfab5000a47811d93b--favorite-quotes-offices.jpg)
+
+]
+
+---
+
+# Resampling methods
+
+* Evaluating model fit/predictive power
+* How to avoid overfitting the data
+
+---
+
+# Validation set
+
+* Randomly split data into two distinct sets
+    * Training set
+    * Validation set
+* Train model on training set
+* Evaluate fit on validation set
+
+---
+
+# Regression
+
+
+
+&lt;img src="index_files/figure-html/auto_plot_lm-1.png" width="864" /&gt;
+
+---
+
+# Mean squared error
+
+`$$MSE = \frac{1}{n} \sum_{i = 1}^{n}{(y_i - \hat{f}(x_i))^2}$$`
+
+* `\(y_i =\)` the observed response value for the `\(i\)`th observation
+* `\(\hat{f}(x_i) =\)` the predicted response value for the `\(i\)`th observation given by `\(\hat{f}\)`
+* `\(n =\)` the total number of observations
+
+---
+
+# Split data
+
+
+```r
+set.seed(1234)
+
+auto_split &lt;- initial_split(data = Auto, prop = 0.5)
+auto_train &lt;- training(auto_split)
+auto_test &lt;- testing(auto_split)
+
+dim(Auto)
+```
+
+```
+## [1] 392   9
+```
+
+```r
+dim(auto_train)
+```
+
+```
+## [1] 196   9
+```
+
+```r
+dim(auto_test)
+```
+
+```
+## [1] 196   9
+```
+
+---
+
+# Train model
+
+
+```r
+auto_lm &lt;- glm(mpg ~ horsepower, data = auto_train)
+tidy(auto_lm)
+```
+
+```
+## # A tibble: 2 × 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   39.2     1.00         39.2 3.49e-94
+## 2 horsepower    -0.150   0.00876     -17.2 9.57e-41
+```
+
+
+```r
+(train_mse &lt;- augment(auto_lm, newdata = auto_train) %&gt;%
+  mutate(.resid = mpg - .fitted,
+         .resid2 = .resid ^ 2) %$%
+  mean(.resid2))
+```
+
+```
+## [1] 24.13599
+```
+
+---
+
+# Validate model
+
+
+```r
+(test_mse &lt;- augment(auto_lm, newdata = auto_test) %&gt;%
+  mutate(.resid = mpg - .fitted,
+         .resid2 = .resid ^ 2) %$%
+  mean(.resid2))
+```
+
+```
+## [1] 23.93601
+```
+
+---
+
+# Compare models
+
+
+
+&lt;img src="index_files/figure-html/mse-poly-1.png" width="864" /&gt;
+
+---
+
+# Classification
+
+
+```r
+survive_age_woman_x &lt;- glm(Survived ~ Age * Sex, data = titanic,
+                           family = binomial)
+tidy(survive_age_woman_x)
+```
+
+```
+## # A tibble: 4 × 5
+##   term        estimate std.error statistic p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+## 1 (Intercept)   0.594     0.310       1.91 0.0557 
+## 2 Age           0.0197    0.0106      1.86 0.0624 
+## 3 Sexmale      -1.32      0.408      -3.23 0.00125
+## 4 Age:Sexmale  -0.0411    0.0136     -3.03 0.00241
+```
+
+---
+
+# Test error rate
+
+
+```r
+# split the data into training and validation sets
+titanic_split &lt;- initial_split(data = titanic, prop = 0.5)
+
+# fit model to training data
+train_model &lt;- glm(Survived ~ Age * Sex,
+                   data = training(titanic_split),
+                   family = binomial)
+
+# calculate predictions using validation set
+x_test_accuracy &lt;- augment(train_model,
+                           newdata = testing(titanic_split),
+                           type.predict = "response") %&gt;% 
+  mutate(pred = as.numeric(.fitted &gt; .5))
+
+# calculate test error rate
+mean(x_test_accuracy$Survived != x_test_accuracy$pred, na.rm = TRUE)
+## [1] 0.2241379
+```
+
+---
+
+# Drawbacks to validation sets
+
+&lt;img src="index_files/figure-html/auto_variable_mse-1.png" width="864" /&gt;
+
+---
+
+# Leave-one-out cross-validation
+
+`$$CV_{(n)} = \frac{1}{n} \sum_{i = 1}^{n}{MSE_i}$$`
+
+* Extension of validation set to repeatedly split data and average results
+* Minimizes bias of estimated error rate
+* Low variance
+* Highly computationally intensive
+
+---
+
+# `rsample::loo_cv()`
+
+
+```r
+loocv_data &lt;- loo_cv(Auto)
+loocv_data
+```
+
+```
+## # Leave-one-out cross-validation 
+## # A tibble: 392 × 2
+##    splits          id        
+##    &lt;list&gt;          &lt;chr&gt;     
+##  1 &lt;split [391/1]&gt; Resample1 
+##  2 &lt;split [391/1]&gt; Resample2 
+##  3 &lt;split [391/1]&gt; Resample3 
+##  4 &lt;split [391/1]&gt; Resample4 
+##  5 &lt;split [391/1]&gt; Resample5 
+##  6 &lt;split [391/1]&gt; Resample6 
+##  7 &lt;split [391/1]&gt; Resample7 
+##  8 &lt;split [391/1]&gt; Resample8 
+##  9 &lt;split [391/1]&gt; Resample9 
+## 10 &lt;split [391/1]&gt; Resample10
+## # … with 382 more rows
+```
+
+---
+
+# Splits
+
+
+```r
+first_resample &lt;- loocv_data$splits[[1]]
+first_resample
+```
+
+```
+## &lt;Analysis/Assess/Total&gt;
+## &lt;391/1/392&gt;
+```
+
+---
+
+# Splits
+
+
+```r
+training(first_resample) %&gt;% glimpse()
+## Rows: 391
+## Columns: 9
+## $ mpg          &lt;dbl&gt; 18, 15, 18, 16, 17, 15, 14, 14, 14, 15, 15, 14, 15, 14, 2…
+## $ cylinders    &lt;dbl&gt; 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 4, 6, 6, 6, 4, …
+## $ displacement &lt;dbl&gt; 307, 350, 318, 304, 302, 429, 454, 440, 455, 390, 383, 34…
+## $ horsepower   &lt;dbl&gt; 130, 165, 150, 150, 140, 198, 220, 215, 225, 190, 170, 16…
+## $ weight       &lt;dbl&gt; 3504, 3693, 3436, 3433, 3449, 4341, 4354, 4312, 4425, 385…
+## $ acceleration &lt;dbl&gt; 12.0, 11.5, 11.0, 12.0, 10.5, 10.0, 9.0, 8.5, 10.0, 8.5, …
+## $ year         &lt;dbl&gt; 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 7…
+## $ origin       &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 3, …
+## $ name         &lt;fct&gt; chevrolet chevelle malibu, buick skylark 320, plymouth sa…
+assessment(first_resample) %&gt;% glimpse()
+## Rows: 1
+## Columns: 9
+## $ mpg          &lt;dbl&gt; 35
+## $ cylinders    &lt;dbl&gt; 4
+## $ displacement &lt;dbl&gt; 122
+## $ horsepower   &lt;dbl&gt; 88
+## $ weight       &lt;dbl&gt; 2500
+## $ acceleration &lt;dbl&gt; 15.1
+## $ year         &lt;dbl&gt; 80
+## $ origin       &lt;dbl&gt; 2
+## $ name         &lt;fct&gt; triumph tr7 coupe
+```
+
+---
+
+# Holdout results
+
+1. Obtain the analysis data set (i.e. the `\(n-1\)` training set)
+1. Fit a linear regression model
+1. Predict the assessment data set using the `broom` package
+1. Determine the MSE for each sample
+
+--
+
+
+```r
+holdout_results &lt;- function(splits) {
+  # Fit the model to the n-1
+  mod &lt;- glm(mpg ~ horsepower, data = analysis(splits))
+  
+  # Save the heldout observation
+  holdout &lt;- assessment(splits)
+  
+  # `augment` will save the predictions with the holdout data set
+  res &lt;- augment(mod, newdata = holdout) %&gt;%
+    # calculate residuals for future use
+    mutate(.resid = mpg - .fitted)
+  
+  # Return the assessment data set with the additional columns
+  res
+}
+```
+
+---
+
+# Holdout results
+
+
+```r
+holdout_results(loocv_data$splits[[1]])
+```
+
+```
+## # A tibble: 1 × 11
+##     mpg cylinders displacement horsepower weight acceleration  year origin name 
+##   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;
+## 1    35         4          122         88   2500         15.1    80      2 triu…
+## # … with 2 more variables: .fitted &lt;dbl&gt;, .resid &lt;dbl&gt;
+```
+
+---
+
+# Holdout results
+
+
+```r
+loocv_data$results &lt;- map(loocv_data$splits, holdout_results)
+loocv_data$mse &lt;- map_dbl(loocv_data$results, ~ mean(.x$.resid ^ 2))
+loocv_data
+```
+
+```
+## # Leave-one-out cross-validation 
+## # A tibble: 392 × 4
+##    splits          id         results               mse
+##    &lt;list&gt;          &lt;chr&gt;      &lt;list&gt;              &lt;dbl&gt;
+##  1 &lt;split [391/1]&gt; Resample1  &lt;tibble [1 × 11]&gt; 80.7   
+##  2 &lt;split [391/1]&gt; Resample2  &lt;tibble [1 × 11]&gt;  2.53  
+##  3 &lt;split [391/1]&gt; Resample3  &lt;tibble [1 × 11]&gt;  0.0275
+##  4 &lt;split [391/1]&gt; Resample4  &lt;tibble [1 × 11]&gt;  4.56  
+##  5 &lt;split [391/1]&gt; Resample5  &lt;tibble [1 × 11]&gt; 26.7   
+##  6 &lt;split [391/1]&gt; Resample6  &lt;tibble [1 × 11]&gt; 63.0   
+##  7 &lt;split [391/1]&gt; Resample7  &lt;tibble [1 × 11]&gt;  0.124 
+##  8 &lt;split [391/1]&gt; Resample8  &lt;tibble [1 × 11]&gt; 19.8   
+##  9 &lt;split [391/1]&gt; Resample9  &lt;tibble [1 × 11]&gt; 38.0   
+## 10 &lt;split [391/1]&gt; Resample10 &lt;tibble [1 × 11]&gt; 67.1   
+## # … with 382 more rows
+```
+
+---
+
+# Holdout results
+
+
+```r
+loocv_data %&gt;%
+  summarize(mse = mean(mse))
+```
+
+```
+## # A tibble: 1 × 1
+##     mse
+##   &lt;dbl&gt;
+## 1  24.2
+```
+
+---
+
+# Compare polynomial terms
+
+&lt;img src="index_files/figure-html/loocv_poly-1.png" width="864" /&gt;
+
+---
+
+# LOOCV in classification
+
+
+```r
+# function to generate assessment statistics for titanic model
+holdout_results &lt;- function(splits) {
+  # Fit the model to the n-1
+  mod &lt;- glm(Survived ~ Age * Sex, data = analysis(splits),
+             family = binomial)
+  
+  # Save the heldout observation
+  holdout &lt;- assessment(splits)
+  
+  # `augment` will save the predictions with the holdout data set
+  res &lt;- augment(mod, newdata = assessment(splits),
+                 type.predict = "response") %&gt;% 
+    mutate(pred = as.numeric(.fitted &gt; .5))
+
+  # Return the assessment data set with the additional columns
+  res
+}
+```
+
+---
+
+# LOOCV in classification
+
+
+```r
+titanic_loocv &lt;- loo_cv(titanic) %&gt;%
+  mutate(results = map(splits, holdout_results),
+         error_rate = map_dbl(results, ~ mean(.x$Survived != .x$pred,
+                                              na.rm = TRUE)))
+mean(titanic_loocv$error_rate, na.rm = TRUE)
+```
+
+```
+## [1] 0.219888
+```
+
+---
+
+# Exercise: LOOCV in linear regression
+
+.center[
+
+![](https://thealexcreed.files.wordpress.com/2014/05/liftbitch.jpg)
+
+]
+
+---
+
+# `\(k\)`-fold cross-validation
+
+`$$CV_{(k)} = \frac{1}{k} \sum_{i = 1}^{k}{MSE_i}$$`
+
+* Split data into `\(k\)` folds
+* Repeat training/test process for each fold
+* LOOCV: `\(k=n\)`
+
+---
+
+# `\(K\)`-fold CV in linear regression
+
+
+
+&lt;img src="index_files/figure-html/10_fold_auto_loocv-1.png" width="864" /&gt;
+
+---
+
+# Computational speed of LOOCV
+
+&lt;img src="index_files/figure-html/loocv-kfold-time-1.png" width="864" /&gt;
+
+---
+
+# `\(K\)`-fold CV in logistic regression
+
+
+```r
+# function to generate assessment statistics for titanic model
+holdout_results &lt;- function(splits) {
+  # Fit the model to the training set
+  mod &lt;- glm(Survived ~ Age * Sex, data = analysis(splits),
+             family = binomial)
+  
+  # Save the heldout observations
+  holdout &lt;- assessment(splits)
+  
+  # `augment` will save the predictions with the holdout data set
+  res &lt;- augment(mod, newdata = assessment(splits),
+                 type.predict = "response") %&gt;% 
+    mutate(pred = as.numeric(.fitted &gt; .5))
+
+  # Return the assessment data set with the additional columns
+  res
+}
+```
+
+---
+
+# `\(K\)`-fold CV in logistic regression
+
+
+```r
+titanic_cv10 &lt;- vfold_cv(data = titanic, v = 10) %&gt;%
+  mutate(results = map(splits, holdout_results),
+         error_rate = map_dbl(results, ~ mean(.x$Survived != .x$pred,
+                                              na.rm = TRUE)))
+mean(titanic_cv10$error_rate, na.rm = TRUE)
+```
+
+```
+## [1] 0.2196609
+```
+
+---
+
+# Exercise: `\(K\)`-fold CV
+
+.center[
+
+![](https://crossfitaggieland.com/wp-content/uploads/2015/01/pet4.jpeg)
+
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://cfss.uchicago.edu/slides/macros.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightLanguage": "r",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
+
+      </main>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 10.0px Times; font-kerning: none}
+    span.s3 {text-decoration: underline ; font-kerning: none}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span><span class="s2">© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class="s1">   <span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span></p>
+</body>
+</html>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,526 @@
+---
+title: "Reproducible examples and Git"
+author: "MACS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+source(here::here("R", "slide-opts.R"))
+xaringanExtra::use_panelset()
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+library(tidyverse)
+library(rcis)
+library(gapminder)
+library(countdown)
+library(here)
+
+set.seed(1234)
+theme_set(theme_minimal(base_size = rcis::base_size))
+```
+
+
+# Agenda
+
+* Reproducible examples
+* Git / GitHub
+  * Vocabulary
+  * Troubleshooting
+
+---
+class: middle
+```{r echo = FALSE}
+include_graphics(path = "https://media.giphy.com/media/uRb2p09vY8lEs/giphy.gif")
+```
+
+---
+
+```{r echo = FALSE, fig.alt = "A side-by-side comparison of a monster providing problematic code to tech support when it is on a bunch of crumpled, disorganized papers, with both monsters looking sad and very stressed (left), compared to victorious looking monsters celebrating when code is provided in a nice box with a bow labeled 'reprex'. Title text reads 'reprex: make reproducible examples. Help them help everyone!'"}
+include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/allison_horst_art/reprex.png")
+#include_graphics(path = "/static/img/allison_horst_art/reprex.png")
+```
+
+.footnote[Source: [Allison Horst](https://github.com/allisonhorst/stats-illustrations)]
+
+---
+
+## Reproducible examples
+
+* reprex (noun)
+* `reprex`
+* `reprex::reprex()`
+
+---
+
+## Why reprexes?
+
+Easier to talk about code that:
+
+* Actually runs
+
+--
+
+* I don't have to run
+
+
+--
+
+* I can easily run
+
+---
+
+## `reprex`
+
+```r
+library(tidyverse)
+count(diamonds, colour)
+```
+
+---
+## Steps to creating a reproducible example:
+1. Run your code
+1. Copy your code
+1. Run `reprex` in the console
+1. paste your code into wherever you'd like!
+
+(If it gets mad, you may not be copying your code first)
+
+```{r reprex-ex}
+
+m <- matrix(
+  c(1:16),
+  nrow = 4,
+  ncol = 4,
+  byrow = TRUE
+)
+m
+#>      [,1] [,2] [,3] [,4]
+#> [1,]    1    2    3    4
+#> [2,]    5    6    7    8
+#> [3,]    9   10   11   12
+#> [4,]   13   14   15   16
+
+
+for (row in 1:nrow(m)){ # going by rows OR columns
+  for (col in 1:ncol(m)) { # by whatever's left (col OR rows)
+
+  #  m_sq[row,col]<-(m[row, col]^2)
+  }
+}
+#> Error: object 'm_sq' not found
+```
+
+<sup>Created on 2023-07-05 with [reprex v2.0.2](https://reprex.tidyverse.org)</sup>
+
+---
+
+## Customizing `reprex()`
+
+.panelset[
+
+.panel[
+
+.panel-name[Include session info]
+
+```r
+reprex(
+  x = mean(rnorm(100)),
+  si = TRUE
+)
+```
+
+]
+
+.panel[
+
+.panel-name[Change venue]
+
+```r
+reprex(
+  x = mean(rnorm(100)),
+  venue = "r"
+)
+```
+
+]
+
+.panel[
+
+.panel-name[Style the code]
+
+```r
+reprex(
+  x = {
+if (TRUE) "true branch" else {
+  "else branch"
+}
+  },
+  style = TRUE
+)
+```
+
+]
+
+]
+
+---
+
+## Reprex do's and don'ts
+
+* Ensure the example is **fully** reproducible
+* Use the smallest, simplest, most built-in data possible
+* Include commands on a strict "need to run" basis
+* Consider including "session info"
+* Use good coding style to ensure the readability of your code by other human beings
+* Ensure portability of the code
+
+---
+
+## Build some reproducible examples
+
+```{r echo = FALSE, out.width = "65%"}
+include_graphics(path = "https://media.giphy.com/media/l4Ki2obCyAQS5WhFe/giphy.gif")
+```
+
+```{r echo = FALSE, cache = FALSE}
+countdown(minutes = 15)
+```
+
+---
+
+class: center, middle
+
+```{r, echo = FALSE}
+knitr::include_graphics("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/git-meme.jpeg")
+#knitr::include_graphics("/img/git-meme.jpeg")
+```
+
+---
+
+## Git
+
+* Version control system
+* Repository (repo)
+* GitHub is where we can store / distribute repos (distinction between Git and GitHub)
+* COMMIT OFTEN!!
+  * Think of it as taking a photo do of EVERYTHING to document where you are in your project
+  * Try to have a meaningful message to remind yourself what changed (in case you need to go back later!)
+* Push somewhat often (people vary on this)
+
+
+---
+## Why use Git? 
+
+--
+```{r echo = FALSE, out.width = "450px"}
+include_graphics(path = "https://swcarpentry.github.io/git-novice/fig/phd101212s.png") 
+```
+
+
+---
+## Git
+
+### What files to commit
+
+* Source files (includes markdown files)
+* Configuration files (e.g. gitignore, .Rproj)
+* Data files
+
+### What files to not commit
+
+* Temporary files
+* Log files
+* Files with private details
+* Any file greater than 100 megabytes
+
+---
+
+## `.gitignore`
+
+* System file
+* Tells Git which files/directories to ignore
+
+--
+### Getting started with gitignore:
+
+* [example files here](https://github.com/github/gitignore)
+* [creating a git ignore file](https://www.w3schools.com/git/git_ignore.asp?remote=github)
+
+---
+## Git LFS
+
+* [Git Large File Storage](https://git-lfs.github.com/)
+* Separate software for tracking large files
+* Integrates with Git
+* Generally charges a fee
+
+
+---
+
+## Vocabulary 
+* Upstream: typically the original repo (see below on forking)
+* Main / master: where you are typically working (note that )
+* Branch: used to test out / develop new code in a safe local so you don't have to roll back any changes. These can be merged into the main when you're ready. 
+* Forking:  Copying from the repo to your own repo (typically when you do not have write access to the original)
+* Cloning: Copying from the repo (typically to your machine when you have write access to the original)
+* **Pulling** is when you are 'refreshing' your copy of the files to your machine.  
+* **Pushing** is when you are sending your changes to GitHub  
+
+The order of your workflow matters less when you are working on your own on a project, but when you are collaborating with others, it becomes crucial to have a good workflow. Think of a google doc you are collaboratively editing. You work offline and when you go back online, someone else has made changes, how could you reconcile this? The analogy is trying to push changes without pulling to update your files first. **It is a good habit to pull before starting work, even when working alone.**  
+
+
+
+---
+## Git and merge conflicts
+*Typically* these occur when you haven't pulled before pushing changes in a collaborative project. Essentially, there are now two 'current' versions of a file and they need to be reconciled. Sometimes, they can be automatically resolved but sometimes you have to deal with the conflicts. In these instances, you can review the code side-by-side and confirm the changes. (**this option varies by how you interact with Git!**)
+
+
+---
+## Using Git and various interfaces
+
+There are more options to consider when using Git, right now, we've mostly been using RStudio. You can also use other options, such as GitHub desktop, the terminal, or others. [See here for a partial list of options!](https://git-scm.com/downloads/guis)
+
+
+---
+## Command line Git
+Once you feel comfortable in RStudio, you can switch to the terminal. See this [tutorial on command line Git here](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
+
+
+
+---
+## Command line Git
+
+## Steps:
+1. (initially) Setup git and navigate to relevant directory
+1. (in terminal) git pull (everything is up to date!) 
+1. (make changes)
+1. git status to verify which files have been changed
+1. git add (file name) OR git add ..
+1. git status to double-check you're ready / didn't forget anything
+1. git commit -m "comment you want to appear"
+1. git push 
+
+---
+
+## Navigating to the relevant directory: fun with bash!
+This is initially quite daunting (at least it was for me, but you get comfortable after awhile). You can also patch this together a bit if you need by getting file locations in, say, finder, and then using that to help navigate to relevant files. 
+
+--
+### Vocabulary:
+
+* pwd to check your current directory
+* cd to navigate to your desired directory and move around terminal 
+  * .. can help you navigate up (command is cd ..)
+  * (tab) can autofill text
+  * (tab)(tab) can give you options
+* ls to list all visible content in your current directory
+* ls -a to list all visible and hidden contents in your current directory
+* touch to create a new file; provide the filename and the extension
+* :q to exit and end the execution of a process
+* rm remove a file
+* cp copy a file (can copy elsewhere)
+
+---
+## Command line Git
+
+## Steps:
+1. (initially) Setup git and navigate to relevant directory
+1. (in terminal) git pull (everything is up to date!) 
+--
+1. (make changes)
+1. git status to verify which files have been changed
+1. git add (file name) OR git add ..
+1. git status to double-check you're ready / didn't forget anything
+1. git commit -m "comment you want to appear"
+1. git push
+
+---
+
+## Command line Git: Vocabulary
+* git init to initialize a new repo
+* git status to check the current status of your repo
+* git add . to add to the git staging area all new or changed files
+* git commit -m "your commit message" to commit the staged files
+* git push to push your committed files the online Github repo
+* git diff to show differences in files
+* git log to show all history of your commits
+* git reset --hard HEAD~1 to delete a pushed commit (use with caution), followed by git push -f origin main to push the deleted commit to the online Github repo
+
+
+---
+
+class: center, middle, inverse
+
+# Troubleshooting Git
+
+
+---
+## Key issues that pop up
+
+* Cloning from main on accident
+
+---
+
+## Accidentally cloned from the main
+
+```{r echo = FALSE}
+include_graphics(path = "https://media.giphy.com/media/3oxHQKW9lw6rK9kYtq/giphy.gif")
+```
+
+---
+
+## Accidentally cloned from the main
+
+```bash
+remote: Permission to cfss-hmwks/hw03.git denied to cfss-student
+fatal: unable to access 'https://github.com/cfss-hmwks/hw03.git/': The requested URL returned error: 403
+```
+
+--
+
+```r
+usethis::use_git_remote(
+  name = "origin",
+  url = "<YOUR_FORK_URL>",
+  overwrite = TRUE
+)
+```
+
+---
+
+
+## Burn it all down
+
+```{r echo = FALSE, out.width = "35%"}
+include_graphics(path = "https://imgs.xkcd.com/comics/git.png")
+```
+
+.footnote[Source: [xkcd](https://xkcd.com/1597/)]
+
+---
+## Avoiding Git problems
+
+1. Commit early and often
+1. Push regularly to GitHub
+
+
+---
+
+## Recap
+
+1. Commit early and often as you revise and update your project
+1. Push regularly to GitHub
+1. Each successful push results in a new “worst case scenario”
+1. If you screw things up badly on your local machine, copy all the files in your repo to a safe place on your computer (i.e. a new folder)
+1. Rename the existing local repository as a temporary measure
+1. Clone the repository from GitHub to your local machine. This version of the repository works as intended
+1. Copy all relevant files back over from your safe space. That is, the ones whose updated state you need to commit
+1. Stage, commit, and push
+
+
+---
+
+## Acknowledgments 
+
+Materials adapted from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+

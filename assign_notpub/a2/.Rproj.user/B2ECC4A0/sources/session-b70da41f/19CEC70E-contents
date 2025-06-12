@@ -1,0 +1,138 @@
+---
+title: "Assignment 2"
+author: "Jean Clipperton"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+
+## Assignment 2
+This is an example file -- note that this is a MINIMAL version. We are providing an example of a possible version of the assignment here to give you a sense of expectations. 
+
+### Load packages
+
+```{r loading}
+library(tidyverse)
+library(stevedata)
+library(knitr)
+library(psych)
+data(gss_wages)
+```
+
+## Explore the data
+We are using a sample of GSS data. To learn more, [see this dataset description here](https://r-packages.io/datasets/gss_wages).
+
+### Very specific questions
+1. Load and describe the dataframe 'gss_wages'
+
+
+```{r}
+# Step 1: Load and describe the dataframe
+# Assuming gss_wages is already loaded into your environment
+# Basic summary
+describe(gss_wages)
+```
+
+1. Generate a data frame that summarizes the number of women and men per education category Print the data frame as a formatted `kable()` table.
+
+```{r}
+
+# Step 2: Summarize number of women and men per education category
+gender_education_summary <- gss_wages %>%
+  group_by(educcat, gender) %>%
+  summarise(count = n(), .groups = 'drop') %>%
+  tidyr::pivot_wider(names_from = gender, values_from = count, values_fill = 0)
+
+# Display formatted table
+kable(gender_education_summary, caption = "Number of Women and Men per Education Category")
+```
+1. Generate a boxplot visualizing the wages of individuals, by recoded occupational category.
+
+
+```{r}
+# Step 4: Boxplot of wages by race
+ggplot(gss_wages, aes(x = occrecode, y = realrinc)) +
+  geom_boxplot(fill = "gray30") +
+  labs(title = "Wages by Race",
+       x = "Race",
+       y = "Wage") +
+  theme_minimal()+ theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+
+
+1. Generate a bar chart that identifies the total number of children by each education category. The bars should be sorted from highest to lowest.
+```{r}
+children_by_education <- gss_wages %>%
+  group_by(educcat) %>%
+  summarise(total_children = sum(childs, na.rm = TRUE)) %>%
+  arrange(desc(total_children))
+# Create bar chart
+ggplot(children_by_education, aes(x = reorder(educcat, -total_children), y = total_children)) +
+  geom_bar(stat = "identity", fill = "gray8") +
+  labs(title = "Total Number of Children by Education Category",
+       x = "Education Category",
+       y = "Total Number of Children") +
+  theme_minimal()+ theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+### More open-ended questions
+
+Answer the following questions. Generate appropriate figures/tables to support your conclusions.
+
+1. How many women and how many men have a high school education? 
+
+```{r}
+children_by_education <- gss_wages %>%
+  group_by(educcat, gender) %>%
+  summarise(total_children = sum(childs, na.rm = TRUE)) %>%
+  arrange(desc(total_children))
+# Create bar chart
+ggplot(children_by_education, aes(x = reorder(educcat, -total_children), y = total_children)) +
+  geom_bar(stat = "identity", fill = "gray70") + facet_wrap(vars(gender), ncol= 2) + 
+  labs(title = "Total Number of Children by Education Category",
+       x = "Education Category",
+       y = "Total Number of Children") +
+  theme_minimal()+ theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+kable(children_by_education)
+```
+
+
+
+1. How does the distribution of wages vary across the different (recoded) occupations? Reorder your chart from above to sort from lowest to highest median. 
+
+```{r, eval = FALSE, echo = FALSE}
+
+ggplot(gss_wages, aes(x = reorder(occrecode, realrinc, FUN = median, na.rm = TRUE), y = realrinc)) +
+  geom_boxplot(fill = "gray50") +
+  labs(title = "Wages by Occupation",
+       x = "Occupation",
+       y = "Real Income (realrinc)") +
+  theme_minimal()  + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+### Very open-ended questions
+
+Answer the following questions. Generate appropriate figures/tables to support your conclusions. Provide 1-2 paragraphs of written interpretation of your results for each question. Graphs and/or tables alone will not be sufficient to answer these questions. You will be graded on your code and your analysis. 
+
+1. We generated total number of children by category. Is this helpful to understand the question of whether people with different educational backgrounds have more children? Explain why or why not, and include any supplemental visualizations you wish. 
+1. Consider the findings regarding income and occupation. What additional variable might you use to help you uncover any additional underlying trends? Be specific and provide additional visualizations and/or tables as needed. 
+
+
+### AI / Resources statement. 
+All assignments need about one paragraph describing the resources you used (including links and prompts, as relevant) in completing the assignment. This helps us learn about your process. Include this in your assignment submission. 
+
+**sample response** *I used ChatGPT on the question to separate by gender because I kept getting an error about splitting by group. I realized that I had missed summarizing by gender. I also googled to find a suitable theme for the markdown file*

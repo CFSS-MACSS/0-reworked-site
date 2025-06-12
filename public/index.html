@@ -1,0 +1,516 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>CFSS: Computing for the Social Sciences</title>
+<meta name="description" content="You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to R for Data Science (2e) except where otherwise noted. Note! I’m updating the course and pages as we go to keep up with changes and updates in R!
+Week Date Topic Readings Slides Assignment Week 1 Day 1 16-Jun Intro to course / markdown / git Ch 1 A1 (due 6/20) Day 2 17-Jun Data Visualization Ch 1 Day 3 18-Jun Workflow &#43; transformation Ch 2, Ch 3 A2 (due 6/23) Day 4 19-Jun Code style &#43; tidying Ch 4, Ch 5 Week 2 Day 1 23-Jun Workflow: scripts &#43; Data import Ch 6, 7 A3 (due 6/27) Day 2 24-Jun Workflow: help Ch 8 Day 3 25-Jun Visualize: layers &#43; EDA Ch 9, 10 Day 4 26-Jun Visualize: communication Ch 11 Week 3 Day 1 30-Jun Synthesis: pulling together skills A4 (due 7/3) Day 2 1-Jul Transform Ch 12, 13 Day 3 2-Jul Transform Ch 14 Day 4 3-Jul Transform Ch 15, 16 Week 4 Day 1 7-Jul Transform Ch 17, 18, 19 A5 (due 7/11) Day 2 8-Jul Import Ch 20, 21 Day 3 9-Jul APIs Ch 24 A6 (due 7/14) Day 4 10-Jul Web scraping Ch 24 Week 5 Day 1 14-Jul CSS &#43; You Final (due 7/18) Day 2 15-Jul Texts &#43; sentiment A7 (opt: due 7/18) Day 3 16-Jul Reproducible workflows Day 4 17-Jul Advanced R: programming For information about the course, expectations, and details, see the course syllabus.">
+<meta property="og:url" content="http://localhost:1313/">
+  <meta property="og:site_name" content="CFSS: Computing for the Social Sciences">
+  <meta property="og:title" content="Welcome to CFSS!">
+  <meta property="og:description" content="You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to R for Data Science (2e) except where otherwise noted. Note! I’m updating the course and pages as we go to keep up with changes and updates in R!
+Week Date Topic Readings Slides Assignment Week 1 Day 1 16-Jun Intro to course / markdown / git Ch 1 A1 (due 6/20) Day 2 17-Jun Data Visualization Ch 1 Day 3 18-Jun Workflow &#43; transformation Ch 2, Ch 3 A2 (due 6/23) Day 4 19-Jun Code style &#43; tidying Ch 4, Ch 5 Week 2 Day 1 23-Jun Workflow: scripts &#43; Data import Ch 6, 7 A3 (due 6/27) Day 2 24-Jun Workflow: help Ch 8 Day 3 25-Jun Visualize: layers &#43; EDA Ch 9, 10 Day 4 26-Jun Visualize: communication Ch 11 Week 3 Day 1 30-Jun Synthesis: pulling together skills A4 (due 7/3) Day 2 1-Jul Transform Ch 12, 13 Day 3 2-Jul Transform Ch 14 Day 4 3-Jul Transform Ch 15, 16 Week 4 Day 1 7-Jul Transform Ch 17, 18, 19 A5 (due 7/11) Day 2 8-Jul Import Ch 20, 21 Day 3 9-Jul APIs Ch 24 A6 (due 7/14) Day 4 10-Jul Web scraping Ch 24 Week 5 Day 1 14-Jul CSS &#43; You Final (due 7/18) Day 2 15-Jul Texts &#43; sentiment A7 (opt: due 7/18) Day 3 16-Jul Reproducible workflows Day 4 17-Jul Advanced R: programming For information about the course, expectations, and details, see the course syllabus.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Welcome to CFSS!">
+  <meta itemprop="description" content="You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to R for Data Science (2e) except where otherwise noted. Note! I’m updating the course and pages as we go to keep up with changes and updates in R!
+Week Date Topic Readings Slides Assignment Week 1 Day 1 16-Jun Intro to course / markdown / git Ch 1 A1 (due 6/20) Day 2 17-Jun Data Visualization Ch 1 Day 3 18-Jun Workflow &#43; transformation Ch 2, Ch 3 A2 (due 6/23) Day 4 19-Jun Code style &#43; tidying Ch 4, Ch 5 Week 2 Day 1 23-Jun Workflow: scripts &#43; Data import Ch 6, 7 A3 (due 6/27) Day 2 24-Jun Workflow: help Ch 8 Day 3 25-Jun Visualize: layers &#43; EDA Ch 9, 10 Day 4 26-Jun Visualize: communication Ch 11 Week 3 Day 1 30-Jun Synthesis: pulling together skills A4 (due 7/3) Day 2 1-Jul Transform Ch 12, 13 Day 3 2-Jul Transform Ch 14 Day 4 3-Jul Transform Ch 15, 16 Week 4 Day 1 7-Jul Transform Ch 17, 18, 19 A5 (due 7/11) Day 2 8-Jul Import Ch 20, 21 Day 3 9-Jul APIs Ch 24 A6 (due 7/14) Day 4 10-Jul Web scraping Ch 24 Week 5 Day 1 14-Jul CSS &#43; You Final (due 7/18) Day 2 15-Jul Texts &#43; sentiment A7 (opt: due 7/18) Day 3 16-Jul Reproducible workflows Day 4 17-Jul Advanced R: programming For information about the course, expectations, and details, see the course syllabus.">
+  <meta itemprop="datePublished" content="2023-07-10T13:30:00-06:00">
+  <meta itemprop="dateModified" content="2025-10-06T13:30:00-06:00">
+  <meta itemprop="wordCount" content="258">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Welcome to CFSS!">
+  <meta name="twitter:description" content="You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to R for Data Science (2e) except where otherwise noted. Note! I’m updating the course and pages as we go to keep up with changes and updates in R!
+Week Date Topic Readings Slides Assignment Week 1 Day 1 16-Jun Intro to course / markdown / git Ch 1 A1 (due 6/20) Day 2 17-Jun Data Visualization Ch 1 Day 3 18-Jun Workflow &#43; transformation Ch 2, Ch 3 A2 (due 6/23) Day 4 19-Jun Code style &#43; tidying Ch 4, Ch 5 Week 2 Day 1 23-Jun Workflow: scripts &#43; Data import Ch 6, 7 A3 (due 6/27) Day 2 24-Jun Workflow: help Ch 8 Day 3 25-Jun Visualize: layers &#43; EDA Ch 9, 10 Day 4 26-Jun Visualize: communication Ch 11 Week 3 Day 1 30-Jun Synthesis: pulling together skills A4 (due 7/3) Day 2 1-Jul Transform Ch 12, 13 Day 3 2-Jul Transform Ch 14 Day 4 3-Jul Transform Ch 15, 16 Week 4 Day 1 7-Jul Transform Ch 17, 18, 19 A5 (due 7/11) Day 2 8-Jul Import Ch 20, 21 Day 3 9-Jul APIs Ch 24 A6 (due 7/14) Day 4 10-Jul Web scraping Ch 24 Week 5 Day 1 14-Jul CSS &#43; You Final (due 7/18) Day 2 15-Jul Texts &#43; sentiment A7 (opt: due 7/18) Day 3 16-Jul Reproducible workflows Day 4 17-Jul Advanced R: programming For information about the course, expectations, and details, see the course syllabus.">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-home">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">CFSS: Computing for the Social Sciences</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/"><span>Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/syllabus/"><span>Syllabus</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/schedule/"><span>Schedule</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assignments/"><span>Assignments</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 active td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="td-sidebar-nav-active-item">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setup-li">
+  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupgit-li">
+  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
+  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-li">
+  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-clients-li">
+  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-configure-li">
+  <a href="/setup/git/git-configure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="">Configure Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-with-rstudio-li">
+  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupr-li">
+  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
+  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-server-li">
+  <a href="/setup/r/r-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr-server"><span class="">Accessing RStudio Workbench</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupshell-li">
+  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
+  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
+  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
+  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
+  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
+  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
+  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulejuneteenth-li">
+  <a href="/schedule/juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulejuneteenth"><span class="">Juneteenth (observed)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleapplication-program-interface-li">
+  <a href="/schedule/application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleapplication-program-interface"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
+  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleclassification-topic-models-li">
+  <a href="/schedule/classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleclassification-topic-models"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
+  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-structures-li">
+  <a href="/schedule/data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-structures"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-transformation-li">
+  <a href="/schedule/data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-transformation"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledebugging-li">
+  <a href="/schedule/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledebugging"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
+  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleexploratory-data-analysis-li">
+  <a href="/schedule/exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleexploratory-data-analysis"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
+  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
+  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
+  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegrammar-of-graphics-li">
+  <a href="/schedule/grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegrammar-of-graphics"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
+  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
+  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleintro-li">
+  <a href="/schedule/intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleintro"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
+  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
+  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
+  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
+  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulepipes-functions-li">
+  <a href="/schedule/pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulepipes-functions"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduler-markdown-li">
+  <a href="/schedule/r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduler-markdown"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulerelational-data-factors-li">
+  <a href="/schedule/relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulerelational-data-factors"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereprex-git-li">
+  <a href="/schedule/reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereprex-git"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-documents-li">
+  <a href="/schedule/reproducible-documents/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-documents"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-workflow-li">
+  <a href="/schedule/reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
+  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
+  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
+  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
+  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
+  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
+  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletext-data-li">
+  <a href="/schedule/text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletext-data"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
+  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidy-data-li">
+  <a href="/schedule/tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidy-data"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
+  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulevectors-iteration-li">
+  <a href="/schedule/vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulevectors-iteration"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleweb-scraping-li">
+  <a href="/schedule/web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleweb-scraping"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
+  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs td-breadcrumbs__single">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item active" aria-current="page">
+    Home</li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Welcome to CFSS!</h1>
+  
+	<header class="article-meta">
+		
+  </header>
+	<p>You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to <a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> except where otherwise noted.  Note! I&rsquo;m updating the course and pages as we go to keep up with changes and updates in R!</p>
+<table>
+  <thead>
+      <tr>
+          <th>Week</th>
+          <th>Date</th>
+          <th>Topic</th>
+          <th>Readings</th>
+          <th>Slides</th>
+          <th>Assignment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Week 1</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 1</td>
+          <td>16-Jun</td>
+          <td>Intro to course / markdown / git</td>
+          <td><a href="https://r4ds.hadley.nz/data-visualize.html">Ch 1</a></td>
+          <td><a href="/slides/intro/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/edit-readme/">A1 (due 6/20)</a></td>
+      </tr>
+      <tr>
+          <td>Day 2</td>
+          <td>17-Jun</td>
+          <td>Data Visualization</td>
+          <td><a href="https://r4ds.hadley.nz/data-visualize.html">Ch 1</a></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 3</td>
+          <td>18-Jun</td>
+          <td>Workflow + transformation</td>
+          <td><a href="https://r4ds.hadley.nz/workflow-basics.html">Ch 2</a>, <a href="https://r4ds.hadley.nz/data-transform.html">Ch 3</a></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/explore-data/">A2 (due 6/23)</a></td>
+      </tr>
+      <tr>
+          <td>Day 4</td>
+          <td>19-Jun</td>
+          <td>Code style + tidying</td>
+          <td>Ch 4, Ch 5</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Week 2</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 1</td>
+          <td>23-Jun</td>
+          <td>Workflow: scripts + Data import</td>
+          <td>Ch 6, 7</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/wrangle-data/">A3 (due 6/27)</a></td>
+      </tr>
+      <tr>
+          <td>Day 2</td>
+          <td>24-Jun</td>
+          <td>Workflow: help</td>
+          <td>Ch 8</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 3</td>
+          <td>25-Jun</td>
+          <td>Visualize: layers + EDA</td>
+          <td>Ch 9, 10</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 4</td>
+          <td>26-Jun</td>
+          <td>Visualize: communication</td>
+          <td>Ch 11</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Week 3</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 1</td>
+          <td>30-Jun</td>
+          <td>Synthesis: pulling together skills</td>
+          <td></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/programming/"> A4 (due 7/3)</a></td>
+      </tr>
+      <tr>
+          <td>Day 2</td>
+          <td>1-Jul</td>
+          <td>Transform</td>
+          <td>Ch 12, 13</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 3</td>
+          <td>2-Jul</td>
+          <td>Transform</td>
+          <td>Ch 14</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 4</td>
+          <td>3-Jul</td>
+          <td>Transform</td>
+          <td>Ch 15, 16</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Week   4</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 1</td>
+          <td>7-Jul</td>
+          <td>Transform</td>
+          <td>Ch 17, 18, 19</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/debugging-rmarkdown/">A5 (due 7/11)</a></td>
+      </tr>
+      <tr>
+          <td>Day 2</td>
+          <td>8-Jul</td>
+          <td>Import</td>
+          <td>Ch 20, 21</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 3</td>
+          <td>9-Jul</td>
+          <td>APIs</td>
+          <td>Ch 24</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/webdata/">A6 (due 7/14)</a></td>
+      </tr>
+      <tr>
+          <td>Day 4</td>
+          <td>10-Jul</td>
+          <td>Web scraping</td>
+          <td>Ch 24</td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Week 5</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 1</td>
+          <td>14-Jul</td>
+          <td>CSS + You</td>
+          <td></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/reproducible-research/">Final (due 7/18)</a></td>
+      </tr>
+      <tr>
+          <td>Day 2</td>
+          <td>15-Jul</td>
+          <td>Texts + sentiment</td>
+          <td></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td><a href="/assignments/text-analysis/">A7 (opt: due 7/18)</a></td>
+      </tr>
+      <tr>
+          <td>Day 3</td>
+          <td>16-Jul</td>
+          <td>Reproducible workflows</td>
+          <td></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Day 4</td>
+          <td>17-Jul</td>
+          <td>Advanced R: programming</td>
+          <td></td>
+          <td><a href="/slides/"><i class="fa-solid fa-person-chalkboard"></i></a></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>For information about the course, expectations, and details, <a href="/syllabus/">see the course syllabus</a>.</strong></p>
+
+  <div class="section-index">
+    
+    
+    </div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 10.0px Times; font-kerning: none}
+    span.s3 {text-decoration: underline ; font-kerning: none}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span></p>
+<p class="p1"><span class="s1"></span><span class="s2">© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class="s1">   <span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"></span></p>
+</body>
+</html>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

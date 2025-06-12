@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Exploratory Data Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="MACSS 30500   University of Chicago" />
+    <script src="index_files/header-attrs/header-attrs.js"></script>
+    <link href="index_files/panelset/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Exploratory Data Analysis
+]
+.author[
+### MACSS 30500 <br /> University of Chicago
+]
+
+---
+
+
+
+
+
+
+class: inverse, middle
+
+# Exploratory Data Analysis
+
+---
+
+## Definition of Exploratory Data Analysis (EDA)
+
+**All set of initial investigations in order to get a sense of your data and generate questions**: 
++ discovering patterns 
++ spot anomalies (outliers)
++ formulate and refine questions 
++ check initial hypotheses before formally testing them
+
+--
+
+Exploratory Data Analysis (EDA):
+* relies on **visualizations** and frequently goes together with **descriptive statistics**
+* is different from **Explanatory or Confirmatory Data Analysis** 
+
+---
+
+## Exploratory Data Analysis as iterative cycle
+
+Chapter 7 of R for Data Science defines EDA as an iterative process:
+
+1. Generate questions about your data
+1. Search for answers in the data by transforming, visualizing, and modeling the data
+1. Use what you learn to refine your questions and/or generate new questions
+1. Repeat until necessary
+
+--
+
+EDA is a **creative process**: it is not an exact science. It requires knowledge of your data and a lot of time. At the most basic level, it involves answering two questions:
+
+1. What type of **variation** occurs within my variables?
+2. What type of **covariation** occurs between my variables?
+
+
+---
+
+## How to perform Exploratory Data Analysis?
+
+EDA relies on:
+- **descriptive stats** such as measures of central tendency (mean, mode, median) and of dispersion (variance, standard deviation)
+- **visualization tools** such box plots, histograms, bar charts, and scatter plots 
+
+--
+
+We focus on visualizations, and especially on:
+- *Variation* that is how values within a single variable vary (univariate analysis)
+- *Covariation* that how values of two variables co-vary (bivariate analysis)
+
+--
+
+&gt; Visualizations are employed in both Exploratory and Confirmatory Data Analysis, but their use is different. 
+
+&lt;!--
+In Exploratory Analysis you might generate 100 or even 1000 graphs, but not all of them will be useful for your research. In Confirmatory Analysis, you generate only a few graphs and each graph is well refined.
+--&gt;
+
+---
+
+class: inverse, middle
+
+# Exploratory VS Confirmatory Data Analysis
+
+---
+
+## Comparing Exploratory and Confirmatory plots
+
+
+```r
+library(palmerpenguins)
+data("penguins")
+
+head(penguins)
+```
+
+```
+## # A tibble: 6 × 8
+##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+## 1 Adelie  Torgersen           39.1          18.7               181        3750
+## 2 Adelie  Torgersen           39.5          17.4               186        3800
+## 3 Adelie  Torgersen           40.3          18                 195        3250
+## 4 Adelie  Torgersen           NA            NA                  NA          NA
+## 5 Adelie  Torgersen           36.7          19.3               193        3450
+## 6 Adelie  Torgersen           39.3          20.6               190        3650
+## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+We want build a plot of two continuous variables: penguins body mass (in grams) and penguins flipper length (in millimeters)
+
+---
+
+
+
+count: false
+ 
+## Exploratory plot
+.panel1-penguins-eda-auto[
+
+```r
+*ggplot(
+* data = penguins,
+* mapping = aes(
+*   x = body_mass_g,
+*   y = flipper_length_mm
+* )
+*) 
+```
+]
+ 
+.panel2-penguins-eda-auto[
+&lt;img src="index_files/figure-html/penguins-eda_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Exploratory plot
+.panel1-penguins-eda-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+* geom_point()
+```
+]
+ 
+.panel2-penguins-eda-auto[
+&lt;img src="index_files/figure-html/penguins-eda_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Exploratory plot
+.panel1-penguins-eda-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+  geom_point() +
+* geom_smooth()
+```
+]
+ 
+.panel2-penguins-eda-auto[
+&lt;img src="index_files/figure-html/penguins-eda_auto_03_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-penguins-eda-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-penguins-eda-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-penguins-eda-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+Simple exploratory plot. What does this graph tell us?
+
+--
+
+Pros: minimum code, easy to replicate, good for your internal use
+Cons: not well refined, not good for publication or external audience
+
+How can we improve this graph?
+
+---
+
+
+
+count: false
+ 
+## Confirmatory plot
+.panel1-penguins-final-auto[
+
+```r
+*ggplot(
+* data = penguins,
+* mapping = aes(
+*   x = body_mass_g,
+*   y = flipper_length_mm
+* )
+*) 
+```
+]
+ 
+.panel2-penguins-final-auto[
+&lt;img src="index_files/figure-html/penguins-final_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Confirmatory plot
+.panel1-penguins-final-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+* geom_point(alpha = .1)
+```
+]
+ 
+.panel2-penguins-final-auto[
+&lt;img src="index_files/figure-html/penguins-final_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Confirmatory plot
+.panel1-penguins-final-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+  geom_point(alpha = .1) +
+* geom_smooth(se = FALSE)
+```
+]
+ 
+.panel2-penguins-final-auto[
+&lt;img src="index_files/figure-html/penguins-final_auto_03_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Confirmatory plot
+.panel1-penguins-final-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+  geom_point(alpha = .1) +
+  geom_smooth(se = FALSE) +
+* labs(
+*   title = "Relationship between body mass and\nflipper length of a penguin",
+*   subtitle = "Sample of 344 penguins",
+*   x = "Body mass (g)",
+*   y = "Flipper length (mm)"
+* )
+```
+]
+ 
+.panel2-penguins-final-auto[
+&lt;img src="index_files/figure-html/penguins-final_auto_04_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Confirmatory plot
+.panel1-penguins-final-auto[
+
+```r
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = body_mass_g,
+    y = flipper_length_mm
+  )
+) +
+  geom_point(alpha = .1) +
+  geom_smooth(se = FALSE) +
+  labs(
+    title = "Relationship between body mass and\nflipper length of a penguin",
+    subtitle = "Sample of 344 penguins",
+    x = "Body mass (g)",
+    y = "Flipper length (mm)"
+  ) +
+* theme_xaringan(
+*   title_font_size = 18,
+*   text_font_size = 16
+* )
+```
+]
+ 
+.panel2-penguins-final-auto[
+&lt;img src="index_files/figure-html/penguins-final_auto_05_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-penguins-final-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-penguins-final-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-penguins-final-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+Plot for confirmatory purposes. It requires more code. Good for a final report, class presentation, paper, etc. but not necessary for exploratory purposes.
+
+
+
+
+---
+
+class: inverse, middle
+
+# EDA with the `scorecard` dataset
+
+### Data on every four-year college university in the U.S.
+The Department of Education collects annual statistics on colleges and universities in the United States. We are going to look at a subset of this data from 2018-19.
+
+---
+
+## `scorecard`
+
+
+```r
+library(rcis)
+data("scorecard")
+glimpse(scorecard)
+```
+
+```
+## Rows: 1,721
+## Columns: 14
+## $ unitid    &lt;dbl&gt; 100654, 100663, 100706, 100724, 100751, 100830, 100858, 1009…
+## $ name      &lt;chr&gt; "Alabama A &amp; M University", "University of Alabama at Birmin…
+## $ state     &lt;chr&gt; "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", "AL", …
+## $ type      &lt;fct&gt; "Public", "Public", "Public", "Public", "Public", "Public", …
+## $ admrate   &lt;dbl&gt; 0.8965, 0.8060, 0.7711, 0.9888, 0.8039, 0.9555, 0.8507, 0.60…
+## $ satavg    &lt;dbl&gt; 959, 1245, 1300, 938, 1262, 1061, 1302, 1202, 1068, NA, 1101…
+## $ cost      &lt;dbl&gt; 23445, 25542, 24861, 21892, 30016, 20225, 32196, 32514, 3483…
+## $ netcost   &lt;dbl&gt; 15529, 16530, 17208, 19534, 20917, 13678, 24018, 19808, 2050…
+## $ avgfacsal &lt;dbl&gt; 68391, 102420, 87273, 64746, 93141, 69561, 96498, 62649, 533…
+## $ pctpell   &lt;dbl&gt; 0.7095, 0.3397, 0.2403, 0.7368, 0.1718, 0.4654, 0.1343, 0.22…
+## $ comprate  &lt;dbl&gt; 0.2866, 0.6117, 0.5714, 0.3177, 0.7214, 0.3040, 0.7870, 0.70…
+## $ firstgen  &lt;dbl&gt; 0.3658281, 0.3412237, 0.3101322, 0.3434343, 0.2257127, 0.381…
+## $ debt      &lt;dbl&gt; 15250, 15085, 14000, 17500, 17671, 12000, 17500, 16000, 1425…
+## $ locale    &lt;fct&gt; City, City, City, City, City, City, City, City, City, Suburb…
+```
+
+---
+
+## Types of visualization we can perform:
+
+#### *Variation* -- how values within a single variable vary (univariate analysis)
+  
+* continuous variable: histogram
+* categorical variable: bar chart
+
+
+#### *Covariation* -- how values of two variables co-vary (bivariate analysis)
+
+* continuous variables: scatter plot
+* categorical variables: compute count for each, then visualize
+* categorical and continuous variables: box plot
+
+---
+
+class: inverse, middle
+
+# Variation: univariate analysis
+
+---
+
+
+
+count: false
+ 
+## Histogram
+.panel1-histogram-auto[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(x = cost)
+*) 
+```
+]
+ 
+.panel2-histogram-auto[
+&lt;img src="index_files/figure-html/histogram_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Histogram
+.panel1-histogram-auto[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = cost)
+) +
+* geom_histogram()
+```
+]
+ 
+.panel2-histogram-auto[
+&lt;img src="index_files/figure-html/histogram_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-histogram-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-histogram-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-histogram-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+HISTOGRAM: for **continuous variables** (here cost). It splits the input variable into n sets of equal width and does a frequency count within each set.
+
+--
+
+What does this histogram tell us?
+
+--
+
+Follow up questions we might ask: Why do we have these different picks? Who are the outliers?
+
+---
+
+
+
+count: false
+ 
+## Histogram
+.panel1-histogram-bins-rotate[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = cost)
+) +
+* geom_histogram(bins = 50)
+```
+]
+ 
+.panel2-histogram-bins-rotate[
+&lt;img src="index_files/figure-html/histogram-bins_rotate_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Histogram
+.panel1-histogram-bins-rotate[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = cost)
+) +
+* geom_histogram(bins = 30)
+```
+]
+ 
+.panel2-histogram-bins-rotate[
+&lt;img src="index_files/figure-html/histogram-bins_rotate_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Histogram
+.panel1-histogram-bins-rotate[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = cost)
+) +
+* geom_histogram(bins = 10)
+```
+]
+ 
+.panel2-histogram-bins-rotate[
+&lt;img src="index_files/figure-html/histogram-bins_rotate_03_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-histogram-bins-rotate {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-histogram-bins-rotate {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-histogram-bins-rotate {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+Bins: each bar is a bin and represents one interval or set of data; `bins` control the size of each bar. In these examples, we divided the data into 50, 30 (default), or 10 equally sized bars.
+
+---
+
+
+
+count: false
+ 
+## Bar chart
+.panel1-barplot-auto[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(x = type)
+*) 
+```
+]
+ 
+.panel2-barplot-auto[
+&lt;img src="index_files/figure-html/barplot_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Bar chart
+.panel1-barplot-auto[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = type)
+) +
+* geom_bar()
+```
+]
+ 
+.panel2-barplot-auto[
+&lt;img src="index_files/figure-html/barplot_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-barplot-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-barplot-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-barplot-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+BAR CHART: for **categorical variables** (here type). It takes each category of the variable and automatically applies a frequency count to aggregate the data by variable. 
+
+---
+
+## Bar chart 
+
+
+
+The default stats for `geom_bar()` is `count`. See [documentation](https://ggplot2.tidyverse.org/reference/geom_bar.html) for more info.
+
+It means that under the hood `geom_bar()` performs the equivalent of the following:
+
+
+```r
+scorecard %&gt;%
+  count(type)
+```
+
+```
+## # A tibble: 3 × 2
+##   type                    n
+##   &lt;fct&gt;               &lt;int&gt;
+## 1 Public                533
+## 2 Private, nonprofit   1103
+## 3 Private, for-profit    85
+```
+
+Unless we explicitly tell `geom_bar()` not to do so with `geom_bar(stats = "identity")`
+
+---
+
+## Reorder factor levels in a bar chart
+
+.panelset[
+.panel[.panel-name[Not Ordered]
+
+
+&lt;img src="index_files/figure-html/not-ordered-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Ordered]
+
+&lt;img src="index_files/figure-html/reordered-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+
+## Reorder factor levels in a bar chart
+
+The most straightforward approach to reorder the levels of a categorical variables is with dplyr and ggplot combined:
+
+```
+# calculate count for variable of interest and save in new dataframe
+count_type &lt;- scorecard %&gt;%
+  count(type)
+
+# use the new dataframe to create the graph
+ggplot(count_type,
+       mapping = aes(x = reorder(type, desc(n)), 
+                     y = n)) +
+       geom_bar(stat = "identity")
+```
+
+--
+
+```
+# same results in one step
+scorecard %&gt;%
+  count(type) %&gt;%
+  ggplot(mapping = aes(x = reorder(type, desc(n)), 
+                       y = n)) +
+  geom_bar(stat = "identity")
+```
+
+
+---
+
+## Reorder factor levels in a bar chart
+
+[`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html): allows to reorder factor levels by hand
+
+```
+scorecard %&gt;%
+  mutate(
+  type = fct_relevel(.f = type, 
+                    levels = "Private, nonprofit", "Public", "Private, for-profit" )) %&gt;%
+  ggplot(
+    mapping = aes(x = type)) +
+    geom_bar()
+```
+
+[`fct_infreq()`](https://forcats.tidyverse.org/reference/fct_inorder.html): reorders factor levels by the number of obs. with each level (e.g., by frequency)
+
+```
+scorecard %&gt;%
+  mutate(type = fct_infreq(type)) %&gt;%
+  ggplot(
+    mapping = aes(x = type)) +
+  geom_bar()
+```
+
+---
+
+## Other types of univariate and bivariate graphs
+
+See the Visualization cheat sheet! 
+
+Help &gt; Cheat Sheets &gt; Data Visualization with ggplot2
+
+---
+
+class: inverse, middle
+
+# Covariation: bivariate analysis
+
+---
+
+## Covariation
+
+1. Two-dimensional graphs
+1. Multiple window plots
+1. Utilizing additional channels
+
+---
+
+
+
+count: false
+ 
+## Box plot
+.panel1-boxplot-auto[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(
+*   x = type,
+*   y = cost
+* )
+*) 
+```
+]
+ 
+.panel2-boxplot-auto[
+&lt;img src="index_files/figure-html/boxplot_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Box plot
+.panel1-boxplot-auto[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(
+    x = type,
+    y = cost
+  )
+) +
+* geom_boxplot()
+```
+]
+ 
+.panel2-boxplot-auto[
+&lt;img src="index_files/figure-html/boxplot_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-boxplot-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-boxplot-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-boxplot-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+BOX PLOT: looks at the relationship between a **continuous variable** (here cost) and a  **categorical variable** (here type). It summarizes the continuous variable distribution across each of the categorical variables.
+
+--
+
+What does this box plot tell us?
+
+&lt;!-- median is the line in the middle, the middle value 
+Here we see that on average, public universities are the least expensive, followed by private for-profit institutions. I was somewhat surprised by this since for-profit institutions by definition seek to generate a profit, so wouldn't they be the most expensive? But perhaps this makes sense, because they have to attract students so need to offer a better financial value than competing nonprofit or public institutions. Is there a better explanation for these differences? Another question you could explore after viewing this visualization.
+--&gt;
+
+---
+
+## Box plot
+
+&lt;img src="https://d33wubrfki0l68.cloudfront.net/153b9af53b33918353fda9b691ded68cd7f62f51/5b616/images/eda-boxplot.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Source of image: R for Data Science Chapter 7]
+
+
+---
+
+
+
+count: false
+ 
+## Scatterplot
+.panel1-scatterplot-auto[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(
+*   x = cost,
+*   y = netcost
+* )
+*) 
+```
+]
+ 
+.panel2-scatterplot-auto[
+&lt;img src="index_files/figure-html/scatterplot_auto_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Scatterplot
+.panel1-scatterplot-auto[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(
+    x = cost,
+    y = netcost
+  )
+) +
+* geom_point()
+```
+]
+ 
+.panel2-scatterplot-auto[
+&lt;img src="index_files/figure-html/scatterplot_auto_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-scatterplot-auto {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-scatterplot-auto {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-scatterplot-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+SCATTERPLOT: looks at the relationship between two **continuous variables** (here cost and netcost). 
+
+
+--
+
+What does this scatterplot tell us?
+
+&lt;!--
+
+As the advertised price increases, the net cost also increases though with significant variation. Some schools have a much lower net cost than their advertised price.
+
+No clear alignment on diagonal, net costs tend to be lower than adv costs for several schools, especially as the adv costs increase; in most universities the average student pay less than the adv costs. It is a 2d plot bcs we are mapping two variables: one on the y and one on the x.
+
+Link to next slide: for histogram does not make sense to map a second variable on the y, beside count/frequency bcs with a histogram see the total distribution (vs box plot in which you see summary stats of the distribution). 
+--&gt;
+
+---
+
+
+
+count: false
+ 
+## Multiple windows plot - faceted histogram
+.panel1-histogram-facet-user[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(x = cost)
+*) +
+* geom_histogram()
+```
+]
+ 
+.panel2-histogram-facet-user[
+&lt;img src="index_files/figure-html/histogram-facet_user_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Multiple windows plot - faceted histogram
+.panel1-histogram-facet-user[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(x = cost)
+) +
+  geom_histogram() +
+* facet_wrap(facets = vars(type))
+```
+]
+ 
+.panel2-histogram-facet-user[
+&lt;img src="index_files/figure-html/histogram-facet_user_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-histogram-facet-user {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-histogram-facet-user {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-histogram-facet-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+Multiple windows plot - HISTOGRAM WITH FACETS: looks at **categorical variables**. 
+
+On the y axis is frequency count (calculated from the x). With histograms we cannot map a second variable on the y, but we can use facets to compare the distribution of each college type. Compare with box plot.
+
+---
+
+
+
+count: false
+ 
+## Multiple windows plot - faceted scatterplot
+.panel1-scatterplot-facet-user[
+
+```r
+*ggplot(
+* data = scorecard,
+* mapping = aes(
+*   x = cost,
+*   y = netcost
+* )
+*) +
+* geom_point()
+```
+]
+ 
+.panel2-scatterplot-facet-user[
+&lt;img src="index_files/figure-html/scatterplot-facet_user_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Multiple windows plot - faceted scatterplot
+.panel1-scatterplot-facet-user[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(
+    x = cost,
+    y = netcost
+  )
+) +
+  geom_point() +
+* facet_wrap(facets = vars(type))
+```
+]
+ 
+.panel2-scatterplot-facet-user[
+&lt;img src="index_files/figure-html/scatterplot-facet_user_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-scatterplot-facet-user {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-scatterplot-facet-user {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-scatterplot-facet-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+Multiple windows plot - SCATTERPLOT WITH FACETS: looks at **continuous variables** (here cost and netcost) and plot each in a separate panel with same scale range on the x and y.
+
+---
+
+
+
+count: false
+ 
+## Utilizing additional aesthetics
+.panel1-scatterplot-mult-channels-rotate[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(
+    x = cost,
+    y = netcost,
+*   color = type,
+  )
+) +
+  geom_point()
+```
+]
+ 
+.panel2-scatterplot-mult-channels-rotate[
+&lt;img src="index_files/figure-html/scatterplot-mult-channels_rotate_01_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+count: false
+ 
+## Utilizing additional aesthetics
+.panel1-scatterplot-mult-channels-rotate[
+
+```r
+ggplot(
+  data = scorecard,
+  mapping = aes(
+    x = cost,
+    y = netcost,
+*   color = type, size = debt
+  )
+) +
+  geom_point()
+```
+]
+ 
+.panel2-scatterplot-mult-channels-rotate[
+&lt;img src="index_files/figure-html/scatterplot-mult-channels_rotate_02_output-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;style&gt;
+.panel1-scatterplot-mult-channels-rotate {
+  color: black;
+  width: 38.6060606060606%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 60%
+}
+.panel2-scatterplot-mult-channels-rotate {
+  color: black;
+  width: 59.3939393939394%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 60%
+}
+.panel3-scatterplot-mult-channels-rotate {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 60%
+}
+&lt;/style&gt;
+
+
+
+Additional info: rather than using facets to sort each distribution, we could use the color aesthetic to automatically incorporate the `type` info into the same visualization.
+
+We can also add a fourth variable such as `depth` and render it through the size aesthetic. However, does adding `depth` make the graph more informative? 
+
+
+---
+
+class: inverse, middle
+
+# Factors
+
+---
+
+Categorical variables, also called discrete variables, are variables that have a fixed set of possible values. R uses **factors** to work these variables.
+
+[**Chapter 15 of R for Data Science**](https://r4ds.had.co.nz/factors.html) goes in-depth on creating and modifying factors: 
+
+
+```r
+month_string &lt;- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+month_string
+typeof(month_string)  # character
+class(month_string)   # character
+```
+
+
+```r
+month_factor &lt;- factor(month_string, levels = month_string)
+month_factor
+typeof(month_factor)  # integer
+class(month_factor)   # factor
+```
+
+* `class`: attribute of the object, regardless of R internal storage
+* `typeof`: R internal storage of the object
+
+---
+
+class: inverse, middle
+
+# Practice exploring data
+
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "magula",
+"highlightLines": true,
+"highlightLanguage": "r",
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

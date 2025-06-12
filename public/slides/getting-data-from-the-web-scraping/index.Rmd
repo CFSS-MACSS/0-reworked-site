@@ -1,0 +1,716 @@
+---
+title: "Getting data from the web: scraping"
+author: "MACSS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+xaringanExtra::use_panelset()
+source(here::here("R", "slide-opts.R"))
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+knitr::opts_chunk$set(
+  cache = TRUE,
+  message = FALSE,
+  warning = FALSE
+)
+
+library(tidyverse)
+library(rvest)
+library(lubridate)
+library(xaringanExtra)
+
+set.seed(1234)
+theme_set(theme_minimal(base_size = rcis::base_size))
+```
+
+# Agenda
+* Recap: APIs
+* Intro to rvest
+* Example: Scraping presidential statements
+* Applications: work in groups
+* Ethics / considerations when scraping
+* Recap
+
+
+---
+class: inverse, middle
+
+# Scraping without an API
+
+### Last time we learned two main concepts...
+
+---
+
+### Last time we learned two main concepts...
+
+#### Concept 1: What is behind a website
+* a website is made of mostly HTML, CSS, JS
+* **HTML** the website's "skeleton"; it is built with **tags** that follow a hierarchical, tree-like structure 
+* **CSS** builds on top of HTML and makes it prettier
+
+#### Concept 2: How computers interact on the web
+* the browser sends a request to the server that hosts the website
+* the server sends back a response code + a response content written in HTML
+* the browser translates the response content written in HTML into nicely rendered the website
+
+---
+
+class: inverse, middle
+
+# HTML: HyperText Markup Language
+
+---
+
+##  HTML structure
+
+* `html`
+    * `head`
+        * `title`
+        * `a href`
+        * `script`
+    * `body`
+        * `div`
+            * `p`
+                * `b`
+            * `span`
+        * `table`
+            * `tr`
+                * `td`
+                * `td`
+        * `img`
+
+---
+
+##  HTML structure
+
+* `html`
+    * `head`
+        * `title`
+        * `a href` -- links
+        * `script` -- code
+    * `body`
+        * `div` -- generic container for content (block)
+            * `p` -- paragraph
+                * `b` -- bold formatting
+            * `span` -- generic container for content (in line)
+        * `table`
+            * `tr` -- row of cells
+                * `td` -- actual cell element 
+                * `td`
+        * `img`
+
+
+---
+
+## HTML structure: example
+
+.small[
+```html
+<html>
+  <head>
+    <title>Title</title>
+    <a href="http://github.com">GitHub</a>
+    <script src="https://c.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>Click <b>here</b> now.</p>
+      <span>Frozen</span>
+    </div>
+    <table style="width:100%">
+      <tr>
+        <td>Kristen</td>
+        <td>Bell</td>
+      </tr>
+    </table>
+  <img src="http://ia.media-imdb.com/images.png"/>
+  </body>
+</html>
+```
+]
+Find: (1) the text content `Frozen`; (2) the GitHub link and the text content `GitHub`
+
+---
+
+## Components of HTML code
+
+**Find the text content `Frozen`:**
+
+```html
+<span>Frozen</span>
+```
+
+* `<span></span>` - tag name
+* `Frozen` - content as text
+
+<!--In this ex. there is only one span tag: what if the HTML has multiple span tags?-->
+--
+
+**Find the GitHub link and text content `GitHub`:**
+
+```html
+<a href="http://github.com">GitHub</a>
+```
+
+* `<a></a>` - tag name
+* `href` - tag attribute (argument)
+* `"http://github.com"` - tag attribute (value)
+* `GitHub` - content as text
+
+---
+
+## HTML Useful references:
+
+* HTML overview: https://www.w3schools.com/html/html_intro.asp
+* List of tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element 
+
+---
+
+class: inverse, middle
+
+# CSS: Cascading Style Sheet
+
+---
+
+## CSS code
+
+Often a website has HTML + CSS:
+* **HTML defines the content** 
+* **CSS defines the format** 
+
+This is an example of CSS code. Notice the `span` HTML tag can be styled using CSS `color`: 
+
+```css
+span {
+  color: #ffffff;
+}
+
+table.data {
+  width: auto;
+```
+--
+
+Most websites use HTML with tags such `class` and `id` to provide “hooks” for their CSS. This way the CSS "knows" where to apply CSS stylistic elements.
+
+Example: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class
+
+<!-- https://plsc-31101.github.io/course/collecting-data-from-the-web.html#webscraping 
+[CSS diner](http://flukeout.github.io) -->
+
+---
+
+## HTML + CSS code: example 
+
+.pull-left[
+
+```html
+<body>
+    <table id="content">
+        <tr class='name'>
+            <td class='firstname'>
+                Kurtis
+            </td>
+            <td class='lastname'>
+                McCoy
+            </td>
+        </tr>
+        <tr class='name'>
+            <td class='firstname'>
+                Leah
+            </td>
+            <td class='lastname'>
+                Guerrero
+            </td>
+        </tr>
+    </table>
+</body>
+```
+
+]
+
+.pull-right[
+
+Find the HTML/CSS code to extract:
+1. The entire table
+1. The general element(s) containing first names
+1. Just the specific element "Kurtis"
+
+]
+
+
+---
+
+class: inverse, middle
+
+# `rvest`
+
+---
+## Packages to read html: rvest
+
+* [`rvest`](https://rvest.tidyverse.org/): allows you to scrape (harvest...get it...) data from the web
+* works great with tidyverse
+* can 'flatten' the hierarchical html/css elements into something we can more easily work with:
+  * by HTML tags or attributes
+  * by CSS selectors
+
+
+---
+## Using `rvest` to read HTML: functions to know
+
+`read_html` - read HTML data from a url or character string.
+
+`html_nodes` - select specified nodes from the HTML document using CSS selectors.
+
+`html_table` - parse an HTML table into a data frame.
+
+`html_text` - extract tag pairs' content.
+
+`html_name` - extract tags' names.
+
+`html_attrs` - extract all of each tag's attributes.
+
+`html_attr` - extract tags' attribute value by name.
+
+
+
+---
+
+class: inverse, middle
+
+# Exercise: Practice all of this in R using `rvest`
+
+### `rvest`: https://rvest.tidyverse.org/
+### Scraping presidential statements
+
+---
+# Exercise: Practice all of this in R using `rvest`
+
+**Let’s start with step one:**
+
+* We use the `read_html` function from the `rvest` package to call the URL we want data from, grab the HTML response, and store it as an object.
+* We are going to scrape data from this URL: `https://www.presidency.ucsb.edu/documents/special-message-the-congress-relative-space-science-and-exploration`
+
+---
+
+## Get the page with `read_html`
+
+```{r get-statement, eval = FALSE}
+library(tidyverse)
+library(rvest)
+
+url <- "https://www.presidency.ucsb.edu/documents/special-message-the-congress-relative-space-science-and-exploration"
+
+dwight <- read_html(x = url)
+
+dwight
+```
+--
+
+This is not very informative. We can do better! How? `rvest` lets us find and grab the specific HTML/CSS elements that we want from a webpage:
+  * by HTML tags or attributes
+  * by CSS selectors
+
+---
+
+## Find specific elements with `html_elements`
+
+For example, if we want to find **all `a` elements** in the HTML of our webpage (which we saved in the object `dwight`), we run the following code:
+
+.panelset[
+.panel[.panel-name[R Code]
+```{r nodes, dependson = "get-statement", eval = FALSE}
+html_elements(x = dwight, css = "a") 
+```
+]
+.panel[.panel-name[R output]
+```{r nodes-out, dependson = "get-statement", eval = FALSE}
+out
+```
+]
+]
+
+--
+
+Observe the output: 
+* Many elements on the same page have the same HTML tag. So, if we search for all `a` tags, we will likely get a lot of stuff, much of which we do not want.
+* We can be more precise! For example, we might want to find **only the element that contains the document's speaker: "Dwight D. Eisenhower"**. How?
+  * find it on the webpage
+  * modify the above code accordingly
+
+---
+
+## Find specific elements with `html_elements`
+
+#### To find a specific element, we need to inspect the HTML of the website. We can do so in two ways:
+
+1. **Directly**: by right clicking on the page and select "Inspect" (notice here we need the content of the specific `a` tag, which is nested under `<h3 class="diet-title">`).
+
+--
+
+2. Using the **SelectorGadget**: 
+* See [here](https://selectorgadget.com/) and [here](https://rvest.tidyverse.org/articles/articles/selectorgadget.html)
+* Drag the SelectorGadget link into your browser's bookmark bar
+* Navigate to a webpage and open the SelectorGadget bookmark
+* Click on the item to scrape, it will turn green
+* Click on yellow items you do not want to scrape (scroll up and down to check)
+* Copy the selector to use with `html_elements()`
+
+I generally rely on method 1 or start with the SelectorGadget and confirm with method 1.
+
+---
+
+## Find specific elements with `html_elements`
+
+Finally, we are ready to find **only the element that contains the document's speaker: "Dwight D. Eisenhower".** We modify the previous code accordingly:
+
+```{r get-speaker, dependson = "get-statement", eval = FALSE}
+html_elements(x = dwight, css = ".diet-title a")
+```
+
+--
+
+Once we have identified the element(s) of interest, usually we want to **access further information included in those elements**. Oftentimes this means two things: text and attributes, and `rvest` has two handy functions: 
+* `html_text2()` for text
+* `html_attr()` for attributes
+
+---
+
+### Get text of elements with `html_text2()`
+
+```{r get-speaker-text, dependson = "get-statement", eval = FALSE}
+
+speaker_name <- html_elements(dwight, ".diet-title a") %>% 
+  html_text2() 
+
+speaker_name
+```
+--
+
+### Get attributes of elements with `html_attr()`
+
+```{r get-speaker-link, dependson = "get-statement", eval = FALSE}
+
+speaker_link <- html_elements(dwight, ".diet-title a") %>% 
+  html_attr("href") # note a is the tag, href is its attribute
+
+speaker_link
+```
+
+#### We can keep using `html_text2()` and `html_attr()` to select other things of interest such as: this statement's date, its title, or its text body.
+
+---
+
+### Date of statement
+
+As a string (character):
+```{r get-date, dependson = "get-statement", eval = FALSE}
+date <- html_elements(x = dwight, css = ".date-display-single") %>%
+  html_text2()
+
+date
+```
+
+As a date (double of class "Date"):
+```{r get-date-mdy, dependson = "get-statement", eval = FALSE}
+library(lubridate)
+
+date <- html_elements(x = dwight, css = ".date-display-single") %>%
+  html_text2() %>%
+  mdy() # format the element text using lubridate
+
+date
+class(date)
+```
+
+---
+
+### Title
+
+```{r get-title, dependson = "get-statement", eval = FALSE}
+title <- html_elements(x = dwight, css = "h1") %>%
+  html_text2()
+title
+```
+
+--
+
+### Text
+
+```{r get-text, dependson = "get-statement", eval = FALSE}
+text <- html_elements(x = dwight, css = "div.field-docs-content") %>%
+  html_text2()
+
+# display the first 1,000 characters
+text %>% str_sub(1, 1000) 
+```
+ 
+**Now we know how to extract, the speaker, date, title, and full text from this document!**
+
+---
+
+## Make a function
+
+Think: **Why are we doing through all this effort to scrape just one page?**
+
+Make a function called `scrape_docs` that:
+
+- Take as argument an URL of an single webpage
+- Get the HTML of that page 
+- Scrapes it
+- Returns a data frame containing the document's
+    - Date
+    - Speaker
+    - Title
+    - Full text
+
+---
+
+.small[
+```{r, eval = FALSE}
+
+scrape_doc <- function(url) {
+  
+  # get HTML page
+  url_contents <- read_html(x = url)
+  
+  # extract elements we want
+  date <- html_elements(x = url_contents, css = ".date-display-single") %>%
+    html_text2() %>% mdy()
+  
+  speaker <- html_elements(x = url_contents, css = ".diet-title a") %>%
+    html_text2()
+  
+  title <- html_elements(x = url_contents, css = "h1") %>%
+    html_text2()
+  
+  text <- html_elements(x = url_contents, css = "div.field-docs-content") %>%
+    html_text2()
+  
+  # store in a data frame and return it
+  url_data <- tibble(
+    date = date,
+    speaker = speaker,
+    title = title,
+    text = text
+  )
+  return(url_data)
+}
+```
+]
+
+---
+
+### Call the function to scrape documents from the UCSB website:
+
+```{r, eval = FALSE}
+url_1 <- "https://www.presidency.ucsb.edu/documents/letter-t-keith-glennan-administrator-national-aeronautics-and-space-administration"
+scrape_doc(url_1)
+```
+
+```{r, eval = FALSE}
+url_2 <- "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-representatives-proposing"
+scrape_doc(url_2)
+```
+
+**Challenge**: How could we further automate our scraper so we do not have to pass 4000+ URLs (that's the amount of URLs in `https://www.presidency.ucsb.edu/documents/app-categories/presidential/letters`) each time?
+* collect all URLs on that page, and store them in a list or character vector
+* notice each page has about 10 URLs, so we need to tell the scraper to turn page
+* apply our `scrape_doc` function to the list of URLs, one at a time 
+
+*recall your practice with homework 05 to loop over filenames!*
+
+---
+
+class: inverse, middle
+
+# Other examples (see today's class materials)
+
+---
+
+### Both examples are included in today's class materials:
+
+#### Example 01: Sperling's Best Places 
+
+> **Task 1:** look up the cost of living for your hometown on Sperling's Best Places website: http://www.bestplaces.net/ and extract it with `html_elements()` and `html_text2()`
+
+> **Task 2:** get the first table with `html_table()` and put it to a data frame
+
+> **Task 3:** extract the climate statistics table of your hometown 
+
+#### Example 02: Movie information from IMDb 
+
+> Note: this is different than OMDb, which we used as example to scrape with an API
+
+---
+
+class: inverse, middle
+
+# Rectangling or Simplifying lists
+
+---
+
+### Rectangling
+
+Rectangling or simplifying lists: means taking a deeply nested list (often sourced from wild caught JSON or XML) and taming it into a tidy data set of rows and columns.
+
+If you need to simplify nested lists for your scraping project **make sure to check today's class materials for a tutorial and examples of rectangling!**
+
+---
+
+class: inverse, middle
+
+# Scraping challanges, tips, and ethics 
+
+
+---
+
+## Scraping: General tips
+
+* Confirm that there is no R package and no API
+* Make sure your code scrapes only what you want (and not additional information)
+* Save and store the content of what you scrape, so to avoid scraping it again
+
+---
+
+## Scraping: Challanges & Solutions
+
+* **Variety:** every website is different, so pretty much every website requires a new project
+
+* **Bad formatting**: websites should be built using "logical formatting" following a properly nested HTML structure. In practice, that's often not the case. If you are having trouble parsing, try selecting a smaller subset of the thing you are seeking
+
+* **Change:** the same website might change over time, so you might find that your code of a few months ago does not work anymore. The good news is that, usually, it takes only a few changes to run it again
+
+* **Limits:** some websites set a max amount of data you can scrape at once, for example 50 pages or 2500 articles max. The solution is to break your requests into "chunks"
+
+* **Messy:** the scraped data are usually a bit messy, and they need to be cleaned
+
+* **Dynamic Scraping:** this not really a challenge but something to keep in mind: many websites incorporate Javascript dynamic parts which requires advanced scraping skills
+
+---
+
+## Scraping: Ethics
+
+* **Private data (not OK) VS. Public data (OK):** If there is a password, it is private data. For example, it is not OK to scrape data from an online community where only logged-in users can access posts (unless you use the API provided by the website and follow its rules). **In general: if the website has an API, use it.**
+
+* **Check the `robots.txt`** before you scrape by adding `/robots.txt` at the end of your URL. For example, for the NYT Robot File, type: `https://www.nytimes.com/robots.txt`. The star after "User-agent" means "the following is valid for all robots"; things you cannot scrape are under "Disallow". More info [here](https://www.robotstxt.org/robotstxt.html)
+
+* **Read the website’s Terms of Service (ToS):** legal rules you agree to observe in order to use a service. Violating ToS exposes you to the risk of violating CFAA or "Computer Fraud & Abuse Act", which is a federal crime.
+
+* **If you are scraping lots of data:** use `rvest` together with `polite`. The polite package ensures that you’re respecting the `robots.txt` and not hammering the site with too many requests.
+
+* For more info on ethical issues, check the **hiQ Labs v. LinkedIn** lawsuit case.
+
+---
+
+## Recap
+
+* Use an API when you can
+* Be `polite`
+* Read `robots.txt`
+* Use publicly available data
+
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.

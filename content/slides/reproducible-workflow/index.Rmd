@@ -1,0 +1,460 @@
+---
+title: "Reproducible workflow"
+author: "MACSS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+source(here::here("R", "slide-opts.R"))
+xaringanExtra::use_panelset()
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+library(tidyverse)
+library(rcis)
+library(here)
+library(countdown)
+
+set.seed(1234)
+theme_set(theme_minimal(base_size = rcis::base_size))
+```
+
+class: inverse, middle
+
+# A holistic workflow
+
+---
+
+## Workspace
+
+When you are running a session of R, the workspace contains all the objects you created in that session: 
+* Libraries with `library()`
+* User-created objects (variables, functions, etc.)
+
+Our goal: not to preserve the workspace, but the code that produces that workspace
+
+---
+
+## Pets VS Cattle?
+
+```{r fig.align = "center", echo = FALSE, out.width = "50%"}
+knitr::include_graphics(path = "/img/individual-cows-vs-cattle.png", error = FALSE)
+```
+
+<!-- https://blog.octo.com/en/pet-vs-cattle-from-server-craftsman-to-software-craftsman/ -->
+
+--
+
+**Think of your R workspaces as livestock, not pets. Your R code is your pet!**
+
+---
+
+## Save code, not workspace
+
+**Advantages of saving code, not workspace:**
+* Enforces reproducibility: if everything is in the code, other people can reproduce your work
+* Easy to regenerate on-demand: re-run the code and the workspace will be recreated
+
+--
+
+**How to make this happen:**
+* Always save code in your script
+
+* Always start R with an empty and new workspace, do not restore  the previous section. Change the default settings:
+  * "Do you want to save your workspace?" No, thanks
+  * Tools > Global Options > General 
+      * uncheck “Restore .Rdata into workspace at startup”
+      * set to Never "Save workspace to .RData on exit"
+
+* Restart R often: Session > Restart R
+
+---
+
+## Inefficient approach to clear workspace
+
+```r
+rm(list = ls())
+```
+
+* Good intent, but poor execution
+* Only deletes user-created objects
+* Enforces hidden dependencies on things you ran before `rm(list = ls())`
+
+Instead: restart your R session to make sure you are clearing everything from your workspace
+
+--
+
+**Why do all of this?**...
+
+---
+
+class: middle, center
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/GiPe1OiKQuk?start=07" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+## Avoid unknown unknowns
+
+**We want to restart our R session to avoid the "unknown unknowns"**: e.g., we loaded something in the workspace that we did not even remember, or we have run previous scripts for which results are held, etc.
+
+Solution: write every script like its running in a fresh process
+
+--
+
+**Exception:** There are some instances where running everything in a new session of R might be challenging, such as storing computationally demanding output [see more on data in R here](https://bookdown.org/f_lennert/introduction-to-r/workingwithdata.html):
+* In Rmd: `cache = TRUE`
+* In regular R script: use `write_rds()` to save & `read_rds()` to import back
+
+---
+
+class: inverse, middle
+
+# Project-based workflows
+
+---
+
+## Project-based workflow
+
+In this class, we have been using a project-based workflow **by splitting work into project** (e.g., every homework assignment has been stored in a different R project, and every in-class practice exercise that you downloaded from the website has been stored as a R project)
+
+The **value of this approach**:
+* keeps materials organized
+* helps managing working directories
+
+---
+
+## Working directory
+
+The working directory is the folder that R takes as **default directory** every time you try to access files, scripts, etc.
+
+**To check your current working directory**: start a new session of R and type `getwd()`. In R workbench it should be `"/home/your_cnetid"`
+
+--
+
+Working directory with `setwd()` vs Project-based workflow:
+* You can manually set your directory to an absolute path, for example using `setwd()` 
+* **OR** you can use relative file paths (relative to the project folder where this project is stored)
+
+---
+
+## Working directory with `setwd()`
+
+This example uses `setwd()`to manually set your working dir to a specific folder:
+
+```r
+library(tidyverse)
+
+# modify workng directory
+setwd("/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/examples/")
+getwd()
+
+# reference directly data to import
+data_ex_tea <- read_csv("data_ex_tea.csv")
+
+#relevel months
+data_ex_tea <- data_ex_tea %>% mutate(Months = factor(Months, levels = month.abb))
+
+# plot
+p <- ggplot(data_ex_tea, aes(Months, Cups_tea)) + geom_point()
+
+# save p in figures folder, use .. notation to go up one level 
+ggsave("../figures/tea_scatterplot.png")
+```
+--
+
+Is this code reproducible?
+
+---
+
+## Project-based workflow: RStudio Projects
+
+The previous code is not reproducible because I hard coded my own absolute path in the code. If you try to run the same code, you will get an error. This hinders reproducibility! 
+
+Our goal should be to **avoid specifying the working directory, and have it detected automatically.** 
+
+---
+
+## Project-based workflow: RStudio Projects
+
+R studio has something called "RStudio Projects" (**`.Rproj`**) to help us implement this workflow. R will automatically detect the working directory based on your project. Advantages: ensures portability and a reliable behavior.
+
+It needs: 
+
+* File system discipline: one project = one folder with all material you need for that project
+* File path discipline: do not use long file paths for working directories
+
+For example, every homework and in-class exercise folder that we have been using in this course has a `.Rproj` file. This file helps R to automatically detect the working directory. If you switch between projects, the working directory changes automatically. 
+
+---
+
+## Working dir with `setwd()` vs Project-based workflow
+
+Review the previous example using `.Rproj`:
+* Go to File > New Project > Existing Directory
+* If I set the Existing Directory to my project `"/Users/jeanclipperton/Desktop/something_something"`, 
+the previous code can be modified as follows:
+
+```r
+library(tidyverse)
+
+# get current working directory 
+getwd()
+
+# reference data directly to import
+data_ex_tea <- read_csv("data_ex_tea.csv")
+
+#relevel months
+data_ex_tea <- data_ex_tea %>%
+  mutate(Months = factor(Months, levels = month.abb))
+  
+# plot
+p <- ggplot(data_ex_tea, aes(Months, Cups_tea)) +
+  geom_point()
+
+
+# save p in figures folder, use .. notation to go up one level 
+ggsave("../figures/tea_scatterplot.png")
+
+# save p in figures folder
+ggsave("foofy/figures/foofy_scatterplot.png")
+```
+
+---
+
+
+class: inverse, middle
+
+# Practice using reproducible workflow within R
+
+---
+
+### Instructions:
+
+1) In your [R Workbench](https://macs30500.netlify.app/setup/r/r-server/), create a new R Project (File > New Project > New Directory); no need to make it a Version control project for this exercise. Give the name "test" to the new directory and place it in a sub-folder (e.g., your lecture sub-folder, etc.)
+
+2) Inside your newly created "test" folder, create a "data" sub-folder (Go under "Files" (lower right menu) and click on the yellow folder icon)
+
+3) In your R Workbench, you should have your HW3 with a folder called "data" and two `.csv` files. You want to take the `scdb-case.csv` and make a copy of it in your newly created "test" folder (if you do not have this data, you can pick any other csv file from another folder). To do so:
+* navigate to the HW3 data folder, find the csv file and check the box next to it
+* click on the blue wheel icon under "Files" and select "Copy to"
+* navigate to the "test" folder, then to its "data" sub-folder, and move the csv to that sub-folder
+
+---
+
+### Instructions (cont.):
+
+4) Create a new R script inside your "test" folder (File > New File > R Script) 
+
+5) Use `getwd()` to check your working directory.
+It should be your new project's working directory
+
+6) In your script, load the tidyverse library, then import the `scdb-case.csv` data using a **full path**
+
+7) Import the same data using a **relative path** (relative to your `.Rproj`)
+
+---
+
+
+## Use safe filepaths
+
+Using R projects to encapsulate our project is great and prevents a number of problems. 
+
+So far we have learned to:
+* Avoid `setwd()` at all costs
+* Split work into R projects
+* Declare each folder as a project
+
+In addition:
+* We can use `here()` to locate a file location independently from where the current working directory is. So, even if the working directory accidentally gets changed, we still are able to retrieve the file.
+
+---
+
+<!-- class: small -->
+
+## How to use the `here()` function from the `here` package
+
+```{r}
+library(here)
+here()
+```
+
+This prints out what it identifies as current project folder (relative to where these slides have been created) 
+
+--
+
+If I want to build a file path, based on this directory, I can use the `here()` function to build that path. For example, if I want to access a file `awesome.txt` located in a specific folder and sub-folder of `course-site`, I pass each folder and the name of the file as a different argument to the `here()` function:
+
+```{r, collapse = TRUE}
+# use here to build the path
+here("static", "extras", "awesome.txt")
+
+# test to see if it works
+cat(readLines(here("static", "extras", "awesome.txt")))
+```
+    
+---
+
+## How to use the `here()` function from the `here` package
+
+What happens if we change the working directory?
+
+```{r, collapse = TRUE}
+# change the working directory
+setwd("/Users/jeanclipperton/Library")
+getwd()
+
+# test to see if this still works
+cat(readLines(here("static", "extras", "awesome.txt")))
+```
+
+Since I changed the working directory, there is no "static" folder anymore, but the `here()` function still works!
+
+This because the output of the code `here("static", "extras", "awesome.txt")` remains the same regardless on how we change the working dir: **`here()` identifies the location of the current `.Rproj`** and builds the path from there
+
+---
+
+class: inverse, middle
+
+# Practice using reproducible workflow within R
+
+---
+
+### Instructions:
+
+8) Load the `here` library (already installed on R Workbench). Type `here()` to print out what it identifies as current project folder. Then import the same `scdb-case.csv` file building a path with `here()`
+9) 
+
+---
+
+## Filepaths and R Markdown
+
+**Every time you knit an `.Rmd` file, R always assumes that its location is the working directory**, regardless of whatever you are doing in R. This is important to remember, and sometimes leads to complications.
+
+Let's see an example with the supreme courts data you worked with for homework 3... 
+
+---
+
+## Filepaths and R Markdown
+
+Imagine we have a `"court-project"` folder, structured as follows:
+
+```
+data/
+  scdb-case.csv
+analysis/
+  exploratory-analysis.Rmd
+final-report.Rmd
+scotus.Rproj
+```
+
+--
+
+Imagine that in both of the R Markdown files `exploratory-analysis.Rmd` and `final-report.Rmd`, we have this piece of code: `read_csv("data/scdb-case.csv")`
+
+* In `final-report.Rmd`, will this code work?
+* In `exploratory-analysis.Rmd`, will this code work?
+* If we replace the `read_csv("data/scdb-case.csv")` with `read_csv(here("data", "scdb-case.csv"))`, will this code work in both .Rmd files? **Hint: here can override the particular location of the file while the relational path cannot.**
+
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.

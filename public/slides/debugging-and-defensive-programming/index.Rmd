@@ -1,0 +1,568 @@
+---
+title: "Debugging and defensive programming"
+author: "MACSS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#011f4b",
+  secondary_color = "#bbd6c7",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+source(here::here("R", "slide-opts.R"))
+xaringanExtra::use_panelset()
+knitr::opts_chunk$set(
+  warning = TRUE,
+  message = TRUE
+)
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+library(tidyverse)
+library(here)
+library(countdown)
+
+set.seed(1234)
+theme_set(theme_minimal(base_size = rcis::base_size))
+```
+
+class: inverse, middle
+
+# R Base Data Structures
+
+---
+
+## Bugs
+
+> An error, flaw, failure or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways.
+
+When we talk about a bug mostly we refer to a syntactic error or a typo, but a bug is also related to understanding R rules, data types, structures, and how to use functions. Computers are powerful tools but you need to follow their rules
+
+Debugging has two goals:
+* Prevent bugs from occurring in the first place
+* Fix bugs once they occur
+
+**Debugging (like programming) requires patience!** 
+
+
+---
+
+class: inverse, middle
+
+# Defensive programming
+
+---
+
+## Defensive programming
+
+Two elements of defensive programming...
+
+**Style guide for writing code:**
+* Notation and naming guide (file names, object names, etc.)
+* Syntax (spacing, curly braces, line length, indentation, assignment, calling functions)
+* Comments (# and space)
+* Auto-formatting in RStudio
+
+**Failing fast:**
+* Condition handling
+
+
+---
+
+## Writing code
+
+Programming |	Language
+------------|----------
+Scripts |	Essays
+Sections | Paragraphs
+Lines Breaks | Sentences
+Parentheses |	Punctuation
+Functions |	Verbs
+Variables |	Nouns
+
+---
+
+### A text with no syntax
+
+Text taken from a speech given by Ronald Reagan in 1987, after the spacial Challenger exploded on take off. Reagan's address: https://youtu.be/Qa7icmqgsow
+ 
+"weve grown used to wonders in this century its hard to dazzle us but for 25 years the united states space program has been doing just that weve grown used to the idea of space and perhaps we forget that weve only just begun were still pioneers they the members of the Challenger crew were pioneers and i want to say something to the school children of America who were watching the live coverage of the shuttles takeoff i know it is hard to understand but sometimes painful things like this happen its all part of the process of exploration and discovery its all part of taking a chance and expanding mans horizons the future doesnt belong to the fainthearted it belongs to the brave the challenger crew was pulling us into the future and well continue to follow them the crew of the space shuttle challenger honored us by the manner in which they lived their lives we will never forget them nor the last time we saw them this morning as they prepared for the journey and waved goodbye and slipped the surly bonds of earth to touch the face of god"
+
+
+---
+
+### A text with syntax
+
+"We've grown used to wonders in this century. It's hard to dazzle us. But for 25 years the United States space program has been doing just that. We've grown used to the idea of space, and perhaps we forget that we've only just begun. We're still pioneers. They, the members of the Challenger crew, were pioneers.
+
+And I want to say something to the school children of America who were watching the live coverage of the shuttle's takeoff. I know it is hard to understand, but sometimes painful things like this happen. It's all part of the process of exploration and discovery. It's all part of taking a chance and expanding man's horizons. The future doesn't belong to the fainthearted; it belongs to the brave. The Challenger crew was pulling us into the future, and we'll continue to follow them....
+
+The crew of the space shuttle Challenger honoured us by the manner in which they lived their lives. We will never forget them, nor the last time we saw them, this morning, as they prepared for the journey and waved goodbye and 'slipped the surly bonds of earth' to 'touch the face of God.'"
+
+---
+
+## Object names
+
+```r
+# Optimal (short and use of snake case)
+day_one
+day_1
+
+# Not optimal
+first_day_of_the_month
+DayOne
+dayone
+djm1
+```
+
+The tidyverse style guide https://style.tidyverse.org/
+
+---
+
+## Overwriting objects
+
+Avoid assigning the same to object or functions that already exists in R or assigning something wrong:
+
+```r
+# Not Good
+
+T <- FALSE
+
+c <- 10
+
+x <- seq(from = 1, to = 10)
+mean <- function(x) sum(x)
+mean(x)
+```
+
+---
+
+## Line length
+
+R does not necessary require you to split your code across multiple lines in order to run, but it is good practice to do so:
+
+```r
+# Optimal
+scdbv <- scdbv %>%
+  mutate(chief = factor(chief,
+                        levels = c("Jay", "Rutledge", "Ellsworth",
+                                   "Marshall", "Taney", "Chase",
+                                   "Waite", "Fuller", "White",
+                                   "Taft", "Hughes", "Stone",
+                                   "Vinson", "Warren", "Burger",
+                                   "Rehnquist", "Roberts")))
+
+# Not optimal
+scdbv <- mutate(scdbv, chief = factor(chief, levels = c("Jay", "Rutledge", "Ellsworth", "Marshall", "Taney", "Chase", "Waite", "Fuller", "White", "Taft", "Hughes", "Stone", "Vinson", "Warren", "Burger", "Rehnquist", "Roberts")))
+```
+
+---
+
+## Indentation
+
+Indentation makes the code more readable. For example, it is helpful to identify which values are part of which function:
+
+```r
+# in a mutate() function
+scdbv <- scdbv %>%
+  mutate(majority = majority - 1,
+         chief = factor(chief,
+                        levels = c("Jay", "Rutledge", "Ellsworth",
+                                   "Marshall", "Taney", "Chase",
+                                   "Waite", "Fuller", "White",
+                                   "Taft", "Hughes", "Stone",
+                                   "Vinson", "Warren", "Burger",
+                                   "Rehnquist", "Roberts")))
+```
+
+---
+
+## Calling functions
+
+If you are using functions that you have not written (e.g., from packages), you do not have the ability to rename them. Sometimes functions have the **same name across different packages**:
+
+```r
+library(purrr)
+map()
+```
+--
+
+```r
+library(purrr)
+library(maps)
+
+map()
+```
+--
+
+`map()` is defined both in the `purrr` and `maps` package. By default, R will call the function from the package most recently loaded.
+
+---
+
+## `::` notation
+
+To fix this problem, we can detach and re-attach a package, but more frequently we use the `::` notation 
+
+```r
+library(purrr)
+library(maps)
+
+purrr::map()    # use map() from the purrr library
+maps::map()     # use map() from the maps library
+```
+
+--
+
+We can also avoid loading a given package, and just load the specific function that we need from it: 
+
+```r
+library(purrr)
+
+map()           # use map() from the purrr library
+maps::map()     # use map() from the maps library
+```
+
+---
+
+## Auto-formatting in RStudio
+
+RStudio helps out with these issues:
+
+* `Code > Reformat Code` (Shift + Cmd/Ctrl + A)
+* `Code > Reindent Lines` (Cmd/Ctrl + I)
+* For better help see [`styler`](http://styler.r-lib.org/) 
+
+<!-- * [This code example](/notes/style-guide/#exercise-style-this-code) -->
+
+
+---
+
+## Auto-formatting in RStudio
+Try it out!
+* option 1: `Code > Reformat Code` (Shift + Cmd/Ctrl + A)
+* option 2: `Code > Reindent Lines` (Cmd/Ctrl + I)
+* option 3: `install.packages("styler")` (should be abel to find it under addins at top right)
+
+```{r, eval = FALSE}
+  y<-10
+if (y < 20) {
+  x <- "Too low" 
+  }   else {
+  x <-"Too high"}
+```
+
+---
+
+class: inverse, middle
+
+# Condition handling
+
+---
+
+## Condition handling
+
+**Coding style** is one way to practice defensive programming and prevent bugs.
+
+Another way is **condition handling**: set up our code in a way that it tells us if something is problematic.
+
+Three types of conditions:
+* (Fatal) Errors
+* Warnings
+* Messages
+
+---
+
+## Errors
+
+**Code is written incorrectly or asks R to do something that is not possible.**
+
+For example, this `addition()` function takes two arguments and adds them together. Notice the condition checks if either `x` or `y` is not a number. If that's TRUE, the `stop()` function triggers a error and notifies the user:
+
+```{r error, error = TRUE, warning = FALSE}
+
+addition <- function(x, y) {
+  if (!is_numeric(c(x, y))) {
+    stop("One of your inputs is not a number")
+  } else {
+    return(x + y)
+    }
+}
+
+addition(3, "2")
+```
+
+---
+
+## Errors
+
+Notice, a function can test for more than one error; you need to check each of them separately with multiple if-else statements. The function stops as soon as it encounters one of them.
+
+How to determine what errors to check for?
+1. The more conditional tests you build into the function, the more robust is the function against incorrect uses; BUT the longer it takes to write it
+1. Think about who is going to use that function and how frequently
+1. Can provide documentation on how to use the function to reduce tests
+
+---
+
+## Warnings
+
+**Code runs but you might want to take a look, as it might be problematic.**
+
+For example, this code defines a function that takes as input `x` a probability value (between 0 and 1) and we want to convert it to a natural logarithm value.
+
+R will execute this code, but when the function is called with values outside the probability range, it gives a warning that says the result produces a “NaN” value ("Not a Number", impossible to calculate):
+
+```{r logit, error = TRUE}
+
+logit <- function(x) {
+  return(log(x / (1 - x)))
+}
+
+logit(-1)
+```
+
+---
+
+## Warnings
+
+To fix the warning, we can add a condition that signals and triggers an error instead than a warning. 
+
+For example, if `x` is not between 0 and 1, then stop the code:
+
+```{r logit_error, error = TRUE}
+
+logit <- function(x) {
+  if (x < 0 | x > 1) {
+    stop('x not between 0 and 1')
+  } else {
+    return(log(x / (1 - x)))
+    }
+}
+
+logit(-1)
+```
+---
+
+<!--
+
+## Warnings
+
+Same code of the previous slide, written more compactly:
+
+```{r logit_error-compact, error = TRUE}
+
+logit <- function(x) {
+  if (x < 0 | x > 1) stop('x not between 0 and 1')
+  log(x / (1 - x))
+}
+
+logit(-1)
+```
+
+Notice here we can write `if` and the condition one the same line without the `{}` and still preserve code legibility of this single `if` statement; we can also remove `return`
+
+-->
+
+## Warnings
+
+If we do not want to stop the code from running, we can also fix the warning in other ways, without triggering an error. For example: (1) we can check if `x` is outside the range, if so, replace it with a missing value; (2) trigger a warning if `x` is a missing value (whose log is a missing value)
+
+```{r logit_error2, error = TRUE}
+
+logit <- function(x) {
+  x <- if_else(x < 0 | x > 1,
+               NA_real_,
+               x)
+  if (is.na(x)) {
+    warning('x not between 0 and 1') 
+    return(log(x / (1 - x)))
+    }
+}
+
+logit(-1)
+```
+
+---
+
+## Messages
+
+**Messages do not indicate that something is wrong, but provide useful information to the user.**
+
+For example, here we are plotting with `geom_point()` and `geom_smooth()`, which automatically decides which smoothing algorithm to use to create the line (default is `gam` based on sample size):
+
+```{r message_ggplot, out.width = "35%"}
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() + geom_smooth()
+```
+
+---
+
+## Messages
+
+To write a message in your code, use the `message()` function.
+
+```{r}
+demo_message <- function() message("This is a message")
+demo_message()
+```
+
+You can also suppress a message, if you want, with `suppressMessages()`:
+```{r}
+suppressMessages(demo_message())  # no output
+```
+
+--
+
+You do not want to use `print()` to create a message. The `supressMessages()` function would not work with it.
+
+---
+
+class: inverse, middle
+
+# Debugging
+
+---
+
+## Debugging techniques
+
+1. Realize that you have a bug
+1. Make it repeatable
+1. Figure out where it is
+1. Fix it
+
+---
+
+## The call stack
+
+**Often times, when we run a piece of code the actual cause of the problem is not in the line we run.** 
+
+For example, here we have several functions that call other functions: `f` is a function that takes an input `a` and passes it into another function `g`; `g` takes an input `b` and passes it into function `h`, etc. 
+
+The problem is in function `i`, but let's say in our code we call function `f`:
+
+```{r callstack, error = TRUE}
+f <- function(a) g(a)
+g <- function(b) h(b)
+h <- function(c) i(c)
+i <- function(d) "a" + d
+
+f(10)
+```
+
+---
+
+## The call stack
+
+We cannot fix function `f`, because the problem does not occur there. We need to fix function `i` which triggers a the entire call sequence. 
+
+Use `traceback()`, which is often shown automatically in RStudio, and read it from bottom to top. The line at the top is where the error occurred:
+
+```{r traceback, eval = FALSE}
+traceback()
+```
+
+```
+# 4: i(c) at exceptions-example.R#3
+# 3: h(b) at exceptions-example.R#2
+# 2: g(a) at exceptions-example.R#1
+# 1: f(10)
+```
+---
+
+## Acknowledgments 
+
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+

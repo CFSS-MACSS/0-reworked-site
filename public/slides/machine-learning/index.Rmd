@@ -1,0 +1,1698 @@
+---
+title: "An introduction to machine learning"
+author: "INFO 5940 <br /> Cornell University"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+# generate CSS file
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#B31B1B",
+  secondary_color = "#F8981D",
+  inverse_header_color = "#222222",
+  black_color = "#222222",
+  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
+  code_font_google = xaringanthemer::google_font("Source Code Pro"),
+  base_font_size = "24px",
+  code_font_size = "20px",
+  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
+  # title_slide_background_size = "contain",
+  # title_slide_background_position = "top",
+  header_h1_font_size = "2rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.5rem",
+  extra_css = list(
+    "h1" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h2" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    "h3" = list(
+      "margin-block-start" = "0.4rem",
+      "margin-block-end" = "0.4rem"
+    ),
+    ".tiny" = list("font-size" = "70%"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".tiny .remark-code" = list("font-size" = "70%"),
+    ".small .remark-code" = list("font-size" = "90%"),
+    ".midi .remark-code" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".huge" = list(
+      "font-size" = "400%",
+      "font-family" = "'Montserrat', sans-serif",
+      "font-weight" = "bold"
+    ),
+    ".hand" = list(
+      "font-family" = "'Gochi Hand', cursive",
+      "font-size" = "125%"
+    ),
+    ".task" = list(
+      "padding-right" = "10px",
+      "padding-left" = "10px",
+      "padding-top" = "3px",
+      "padding-bottom" = "3px",
+      "margin-bottom" = "6px",
+      "margin-top" = "6px",
+      "border-left" = "solid 5px #F1DE67",
+      "background-color" = "#F3D03E"
+    ),
+    ".pull-left" = list(
+      "width" = "49%",
+      "float" = "left"
+    ),
+    ".pull-right" = list(
+      "width" = "49%",
+      "float" = "right"
+    ),
+    ".pull-left-wide" = list(
+      "width" = "70%",
+      "float" = "left"
+    ),
+    ".pull-right-narrow" = list(
+      "width" = "27%",
+      "float" = "right"
+    ),
+    ".pull-left-narrow" = list(
+      "width" = "27%",
+      "float" = "left"
+    ),
+    ".pull-right-wide" = list(
+      "width" = "70%",
+      "float" = "right"
+    ),
+    ".blue" = list(color = "#2A9BB7"),
+    ".purple" = list(color = "#a493ba"),
+    ".yellow" = list(color = "#f1de67"),
+    ".gray" = list(color = "#222222")
+  )
+)
+
+source(here::here("R", "slide-opts.R"))
+xaringanExtra::use_panelset()
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE
+)
+```
+
+class: inverse, middle
+
+# What is machine learning?
+
+---
+
+class: middle
+
+```{r echo=FALSE}
+knitr::include_graphics("/img/amazon-recommendations.png")
+```
+
+---
+
+class: middle
+
+```{r echo=FALSE}
+knitr::include_graphics("https://miro.medium.com/max/1400/1*j5aWfH9t1_EZPJC92CJ7oQ.png")
+```
+
+.footnote[https://medium.com/tmobile-tech/small-data-big-value-f783ceca4fdb]
+
+---
+
+class: middle
+
+```{r echo=FALSE}
+knitr::include_graphics("https://techcrunch.com/wp-content/uploads/2017/12/facebook-facial-recognition-photo-review.png?w=730&crop=1")
+```
+
+---
+
+class: middle, inverse
+
+# What is machine learning?
+
+---
+
+class: middle, center
+
+```{r echo=FALSE, out.width = "40%"}
+knitr::include_graphics("https://imgs.xkcd.com/comics/machine_learning.png")
+```
+
+---
+
+class: middle
+
+```{r echo=FALSE}
+knitr::include_graphics("images/intro.002.jpeg")
+```
+
+---
+
+class: middle
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/intro.003.jpeg")
+```
+
+---
+
+## Types of machine learning
+
+- Supervised
+- Unsupervised
+
+---
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/all-of-ml.jpg")
+```
+
+.footnote[Credit: <https://vas3k.com/blog/machine_learning/>]
+
+---
+
+## Examples of supervised learning
+
+- Ad click prediction
+- Supreme Court decision making
+- Police misconduct prediction
+
+---
+
+## Two modes
+
+--
+
+.pull-left[
+
+### Classification
+
+Is your hospital in a state of crisis care?
+
+]
+
+--
+
+.pull-left[
+
+### Regression
+
+What percentage of hospital beds are occupied?
+
+]
+
+---
+
+## Two cultures
+
+.pull-left[
+
+### Statistics
+
+- model first
+- inference emphasis
+
+]
+
+.pull-right[
+
+
+### Machine Learning
+
+- data first
+- prediction emphasis
+
+]
+
+---
+name: train-love
+background-image: url(images/train.jpg)
+background-size: contain
+background-color: #f6f6f6
+
+---
+template: train-love
+class: center, top
+
+# Statistics
+
+---
+
+template: train-love
+class: bottom
+
+
+> *"Statisticians, like artists, have the bad habit of falling in love with their models."*
+>
+> &mdash; George Box
+
+---
+
+## Predictive modeling
+
+```{r, message = TRUE, warning = TRUE}
+library(tidymodels)
+```
+
+```{r setup2, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      R.options = list(tibble.max_extra_cols = 5, 
+                                       tibble.print_max = 5, 
+                                       tibble.width = 60))
+options("scipen" = 16)
+library(tidymodels)
+yt_counter <- 0
+```
+
+```{r packages, include=FALSE}
+library(countdown)
+library(tidyverse)
+library(tidymodels)
+library(workflows)
+library(scico)
+library(gganimate)
+library(AmesHousing)
+library(tune)
+library(viridis)
+ames <- make_ames()
+theme_set(theme_minimal(base_size = 16))
+
+# for figures
+train_color <- "#1a162d"
+test_color  <- "#84cae1"
+data_color  <- "#CA225E"
+assess_color <- data_color
+splits_pal <- c(data_color, train_color, test_color)
+```
+
+---
+
+## Bechdel Test
+
+```{r echo = FALSE, out.width = "60%"}
+knitr::include_graphics(path = "https://fivethirtyeight.com/wp-content/uploads/2014/04/hickey-bechdel-11.png")
+```
+
+.footnote[Source:[FiveThirtyEight](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/)]
+
+---
+
+## Bechdel Test
+
+1. It has to have at least two [named] women in it
+1. Who talk to each other
+1. About something besides a man
+
+--
+
+```{r}
+library(rcis)
+data("bechdel")
+glimpse(bechdel)
+```
+
+---
+
+## Bechdel test data
+
+- N = `r nrow(bechdel)`
+- 1 categorical outcome: `test`
+- `r ncol(bechdel) - 1` predictors
+
+---
+
+class: middle
+
+```{r echo=FALSE}
+ggplot(data = bechdel, aes(
+  x = metascore,
+  y = imdb_rating,
+  color = test
+)) +
+  geom_point(alpha = .3, size = 3) +
+  scale_color_manual(values = c("#1a162d", "#CA225E")) +
+  labs(
+    x = "Metacritic score",
+    y = "IMDB rating",
+    color = "Bechdel test"
+  ) +
+  theme(legend.position = "top")
+```
+
+
+---
+
+class: inverse, middle
+
+# What is the goal of machine learning?
+
+--
+
+## Build .white[models] that
+
+--
+
+
+## generate .white[accurate predictions]
+
+--
+
+
+## for .white[future, yet-to-be-seen data].
+
+--
+
+.footnote[Max Kuhn & Kjell Johnston, http://www.feat.engineering/]
+
+---
+
+## Machine learning
+
+We'll use this goal to drive learning of 3 core `tidymodels` packages:
+
+- `parsnip`
+- `yardstick`
+- `rsample`
+
+---
+
+class: inverse, middle
+
+## `r emo::ji("hammer")` Build models with `parsnip`
+
+---
+
+class: middle, center, frame
+
+## parsnip
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_url("https://parsnip.tidymodels.org")
+```
+
+---
+
+## `glm()`
+
+
+```{r}
+glm(test ~ metascore, family = binomial, data = bechdel)
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.001.jpeg")
+```
+
+---
+
+## To specify a model with `parsnip`
+
+1. Pick a model
+1. Set the engine
+1. Set the mode (if needed)
+
+---
+
+## To specify a model with `parsnip`
+
+```{r}
+logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+```
+
+---
+
+## To specify a model with `parsnip`
+
+```{r}
+decision_tree() %>%
+  set_engine("C5.0") %>%
+  set_mode("classification")
+```
+
+---
+
+## To specify a model with `parsnip`
+
+```{r}
+nearest_neighbor() %>%              
+  set_engine("kknn") %>%             
+  set_mode("classification")        
+```
+
+---
+
+## 1\. Pick a model
+
+All available models are listed at
+
+<https://www.tidymodels.org/find/parsnip/>
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_url("https://www.tidymodels.org/find/parsnip/")
+```
+
+---
+
+## `logistic_reg()`
+
+Specifies a model that uses logistic regression
+
+```{r results='hide'}
+logistic_reg(penalty = NULL, mixture = NULL)
+```
+
+---
+
+## `logistic_reg()`
+
+Specifies a model that uses logistic regression
+
+```{r results='hide'}
+logistic_reg(
+  mode = "classification", # "default" mode, if exists
+  penalty = NULL,          # model hyper-parameter
+  mixture = NULL           # model hyper-parameter
+  )
+```
+
+---
+
+## `set_engine()`
+
+Adds an engine to power or implement the model.
+
+```{r eval=FALSE}
+logistic_reg() %>% set_engine(engine = "glm")
+```
+
+---
+
+## `set_mode()`
+
+Sets the class of problem the model will solve, which influences which output is collected. Not necessary if mode is set in Step 1.
+
+```{r eval=FALSE}
+logistic_reg() %>% set_mode(mode = "classification")
+```
+
+---
+class: your-turn
+
+## Your turn `r (yt_counter <- yt_counter + 1)`
+
+Run the chunk in your .Rmd and look at the output. Then, copy/paste the code and edit to create:
+
++ a decision tree model for classification 
+
++ that uses the `C5.0` engine. 
+
+Save it as `tree_mod` and look at the object. What is different about the output?
+
+*Hint: you'll need https://www.tidymodels.org/find/parsnip/*
+
+```{r echo = FALSE}
+countdown(minutes = 3)
+```
+
+---
+
+```{r include=FALSE}
+lr_mod <- logistic_reg() %>% 
+  set_engine(engine = "glm") %>% 
+  set_mode("classification")
+lr_mod
+```
+
+```{r}
+lr_mod 
+
+tree_mod <- decision_tree() %>% 
+  set_engine(engine = "C5.0") %>% 
+  set_mode("classification")
+tree_mod 
+```
+
+---
+class: inverse, middle
+
+## Now we've built a model.
+
+--
+
+## But, how do we .white[use] a model?
+
+--
+
+## First - what does it mean to use a model?
+
+---
+class: inverse, middle, center
+
+![](https://media.giphy.com/media/fhAwk4DnqNgw8/giphy.gif)
+
+Statistical models learn from the data. 
+
+Many learn model parameters, which *can* be useful as values for inference and interpretation.
+
+---
+
+## A fitted model
+
+.pull-left[
+
+```{r}
+lr_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel) %>% 
+  broom::tidy()
+```
+]
+
+.pull-right[
+
+```{r echo=FALSE, fig.width = 6}
+ggplot(data = bechdel, aes(
+  x = metascore,
+  y = imdb_rating,
+  color = test
+)) +
+  geom_point(alpha = .3, size = 3) +
+  scale_color_manual(values = c("#1a162d", "#CA225E")) +
+  labs(
+    x = "Metacritic score",
+    y = "IMDB rating",
+    color = "Bechdel test"
+  ) +
+  theme(legend.position = "top")
+```
+]
+
+---
+
+## "All models are wrong, but some are useful"
+
+```{r include=FALSE}
+lr_preds <- lr_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel) %>% 
+  predict(new_data = bechdel) %>% 
+  bind_cols(bechdel) %>% 
+  mutate(.pred_match = if_else(test == .pred_class, 1, 0))
+```
+
+```{r echo=FALSE}
+ggplot(data = lr_preds, aes(
+  x = metascore,
+  y = imdb_rating,
+  shape = as.factor(.pred_match),
+           color = test,
+           alpha = as.factor(.pred_match))) +
+  geom_point(size = 3) +
+  scale_alpha_manual(values = c(1, .2), guide = FALSE) +
+  scale_shape_manual(values = c(4, 19), guide = FALSE) +
+  scale_color_manual(values = c("#1a162d", "#cd4173"), guide = FALSE) +
+  labs(
+    title = "Logistic regression model",
+    x = "Metacritic score",
+    y = "IMDB rating"
+  )
+```
+
+---
+
+## "All models are wrong, but some are useful"
+
+```{r include=FALSE}
+tree_preds <- tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel) %>% 
+  predict(new_data = bechdel) %>% 
+  bind_cols(bechdel) %>% 
+  mutate(.pred_match = if_else(test == .pred_class, 1, 0))
+```
+
+```{r echo=FALSE}
+ggplot(data = tree_preds, aes(
+  x = metascore,
+  y = imdb_rating,
+  shape = as.factor(.pred_match),
+           color = test,
+           alpha = as.factor(.pred_match))) +
+  geom_point(size = 3) +
+  scale_alpha_manual(values = c(1, .2), guide = FALSE) +
+  scale_shape_manual(values = c(4, 19), guide = FALSE) +
+  scale_color_manual(values = c("#1a162d", "#cd4173"), guide = FALSE) +
+   labs(
+     title = "C5.0 classification tree model",
+    x = "Metacritic score",
+    y = "IMDB rating",
+  )
+```
+
+---
+
+## Predict new data
+
+```{r}
+bechdel_new <- tibble(metascore = c(40, 50, 60), 
+                      imdb_rating = c(6, 6, 6),
+                      test = c("Fail", "Fail", "Pass")) %>% 
+  mutate(test = factor(test, levels = c("Fail", "Pass")))
+bechdel_new
+```
+
+---
+
+## Predict old data
+
+```{r predict-old}
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel) %>% 
+  predict(new_data = bechdel) %>% 
+  mutate(true_bechdel = bechdel$test) %>% 
+  accuracy(truth = true_bechdel, 
+           estimate = .pred_class)
+```
+
+---
+
+## Predict new data
+
+.pull-left[
+### out with the old...
+```{r ref.label='predict-old'}
+
+```
+
+]
+
+.pull-right[
+
+### in with the `r emo::ji("new")`
+
+```{r}
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel) %>% 
+  predict(new_data = bechdel_new) %>% #<<
+  mutate(true_bechdel = bechdel_new$test) %>% #<<
+  accuracy(truth = true_bechdel, 
+           estimate = .pred_class)
+```
+
+]
+
+---
+
+## `fit()`
+
+Train a model by fitting a model. Returns a parsnip model fit.
+
+```{r results='hide'}
+fit(tree_mod, test ~ metascore + imdb_rating, data = bechdel)
+```
+
+---
+
+## `fit()`
+
+Train a model by fitting a model. Returns a parsnip model fit.
+
+```{r results='hide'}
+tree_mod %>%                               # parsnip model
+  fit(test ~ metascore + imdb_rating, # a formula
+      data = bechdel                       # dataframe
+  )
+```
+
+---
+
+## `fit()`
+
+Train a model by fitting a model. Returns a parsnip model fit.
+
+```{r results='hide'}
+tree_fit <- tree_mod %>%                   # parsnip model
+  fit(test ~ metascore + imdb_rating, # a formula
+      data = bechdel                       # dataframe
+  )
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.001.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.003.jpeg")
+```
+
+---
+
+## `predict()`
+
+Use a fitted model to predict new `y` values from data. Returns a tibble.
+
+```{r eval=FALSE}
+predict(tree_fit, new_data = bechdel_new) 
+```
+
+---
+
+```{r}
+tree_fit %>% 
+  predict(new_data = bechdel_new)
+```
+
+---
+
+## Axiom
+
+The best way to measure a model's performance at predicting new data is to .display[predict new data].
+
+---
+
+## Data splitting
+
+```{r all-split, echo = FALSE, fig.width = 12, fig.height = 3}
+set.seed(16)
+one_split <- slice(bechdel, 1:30) %>% 
+  initial_split() %>% 
+  tidy() %>% 
+  add_row(Row = 1:30, Data = "Original") %>% 
+  mutate(Data = case_when(
+    Data == "Analysis" ~ "Training",
+    Data == "Assessment" ~ "Testing",
+    TRUE ~ Data
+  )) %>% 
+  mutate(Data = factor(Data, levels = c("Original", "Training", "Testing")))
+
+all_split <- ggplot(one_split, aes(x = Row, y = fct_rev(Data), fill = Data)) + 
+  geom_tile(color = "white",
+            size = 1) + 
+  scale_fill_manual(values = splits_pal, guide = FALSE) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = rel(2)),
+        axis.text.x = element_blank(),
+        legend.position = "top",
+        panel.grid = element_blank(),
+        text = element_text(family = "Lato")) +
+  coord_equal(ratio = 1) +
+  labs(x = NULL, y = NULL)
+
+all_split
+```
+
+---
+
+class: inverse, middle
+
+# `r emo::ji("recycle")` Resample models with `rsample`
+
+---
+
+## `rsample`
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_url("https://tidymodels.github.io/rsample/")
+```
+
+---
+
+## `initial_split()*`
+
+"Splits" data randomly into a single testing and a single training set.
+
+```{r eval= FALSE}
+initial_split(data, prop = 3/4)
+```
+
+.footnote[`*` from `rsample`]
+
+---
+
+```{r}
+bechdel_split <- initial_split(data = bechdel, strata = test,  prop = 3/4)
+bechdel_split
+```
+
+---
+
+## `training()` and `testing()*`
+
+Extract training and testing sets from an `rsplit`
+
+```{r results='hide'}
+training(bechdel_split)
+testing(bechdel_split)
+```
+
+.footnote[`*` from `rsample`]
+
+---
+
+```{r R.options = list(tibble.max_extra_cols=5, tibble.print_max=5, tibble.width=60)}
+bechdel_train <- training(bechdel_split) 
+bechdel_train
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.001.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.003.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.004.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.006.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.007.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.008.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.009.jpeg")
+```
+
+---
+
+## Your turn `r (yt_counter <- yt_counter + 1)`
+
+Fill in the blanks. 
+
+Use `initial_split()`, `training()`, and `testing()` to:
+
+1. Split **bechdel** into training and test sets. Save the rsplit!
+
+2. Extract the training data and fit your classification tree model.
+
+3. Predict the testing data, and save the true `test` values.
+
+4. Measure the accuracy of your model with your test set.  
+
+Keep `set.seed(100)` at the start of your code.
+
+```{r echo=FALSE}
+countdown(minutes = 4)
+```
+
+---
+
+```{r results='hide'}
+set.seed(100) # Important!
+
+bechdel_split  <- initial_split(bechdel, strata = test, prop = 3/4)
+bechdel_train  <- training(bechdel_split)
+bechdel_test   <- testing(bechdel_split)
+
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel_train) %>% 
+  predict(new_data = bechdel_test) %>% 
+  mutate(true_bechdel = bechdel_test$test) %>% 
+  accuracy(truth = true_bechdel, estimate = .pred_class)
+```
+
+---
+
+class: inverse, middle
+
+# Goal of Machine Learning
+
+## `r emo::ji("target")` generate accurate predictions
+
+---
+
+## Axiom
+
+Better Model = Better Predictions (Lower error rate)
+
+---
+
+## `accuracy()*`
+
+Calculates the accuracy based on two columns in a dataframe: 
+
+The .display[truth]: ${y}_i$ 
+
+The predicted .display[estimate]: $\hat{y}_i$ 
+
+```{r eval = FALSE}
+accuracy(data, truth, estimate)
+```
+
+.footnote[`*` from `yardstick`]
+
+---
+
+```{r}
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel_train) %>% 
+  predict(new_data = bechdel_test) %>% 
+  mutate(true_bechdel = bechdel_test$test) %>% 
+  accuracy(truth = true_bechdel, estimate = .pred_class) #<<
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.006.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.007.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.008.jpeg")
+```
+
+---
+
+class: center
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/predicting/predicting.009.jpeg")
+```
+
+---
+
+## Your Turn `r (yt_counter <- yt_counter + 1)`
+
+What would happen if you repeated this process? Would you get the same answers?
+
+Note your accuracy from above. Then change your seed number and rerun just the last code chunk above. Do you get the same answer? 
+
+Try it a few times with a few different seeds.
+
+```{r echo=FALSE}
+countdown(minutes = 2)
+```
+
+---
+
+.pull-left[
+
+```{r new-split, echo=FALSE, warnings = FALSE, message = FALSE}
+bechdel_split  <- initial_split(bechdel, strata = test, prop = 3/4)
+bechdel_train  <- training(bechdel_split)
+bechdel_test   <- testing(bechdel_split)
+
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel_train) %>% 
+  predict(new_data = bechdel_test) %>% 
+  mutate(true_bechdel = bechdel_test$test) %>% 
+  accuracy(truth = true_bechdel, estimate = .pred_class)
+```
+
+```{r include=FALSE}
+set.seed(500) # Important!
+```
+
+
+```{r ref.label='new-split', echo=FALSE, warnings = FALSE, message = FALSE}
+```
+
+```{r include=FALSE}
+set.seed(2020) # Important!
+```
+
+```{r ref.label='new-split', echo=FALSE, warnings = FALSE, message = FALSE}
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r include=FALSE}
+set.seed(13) # Important!
+```
+
+```{r ref.label='new-split', echo=FALSE, warnings = FALSE, message = FALSE}
+```
+
+```{r include=FALSE}
+set.seed(1000) # Important!
+```
+
+```{r ref.label='new-split', echo=FALSE, warnings = FALSE, message = FALSE}
+```
+
+```{r include=FALSE}
+set.seed(1980) # Important!
+```
+
+```{r ref.label='new-split', echo=FALSE, warnings = FALSE, message = FALSE}
+```
+
+]
+
+---
+
+## Quiz
+
+Why is the new estimate different?
+
+```{r include=FALSE}
+plot_split <- function(seed = 1, arrow = FALSE) {
+  set.seed(seed)
+  one_split <- slice(bechdel, 1:20) %>% 
+    initial_split() %>% 
+    tidy() %>% 
+    add_row(Row = 1:20, Data = "Original") %>% 
+    mutate(Data = case_when(
+      Data == "Analysis" ~ "Training",
+      Data == "Assessment" ~ "Testing",
+      TRUE ~ Data
+    )) %>% 
+    mutate(Data = factor(Data, levels = c("Original", "Training", "Testing")))
+  
+  both_split <-
+    one_split %>% 
+    filter(!Data == "Original") %>% 
+    ggplot(aes(x = Row, y = 1, fill = Data)) + 
+    geom_tile(color = "white",
+              size = 1) + 
+    scale_fill_manual(values = splits_pal[2:3],
+                       guide = FALSE) +
+    theme_void() +
+    #theme(plot.margin = unit(c(-1, -1, -1, -1), "mm")) +
+    coord_equal() + {
+    # arrow is TRUE
+    if (arrow == TRUE) 
+      annotate("segment", x = 31, xend = 32, y = 1, yend = 1, 
+               colour = assess_color, size=1, arrow=arrow())
+    } + {
+    # arrow is TRUE
+    if (arrow == TRUE)
+        annotate("text", x = 33.5, y = 1, colour = assess_color, size=8, 
+                 label = "Metric", family="Lato")
+    }
+
+  
+  both_split
+}
+```
+
+---
+
+## Data Splitting
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 100)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 1)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 10)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 18)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 30)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 31)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 21)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 10, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 321)
+```
+
+---
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 100, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 1, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 10, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 18, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 30, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 31, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 21, arrow = TRUE)
+```
+
+--
+
+```{r echo=FALSE, fig.width = 15, fig.height = .5, fig.align = 'center', fig.asp = NULL}
+plot_split(seed = 321, arrow = TRUE)
+```
+
+--
+
+.right[Mean accuracy]
+
+---
+
+## Resampling
+
+Let's resample 10 times 
+
+then compute the mean of the results...
+
+---
+
+```{r include = FALSE}
+set.seed(9)
+```
+
+
+```{r cv-for-loop, include = FALSE}
+acc <- vector(length = 10, mode = "double")
+for (i in 1:10) {
+  new_split <- initial_split(bechdel)
+  new_train <- training(new_split)
+  new_test  <- testing(new_split)
+  acc[i] <-
+    lr_mod %>% 
+      fit(test ~ metascore + imdb_rating, data = new_train) %>% 
+      predict(new_test) %>% 
+      mutate(truth = new_test$test) %>% 
+      accuracy(truth, .pred_class) %>% 
+      pull(.estimate)
+}
+```
+
+```{r}
+acc %>% tibble::enframe(name = "accuracy")
+mean(acc)
+```
+
+---
+
+## Guess
+
+Which do you think is a better estimate?
+
+The best result or the mean of the results? Why? 
+
+---
+
+## But also...
+
+Fit with .display[training set]
+
+Predict with .display[testing set]
+
+--
+
+Rinse and repeat?
+
+---
+
+## There has to be a better way...
+
+```{r ref.label='cv-for-loop', eval = FALSE}
+```
+
+---
+background-image: url(images/diamonds.jpg)
+background-size: contain
+background-position: left
+class: middle, center
+background-color: #f5f5f5
+
+.pull-right[
+## The .display[testing set] is precious...
+
+## we can only use it once!
+
+]
+
+---
+background-image: url(images/diamonds.jpg)
+background-size: contain
+background-position: left
+class: middle, center
+background-color: #f5f5f5
+
+.pull-right[
+
+## How can we use the training set to compare, evaluate, and tune models?
+
+]
+
+---
+
+class: middle
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://www.tidymodels.org/start/resampling/img/resampling.svg")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide2.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide3.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide4.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide5.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide6.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide7.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide8.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide9.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide10.png")
+```
+
+---
+
+## Cross-validation
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/cross-validation/Slide11.png")
+```
+
+---
+
+## V-fold cross-validation
+
+```{r eval=FALSE}
+vfold_cv(data, v = 10, ...)
+```
+
+---
+exclude: true
+
+```{r cv, fig.height=4, echo=FALSE}
+set.seed(1)
+folds10 <- slice(ames, 1:20) %>% 
+  vfold_cv() %>% 
+  tidy() %>% 
+  mutate(split = str_c("Split", str_pad(parse_number(Fold), width = 2, pad = "0")))
+
+folds <- ggplot(folds10, aes(x = Row, y = fct_rev(split), fill = Data)) + 
+  geom_tile(color = "white",
+            width = 1,
+            size = 1) + 
+  scale_fill_manual(values = c(train_color, assess_color)) +
+  theme(axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        legend.position = "top",
+        panel.grid = element_blank(),
+        text = element_text(family = "Lato"),
+        legend.key.size = unit(.4, "cm"),
+        legend.text = element_text(size = rel(.4))) +
+  coord_equal() +
+  labs(x = NULL, y = NULL, fill = NULL) 
+```
+
+---
+
+## Guess
+
+How many times does an observation/row appear in the assessment set?
+
+```{r vfold-tiles, echo=FALSE, fig.height=6, fig.width = 12, fig.align='center'}
+folds +
+    theme(axis.text.y = element_text(size = rel(2)),
+          legend.key.size = unit(.85, "cm"),
+          legend.text = element_text(size = rel(1)))
+```
+
+---
+
+```{r echo=FALSE, fig.height=6, fig.width = 12, fig.align='center', warning=FALSE, message=FALSE}
+test_folds <- tibble(
+  Row = seq(1, 20, 1),
+  Data = "assessment",
+  Fold = rep(1:10, each = 2)
+) 
+
+# i want all 20 rows, for all 10 folds
+all_rows <- tibble(
+  Row = rep(seq(1, 20, 1), 10),
+  Fold = rep(1:10, each = 20)
+)
+
+train_folds <- all_rows %>% 
+  anti_join(test_folds)
+
+all_folds <- test_folds %>% 
+  full_join(train_folds) %>% 
+  mutate(Fold = as.factor(Fold)) %>% 
+  mutate(Data = replace_na(Data, "analysis"))
+
+ggplot(all_folds, aes(x = Row, y = fct_rev(Fold), fill = Data)) + 
+  geom_tile(color = "white",
+            width = 1,
+            size = 1) + 
+  scale_fill_manual(values = c(train_color, assess_color), guide = FALSE) +
+  theme(axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        legend.position = "top",
+        panel.grid = element_blank(),
+        text = element_text(family = "Lato"),
+        legend.key.size = unit(.4, "cm"),
+        legend.text = element_text(size = rel(.4))) +
+  coord_equal() +
+  labs(x = NULL, y = NULL, fill = NULL) 
+```
+
+---
+
+## Quiz
+
+If we use 10 folds, which percent of our data will end up in the training set and which percent in the testing set for each fold?
+
+--
+
+90% - training
+
+10% - test
+
+---
+
+## Your Turn `r (yt_counter <- yt_counter + 1)`
+
+Run the code below. What does it return?
+
+```{r make-ames-cv, results='hide'}
+set.seed(100)
+bechdel_folds <- vfold_cv(data = bechdel_train, v = 10, strata = test)
+bechdel_folds
+```
+
+```{r echo=FALSE}
+countdown(minutes = 1)
+```
+
+---
+```{r ref.label='make-ames-cv'}
+```
+
+---
+
+## We need a new way to fit
+
+```{r eval=FALSE}
+split1       <- bechdel_folds %>% pluck("splits", 1)
+split1_train <- training(split1)
+split1_test  <- testing(split1)
+
+tree_mod %>% 
+  fit(test ~ ., data = split1_train) %>% 
+  predict(split1_test) %>% 
+  mutate(truth = split1_test$test) %>% 
+  accuracy(truth, .pred_class)
+
+# rinse and repeat
+split2 <- ...
+```
+
+---
+
+## `fit_resamples()`
+
+Trains and tests a resampled model.
+
+```{r fit-ames-cv, results='hide'}
+tree_mod %>% 
+  fit_resamples(
+    test ~ metascore + imdb_rating, 
+    resamples = bechdel_folds
+    )
+```
+
+---
+
+```{r ref.label='fit-ames-cv', warning=FALSE, messages=FALSE}
+
+```
+
+---
+
+## `collect_metrics()`
+
+Unnest the metrics column from a tidymodels `fit_resamples()`
+
+```{r eval = FALSE}
+_results %>% collect_metrics(summarize = TRUE)
+```
+
+--
+
+.footnote[`TRUE` is actually the default; averages across folds]
+
+---
+
+```{r}
+tree_mod %>% 
+  fit_resamples(
+    test ~ metascore + imdb_rating, 
+    resamples = bechdel_folds
+    ) %>% 
+  collect_metrics(summarize = FALSE)
+```
+
+---
+
+## 10-fold CV
+
+- 10 different analysis/assessment sets
+
+- 10 different models (trained on .display[analysis] sets)
+
+- 10 different sets of performance statistics (on .display[assessment] sets)
+
+---
+
+## Your Turn `r (yt_counter <- yt_counter + 1)`
+
+Modify the code below to use `fit_resamples` and `bechdel_folds` to cross-validate the classification tree model. What is the ROC AUC that you collect at the end?
+
+```{r eval=FALSE}
+set.seed(100)
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, 
+      data = bechdel_train) %>% 
+  predict(new_data = bechdel_test) %>% 
+  mutate(true_bechdel = bechdel_test$test) %>% 
+  accuracy(truth = true_bechdel, estimate = .pred_class)
+```
+
+```{r echo=FALSE}
+countdown(minutes = 3)
+```
+
+---
+
+```{r rt-rs, warning=FALSE, message=FALSE}
+set.seed(100)
+tree_mod %>% 
+  fit_resamples(test ~ metascore + imdb_rating, 
+                resamples = bechdel_folds) %>% 
+  collect_metrics()
+```
+
+---
+
+## How did we do?
+
+```{r}
+tree_mod %>% 
+  fit(test ~ metascore + imdb_rating, data = bechdel_train) %>% 
+  predict(bechdel_test) %>% 
+  mutate(truth = bechdel_test$test) %>% 
+  accuracy(truth, .pred_class)
+```
+
+```{r ref.label='rt-rs', echo=FALSE}
+
+```
+

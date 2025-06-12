@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FAQ on CFSS: Computing for the Social Sciences</title>
+    <link>http://localhost:1313/faq/</link>
+    <description>Recent content in FAQ on CFSS: Computing for the Social Sciences</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Sep 2022 00:00:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/faq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>General Questions &amp; Info</title>
+      <link>http://localhost:1313/faq/about-the-course/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/faq/about-the-course/</guid>
+      <description>&lt;h2 id=&#34;general-description&#34;&gt;General description&lt;/h2&gt;&#xA;&lt;p&gt;This course is open to any graduate (or advanced undergraduate) at the&#xA;University of Chicago. We draw from a wide range of departments such as&#xA;Information Science, Sociology, Psychology, Political Science, etc.&#xA;Typically these students are looking to learn basic computational and&#xA;analytic skills they can apply to master’s projects or dissertation&#xA;research.&lt;/p&gt;&#xA;&lt;p&gt;If you have never programmed before or don’t know what the&#xA;&lt;a href=&#34;http://localhost:1313/setup/shell/&#34;&gt;shell&lt;/a&gt; is, &lt;strong&gt;prepare for a different way of approaching&#xA;problems&lt;/strong&gt;. This class will prove to be very beneficial if you stick&#xA;with it, but that will require you to commit for the full quarter. I do&#xA;not presume any prior programming experience, so everyone starts from&#xA;the same knowledge level. I guarantee that the first few weeks and&#xA;assignments will be rough - but the good news is that they will be rough&#xA;for everyone! Your classmates are struggling with you and you can lean&#xA;on one another to get through the worst part of the learning curve.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Homework Rubric</title>
+      <link>http://localhost:1313/faq/homework-evaluations/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/faq/homework-evaluations/</guid>
+      <description>&lt;h2 id=&#34;evaluation-philosophy&#34;&gt;Evaluation philosophy&lt;/h2&gt;&#xA;&lt;p&gt;The university requires that I assign each student a letter grade at the end of the quarter. However I find that numeric scores on assignments tend to cause students grading anxiety if they do not achieve a perfect 100%. Nor does the numeric score convey specific feedback as to what the student has done well on an assignment, combined with feedback on areas for improvement.&lt;/p&gt;&#xA;&lt;p&gt;As such, I do not assign numeric scores in this class. All homework assignments are evaluated using the grading rubric below. Final grades are calculated as the cumulative performance across all homework assignments.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to ask for help</title>
+      <link>http://localhost:1313/faq/asking-questions/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/faq/asking-questions/</guid>
+      <description>&lt;p&gt;Asking questions is an important part of this class. Remember the &lt;strong&gt;15&#xA;minute rule&lt;/strong&gt;: Once you’ve spent 15 minutes attempting to troubleshoot a&#xA;problem, ask for help.&lt;/p&gt;&#xA;&lt;p&gt;Questions should be posted to &lt;a href=&#34;https://edstem.org/us/courses/79778/discussion&#34;&gt;Ed&#xA;Discussion&lt;/a&gt; in the&#xA;appropriate category (general v discussion). Here are some &lt;strong&gt;tips&lt;/strong&gt; you&#xA;should always follow when posting questions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduce-the-problem-with-an-informative-title&#34;&gt;Introduce the problem with an informative title&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Bad title: “I need help!”&lt;/li&gt;&#xA;&lt;li&gt;Good title: “Getting a ‘file not found error’ when importing&#xA;scotus.csv”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Be specific with your title. It should be brief, but also informative so&#xA;that when others are looking at it (and they have a similar error and/or&#xA;solution), they can easily find it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

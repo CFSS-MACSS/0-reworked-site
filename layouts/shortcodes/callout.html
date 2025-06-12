@@ -1,0 +1,7 @@
+<div class="alert alert-{{ .Get "type" | default "info" }}" role="alert">
+  {{ if .IsNamedParams }}
+    {{ .Inner | markdownify }}
+  {{ else }}
+    {{ .Get 0 | markdownify }}
+  {{ end }}
+</div>
