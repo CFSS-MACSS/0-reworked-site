@@ -2,5 +2,10 @@
   "dependencies": {
     "autoprefixer": "^10.4.7",
     "build": "^0.1.4"
+  },
+  "scripts": {
+    "build": "hugo --minify",
+    "start": "hugo server",
+    "test": "echo \"No tests yet\""
   }
 }
