@@ -17,24 +17,24 @@ In this course, we will learn how to speak the language of [R](https://www.r-pro
 Before we can do any of this, we need to install all the necessary software and get it setup and working.
 Please, follow one of the two options and complete the required steps for both options (at the end).
 
+# 
+# 
+# I encourage students newer to R to utilize the RStudio Workbench option. This will ensure all students use a consistent software environment. If you choose to install your own software locally, I cannot guarantee the instructional staff will be able to help you troubleshoot issues caused by software configuration.
+# 
+# ## Option 1 - use RStudio Workbench
+# 
+# If you want to avoid installing anything on your computer and access R and RStudio through your web browser, follow these instructions. Make sure to follow them in the provided order:
+# 
+# * R
+#     * [Why R?](/setup/what-is-r/)
+#     * [Accessing RStudio Workbench](/setup/r-server/)
+# * Git
+#     * [What is Git?](/setup/what-is-git/)
+#     * [Configure Git](/setup/git-configure/)
 
+## Getting started: install the software locally
 
-I encourage students newer to R to utilize the RStudio Workbench option. This will ensure all students use a consistent software environment. If you choose to install your own software locally, I cannot guarantee the instructional staff will be able to help you troubleshoot issues caused by software configuration.
-
-## Option 1 - use RStudio Workbench
-
-If you want to avoid installing anything on your computer and access R and RStudio through your web browser, follow these instructions. Make sure to follow them in the provided order:
-
-* R
-    * [Why R?](/setup/what-is-r/)
-    * [Accessing RStudio Workbench](/setup/r-server/)
-* Git
-    * [What is Git?](/setup/what-is-git/)
-    * [Configure Git](/setup/git-configure/)
-
-## Option 2 - install the software locally
-
-If you want to run R and R studio on your own computer, follow these instructions, in the provided order:
+To run R and RStudio on your own computer, follow these instructions, in the provided order:
 
 * R
     * [Why R?](/setup/what-is-r/)
@@ -47,7 +47,7 @@ If you want to run R and R studio on your own computer, follow these instruction
     * [Configure Git](/setup/git-configure/)
 
 
-## For both options
+## Getting Started with Git/GitHub
 
 * [Register a free GitHub account.](https://github.com/) As a university student, also check to see if you are eligible for [GitHub Education offers](https://education.github.com/). Some of these are very useful, such as unlimited [private repositories](https://help.github.com/articles/what-plan-should-i-choose/). Remember that once you create a GitHub account, you are stuck with that username. Choose something professional.
 * Test your installation and practice using Git through RStudio following these instructions: [Using Git within RStudio](/setup/git-with-rstudio/)
