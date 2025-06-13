@@ -58,18 +58,18 @@ math: false
 
 ## Before class
 
-* Required: read Chapter 5 "Data Transformation" and Chapter 18 "Pipes" from [R for Data Science](http://r4ds.had.co.nz/)
+* Required: read Chapter 3 "Data Transformation" and Chapter 18 "Pipes" from [R for Data Science](https://r4ds.hadley.nz/)
 
 
-## Class materials
+<!-- ## Class materials -->
 
-* [Computer programming as a form of problem solving](/notes/problem-solving/)
-* [`dplyr` in brief](/notes/dplyr/)
-* [Practice transforming college education data](/notes/transform-college/)
+<!-- * [Computer programming as a form of problem solving](/notes/problem-solving/) -->
+<!-- * [`dplyr` in brief](/notes/dplyr/) -->
+<!-- * [Practice transforming college education data](/notes/transform-college/) -->
 
-<!--
-* see also: [Pipes in R](/notes/pipes/) taken from "Functions" lecture of Oct 25
--->
+<!-- <!-- -->
+<!-- * see also: [Pipes in R](/notes/pipes/) taken from "Functions" lecture of Oct 25 -->
+<!-- --> -->
 
 
 ## Additional resources
@@ -79,8 +79,8 @@ math: false
 
 ## What you need to do after class
 
-* Start Homework 2
-* Review this week's readings and notes
+* Start [Assignment 2](assignments/explore-data/)
+* Review this week's readings
 
 <!--
 * Complete your peer evaluations for homework 01. Review the following:
