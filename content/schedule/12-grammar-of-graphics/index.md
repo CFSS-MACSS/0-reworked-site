@@ -55,8 +55,9 @@ math: false
 
 ## Before class
 
-- Required: read chapter 3 from [R for Data
-  Science](https://r4ds.had.co.nz/data-visualisation.html). You need to
+- Required: read [chapters
+  1](https://r4ds.hadley.nz/data-visualize.html) and 2 from [R for Data
+  Science](https://r4ds.hadley.nz/workflow-basics.html). You need to
   read this chapter and complete some of the exercises before coming to
   class. Exercise solutions can be found
   [here](https://jrnold.github.io/r4ds-exercise-solutions/).
