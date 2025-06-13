@@ -1,68 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Assignments on CFSS: Computing for the Social Sciences</title>
-    <link>http://localhost:1313/assignments/</link>
-    <description>Recent content in Assignments on CFSS: Computing for the Social Sciences</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 06 Oct 2025 13:30:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/assignments/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A1: Practice editing .Rmd and generating .md</title>
-      <link>http://localhost:1313/assignments/edit-readme/</link>
-      <pubDate>Thu, 29 Sep 2022 13:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/assignments/edit-readme/</guid>
-      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;The goal is to test your software installation, your GitHub setup, and&#xA;the homework submission process, as well as demonstrate basic competency&#xA;in Markdown and R Markdown.&lt;/p&gt;&#xA;&lt;h2 id=&#34;accessing-your-a1-repository&#34;&gt;Accessing your &lt;code&gt;A1&lt;/code&gt; repository&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Go &lt;a href=&#34;https://classroom.github.com/a/B8DreZI2&#34;&gt;to this link&lt;/a&gt; to accept&#xA;and create your private &lt;code&gt;a1&lt;/code&gt; repository on GitHub. Once you do so,&#xA;your repository will be built in a few seconds. It follows the naming&#xA;convention &lt;code&gt;a1-&amp;lt;USERNAME&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Once the your repository has been created, click on the link you see,&#xA;which will take you to your repository.&lt;/li&gt;&#xA;&lt;li&gt;Finally, clone the repository to your computer following the process&#xA;below.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;cloning-your-a1-repository&#34;&gt;Cloning your &lt;code&gt;a1&lt;/code&gt; repository&lt;/h2&gt;&#xA;&lt;p&gt;After you have accessed the &lt;code&gt;a1&lt;/code&gt; repository (see above), follow these&#xA;steps to clone it. Whenever possible, this will be the preferred route&#xA;for setting up your R projects:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>A2: Exploring and visualizing data</title>
-      <link>http://localhost:1313/assignments/explore-data/</link>
-      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/assignments/explore-data/</guid>
-      <description>Transform and explore a cleaned dataset on gun deaths in the United States.</description>
-    </item>
-    <item>
-      <title>A3: Wrangling and visualizing data</title>
-      <link>http://localhost:1313/assignments/wrangle-data/</link>
-      <pubDate>Tue, 27 Jun 2023 13:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/assignments/wrangle-data/</guid>
-      <description>Wrangle and explore messy datasets in practical research environments.</description>
-    </item>
-    <item>
-      <title>A4: Programming in R</title>
-      <link>http://localhost:1313/assignments/programming/</link>
-      <pubDate>Fri, 21 Oct 2022 13:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/assignments/programming/</guid>
-      <description>Practice programming techniques in R.</description>
-    </item>
-    <item>
-      <title>A5: Debugging and practice working with functions</title>
-      <link>http://localhost:1313/assignments/debugging-rmarkdown/</link>
-      <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
-      <guid>http://localhost:1313/assignments/debugging-rmarkdown/</guid>
-      <description>Resolve code errors and practice writing and using functions with social science data.</description>
-    </item>
-    <item>
-      <title>A6: Collecting and analyzing data from the web</title>
-      <link>http://localhost:1313/assignments/webdata/</link>
-      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/assignments/webdata/</guid>
-      <description>Collect data from the web and analyze it.</description>
-    </item>
-    <item>
-      <title>Final: Generating reproducible social science research</title>
-      <link>http://localhost:1313/assignments/reproducible-research/</link>
-      <pubDate>Mon, 10 Jul 2023 13:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/assignments/reproducible-research/</guid>
-      <description>Synthesize everything we have learned thus far.</description>
-    </item>
-    <item>
-      <title>A7: Analyzing textual data</title>
-      <link>http://localhost:1313/assignments/text-analysis/</link>
-      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/assignments/text-analysis/</guid>
-      <description>Collect text data and analyze it.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Assignments on CFSS: Computing for the Social Sciences</title><link>https://cfssmacss.netlify.app/assignments/</link><description>Recent content in Assignments on CFSS: Computing for the Social Sciences</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 06 Oct 2025 13:30:00 -0600</lastBuildDate><atom:link href="https://cfssmacss.netlify.app/assignments/index.xml" rel="self" type="application/rss+xml"/><item><title>A1: Practice editing .Rmd and generating .md</title><link>https://cfssmacss.netlify.app/assignments/edit-readme/</link><pubDate>Thu, 29 Sep 2022 13:30:00 -0600</pubDate><guid>https://cfssmacss.netlify.app/assignments/edit-readme/</guid><description>&lt;h1 id="overview">Overview&lt;/h1>
+&lt;p>The goal is to test your software installation, your GitHub setup, and
+the homework submission process, as well as demonstrate basic competency
+in Markdown and R Markdown.&lt;/p>
+&lt;h2 id="accessing-your-a1-repository">Accessing your &lt;code>A1&lt;/code> repository&lt;/h2>
+&lt;ul>
+&lt;li>Go &lt;a href="https://classroom.github.com/a/B8DreZI2">to this link&lt;/a> to accept
+and create your private &lt;code>a1&lt;/code> repository on GitHub. Once you do so,
+your repository will be built in a few seconds. It follows the naming
+convention &lt;code>a1-&amp;lt;USERNAME&amp;gt;&lt;/code>&lt;/li>
+&lt;li>Once the your repository has been created, click on the link you see,
+which will take you to your repository.&lt;/li>
+&lt;li>Finally, clone the repository to your computer following the process
+below.&lt;/li>
+&lt;/ul>
+&lt;h2 id="cloning-your-a1-repository">Cloning your &lt;code>a1&lt;/code> repository&lt;/h2>
+&lt;p>After you have accessed the &lt;code>a1&lt;/code> repository (see above), follow these
+steps to clone it. Whenever possible, this will be the preferred route
+for setting up your R projects:&lt;/p></description></item><item><title>A2: Exploring and visualizing data</title><link>https://cfssmacss.netlify.app/assignments/explore-data/</link><pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate><guid>https://cfssmacss.netlify.app/assignments/explore-data/</guid><description>Transform and explore a cleaned dataset on gun deaths in the United States.</description></item><item><title>A3: Wrangling and visualizing data</title><link>https://cfssmacss.netlify.app/assignments/wrangle-data/</link><pubDate>Tue, 27 Jun 2023 13:30:00 -0600</pubDate><guid>https://cfssmacss.netlify.app/assignments/wrangle-data/</guid><description>Wrangle and explore messy datasets in practical research environments.</description></item><item><title>A4: Programming in R</title><link>https://cfssmacss.netlify.app/assignments/programming/</link><pubDate>Fri, 21 Oct 2022 13:30:00 -0600</pubDate><guid>https://cfssmacss.netlify.app/assignments/programming/</guid><description>Practice programming techniques in R.</description></item><item><title>A5: Debugging and practice working with functions</title><link>https://cfssmacss.netlify.app/assignments/debugging-rmarkdown/</link><pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate><guid>https://cfssmacss.netlify.app/assignments/debugging-rmarkdown/</guid><description>Resolve code errors and practice writing and using functions with social science data.</description></item><item><title>A6: Collecting and analyzing data from the web</title><link>https://cfssmacss.netlify.app/assignments/webdata/</link><pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate><guid>https://cfssmacss.netlify.app/assignments/webdata/</guid><description>Collect data from the web and analyze it.</description></item><item><title>Final: Generating reproducible social science research</title><link>https://cfssmacss.netlify.app/assignments/reproducible-research/</link><pubDate>Mon, 10 Jul 2023 13:30:00 -0600</pubDate><guid>https://cfssmacss.netlify.app/assignments/reproducible-research/</guid><description>Synthesize everything we have learned thus far.</description></item><item><title>A7: Analyzing textual data</title><link>https://cfssmacss.netlify.app/assignments/text-analysis/</link><pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate><guid>https://cfssmacss.netlify.app/assignments/text-analysis/</guid><description>Collect text data and analyze it.</description></item></channel></rss>

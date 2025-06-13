@@ -1,458 +1,80 @@
-<!doctype html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1"><meta property="og:url" content="http://localhost:1313/assignments/edit-readme/">
-  <meta property="og:site_name" content="CFSS: Computing for the Social Sciences">
-  <meta property="og:title" content="A1: Practice editing .Rmd and generating .md">
-  <meta property="og:description" content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="assignments">
-    <meta property="article:published_time" content="2022-09-29T13:30:00-06:00">
-    <meta property="article:modified_time" content="2022-09-29T13:30:00-06:00">
-
-  <meta itemprop="name" content="A1: Practice editing .Rmd and generating .md">
-  <meta itemprop="description" content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.">
-  <meta itemprop="datePublished" content="2022-09-29T13:30:00-06:00">
-  <meta itemprop="dateModified" content="2022-09-29T13:30:00-06:00">
-  <meta itemprop="wordCount" content="1038">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="A1: Practice editing .Rmd and generating .md">
-  <meta name="twitter:description" content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.">
-<link href="/scss/main.css" rel="stylesheet">
-</span></p>
-</body>
-</html>
-
-  </head>
-  <body class="td-page">
-    <header>
-      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
-<div class="container-fluid flex-column flex-md-row">
-  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"></span><span class="navbar-brand__name">CFSS: Computing for the Social Sciences</span></a>
-  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/"><span>Home</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/syllabus/"><span>Syllabus</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/schedule/"><span>Schedule</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/assignments/"><span>Assignments</span></a>
-      </li>
-      </ul>
-  </div>
-  <div class="d-none d-lg-block">
-    
-  </div>
-</div>
-</nav>
-    </header>
-    <div class="container-fluid td-outer">
-      <div class="td-main">
-        <div class="row flex-xl-nowrap">
-          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            <div id="td-sidebar-menu" class="td-sidebar__inner">
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
-  <nav class="td-sidebar-nav collapse" id="td-section-nav">
-    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
-  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
-  <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setup-li">
-  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupgit-li">
-  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
-  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-li">
-  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-clients-li">
-  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-configure-li">
-  <a href="/setup/git/git-configure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="">Configure Git</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-with-rstudio-li">
-  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupr-li">
-  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
-  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
-  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-server-li">
-  <a href="/setup/r/r-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr-server"><span class="">Accessing RStudio Workbench</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupshell-li">
-  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
-  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
-  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
-  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
-  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
-  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
-  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulejuneteenth-li">
-  <a href="/schedule/juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulejuneteenth"><span class="">Juneteenth (observed)</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleapplication-program-interface-li">
-  <a href="/schedule/application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleapplication-program-interface"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
-  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleclassification-topic-models-li">
-  <a href="/schedule/classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleclassification-topic-models"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
-  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-structures-li">
-  <a href="/schedule/data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-structures"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-transformation-li">
-  <a href="/schedule/data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-transformation"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledebugging-li">
-  <a href="/schedule/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledebugging"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
-  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleexploratory-data-analysis-li">
-  <a href="/schedule/exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleexploratory-data-analysis"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
-  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
-  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
-  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegrammar-of-graphics-li">
-  <a href="/schedule/grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegrammar-of-graphics"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
-  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
-  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleintro-li">
-  <a href="/schedule/intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleintro"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
-  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
-  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
-  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
-  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulepipes-functions-li">
-  <a href="/schedule/pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulepipes-functions"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduler-markdown-li">
-  <a href="/schedule/r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduler-markdown"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulerelational-data-factors-li">
-  <a href="/schedule/relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulerelational-data-factors"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereprex-git-li">
-  <a href="/schedule/reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereprex-git"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-documents-li">
-  <a href="/schedule/reproducible-documents/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-documents"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulereproducible-workflow-li">
-  <a href="/schedule/reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulereproducible-workflow"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
-  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
-  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
-  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
-  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
-  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
-  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletext-data-li">
-  <a href="/schedule/text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletext-data"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
-  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidy-data-li">
-  <a href="/schedule/tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidy-data"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
-  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulevectors-iteration-li">
-  <a href="/schedule/vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulevectors-iteration"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleweb-scraping-li">
-  <a href="/schedule/web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleweb-scraping"><span class=""></span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
-  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li>
-    </ul>
-  </nav>
-</div>
-
-          </aside>
-          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-            
-<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-
-</div>
-
-            <div class="td-toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#accessing-your-a1-repository">Accessing your <code>A1</code> repository</a></li>
-    <li><a href="#cloning-your-a1-repository">Cloning your <code>a1</code> repository</a></li>
-    <li><a href="#general-workflow">General workflow</a></li>
-    <li><a href="#what-you-need-to-submit">What you need to submit</a>
-      <ul>
-        <li></li>
-        <li><a href="#deliverables-items-to-complete">Deliverables: items to complete</a></li>
-      </ul>
-    </li>
-    <li><a href="#submit-the-assignment">Submit the assignment</a></li>
-    <li><a href="#rubric">Rubric</a></li>
-  </ul>
-</nav>
-      </div>
-    
-            
-	
-          </aside>
-          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
-            
-  
-
-            <nav aria-label="breadcrumb" class="td-breadcrumbs">
-  <ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="/assignments/">Assignments</a></li>
-  <li class="breadcrumb-item active" aria-current="page">
-    A1: Practice editing .Rmd and generating .md</li>
-  </ol>
-</nav>
-            
-<div class="td-content">
-	<h1>A1: Practice editing .Rmd and generating .md</h1>
-	<div class="lead">Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.</div>
-	<header class="article-meta">
-		
-  </header>
-	<h1 id="overview">Overview</h1>
-<p>The goal is to test your software installation, your GitHub setup, and
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>A1: Practice editing .Rmd and generating .md | CFSS: Computing for the Social Sciences</title><meta name=description content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown."><meta property="og:url" content="https://cfssmacss.netlify.app/assignments/edit-readme/"><meta property="og:site_name" content="CFSS: Computing for the Social Sciences"><meta property="og:title" content="A1: Practice editing .Rmd and generating .md"><meta property="og:description" content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="assignments"><meta property="article:published_time" content="2022-09-29T13:30:00-06:00"><meta property="article:modified_time" content="2022-09-29T13:30:00-06:00"><meta itemprop=name content="A1: Practice editing .Rmd and generating .md"><meta itemprop=description content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown."><meta itemprop=datePublished content="2022-09-29T13:30:00-06:00"><meta itemprop=dateModified content="2022-09-29T13:30:00-06:00"><meta itemprop=wordCount content="1038"><meta name=twitter:card content="summary"><meta name=twitter:title content="A1: Practice editing .Rmd and generating .md"><meta name=twitter:description content="Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown."><link rel=preload href=/scss/main.min.2bf6e9109f6f32347205312f445c5d7dea681b9fd1802a211b5786faf06a9b77.css as=style integrity="sha256-K/bpEJ9vMjRyBTEvRFxdfepoG5/RgCohG1eG+vBqm3c=" crossorigin=anonymous><link href=/scss/main.min.2bf6e9109f6f32347205312f445c5d7dea681b9fd1802a211b5786faf06a9b77.css rel=stylesheet integrity="sha256-K/bpEJ9vMjRyBTEvRFxdfepoG5/RgCohG1eG+vBqm3c=" crossorigin=anonymous><script src=https://code.jquery.com/jquery-3.7.1.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin=anonymous></script></head><body class=td-page><header><nav class="td-navbar js-navbar-scroll" data-bs-theme=dark><div class="container-fluid flex-column flex-md-row"><a class=navbar-brand href=/><span class="navbar-brand__logo navbar-logo"></span><span class=navbar-brand__name>CFSS: Computing for the Social Sciences</span></a><div class="td-navbar-nav-scroll ms-md-auto" id=main_navbar><ul class=navbar-nav><li class=nav-item><a class=nav-link href=/><span>Home</span></a></li><li class=nav-item><a class=nav-link href=/syllabus/><span>Syllabus</span></a></li><li class=nav-item><a class=nav-link href=/schedule/><span>Schedule</span></a></li><li class=nav-item><a class=nav-link href=/assignments/><span>Assignments</span></a></li></ul></div><div class="d-none d-lg-block"></div></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type=button data-bs-toggle=collapse data-bs-target=#td-section-nav aria-controls=td-section-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="td-sidebar-nav collapse" id=td-section-nav><ul class="td-sidebar-nav__section pe-md-3 ul-0"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m--li><a href=/ title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-><span>Home</span></a><ul class=ul-1><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-setup-li><a href=/setup/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setup><span>Start here: Software Options</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-setupgit-li><a href=/setup/git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupgit><span>Git</span></a><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitwhat-is-git-li><a href=/setup/git/what-is-git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitwhat-is-git><span>What is Git?</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-li><a href=/setup/git/git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit><span>Install Git</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-clients-li><a href=/setup/git/git-clients/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-clients><span>Git clients</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-configure-li><a href=/setup/git/git-configure/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-configure><span>Configure Git</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupgitgit-with-rstudio-li><a href=/setup/git/git-with-rstudio/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setupgitgit-with-rstudio><span>Using Git within RStudio</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id=m-setupr-li><a href=/setup/r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupr><span>R/RStudio</span></a><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprwhat-is-r-li><a href=/setup/r/what-is-r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprwhat-is-r><span>Why R?</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprr-li><a href=/setup/r/r/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprr><span>Setup R</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setuprr-server-li><a href=/setup/r/r-server/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-setuprr-server><span>Accessing RStudio Workbench</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-setupshell-li><a href=/setup/shell/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-setupshell><span>What is the Shell?</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-syllabus-li><a href=/syllabus/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-syllabus><span>Syllabus</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-faq-li><a href=/faq/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-faq><span>FAQ</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqabout-the-course-li><a href=/faq/about-the-course/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqabout-the-course><span>General Questions & Info</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqhomework-evaluations-li><a href=/faq/homework-evaluations/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqhomework-evaluations><span>Homework Rubric</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-faqasking-questions-li><a href=/faq/asking-questions/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-faqasking-questions><span>How to ask for help</span></a></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-schedule-li><a href=/schedule/ class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id=m-schedule><span>Schedule of Topics</span></a><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulejuneteenth-li><a href=/schedule/juneteenth/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulejuneteenth><span>Juneteenth (observed)</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleapplication-program-interface-li><a href=/schedule/application-program-interface/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleapplication-program-interface><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulebuild-better-workflow-li><a href=/schedule/build-better-workflow/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulebuild-better-workflow><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleclassification-topic-models-li><a href=/schedule/classification-topic-models/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleclassification-topic-models><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-communication-li><a href=/schedule/data-communication/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-communication><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-structures-li><a href=/schedule/data-structures/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-structures><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledata-transformation-li><a href=/schedule/data-transformation/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledata-transformation><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledebugging-li><a href=/schedule/debugging/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledebugging><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduledistributed-learning-li><a href=/schedule/distributed-learning/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduledistributed-learning><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleexploratory-data-analysis-li><a href=/schedule/exploratory-data-analysis/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleexploratory-data-analysis><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleextended-git-workflows-li><a href=/schedule/extended-git-workflows/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleextended-git-workflows><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulefall-break-li><a href=/schedule/fall-break/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulefall-break><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulegit-and-github-li><a href=/schedule/git-and-github/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulegit-and-github><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulegrammar-of-graphics-li><a href=/schedule/grammar-of-graphics/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulegrammar-of-graphics><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulehyperparameter-tuning-li><a href=/schedule/hyperparameter-tuning/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulehyperparameter-tuning><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleindependence-day-li><a href=/schedule/independence-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleindependence-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleintro-li><a href=/schedule/intro/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleintro><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulelabor-day-li><a href=/schedule/labor-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulelabor-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulememorial-day-li><a href=/schedule/memorial-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulememorial-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulemlk-day-li><a href=/schedule/mlk-day/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulemlk-day><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleno-class-misc-li><a href=/schedule/no-class-misc/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleno-class-misc><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulepipes-functions-li><a href=/schedule/pipes-functions/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulepipes-functions><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduler-markdown-li><a href=/schedule/r-markdown/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduler-markdown><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulerelational-data-factors-li><a href=/schedule/relational-data-factors/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulerelational-data-factors><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereprex-git-li><a href=/schedule/reprex-git/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereprex-git><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereproducible-documents-li><a href=/schedule/reproducible-documents/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereproducible-documents><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulereproducible-workflow-li><a href=/schedule/reproducible-workflow/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulereproducible-workflow><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleshiny-server-li><a href=/schedule/shiny-server/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleshiny-server><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleshiny-ui-li><a href=/schedule/shiny-ui/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleshiny-ui><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulespatial-viz-i-li><a href=/schedule/spatial-viz-i/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulespatial-viz-i><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulespatial-viz-ii-li><a href=/schedule/spatial-viz-ii/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulespatial-viz-ii><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulestat-learn-classification-li><a href=/schedule/stat-learn-classification/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulestat-learn-classification><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulestat-learn-li><a href=/schedule/stat-learn/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulestat-learn><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletext-data-li><a href=/schedule/text-data/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletext-data><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulethanksgiving-li><a href=/schedule/thanksgiving/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulethanksgiving><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletidy-data-li><a href=/schedule/tidy-data/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletidy-data><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduletidyeval-li><a href=/schedule/tidyeval/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduletidyeval><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulevectors-iteration-li><a href=/schedule/vectors-iteration/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulevectors-iteration><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-scheduleweb-scraping-li><a href=/schedule/web-scraping/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-scheduleweb-scraping><span></span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id=m-schedulework-with-models-li><a href=/schedule/work-with-models/ class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id=m-schedulework-with-models><span></span></a></li></ul></li></ul></li></ul></nav></div></aside><aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"></div><div class=td-toc><nav id=TableOfContents><ul><li><a href=#accessing-your-a1-repository>Accessing your <code>A1</code> repository</a></li><li><a href=#cloning-your-a1-repository>Cloning your <code>a1</code> repository</a></li><li><a href=#general-workflow>General workflow</a></li><li><a href=#what-you-need-to-submit>What you need to submit</a><ul><li></li><li><a href=#deliverables-items-to-complete>Deliverables: items to complete</a></li></ul></li><li><a href=#submit-the-assignment>Submit the assignment</a></li><li><a href=#rubric>Rubric</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 ps-md-5" role=main><nav aria-label=breadcrumb class=td-breadcrumbs><ol class=breadcrumb><li class=breadcrumb-item><a href=/assignments/>Assignments</a></li><li class="breadcrumb-item active" aria-current=page>A1: Practice editing .Rmd and generating .md</li></ol></nav><div class=td-content><h1>A1: Practice editing .Rmd and generating .md</h1><div class=lead>Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.</div><header class=article-meta></header><h1 id=overview>Overview</h1><p>The goal is to test your software installation, your GitHub setup, and
 the homework submission process, as well as demonstrate basic competency
-in Markdown and R Markdown.</p>
-<h2 id="accessing-your-a1-repository">Accessing your <code>A1</code> repository</h2>
-<ul>
-<li>Go <a href="https://classroom.github.com/a/B8DreZI2">to this link</a> to accept
+in Markdown and R Markdown.</p><h2 id=accessing-your-a1-repository>Accessing your <code>A1</code> repository</h2><ul><li>Go <a href=https://classroom.github.com/a/B8DreZI2>to this link</a> to accept
 and create your private <code>a1</code> repository on GitHub. Once you do so,
 your repository will be built in a few seconds. It follows the naming
-convention <code>a1-&lt;USERNAME&gt;</code></li>
-<li>Once the your repository has been created, click on the link you see,
-which will take you to your repository.</li>
-<li>Finally, clone the repository to your computer following the process
-below.</li>
-</ul>
-<h2 id="cloning-your-a1-repository">Cloning your <code>a1</code> repository</h2>
-<p>After you have accessed the <code>a1</code> repository (see above), follow these
+convention <code>a1-&lt;USERNAME></code></li><li>Once the your repository has been created, click on the link you see,
+which will take you to your repository.</li><li>Finally, clone the repository to your computer following the process
+below.</li></ul><h2 id=cloning-your-a1-repository>Cloning your <code>a1</code> repository</h2><p>After you have accessed the <code>a1</code> repository (see above), follow these
 steps to clone it. Whenever possible, this will be the preferred route
-for setting up your R projects:</p>
-<ul>
-<li>In RStudio, start a new Project with <em>File &gt; New Project &gt;
-Version Control &gt; Git</em>. In the “repository URL” paste the URL of
+for setting up your R projects:</p><ul><li>In RStudio, start a new Project with <em>File > New Project >
+Version Control > Git</em>. In the “repository URL” paste the URL of
 your newly created GitHub repository: go back to the repository, click
 on the green button “Code” and grab the correct link, either SSH or
 HTTPS (the one you used to set up your cache credentials). The
 repository name should automatically populate; if not, type your
-<code>a1-&lt;USERNAME&gt;</code> as name.</li>
-<li>Decide where to store the local directory for the project. Don’t
+<code>a1-&lt;USERNAME></code> as name.</li><li>Decide where to store the local directory for the project. Don’t
 scatter everything around your computer - have a central location, or
 some meaningful structure. For example, for repositories you create in
 this course, you can setup a <code>css</code> directory and clone all your repos
-there.</li>
-<li>Before proceeding, check the little box “Open in new session”, as
-that’s what you’ll usually do in real life.</li>
-<li>Click “Create Project” to create a new sub-directory, which will be
-all of these things:
-<ul>
-<li>a directory on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
-</ul>
-</li>
-</ul>
-<div class="alert alert-info" role="alert">
-<pre><code>note
-</code></pre>
-</div>
-<h2 id="general-workflow">General workflow</h2>
-<p>Your general workflow will be:</p>
-<!--
-* Pull from GitHub (just an empty precaution now, but it will matter when you collaborate with others)
--->
-<ul>
-<li>Accept the repo and clone it (see above)</li>
-<li>Make changes locally to the files (here <code>README.md</code> and <code>README.rmd</code>)
-in RStudio</li>
-<li>Save your changes</li>
-<li>Stage-Commit-Push: stage and commit your changes to your local Git
+there.</li><li>Before proceeding, check the little box “Open in new session”, as
+that’s what you’ll usually do in real life.</li><li>Click “Create Project” to create a new sub-directory, which will be
+all of these things:<ul><li>a directory on your computer</li><li>a Git repository, linked to a remote GitHub repository</li><li>an RStudio Project</li></ul></li></ul><div class="alert alert-info" role=alert><pre><code>note
+</code></pre></div><h2 id=general-workflow>General workflow</h2><p>Your general workflow will be:</p><ul><li>Accept the repo and clone it (see above)</li><li>Make changes locally to the files (here <code>README.md</code> and <code>README.rmd</code>)
+in RStudio</li><li>Save your changes</li><li>Stage-Commit-Push: stage and commit your changes to your local Git
 repo; then push them online to GitHub. You can complete these steps
 using the Git GUI integrated into RStudio – if you have not yet, I
-strongly recommend to go through the <a href="/setup/git/git-with-rstudio/">Using Git with R
+strongly recommend to go through the <a href=/setup/git/git-with-rstudio/>Using Git with R
 Studio</a> tutorial to get comfortable with
 the workflow. In general, you do not want to directly modify your
 online GitHub repo; instead modify your local Git repo, then
-stage-commit-push your changes up to your online GitHub repo.</li>
-</ul>
-<h2 id="what-you-need-to-submit">What you need to submit</h2>
-<p>Written assignments for this course will be submitted using Markdown and
-R Markdown: <a href="https://daringfireball.net/projects/markdown/">Markdown</a>
+stage-commit-push your changes up to your online GitHub repo.</li></ul><h2 id=what-you-need-to-submit>What you need to submit</h2><p>Written assignments for this course will be submitted using Markdown and
+R Markdown: <a href=https://daringfireball.net/projects/markdown/>Markdown</a>
 (.md) is a lightweight text formatting language that easily converts
 between file formats. Regular Markdown files (.md) are rendered on the
 GitHub website and can be directly read on the website. They are also
-integrated directly into <a href="https://rmarkdown.rstudio.com/">R Markdown</a>
+integrated directly into <a href=https://rmarkdown.rstudio.com/>R Markdown</a>
 (.rmd or .Rmd), which combines R code, output, and written text into a
 single document. GitHub includes a
-<a href="https://guides.github.com/features/mastering-markdown/">guide</a> for
-writing Markdown documents.</p>
-<p>For this assignment, you need to modify and push to your GitHub homework
+<a href=https://guides.github.com/features/mastering-markdown/>guide</a> for
+writing Markdown documents.</p><p>For this assignment, you need to modify and push to your GitHub homework
 repository the following file: <code>README.rmd</code> Note that we have set up the
 rmd file so that when you <code>knit</code> it, it will create your md file for
-you!</p>
-<h4 id="readmemd"><code>README.md</code></h4>
-<p>You will notice there is already a <code>README.md</code> file in the repo. A
+you!</p><h4 id=readmemd><code>README.md</code></h4><p>You will notice there is already a <code>README.md</code> file in the repo. A
 README is usually a plain .txt or .md file. The purpose of a README file
 in a repository is to communicate important information about your
 project (software, how to run the code, preview of the results, etc.).
-The goal of this assignment is to practice generating your README.</p>
-<h4 id="rcodermd"><code>Rcode.rmd</code></h4>
-<p>You will notice there is already a <code>Rcode.rmd</code> file in the repo. Your
+The goal of this assignment is to practice generating your README.</p><h4 id=rcodermd><code>Rcode.rmd</code></h4><p>You will notice there is already a <code>Rcode.rmd</code> file in the repo. Your
 task is to edit this file by adding more YAML arguments (see readings)
-and at least two R code chunks.</p>
-<h3 id="deliverables-items-to-complete">Deliverables: items to complete</h3>
-<p>To achieve full marks, your <code>README.rmd</code> should include the following
-elements:</p>
-<ul>
-<li>At least one new YAML Header argument. You can modify one of three
+and at least two R code chunks.</p><h3 id=deliverables-items-to-complete>Deliverables: items to complete</h3><p>To achieve full marks, your <code>README.rmd</code> should include the following
+elements:</p><ul><li>At least one new YAML Header argument. You can modify one of three
 arguments that are already there or add a new one to them (e.g.,
-author, subtitle, table of contents, etc.)</li>
-<li>At least two R code chunks:
-<ul>
-<li>Rely on the in-class materials “intro to R” as starting point, but
+author, subtitle, table of contents, etc.)</li><li>At least two R code chunks:<ul><li>Rely on the in-class materials “intro to R” as starting point, but
 do not copy the exact code we have seen in class: make some changes
-to customize or expand it</li>
-<li>Notice the code chunks must execute correctly and your final knitted
+to customize or expand it</li><li>Notice the code chunks must execute correctly and your final knitted
 document (which you should submit as well) must display both the
-code and the results</li>
-</ul>
-</li>
-<li>Before each code chunk, add a brief text that explains what each code
-chunk does</li>
-<li>Headers (one or more)</li>
-<li>Emphasis (italics or/and bold)</li>
-<li>Lists</li>
-<li>Images: add a picture (of yourself or something else) to your repo and
-embed it in your README (see example files present)</li>
-<li>Links</li>
-<li>A summary and reflection of the Git/GitHub workflow you adopted for
+code and the results</li></ul></li><li>Before each code chunk, add a brief text that explains what each code
+chunk does</li><li>Headers (one or more)</li><li>Emphasis (italics or/and bold)</li><li>Lists</li><li>Images: add a picture (of yourself or something else) to your repo and
+embed it in your README (see example files present)</li><li>Links</li><li>A summary and reflection of the Git/GitHub workflow you adopted for
 this homework, and of your experience with Markdown (e.g., provide a
 summary of the workflow you adopted, and add some comments about
-something new you learned, something that surprised you, etc.)</li>
-<li>AI/resources statement: All assignments need about one paragraph
+something new you learned, something that surprised you, etc.)</li><li>AI/resources statement: All assignments need about one paragraph
 describing the resources you used (including links and prompts, as
 relevant) in completing the assignment. This helps us learn about your
-process.</li>
-</ul>
-<h2 id="submit-the-assignment">Submit the assignment</h2>
-<p>To submit the assignment, simply push to your repository the last
+process.</li></ul><h2 id=submit-the-assignment>Submit the assignment</h2><p>To submit the assignment, simply push to your repository the last
 version of your assignment before the deadline. Then copy your
 repository URL
-(e.g. <a href="https://github.com/cfss-hmwks/a1-edit-readme-jmclip">https://github.com/cfss-hmwks/a1-edit-readme-jmclip</a>) and submit
-it to Canvas under A1 before the deadline.</p>
-<h2 id="rubric">Rubric</h2>
-<p>Needs improvement: <code>README.md</code> says the equivalent of “This is the
+(e.g. <a href=https://github.com/cfss-hmwks/a1-edit-readme-jmclip>https://github.com/cfss-hmwks/a1-edit-readme-jmclip</a>) and submit
+it to Canvas under A1 before the deadline.</p><h2 id=rubric>Rubric</h2><p>Needs improvement: <code>README.md</code> says the equivalent of “This is the
 repository of Name Surname” with little details. <code>README.rmd</code> contains R
 code chunks, but no explanation nor additional YAML headers are added.
 All work done via Git/Github … but that’s just a guess, because the
-student doesn’t explain how it was done.</p>
-<p>Satisfactory: Something in between.</p>
-<p>Excellent: <code>README.md</code> provides a proper introduction of the student. It
+student doesn’t explain how it was done.</p><p>Satisfactory: Something in between.</p><p>Excellent: <code>README.md</code> provides a proper introduction of the student. It
 also demonstrates experimentation with several aspects of the Markdown
 syntax (e.g., section headers, links, bold, italic, bullet points,
 image, etc.). The student describes how they got the changes into
 <code>README.md</code> and offers a few reflections on their Git/GitHub workflow
 and their experience with Markdown. <code>README.rmd</code> knits properly and
 contains one or more new YAML headers, R code chunks, with a detailed
-explanation of them.</p>
-<p>For further details, see the <a href="/faq/homework-evaluations/">general
-rubric</a> we adopt for grading.</p>
-
-	
-</div>
-
-
-          </main>
-        </div>
-      </div>
-      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
-    li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 10.0px Times; font-kerning: none}
-    span.s3 {text-decoration: underline ; font-kerning: none}
-    ul.ul1 {list-style-type: disc}
-  </style>
-</head>
-<body>
-<p class="p1"><span class="s1"></span></p>
-<p class="p1"><span class="s1"></span></p>
-<p class="p1"><span class="s1"></span></p>
-<p class="p1"><span class="s1"></span><span class="s2">© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class="s1">   <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"></span></p>
-</body>
-</html>
-
-    </div>
-    <script src="/js/main.js"></script>
-<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
-<script src='/js/tabpane-persist.js'></script>
-
-  </body>
-</html>
+explanation of them.</p><p>For further details, see the <a href=/faq/homework-evaluations/>general
+rubric</a> we adopt for grading.</p></div></main></div></div><!doctype html><html><head><meta charset=utf-8><meta http-equiv=Content-Style-Type content="text/css"><title></title><meta name=Generator content="Cocoa HTML Writer"><meta name=CocoaVersion content="2299.7"><style type=text/css>p.p1{margin:0px;font:12px Times;-webkit-text-stroke:#000000}p.p2{margin:0px 0px 12px;font:12px Times;color:#0000e9;-webkit-text-stroke:#0000e9}li.li3{margin:0px;font:12px Times;-webkit-text-stroke:#000000;min-height:14px}span.s1{font-kerning:none}span.s2{font:10px Times;font-kerning:none}span.s3{text-decoration:underline;font-kerning:none}ul.ul1{list-style-type:disc}</style></head><body><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span></p><p class=p1><span class=s1></span><span class=s2>© 2025 Jean Clipperton (materials adapted from Benjamin Soltoff and Sabrina Nardin) All Rights Reserved</span><span class=s1> <span class=Apple-converted-space> </span></span></p><p class=p1><span class=s1></span></p></body></html></div><script src=/js/main.min.8c87303b31e50afa09a774582c268712d6bb31cd6df1cdcb4573f32abeab7551.js integrity="sha256-jIcwOzHlCvoJp3RYLCaHEta7Mc1t8c3LRXPzKr6rdVE=" crossorigin=anonymous></script><script defer src=/js/click-to-copy.min.73478a7d4807698aed7e355eb23f9890ca18fea3158604c8471746d046702bad.js integrity="sha256-c0eKfUgHaYrtfjVesj+YkMoY/qMVhgTIRxdG0EZwK60=" crossorigin=anonymous></script><script src=/js/tabpane-persist.js></script></body></html>
