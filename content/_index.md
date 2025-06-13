@@ -9,7 +9,7 @@ You can navigate to other pages using the left menu or the top-right options. Se
 |    Week    | Date   | Topic   | Readings      | Slides | Assignment         |
 |---------------|--------|------------------------------------|---------------|--------|--------------------|
 | **Week 1**    |        |                                    |               |        |                    |
-| Day 1         | 16-Jun | Intro to course / markdown / git   | [Ch 1](https://r4ds.hadley.nz/data-visualize.html)          |   [<i class="fa-solid fa-person-chalkboard"></i>](slides/intro)     | [A1 (due 6/20)](/assignments/edit-readme/)      |
+| Day 1         | 16-Jun | [Intro to course / markdown / git](schedule/intro/)   | [Ch 1](https://r4ds.hadley.nz/data-visualize.html)          |   [<i class="fa-solid fa-person-chalkboard"></i>](slides/intro)     | [A1 (due 6/20)](/assignments/edit-readme/)      |
 | Day 2         | 17-Jun | Data Visualization                 | [Ch 1](https://r4ds.hadley.nz/data-visualize.html)   |    [<i class="fa-solid fa-person-chalkboard"></i>](slides/)      |                    |
 | Day 3         | 18-Jun | Workflow + transformation          | [Ch 2](https://r4ds.hadley.nz/workflow-basics.html), [Ch 3](https://r4ds.hadley.nz/data-transform.html)        |     [<i class="fa-solid fa-person-chalkboard"></i>](slides/)      | [A2 (due 6/23)](/assignments/explore-data/)    |
 | Day 4         | 19-Jun | Code style + tidying               | Ch 4, Ch 5       |     [<i class="fa-solid fa-person-chalkboard"></i>](slides/)      |                    |
