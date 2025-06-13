@@ -2,12 +2,12 @@
 title: "A1: Practice editing .Rmd and generating .md"
 date: 2022-09-29T13:30:00-06:00  # Schedule page publish date
 #publishdate: 2019-03-01
-weight: 1
-type: docs
+weight: 1 
 description: Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.
 output:
   md_document:
     preserve_yaml: true
+type: docs
 aliases: ["/a1-edit-README.html"]
 
 ---

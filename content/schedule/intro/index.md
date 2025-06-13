@@ -1,3 +1,16 @@
+---
+title: "Introduction to computing for the social sciences"
+date: 2023-06-12T12:25:00-05:00
+publishDate: 2019-03-01T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 11
+---
+
 ## Overview
 
 - Introduction to the course
@@ -9,15 +22,11 @@
 
 ## Before class
 
-- Read the “Welcome” page and chapter 1 “Introduction” in [R for Data
-  Science](http://r4ds.had.co.nz/). (*Note that there is a new draft
-  we’ll be moving to soon: [Second Edition of R for Data
-  Science](https://r4ds.hadley.nz/)*)
+- Read the “Welcome” page and chapter 1 “Introduction” in [Second
+  Edition of R for Data Science](https://r4ds.hadley.nz/))
 
 ## Class materials
 
-- [Introduction to computing for the social
-  sciences](/notes/intro-to-course/)
 - [Good Enough Practices in Scientific
   Computing](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
   Additional resource and good summary of best computing practices
@@ -25,6 +34,4 @@
 ## What you need to do after class
 
 - Read the [Setup](/setup/) section and install the required software
-- Fill out [this
-  survey](https://docs.google.com/forms/d/e/1FAIpQLSfV_g4z7rpNWz_ONmH1oLrItXprHjo8-KBpnd19FbEJDCrEDA/viewform?usp=sf_link)
 - Explore this website
