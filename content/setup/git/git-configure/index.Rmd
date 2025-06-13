@@ -4,7 +4,10 @@ draft: false
 weight: 40
 title: "Configure Git"
 toc: true
-type: book
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/git07.html", "/setup/git-configure/"]
 ---
 
@@ -135,10 +138,10 @@ You should see output that provides information about your GitHub account.
 Now that you have stored your PAT, you should not be asked to provide a username and password when you attempt to push to or pull from GitHub. It will just work! Hopefully.
 
 
-# Acknowledgments
+<!-- # Acknowledgments -->
 
-```{r child = here::here("R", "_ack_stat545.Rmd")}
-```
-```{r child = here::here("R", "_ack_ben.Rmd")}
-```
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->
 * [*Happy Git and GitHub for the useR*](https://happygitwithr.com/)

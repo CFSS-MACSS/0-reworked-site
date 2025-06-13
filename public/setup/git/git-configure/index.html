@@ -58,85 +58,340 @@
 </div>
 </nav>
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
-        <div class="alert alert-info" role="alert">
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setup-li">
+  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setupgit-li">
+  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitwhat-is-git-li">
+  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-li">
+  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-clients-li">
+  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-setupgitgit-configure-li">
+  <a href="/setup/git/git-configure/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="td-sidebar-nav-active-item">Configure Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-with-rstudio-li">
+  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setupr-li">
+  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
+  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupshell-li">
+  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
+  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
+  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
+  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
+  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
+  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
+  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule11-intro-li">
+  <a href="/schedule/11-intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule11-intro"><span class="">Introduction to computing for the social sciences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule12-grammar-of-graphics-li">
+  <a href="/schedule/12-grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule12-grammar-of-graphics"><span class="">Visualizations and the grammar of graphics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule13-data-transformation-li">
+  <a href="/schedule/13-data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule13-data-transformation"><span class="">Data transformation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule14-juneteenth-li">
+  <a href="/schedule/14-juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule14-juneteenth"><span class="">Juneteenth (observed)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule21-exploratory-data-analysis-li">
+  <a href="/schedule/21-exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule21-exploratory-data-analysis"><span class="">Exploratory data analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule22-tidy-data-li">
+  <a href="/schedule/22-tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule22-tidy-data"><span class="">Data wrangling: tidy data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule23-relational-data-factors-li">
+  <a href="/schedule/23-relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule23-relational-data-factors"><span class="">Data wrangling: relational data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule24-vectors-iteration-li">
+  <a href="/schedule/24-vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule24-vectors-iteration"><span class="">Control Structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule31-pipes-functions-li">
+  <a href="/schedule/31-pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule31-pipes-functions"><span class="">Functions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule32-debugging-li">
+  <a href="/schedule/32-debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule32-debugging"><span class="">Debugging and defensive programming</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule33-data-structures-li">
+  <a href="/schedule/33-data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule33-data-structures"><span class="">Data structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule41-reprex-git-li">
+  <a href="/schedule/41-reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule41-reprex-git"><span class="">A deep dive into Git/GitHub</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule42-r-markdown-li">
+  <a href="/schedule/42-r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule42-r-markdown"><span class="">A deep dive into R Markdown</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule43-application-program-interface-li">
+  <a href="/schedule/43-application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule43-application-program-interface"><span class="">Getting data from the web: API access</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule44-web-scraping-li">
+  <a href="/schedule/44-web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule44-web-scraping"><span class="">Getting data from the web: scraping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule51-text-data-li">
+  <a href="/schedule/51-text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule51-text-data"><span class="">Text analysis: fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule52-classification-topic-models-li">
+  <a href="/schedule/52-classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule52-classification-topic-models"><span class="">Text analysis: topic modeling and sentiment analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule54-reproducible-workflow-li">
+  <a href="/schedule/54-reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule54-reproducible-workflow"><span class="">Reproducible Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
+  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
+  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
+  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
+  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
+  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
+  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
+  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
+  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
+  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
+  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
+  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
+  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
+  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
+  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
+  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
+  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
+  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
+  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
+  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
+  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
+  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cache-credentials-for-ssh">Cache credentials for SSH</a>
+      <ul>
+        <li><a href="#create-and-store-an-ssh-key-pair">Create and store an SSH key pair</a></li>
+      </ul>
+    </li>
+    <li><a href="#cache-credentials-for-https">Cache credentials for HTTPS</a>
+      <ul>
+        <li><a href="#get-a-pat">Get a PAT</a></li>
+        <li><a href="#store-your-pat">Store your PAT</a></li>
+        <li><a href="#confirm-your-pat-is-saved">Confirm your PAT is saved</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/setup/">Start here: Software Options</a></li>
+  <li class="breadcrumb-item">
+    <a href="/setup/git/">Git</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Configure Git</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Configure Git</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<div class="alert alert-info" role="alert">
 <pre><code>note
 </code></pre>
 </div>
-<p>To ensure minimal challenges using Git during the class, we want to configure Git now with some default settings. <strong>You only have to do this once per machine.</strong></p>
+<p>To ensure minimal challenges using Git during the class, we want to
+configure Git now with some default settings. <strong>You only have to do this
+once per machine.</strong></p>
 <h1 id="identify-yourself">Identify yourself</h1>
-<p>In order to track changes and attribute them to the correct user, we need to tell Git your name and email address. Run the following commands from the R console:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">usethis</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">use_git_config</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">user.name</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Jean Clipperton&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">user.email</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;email@gmail.com&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>Replace <code>Jean Clipperton</code> and <code>email@gmail.com</code> with your name and email address. Your name could be your GitHub username, or your actual first and last name. <strong>Your email address must be the email address associated with your GitHub account.</strong></p>
-<p>To check that Git got your credentials, in R Studio go to Tools &gt; Shell and run the following command in the shell/terminal tab that opened up:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">git</span> <span style="color:#000">config</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">global</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">list</span>
-</span></span></code></pre></div><h1 id="cache-credentials">Cache credentials</h1>
-<p>In order to push changes to GitHub, you need to <strong>authenticate</strong> yourself. That is, you need to prove you are the owner of your GitHub account. When you log in to GitHub.com from your browser, you provide your username and password to prove your identity. But when you want to push and pull from your computer, you cannot use this method. Instead, you will prove your identity using one of two methods.</p>
+<p>In order to track changes and attribute them to the correct user, we
+need to tell Git your name and email address. Run the following commands
+from the R console:</p>
+<pre><code>usethis::use_git_config(user.name = &quot;Sabrina Nardin&quot;, user.email = &quot;email@gmail.com&quot;)
+</code></pre>
+<p>Replace <code>Sabrina Nardin</code> and <code>email@gmail.com</code> with your name and email
+address. Your name could be your GitHub username, or your actual first
+and last name. <strong>Your email address must be the email address associated
+with your GitHub account.</strong></p>
+<p>To check that Git got your credentials, in R Studio go to Tools &gt;
+Shell and run the following command in the shell/terminal tab that
+opened up:</p>
+<pre><code>git config --global --list
+</code></pre>
+<h1 id="cache-credentials">Cache credentials</h1>
+<p>In order to push changes to GitHub, you need to <strong>authenticate</strong>
+yourself. That is, you need to prove you are the owner of your GitHub
+account. When you log in to GitHub.com from your browser, you provide
+your username and password to prove your identity. But when you want to
+push and pull from your computer, you cannot use this method. Instead,
+you will prove your identity using one of two methods.</p>
 <h2 id="cache-credentials-for-ssh">Cache credentials for SSH</h2>
 <div class="alert alert-info" role="alert">
 <pre><code>note
 </code></pre>
 </div>
-<p>The <strong>Secure Shell Protocol</strong> (SSH) is another method for authenticating your identity when communicating with GitHub. While a password can eventually be cracked with a brute force attack, SSH keys are nearly impossible to decipher by brute force alone. Generating a key pair provides you with two long strings of characters: a public and a private key. You can place the public key on any server (like GitHub), and then unlock it by connecting to it with a client that already has the private key (your computer or RStudio Serve). When the two match up, the system unlocks without the need for a password.</p>
-<p>The URL for SSH remotes looks like <code>git@github.com:&lt;OWNER&gt;/&lt;REPO&gt;.git</code>. Make sure you use this URL to clone a repository. If you accidentally use the HTTPS version, the operation will not work (if that happens, go back and generate a SSH cache credential).</p>
+<p>The <strong>Secure Shell Protocol</strong> (SSH) is another method for authenticating
+your identity when communicating with GitHub. While a password can
+eventually be cracked with a brute force attack, SSH keys are nearly
+impossible to decipher by brute force alone. Generating a key pair
+provides you with two long strings of characters: a public and a private
+key. You can place the public key on any server (like GitHub), and then
+unlock it by connecting to it with a client that already has the private
+key (your computer or RStudio Serve). When the two match up, the system
+unlocks without the need for a password.</p>
+<p>The URL for SSH remotes looks like <code>git@github.com:&lt;OWNER&gt;/&lt;REPO&gt;.git</code>.
+Make sure you use this URL to clone a repository. If you accidentally
+use the HTTPS version, the operation will not work (if that happens, go
+back and generate a SSH cache credential).</p>
 <h3 id="create-and-store-an-ssh-key-pair">Create and store an SSH key pair</h3>
 <p>Run the following code in the R console:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">credentials</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">ssh_setup_github</span><span style="color:#000;font-weight:bold">()</span>
-</span></span></code></pre></div><!--
+<pre><code>credentials::ssh_setup_github()
+</code></pre>
+<!--
 new line of command cis-ds
 ```r credentials::ssh_keygen() ```
 -->
 <ul>
 <li>You will be prompted to generate a new SSH key. Tell the computer yes</li>
-<li>You will see a long string of characters in the console and be asked to open a browser now. Say yes, then copy and paste the public key (the whole line of text) into the resulting browser window on GitHub. If you do not have a GitHub account, please register a free GitHub account before proceeding, see <a href="https://computing-soc-sci.netlify.app/setup/#for-both-options">here</a> for info</li>
-<li>Give the key an informative title, something like <code>css-rstudio-server</code> or <code>css-rworkbench-fall22</code> to record the class and computer. Leave Key type as &ldquo;Authentication Key&rdquo;</li>
-<li>Click the green button &ldquo;Add SSH key&rdquo;. If you are prompted to type your GitHub password, do so.</li>
+<li>You will see a long string of characters in the console and be asked
+to open a browser now. Say yes, then copy and paste the public key
+(the whole line of text) into the resulting browser window on GitHub.
+If you do not have a GitHub account, please register a free GitHub
+account before proceeding, see
+<a href="https://computing-soc-sci.netlify.app/setup/#for-both-options">here</a>
+for info</li>
+<li>Give the key an informative title, something like <code>css-rstudio-server</code>
+or <code>css-rworkbench-fall22</code> to record the class and computer. Leave Key
+type as “Authentication Key”</li>
+<li>Click the green button “Add SSH key”. If you are prompted to type your
+GitHub password, do so.</li>
 </ul>
 <h2 id="cache-credentials-for-https">Cache credentials for HTTPS</h2>
 <div class="alert alert-info" role="alert">
 <pre><code>note
 </code></pre>
 </div>
-<p>With this method you will clone repositories using a regular HTTPS url like <code>https://github.com/&lt;OWNER&gt;/&lt;REPO&gt;.git</code>. You will need a <strong>personal access token</strong> (PAT) and use that as your credential for HTTPS operations.</p>
+<p>With this method you will clone repositories using a regular HTTPS url
+like <code>https://github.com/&lt;OWNER&gt;/&lt;REPO&gt;.git</code>. You will need a <strong>personal
+access token</strong> (PAT) and use that as your credential for HTTPS
+operations.</p>
 <h3 id="get-a-pat">Get a PAT</h3>
 <p>Run this code from your R console:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">usethis</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">create_github_token</span><span style="color:#000;font-weight:bold">(</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">scopes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;repo&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;user&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;gist&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;workflow&#34;</span><span style="color:#000;font-weight:bold">),</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">description</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;RStudio Workbench&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>This is a helper function that takes you to the web form to create a PAT.</p>
+<pre><code>usethis::create_github_token(
+  scopes = c(&quot;repo&quot;, &quot;user&quot;, &quot;gist&quot;, &quot;workflow&quot;),
+  description = &quot;RStudio Workbench&quot;
+)
+</code></pre>
+<p>This is a helper function that takes you to the web form to create a
+PAT.</p>
 <ul>
-<li>Give the PAT a description (e.g. &ldquo;PAT for Computing for Information Science&rdquo;)</li>
-<li>Change the <strong>Expiration</strong> to 90 days. This ensures the PAT remains valid through the end of the course. You can also set the token to never expire, but GitHub will warn you this is not as secure as an expiring token.</li>
-<li>Leave the remaining options on the pre-filled form selected and click &ldquo;Generate token&rdquo;. As the page says, you must <strong>store this token somewhere</strong>, because you&rsquo;ll never be able to see it again, once you leave that page or close the window. For now, you can copy it to your clipboard (we will save it in the next step).</li>
+<li>Give the PAT a description (e.g. “PAT for Computing for Information
+Science”)</li>
+<li>Change the <strong>Expiration</strong> to 90 days. This ensures the PAT remains
+valid through the end of the course. You can also set the token to
+never expire, but GitHub will warn you this is not as secure as an
+expiring token.</li>
+<li>Leave the remaining options on the pre-filled form selected and click
+“Generate token”. As the page says, you must <strong>store this token
+somewhere</strong>, because you’ll never be able to see it again, once you
+leave that page or close the window. For now, you can copy it to your
+clipboard (we will save it in the next step).</li>
 </ul>
 <p>If you lose or forget your PAT, just generate a new one.</p>
 <h3 id="store-your-pat">Store your PAT</h3>
-<p>In order to store your PAT so you don&rsquo;t have to reenter it every time you interact with Git, we need to run the following code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">gitcreds</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">gitcreds_set</span><span style="color:#000;font-weight:bold">()</span>
-</span></span></code></pre></div><p>When prompted, paste your PAT into the console and press return. Your credential should now be saved on your computer.</p>
+<p>In order to store your PAT so you don’t have to reenter it every time
+you interact with Git, we need to run the following code:</p>
+<pre><code>gitcreds::gitcreds_set()
+</code></pre>
+<p>When prompted, paste your PAT into the console and press return. Your
+credential should now be saved on your computer.</p>
 <h3 id="confirm-your-pat-is-saved">Confirm your PAT is saved</h3>
 <p>Run the following code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">gh</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">gh_whoami</span><span style="color:#000;font-weight:bold">()</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">usethis</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">git_sitrep</span><span style="color:#000;font-weight:bold">()</span>
-</span></span></code></pre></div><p>You should see output that provides information about your GitHub account.</p>
-<p>Now that you have stored your PAT, you should not be asked to provide a username and password when you attempt to push to or pull from GitHub. It will just work! Hopefully.</p>
-<h1 id="acknowledgments">Acknowledgments</h1>
+<pre><code>gh::gh_whoami()
+
+usethis::git_sitrep()
+</code></pre>
+<p>You should see output that provides information about your GitHub
+account.</p>
+<p>Now that you have stored your PAT, you should not be asked to provide a
+username and password when you attempt to push to or pull from GitHub.
+It will just work! Hopefully.</p>
+<!-- # Acknowledgments -->
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->
 <ul>
-<li>
-<p>This page is derived in part from <a href="http://stat545.com">&ldquo;UBC STAT 545A and 547M&rdquo;</a>, licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Creative Commons License</a>.</p>
-</li>
-<li>
-<p>This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.</p>
-</li>
-<li>
-<p><a href="https://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a></p>
-</li>
+<li><a href="https://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a></li>
 </ul>
 
-      </main>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>

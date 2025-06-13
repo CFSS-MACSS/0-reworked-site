@@ -4,7 +4,10 @@ draft: false
 weight: 20
 title: "Install Git"
 toc: true
-type: book
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/git01.html", "/setup/git/"]
 ---
 
@@ -76,12 +79,15 @@ Fedora/Redhat Linux
 
 `sudo yum install git`
 
-# Acknowledgments
 
-```{r child = here::here("R", "_ack_stat545.Rmd")}
-```
-```{r child = here::here("R", "_ack_swcgit.Rmd")}
-```
-```{r child = here::here("R", "_ack_ben.Rmd")}
-```
+<!-- # Acknowledgments -->
+
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_swcgit.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->
+
+
 * ["Chapter 6: Install Git" from Happy Git and GitHub for the useR](https://happygitwithr.com/install-git.html)

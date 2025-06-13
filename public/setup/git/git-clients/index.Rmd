@@ -4,7 +4,10 @@ draft: false
 weight: 30
 title: "Git clients"
 toc: true
-type: book
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/git02.html", "/setup/git-clients/"]
 ---
 
@@ -41,7 +44,7 @@ If you want to use a Git client, here are some options to consider:
 * [GitUp](http://gitup.co/) (Mac only)
 * [Even more choices](https://git-scm.com/downloads/guis)
 
-## Acknowledgments
+<!-- ## Acknowledgments -->
 
-```{r child = here::here("R", c("_ack_stat545.Rmd", "_ack_ben.Rmd"))}
-```
+<!-- ```{r child = here::here("R", c("_ack_stat545.Rmd", "_ack_ben.Rmd"))} -->
+<!-- ``` -->

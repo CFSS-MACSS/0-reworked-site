@@ -58,26 +58,246 @@
 </div>
 </nav>
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
-        <p>Complete these steps after you have Installed Git (only if you are working with R Studio locally) and Configured Git (for both local and R Workbench option) to verify that everything works as expected. If you are not sure, begin by reading <a href="/setup/">Start here: Software Options</a>.</p>
-<h1 id="step-0-make-sure-rstudio-can-find-git">Step 0: Make sure RStudio can find Git</h1>
-<h2 id="if-everything-is-installed-correctly">If everything is installed correctly&hellip;</h2>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setup-li">
+  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setupgit-li">
+  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitwhat-is-git-li">
+  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-li">
+  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-clients-li">
+  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupgitgit-configure-li">
+  <a href="/setup/git/git-configure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="">Configure Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-setupgitgit-with-rstudio-li">
+  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="td-sidebar-nav-active-item">Using Git within RStudio</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setupr-li">
+  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
+  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupshell-li">
+  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
+  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
+  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
+  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
+  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
+  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
+  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule11-intro-li">
+  <a href="/schedule/11-intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule11-intro"><span class="">Introduction to computing for the social sciences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule12-grammar-of-graphics-li">
+  <a href="/schedule/12-grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule12-grammar-of-graphics"><span class="">Visualizations and the grammar of graphics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule13-data-transformation-li">
+  <a href="/schedule/13-data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule13-data-transformation"><span class="">Data transformation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule14-juneteenth-li">
+  <a href="/schedule/14-juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule14-juneteenth"><span class="">Juneteenth (observed)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule21-exploratory-data-analysis-li">
+  <a href="/schedule/21-exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule21-exploratory-data-analysis"><span class="">Exploratory data analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule22-tidy-data-li">
+  <a href="/schedule/22-tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule22-tidy-data"><span class="">Data wrangling: tidy data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule23-relational-data-factors-li">
+  <a href="/schedule/23-relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule23-relational-data-factors"><span class="">Data wrangling: relational data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule24-vectors-iteration-li">
+  <a href="/schedule/24-vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule24-vectors-iteration"><span class="">Control Structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule31-pipes-functions-li">
+  <a href="/schedule/31-pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule31-pipes-functions"><span class="">Functions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule32-debugging-li">
+  <a href="/schedule/32-debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule32-debugging"><span class="">Debugging and defensive programming</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule33-data-structures-li">
+  <a href="/schedule/33-data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule33-data-structures"><span class="">Data structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule41-reprex-git-li">
+  <a href="/schedule/41-reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule41-reprex-git"><span class="">A deep dive into Git/GitHub</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule42-r-markdown-li">
+  <a href="/schedule/42-r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule42-r-markdown"><span class="">A deep dive into R Markdown</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule43-application-program-interface-li">
+  <a href="/schedule/43-application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule43-application-program-interface"><span class="">Getting data from the web: API access</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule44-web-scraping-li">
+  <a href="/schedule/44-web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule44-web-scraping"><span class="">Getting data from the web: scraping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule51-text-data-li">
+  <a href="/schedule/51-text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule51-text-data"><span class="">Text analysis: fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule52-classification-topic-models-li">
+  <a href="/schedule/52-classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule52-classification-topic-models"><span class="">Text analysis: topic modeling and sentiment analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule54-reproducible-workflow-li">
+  <a href="/schedule/54-reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule54-reproducible-workflow"><span class="">Reproducible Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
+  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
+  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
+  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
+  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
+  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
+  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
+  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
+  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
+  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
+  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
+  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
+  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
+  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
+  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
+  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
+  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
+  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
+  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
+  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
+  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
+  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-0-make-sure-rstudio-can-find-git">Step 0: Make sure RStudio can find Git</a>
+      <ul>
+        <li><a href="#if-everything-is-installed-correctly">If everything is installed correctly…</a></li>
+        <li><a href="#if-this-didnt-work">If this didn’t work…</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-1-make-a-new-repository-on-github">Step 1: Make a new repository on GitHub</a></li>
+    <li><a href="#step-2-clone-the-new-github-repository-to-your-computer-via-rstudio">Step 2: Clone the new GitHub repository to your computer via RStudio</a>
+      <ul>
+        <li><a href="#step-2-alternative-connect-a-local-rstudio-project-to-a-github-repository">Step 2 alternative: Connect a local RStudio project to a GitHub repository</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-make-local-changes-save-commit">Step 3: Make local changes, save, commit</a></li>
+    <li><a href="#step-4-push-your-local-changes-online-to-github">Step 4: Push your local changes online to GitHub</a></li>
+    <li><a href="#the-end">The end</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/setup/">Start here: Software Options</a></li>
+  <li class="breadcrumb-item">
+    <a href="/setup/git/">Git</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Using Git within RStudio</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Using Git within RStudio</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<p>Complete these steps after you have Installed Git (only if you are
+working with R Studio locally) and Configured Git (for both local and R
+Workbench option) to verify that everything works as expected. If you
+are not sure, begin by reading <a href="/setup/">Start here: Software
+Options</a>.</p>
+<h2 id="step-0-make-sure-rstudio-can-find-git">Step 0: Make sure RStudio can find Git</h2>
+<h3 id="if-everything-is-installed-correctly">If everything is installed correctly…</h3>
 <ul>
-<li><em>File &gt; New Project</em>. If you see a Version Control options, that&rsquo;s good. Do not select it. Instead, select <em>New Directory &gt; New Project</em>. Do you see a check box &ldquo;Create a git repository&rdquo;? If yes, that&rsquo;s good. Check it.</li>
-<li>Give this test project a name and click &ldquo;Create Project&rdquo;. Do you see a &ldquo;Git&rdquo; tab in the upper right pane, the same one that has &ldquo;Environment&rdquo; and &ldquo;History&rdquo;? If yes, good.</li>
+<li><em>File &gt; New Project</em>. If you see a Version Control options, that’s
+good. Do not select it. Instead, select <em>New Directory &gt; New
+Project</em>. Do you see a check box “Create a git repository”? If yes,
+that’s good. Check it.</li>
+<li>Give this test project a name and click “Create Project”. Do you see a
+“Git” tab in the upper right pane, the same one that has “Environment”
+and “History”? If yes, good.</li>
 </ul>
-<p>If this worked, you can delete the project. You&rsquo;ve set everything up correctly (if you are working on R Workbench this should automatically work). To delete the project, go to the &ldquo;Files&rdquo; tab (bottom right corner), select the project folder and click &ldquo;Delete&rdquo;</p>
-<h2 id="if-this-didnt-work">If this didn&rsquo;t work&hellip;</h2>
-<p>RStudio can only act as a GUI front-end for Git if Git has been successfully installed AND RStudio can find it.</p>
-<p>A basic test for successful installation of git is to simply enter <code>git</code> in the <a href="/setup/shell/">shell</a>. If you get a complaint about <code>git</code> not being found, it means installation was unsuccessful or that it is not being found, i.e. it is not on your <code>PATH</code>.</p>
+<p>If this worked, you can delete the project. You’ve set everything up
+correctly (if you are working on R Workbench this should automatically
+work). To delete the project, go to the “Files” tab (bottom right
+corner), select the project folder and click “Delete”</p>
+<h3 id="if-this-didnt-work">If this didn’t work…</h3>
+<p>RStudio can only act as a GUI front-end for Git if Git has been
+successfully installed AND RStudio can find it.</p>
+<p>A basic test for successful installation of git is to simply enter <code>git</code>
+in the <a href="/setup/shell/">shell</a>. If you get a complaint about <code>git</code> not
+being found, it means installation was unsuccessful or that it is not
+being found, i.e. it is not on your <code>PATH</code>.</p>
 <p>If you are not sure where the git executable lives, try this in a shell:</p>
 <ul>
 <li><code>which git</code> (Mac, Linux)</li>
 <li><code>where git</code> (most versions of Windows)</li>
 </ul>
-<p>If Git appears to be installed and findable, launch RStudio and try again. If it still doesn&rsquo;t work, quit and re-launch RStudio if there&rsquo;s any doubt in your mind about whether you opened RStudio before or after installing Git.</p>
-<p>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to the Git executable. It should read something like:</p>
+<p>If Git appears to be installed and findable, launch RStudio and try
+again. If it still doesn’t work, quit and re-launch RStudio if there’s
+any doubt in your mind about whether you opened RStudio before or after
+installing Git.</p>
+<p>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make
+sure that the box <em>Git executable</em> points to the Git executable. It
+should read something like:</p>
 <ul>
 <li><code>/usr/bin/git</code> (Mac, Linux)</li>
 <li><code>C:/Program Files (x86)/Git/bin/git.exe</code> (Windows)</li>
@@ -88,129 +308,168 @@ On my computer, it looks like this:
 </figure>
 
 -->
-<p>If you make any changes, <strong>restart RStudio and try the steps at the top of the page again</strong>.</p>
-<p>Still not working? Try <a href="https://www.google.com">googling</a> your problem or speak with myself or the TA.</p>
-<h1 id="step-1-make-a-new-repository-on-github">Step 1: Make a new repository on GitHub</h1>
+<p>If you make any changes, <strong>restart RStudio and try the steps at the top
+of the page again</strong>.</p>
+<p>Still not working? Try <a href="https://www.google.com">googling</a> your problem
+or speak with myself or the TA.</p>
+<h2 id="step-1-make-a-new-repository-on-github">Step 1: Make a new repository on GitHub</h2>
 <ul>
-<li>Go to <a href="https://www.github.com">GitHub.com</a> and login. If you haven&rsquo;t yet, sign up and create your account</li>
-<li>Click the green &ldquo;New&rdquo; or New Repository&quot; button
+<li>Go to <a href="https://www.github.com">GitHub.com</a> and login. If you haven’t
+yet, sign up and create your account</li>
+<li>Click the green “New” or New Repository” button
 <ul>
 <li>Repository name: <code>myrepo</code></li>
 <li>Set it as Public</li>
 <li>Add a README file</li>
 <li>No need to add a .gitignore or a license</li>
-<li>Click the green &ldquo;Create repository&rdquo; button</li>
+<li>Click the green “Create repository” button</li>
 </ul>
 </li>
-<li>Copy the URL to your clipboard via the green “Clone or Download” button using SSH or HTTPS. Remember which authentication method you used when you <a href="/setup/git-configure/">configured Git</a> and use it accordingly:
+<li>Copy the URL to your clipboard via the green “Clone or Download”
+button using SSH or HTTPS. Remember which authentication method you
+used when you <a href="/setup/git-configure/">configured Git</a> and use it
+accordingly:
 <ul>
 <li>HTTPS: use <code>https://github.com/&lt;OWNER&gt;/&lt;REPO&gt;.git</code></li>
 <li>SSH: use <code>git@github.com:&lt;OWNER&gt;/&lt;REPO&gt;.git</code></li>
 </ul>
 </li>
 </ul>
-<h1 id="step-2-clone-the-new-github-repository-to-your-computer-via-rstudio">Step 2: Clone the new GitHub repository to your computer via RStudio</h1>
-<p><strong>Whenever possible, this should be your preferred route for setting up your R projects.</strong></p>
-<p>In RStudio (on your local computer or on R Workbench), start a new Git Project: <em>File &gt; New Project &gt; Version Control &gt; Git</em></p>
-<p>If you do you NOT see an option to get the Project from Version Control <a href="/setup/git-with-rstudio/#make-sure-rstudio-can-find-git">make sure RStudio can find Git.</a></p>
-<p>Fill out the following fields:</p>
+<h2 id="step-2-clone-the-new-github-repository-to-your-computer-via-rstudio">Step 2: Clone the new GitHub repository to your computer via RStudio</h2>
+<p><strong>Whenever possible, this should be your preferred route for setting up
+your R projects.</strong></p>
+<p>In RStudio (on your local computer or on R Workbench), start a new Git
+Project: <em>File &gt; New Project &gt; Version Control &gt; Git</em></p>
+<p>If you do you NOT see an option to get the Project from Version Control
+<a href="/setup/git-with-rstudio/#make-sure-rstudio-can-find-git">make sure RStudio can find
+Git.</a></p>
+<p>Fill out the following fields: * Repository URL: paste the URL of your
+new GitHub repository * Project directory name: it should automatically
+populate, do not change it * Create project as subdirectory of: decide
+where to store the local directory for the project. Don’t scatter
+everything around your computer - have a central location, or some
+meaningful structure. For repositories you create in this course, you
+can setup a <code>css</code> directory and clone all your repos there. * Check the
+“Open in new session” box, as that’s what you’ll usually do in real
+life. * Before proceeding, check the little box “Open in new session”,
+as that’s what you’ll usually do in real life. * Click “Create Project”
+to create a new sub-directory, which will be all of these things: * a
+directory on your computer * a Git repository, linked to a remote
+GitHub repository * an RStudio Project</p>
+<p>This should open a new R session and download the <code>README.md</code> file that
+we created on GitHub in the previous step. Look in RStudio’s files
+browser pane for the <code>README.md</code> file.</p>
+<p>Why setup your R projects this way? There’s a big advantage to the
+“Github first, then Git in RStudio workflow”: the remote GitHub repo is
+now the “upstream” remote for your local repo. In essence, you are
+already setup to push and pull commits to GitHub. There is no need to
+set anything else up through the shell or a Git client. However, you
+could also do the other way around (see next step, to complete as an
+alternative to this step).</p>
+<h3 id="step-2-alternative-connect-a-local-rstudio-project-to-a-github-repository">Step 2 alternative: Connect a local RStudio project to a GitHub repository</h3>
+<p>Remember, the previous step should be your preferred route. However,
+sometimes you cannot always setup the GitHub repo first, or you already
+have an RStudio project you need to connect to a GitHub repo. This
+workflow is the reverse of the above and cannot be executed from within
+RStudio.</p>
+<p>In R Studio, start a new RStudio project: <em>File &gt; New Project &gt;
+New Directory &gt; Empty Project</em>: * Directory name: <code>myrepo</code> (or
+whatever you named the GitHub repo) * Decide where to store the local
+directory for the Project. * Yes, check “Create a git repository”. If
+you do you NOT see an option to get the Project from Version Control
+<a href="/setup/git-with-rstudio/#make-sure-rstudio-can-find-git">make sure RStudio can find
+Git.</a> * Check
+the “Open in new session” box, as that’s what you’ll usually do in real
+life. * Click “Create Project” to create a new sub-directory, which
+will be all of these things: * a directory on your computer * a Git
+repository –linked to a remote GitHub repository– in this case this
+isn’t automatic: we still need to link it up * an RStudio Project *
+Initiate the “upstream” or “tracking” relationship by adding a remote.
+Go to <em>Tools &gt; Shell</em> and do this, substituting the example URL for
+your GitHub repo.</p>
+<pre><code>- HTTPS 
+    ```bash
+    git remote add origin https://github.com/jmclip/myrepo.git
+    ```
+
+- SSH
+    ```bash
+    git remote add origin git@github.com:jmclip/myrepo.git
+    ```
+</code></pre>
 <ul>
-<li>Repository URL: paste the URL of your new GitHub repository</li>
-<li>Project directory name: it should automatically populate, do not change it</li>
-<li>Create project as subdirectory of: decide where to store the local directory for the project. Don&rsquo;t scatter everything around your computer - have a central location, or some meaningful structure. For repositories you create in this course, you can setup a <code>css</code> directory and clone all your repos there.</li>
-<li>Check the &ldquo;Open in new session&rdquo; box, as that&rsquo;s what you&rsquo;ll usually do in real life.</li>
-<li>Before proceeding, check the little box &ldquo;Open in new session&rdquo;, as that&rsquo;s what you&rsquo;ll usually do in real life.</li>
-<li>Click &ldquo;Create Project&rdquo; to create a new sub-directory, which will be all of these things:
-<ul>
-<li>a directory on your computer</li>
-<li>a Git repository, linked to a remote GitHub repository</li>
-<li>an RStudio Project</li>
-</ul>
+<li>
+<p>Download all the files from the online GitHub repository (possibly
+just README.md, at this point).</p>
+<pre><code>git pull origin main
+</code></pre>
+</li>
+<li>
+<p>Cement the tracking relationship between your GitHub repository and
+the local repo by pushing and setting the “upstream” remote:</p>
+<pre><code>git push -u origin main
+</code></pre>
 </li>
 </ul>
-<p>This should open a new R session and download the <code>README.md</code> file that we created on GitHub in the previous step. Look in RStudio&rsquo;s files browser pane for the <code>README.md</code> file.</p>
-<p>Why setup your R projects this way? There&rsquo;s a big advantage to the &ldquo;Github first, then Git in RStudio workflow&rdquo;: the remote GitHub repo is now the &ldquo;upstream&rdquo; remote for your local repo. In essence, you are already setup to push and pull commits to GitHub. There is no need to set anything else up through the shell or a Git client. However, you could also do the other way around (see next step, to complete as an alternative to this step).</p>
-<h2 id="step-2-alternative-connect-a-local-rstudio-project-to-a-github-repository">Step 2 alternative: Connect a local RStudio project to a GitHub repository</h2>
-<p>Remember, the previous step should be your preferred route. However, sometimes you cannot always setup the GitHub repo first, or you already have an RStudio project you need to connect to a GitHub repo. This workflow is the reverse of the above and cannot be executed from within RStudio.</p>
-<p>In R Studio, start a new RStudio project: <em>File &gt; New Project &gt; New Directory &gt; Empty Project</em>:</p>
-<ul>
-<li>
-<p>Directory name: <code>myrepo</code> (or whatever you named the GitHub repo)</p>
-</li>
-<li>
-<p>Decide where to store the local directory for the Project.</p>
-</li>
-<li>
-<p>Yes, check &ldquo;Create a git repository&rdquo;. If you do you NOT see an option to get the Project from Version Control <a href="/setup/git-with-rstudio/#make-sure-rstudio-can-find-git">make sure RStudio can find Git.</a></p>
-</li>
-<li>
-<p>Check the &ldquo;Open in new session&rdquo; box, as that&rsquo;s what you&rsquo;ll usually do in real life.</p>
-</li>
-<li>
-<p>Click &ldquo;Create Project&rdquo; to create a new sub-directory, which will be all of these things:
-* a directory on your computer
-* a Git repository  &ndash;linked to a remote GitHub repository&ndash; in this case this isn&rsquo;t automatic: we still need to link it up
-* an RStudio Project</p>
-</li>
-<li>
-<p>Initiate the &ldquo;upstream&rdquo; or &ldquo;tracking&rdquo; relationship by adding a remote. Go to <em>Tools &gt; Shell</em> and do this, substituting the example URL for your GitHub repo.</p>
-<ul>
-<li>
-<p>HTTPS</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin https://github.com/jmclip/myrepo.git
-</span></span></code></pre></div></li>
-<li>
-<p>SSH</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin git@github.com:jmclip/myrepo.git
-</span></span></code></pre></div></li>
-</ul>
-</li>
-<li>
-<p>Download all the files from the online GitHub repository (possibly just README.md, at this point).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
-</span></span></code></pre></div></li>
-<li>
-<p>Cement the tracking relationship between your GitHub repository and the local repo by pushing and setting the &ldquo;upstream&rdquo; remote:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
-</span></span></code></pre></div></li>
-</ul>
-<h1 id="step-3-make-local-changes-save-commit">Step 3: Make local changes, save, commit</h1>
-<p><strong>Do this every time you finish a valuable chunk of work, probably many times a day.</strong></p>
+<h2 id="step-3-make-local-changes-save-commit">Step 3: Make local changes, save, commit</h2>
+<p><strong>Do this every time you finish a valuable chunk of work, probably many
+times a day.</strong></p>
 <p>From RStudio, modify the <code>README.md</code> file by adding the line</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>This is a line from RStudio.
-</span></span></code></pre></div><p>Save your changes. Next, you want to commit these changes to your local repo using RStudio:</p>
+<pre><code>This is a line from RStudio.
+</code></pre>
+<p>Save your changes. Next, you want to commit these changes to your local
+repo using RStudio:</p>
 <ul>
-<li>From R Studio, click the &ldquo;Git&rdquo; tab in the upper right pane</li>
-<li>Check the &ldquo;Staged&rdquo; box for any files whose existence or modifications you want to commit (all of them in this case)</li>
-<li>Click &ldquo;Commit&rdquo;</li>
-<li>Type a message in &ldquo;Commit message&rdquo;. This should describe for a human what modifications you&rsquo;ve made to the staged files</li>
-<li>Click &ldquo;Commit&rdquo;</li>
+<li>From R Studio, click the “Git” tab in the upper right pane</li>
+<li>Check the “Staged” box for any files whose existence or modifications
+you want to commit (all of them in this case)</li>
+<li>Click “Commit”</li>
+<li>Type a message in “Commit message”. This should describe for a human
+what modifications you’ve made to the staged files</li>
+<li>Click “Commit”</li>
 </ul>
-<h1 id="step-4-push-your-local-changes-online-to-github">Step 4: Push your local changes online to GitHub</h1>
+<h2 id="step-4-push-your-local-changes-online-to-github">Step 4: Push your local changes online to GitHub</h2>
 <p><strong>Do this a few times a day, but possibly less often than you commit.</strong></p>
-<p>You have new work in your local Git repository, but the changes are not online yet.</p>
-<p>Before you <em>push</em> your changes to GitHub, first you should <em>pull</em> from GitHub. Why? If you make changes to the repo in the browser (not recommended!) or one day a collaborator has pushed some new code to your repo, you need to pull those changes in before you attempt to push.</p>
+<p>You have new work in your local Git repository, but the changes are not
+online yet.</p>
+<p>Before you <em>push</em> your changes to GitHub, first you should <em>pull</em> from
+GitHub. Why? If you make changes to the repo in the browser (not
+recommended!) or one day a collaborator has pushed some new code to your
+repo, you need to pull those changes in before you attempt to push.</p>
 <ul>
 <li>
-<p>Click the blue &ldquo;Pull&rdquo; button in the &ldquo;Git&rdquo; tab in RStudio. I doubt anything will happen, i.e. you&rsquo;ll get the message &ldquo;Already up-to-date&rdquo;. This is just to establish a habit.</p>
+<p>Click the blue “Pull” button in the “Git” tab in RStudio. I doubt
+anything will happen, i.e. you’ll get the message “Already
+up-to-date”. This is just to establish a habit.</p>
 </li>
 <li>
-<p>Now click the green &ldquo;Push&rdquo; button to send your local changes to GitHub. You should see some message along these lines. If you have never pushed a commit to GitHub, you will be challenged to enter your username and password: enter them.</p>
+<p>Now click the green “Push” button to send your local changes to
+GitHub. You should see some message along these lines. If you have
+never pushed a commit to GitHub, you will be challenged to enter your
+username and password: enter them.</p>
 </li>
 </ul>
-<p>Notice this whole operation will fail if you have not configured Git and/or you have not used the correct authentication method (SSH or HTTPS): see <a href="/setup/git/git-configure/">Configure Git</a> and repeat.</p>
-<h1 id="the-end">The end</h1>
-<p>Now just rinse and repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote &ldquo;synced up&rdquo;.</p>
-<p>Since this was a test, there is no need to keep <code>myrepo</code>. Because we stored the repo on both our computer and GitHub, we need to remove it from both locations.</p>
+<p>Notice this whole operation will fail if you have not configured Git
+and/or you have not used the correct authentication method (SSH or
+HTTPS): see <a href="/setup/git/git-configure/">Configure Git</a> and repeat.</p>
+<h2 id="the-end">The end</h2>
+<p>Now just rinse and repeat. Do work somewhere. Commit it. Push it or pull
+it depending on where you did it, but get local and remote “synced up”.</p>
+<p>Since this was a test, there is no need to keep <code>myrepo</code>. Because we
+stored the repo on both our computer and GitHub, we need to remove it
+from both locations.</p>
 <ul>
 <li>
-<p>Delete the local repository: find where you stored it on your computer and delete it</p>
+<p>Delete the local repository: find where you stored it on your computer
+and delete it</p>
 </li>
 <li>
 <p>Delete the repository from GitHub:</p>
 <ul>
-<li>In the browser, viewing your repository&rsquo;s landing page on GitHub, click on &ldquo;Settings&rdquo;, near the bottom of the right sidebar.</li>
-<li>Scroll down, click on &ldquo;Delete this repository&rdquo;, and follow the instructions</li>
+<li>In the browser, viewing your repository’s landing page on GitHub,
+click on “Settings”, near the bottom of the right sidebar.</li>
+<li>Scroll down, click on “Delete this repository”, and follow the
+instructions</li>
 </ul>
 </li>
 </ul>
@@ -218,22 +477,24 @@ On my computer, it looks like this:
 * Delete the local repository in the shell:
 
 
-```bash
+``` bash
 cd ..
 rm -rf myrepo/
 ```
 -->
-<h1 id="acknowledgments">Acknowledgments</h1>
-<ul>
-<li>
-<p>This page is derived in part from <a href="http://stat545.com">&ldquo;UBC STAT 545A and 547M&rdquo;</a>, licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Creative Commons License</a>.</p>
-</li>
-<li>
-<p>This page has been developed starting from Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY-NC 4.0 Creative Commons License.</p>
-</li>
-</ul>
+<!-- # Acknowledgments -->
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->
 
-      </main>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>

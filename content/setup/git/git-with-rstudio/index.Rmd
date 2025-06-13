@@ -4,7 +4,10 @@ draft: false
 weight: 50
 title: "Using Git within RStudio"
 toc: true
-type: book
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/git05.html", "/setup/git-with-rstudio/"]
 ---
 
@@ -14,16 +17,16 @@ knitr::opts_chunk$set(cache = TRUE)
 
 Complete these steps after you have Installed Git (only if you are working with R Studio locally) and Configured Git (for both local and R Workbench option) to verify that everything works as expected. If you are not sure, begin by reading [Start here: Software Options](/setup/_index.md/).
 
-# Step 0: Make sure RStudio can find Git
+## Step 0: Make sure RStudio can find Git
 
-## If everything is installed correctly...
+### If everything is installed correctly...
 
 * *File > New Project*. If you see a Version Control options, that's good. Do not select it. Instead, select *New Directory > New Project*. Do you see a check box "Create a git repository"? If yes, that's good. Check it.
 * Give this test project a name and click "Create Project". Do you see a "Git" tab in the upper right pane, the same one that has "Environment" and "History"? If yes, good.
 
 If this worked, you can delete the project. You've set everything up correctly (if you are working on R Workbench this should automatically work). To delete the project, go to the "Files" tab (bottom right corner), select the project folder and click "Delete"
 
-## If this didn't work...
+### If this didn't work...
 
 RStudio can only act as a GUI front-end for Git if Git has been successfully installed AND RStudio can find it.
 
@@ -51,7 +54,7 @@ If you make any changes, **restart RStudio and try the steps at the top of the p
 Still not working? Try [googling](https://www.google.com) your problem or speak with myself or the TA.
 
 
-# Step 1: Make a new repository on GitHub
+## Step 1: Make a new repository on GitHub
 
 * Go to [GitHub.com](https://www.github.com) and login. If you haven't yet, sign up and create your account
 * Click the green "New" or New Repository" button
@@ -65,7 +68,7 @@ Still not working? Try [googling](https://www.google.com) your problem or speak 
     * SSH: use `git@github.com:<OWNER>/<REPO>.git`
 
 
-# Step 2: Clone the new GitHub repository to your computer via RStudio
+## Step 2: Clone the new GitHub repository to your computer via RStudio
 
 **Whenever possible, this should be your preferred route for setting up your R projects.**
 
@@ -89,7 +92,7 @@ This should open a new R session and download the `README.md` file that we creat
 
 Why setup your R projects this way? There's a big advantage to the "Github first, then Git in RStudio workflow": the remote GitHub repo is now the "upstream" remote for your local repo. In essence, you are already setup to push and pull commits to GitHub. There is no need to set anything else up through the shell or a Git client. However, you could also do the other way around (see next step, to complete as an alternative to this step).
 
-## Step 2 alternative: Connect a local RStudio project to a GitHub repository
+### Step 2 alternative: Connect a local RStudio project to a GitHub repository
 
 Remember, the previous step should be your preferred route. However, sometimes you cannot always setup the GitHub repo first, or you already have an RStudio project you need to connect to a GitHub repo. This workflow is the reverse of the above and cannot be executed from within RStudio.
 
@@ -126,7 +129,7 @@ In R Studio, start a new RStudio project: *File > New Project > New Directory > 
     git push -u origin main
     ```
 
-# Step 3: Make local changes, save, commit
+## Step 3: Make local changes, save, commit
 
 **Do this every time you finish a valuable chunk of work, probably many times a day.**
 
@@ -145,7 +148,7 @@ Save your changes. Next, you want to commit these changes to your local repo usi
 * Click "Commit"
     
     
-# Step 4: Push your local changes online to GitHub
+## Step 4: Push your local changes online to GitHub
 
 **Do this a few times a day, but possibly less often than you commit.**
 
@@ -161,7 +164,7 @@ Notice this whole operation will fail if you have not configured Git and/or you 
 
 
 
-# The end
+## The end
 
 Now just rinse and repeat. Do work somewhere. Commit it. Push it or pull it depending on where you did it, but get local and remote "synced up".
 
@@ -183,9 +186,9 @@ rm -rf myrepo/
 -->
 
 
-# Acknowledgments
+<!-- # Acknowledgments -->
 
-```{r child = here::here("R", "_ack_stat545.Rmd")}
-```
-```{r child = here::here("R", "_ack_ben.Rmd")}
-```
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->

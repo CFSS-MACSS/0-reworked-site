@@ -3,8 +3,11 @@ date: "2022-09-25T00:00:00-05:00"
 draft: false
 weight: 10
 title: "What is Git?"
-toc: false
-type: book
+toc: true
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/git00.html", "/setup/what-is-git/"]
 ---
 
@@ -38,11 +41,11 @@ Git can be used locally by you on a single computer to track changes in a projec
 
 Chances are that by now you've seen or even used GitHub. Professionally, you should know how to use Git and GitHub to manage projects and share code. In this class, we will use Git and GitHub to host our course site, share code, and distribute/collect assignments.
 
-## Acknowledgments
+<!-- ## Acknowledgments -->
 
-```{r child = here::here("R", "_ack_stat545.Rmd")}
-```
-```{r child = here::here("R", "_ack_swcgit.Rmd")}
-```
-```{r child = here::here("R", "_ack_ben.Rmd")}
-```
+<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_swcgit.Rmd")} -->
+<!-- ``` -->
+<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
+<!-- ``` -->
