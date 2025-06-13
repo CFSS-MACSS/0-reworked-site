@@ -4,8 +4,10 @@
     <title>Visualizations and the Grammar of Graphics</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
-    <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -25,6 +27,7 @@ class: center, middle, inverse, title-slide
 
 
 
+
 class: inverse, middle
 
 # Why visualize data?
@@ -35,22 +38,138 @@ class: center, middle
 
 Consider the following 13 datasets:
 
-
-| ID| `\(N\)`| `\(\bar{X}\)`| `\(\bar{Y}\)`| `\(\sigma_{X}\)`| `\(\sigma_{Y}\)`|        `\(R\)`|
-|--:|---:|---------:|---------:|------------:|------------:|----------:|
-|  1| 142|  54.26610|  47.83472|     16.76983|     26.93974| -0.0641284|
-|  2| 142|  54.26873|  47.83082|     16.76924|     26.93573| -0.0685864|
-|  3| 142|  54.26732|  47.83772|     16.76001|     26.93004| -0.0683434|
-|  4| 142|  54.26327|  47.83225|     16.76514|     26.93540| -0.0644719|
-|  5| 142|  54.26030|  47.83983|     16.76774|     26.93019| -0.0603414|
-|  6| 142|  54.26144|  47.83025|     16.76590|     26.93988| -0.0617148|
-|  7| 142|  54.26881|  47.83545|     16.76670|     26.94000| -0.0685042|
-|  8| 142|  54.26785|  47.83590|     16.76676|     26.93610| -0.0689797|
-|  9| 142|  54.26588|  47.83150|     16.76885|     26.93861| -0.0686092|
-| 10| 142|  54.26734|  47.83955|     16.76896|     26.93027| -0.0629611|
-| 11| 142|  54.26993|  47.83699|     16.76996|     26.93768| -0.0694456|
-| 12| 142|  54.26692|  47.83160|     16.77000|     26.93790| -0.0665752|
-| 13| 142|  54.26015|  47.83972|     16.76996|     26.93000| -0.0655833|
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; ID &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(N\)` &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(\bar{X}\)` &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(\bar{Y}\)` &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(\sigma_{X}\)` &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(\sigma_{Y}\)` &lt;/th&gt;
+   &lt;th style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; `\(R\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26610 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83472 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76983 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93974 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0641284 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26873 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83082 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.76924 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93573 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0685864 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26732 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83772 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93004 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0683434 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26327 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83225 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.76514 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93540 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0644719 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26030 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83983 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76774 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93019 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0603414 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26144 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83025 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.76590 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93988 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0617148 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26881 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83545 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76670 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.94000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0685042 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26785 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83590 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.76676 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93610 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0689797 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26588 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83150 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76885 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93861 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0686092 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26734 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83955 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.76896 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93027 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0629611 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26993 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83699 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76996 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93768 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0694456 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 54.26692 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 47.83160 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 16.77000 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; 26.93790 &lt;/td&gt;
+   &lt;td style="text-align:right;background-color: rgba(128, 0, 0, 255) !important;"&gt; -0.0665752 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.26015 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.83972 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.76996 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.93000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0655833 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -58,7 +177,7 @@ class: center, middle
 
 If we estimate linear regression models for each dataset, we obtain virtually identical coefficients, again suggesting the relationships are identical
 
-&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="80%" /&gt;
 
 ---
 
@@ -66,7 +185,7 @@ class: center, middle
 
 But what happens if we draw a picture?
 
-&lt;img src="index_files/figure-html/datasaurus-graph-1.gif" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-graph-1.gif" width="90%" /&gt;
 
 ---
 
@@ -74,7 +193,7 @@ class: center, middle
 
 These 13 datasets have the same summary statistics, yet they are drastically different in appearance!
 
-&lt;img src="index_files/figure-html/datasaurus-graph-static-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-graph-static-1.png" width="90%" /&gt;
 
 ---
 
@@ -134,7 +253,7 @@ Gapminder data cover multiple countries over multiple years and include informat
 Let's start with mtcars (you will see MANY EXAMPLES using this on stackoverflow). In a fresh Rmd file, create a code chunk that calls `data(mtcars)`
 
 
-```r
+``` r
 data(mtcars)
 head(mtcars)
 ```
@@ -153,7 +272,7 @@ head(mtcars)
 
 # Where we're going: graph somewhat prettiness
 
-&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
 
 ---
   
@@ -163,35 +282,35 @@ head(mtcars)
 --
   I have told it what I want for the data and my respective axes but I haven't actually plotted anything yet!
 
-```r
+``` r
 ggplot(mtcars, aes(x = mpg, y = wt))
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" /&gt;
 
 ---
 # graph layer
   Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 1: points. (note, there are multiple ways we could choose to set this up).
   
 
-```r
+``` r
 ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_point()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" /&gt;
 
 ---
 # graph layer
   Then, we just add each element with a `+` after. Here, we have a few options for how we want the "things" on the graph to appear. Option 2: text (note, there are multiple ways we could choose to set this up).
   
 
-```r
+``` r
 ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_text(label = rownames(mtcars), check_overlap = TRUE) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="50%" /&gt;
 
 
 ---
@@ -200,7 +319,7 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
 Here, we can see our points colored by different criteria. 
 
 
-```r
+``` r
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -208,7 +327,7 @@ ggplot(mtcars)+
                       size = hp)) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" /&gt;
 
 
 ---
@@ -216,7 +335,7 @@ ggplot(mtcars)+
 # label layer 
 
 
-```r
+``` r
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -229,14 +348,14 @@ ggplot(mtcars)+
        caption = "Source: mtcars")
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="50%" /&gt;
 
 ---
   
 # theme layer
 
 
-```r
+``` r
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -250,14 +369,14 @@ ggplot(mtcars)+
   theme_bw()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="40%" /&gt;
 
 ---
   
 # others
 
 
-```r
+``` r
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -272,7 +391,7 @@ ggplot(mtcars)+
   scale_color_manual(values = c("black", "gray", "blue") ) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="40%" /&gt;
 
 ---
   
@@ -281,7 +400,7 @@ ggplot(mtcars)+
 .pull-left[
 
 
-```r
+``` r
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -300,7 +419,7 @@ ggplot(mtcars)+
 
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="90%" /&gt;
 ]
 ---
   
@@ -320,7 +439,7 @@ ggplot(mtcars)+
 
 (NOTE: BAD CODE (why?))  
 
-```r
+``` r
 data(gapminder) # note: not necessary but this will have it show up in your environment like with 'regular' data
 ```
 
@@ -328,7 +447,7 @@ data(gapminder) # note: not necessary but this will have it show up in your envi
 
 ### Why is this code better? 
 
-```r
+``` r
 data(gapminder) # note: not necessary but this will 
                                 # have it show up in your environment 
                                 # like with 'regular' data
@@ -344,7 +463,7 @@ Now, use yesterday's skills to explore the dataset. What might make a good `x' o
 
 # Exercise: Gapminder
 
-&lt;img src="index_files/figure-html/gapminder-over-time-1.gif" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/gapminder-over-time-1.gif" width="60%" /&gt;
 
 ---
 
@@ -356,11 +475,11 @@ The content of these slides is derived in part from Sabrina Nardin's and Benjami
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
