@@ -34,7 +34,7 @@ specific operations.
     `.pkg`).
 3.  Open R. You should see a screen similar to this:
 
-{{&lt; figure src=“r\_console.png” caption=“” &gt;}}
+<img src="r_console.png" width="1096" />
 
 This is the default R console. You can use this as your development
 environment where you write and execute code. However the default R

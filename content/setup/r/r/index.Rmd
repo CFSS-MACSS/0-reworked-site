@@ -25,7 +25,10 @@ knitr::opts_chunk$set(cache = TRUE)
 1. Run the installation from the file you just downloaded (`.exe` or `.pkg`).
 1. Open R. You should see a screen similar to this:
 
-{{< figure src="r_console.png" caption="" >}}
+```{r, echo = F}
+knitr::include_graphics("r_console.png")
+```
+
 
 This is the default R console. You can use this as your development environment where you write and execute code. However the default R console is very minimalistic and not much more useful than a text editor. This is why we will use RStudio for programming in R. However to demonstrate that your R installation works, type `5 + 2` in the console and press enter. You should see the following:
 
