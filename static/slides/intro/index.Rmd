@@ -3,7 +3,7 @@ title: "Introduction to Computing for the Social Sciences"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../cfss.css"]
     nature:
       highlightStyle: magula
       highlightLines: true
@@ -102,7 +102,7 @@ style_duo_accent(
   )
 )
 
-source(here::here("R", "slide-opts.R"))
+#source(here::here("R", "slide-opts.R"))
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -129,10 +129,9 @@ class: inverse, middle
 ```
 
 
-## TAs
+## TA
 
-- Bhavya Pandey
-- Loizos Bitsikokos
+- Sarthak Dhanke: sarthakdhanke@uchicago.edu
 
 
 ## You
@@ -151,7 +150,6 @@ The goal of this course is to acquire and practice **basic computational skills*
 
 * You will learn fundamental computational skills and techniques, and gain the confidence necessary to learn new techniques as you encounter them in your own research
 
-More info on the [Introduction to the course notes](https://computing-soc-sci.netlify.app/notes/intro-to-course/) in our website
 
 
 ---
@@ -186,127 +184,6 @@ print("Hello world!")
 
 class: inverse, middle
 
-# Who is this class for?
-
----
-
-## Who is this class for?
-
-
-### Jeri
-
-.pull-left[
-
-```{r jeri}
-include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000022.jpg", error = FALSE)
-```
-
-]
-
-.pull-right[
-
-* Starting points
-    * Ph.D. student in Sociology
-    * Has experience analyzing data in Stata
-    * Feels comfortable with regression and other stats methods 
-    * Tried to learn Git on her own once, quickly became frustrated and gave up
-* Needs
-    * Wants to transition from Stata to R 
-    * Will be analyzing a large-scale dataset for her dissertation
-    * Seeks a reproducible workflow to manage her data projects
-
-]
-
----
-
-## Who is this class for?
-
-
-### Ryan
-
-.pull-left[
-
-```{r ryan}
-include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000284.jpg", error = FALSE)
-```
-
-]
-
-.pull-right[
-
-* Starting points
-    * Entering the [MAPSS program](https://mapss.uchicago.edu/)
-    * Undergraduate degree in journalism
-    * Hasn't taken a statistics class in years
-    * Took an online course of introduction to R, but hasn't used it in his day-to-day work
-* Needs
-    * Writing a master's thesis in a single year
-    * Expects to analyze a collection of published news articles 
-    * Wants to understand code samples found online and adapt them to his own work
-
-]
-
----
-
-## Who is this class for?
-
-
-### Fernando
-
-.pull-left[
-
-```{r fernando}
-include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000232.jpg", error = FALSE)
-```
-
-]
-
-.pull-right[
-
-* Starting points
-    * Third-year undergraduate student
-    * Majoring in political science
-    * Has taken general education math/stats courses
-    * Does not have programming experience, but isn't afraid to tackle a new challenge
-* Needs
-    * Wants to work as a research assistant on a project exploring the onset of civil conflict, which is run exclusively in R
-    * Will start contributing to a new research paper next quarter
-    * Wants to produce high-quality visualizations
-
-]
-
----
-
-## Who is this class for?
-
-
-### Fang
-
-.pull-left[
-
-```{r fang}
-include_graphics(path = "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/img/stock-photos/000251.jpg", error = FALSE)
-```
-
-]
-
-.pull-right[
-
-* Starting points
-    * First year grad-student
-    * Background in psychology, plans to apply for doctoral programs in marketing
-    * Has experience using Excel, SPSS, and Stata
-* Needs
-    * Is going to analyze data collected by her lab members in the next six months
-    * Wants to produce analysis notebooks that are easily shareable with her colleagues
-    * Expects to take courses in machine learning and statistics which require a background in R
-
-]
-
----
-
-class: inverse, middle
-
 # Succeeding in the class
 
 ---
@@ -314,9 +191,9 @@ class: inverse, middle
 ## General Expectations/Suggestions
 
 
-* Attend classes
+* Attend classes and be engaged
 
-* Bring a laptop
+* Have RStudio up
 
 * Complete the readings before coming to class
 
@@ -325,6 +202,8 @@ class: inverse, middle
 * Collaborate and ask for help
 
 * Start early to work on the homework assignments 
+
+* Understand our [Academic Integrity Policy](https://cfss-macss.netlify.app/syllabus/#chatgptcopilotllmsgenerative-ai)
 
 
 ---
@@ -343,20 +222,14 @@ When stuck, you HAVE to try on your own for 15 min. After 15 min, you HAVE to as
 
 * [StackOverflow](http://stackoverflow.com/)
 
-* Me and TAs
+* Me and TA
 
 * Fellow students (e.g. study groups)
 
-* [Class discussion page on Ed Discussion](https://edstem.org/us/courses/40496/discussion/)
-    * [How to ask for help](https://macs30500.netlify.app/faq/asking-questions/)
-
----
-
-class: middle
-
-```{r plagiarism-cat, out.width = "70%"}
-include_graphics(path = "/img/plagiarism.jpg", error = FALSE)
-```
+* [Class discussion page on Ed Discussion](https://edstem.org/us/courses/79778/discussion)
+    * [How to ask for help](https://cfss-macss.netlify.app/faq/asking-questions/)
+    
+* ChatGPT: PROCEED WITH CAUTION
 
 ---
 
@@ -372,25 +245,36 @@ include_graphics(path = "/img/plagiarism.jpg", error = FALSE)
 
 * In your homework, at the top: please mention the resources you had access to complete the homework (e.g., I met with the Sabrina for the part of code ... I asked advice to my colleague name for... )
 
+---
+## ChatGPT / AI / Generative AI / LLMs
+
+We're in a brave new world: there are many tools and options available to 'help' with assignments. We recognize this, and that while these are tempting, they are likely going to only help in the short term at the expense of long-term learning. 
+
+Every single assignment needs to include a statement about how/if you used AI in the completion of the assignment (if you did not use it, you can say so; if you used other sources, you can document them). For your assignment, you need to document how you sought help, the prompts you used, and how the model helped you move forward on your assignment.
+
+In this particular class, you should aim to have ~95% of your work completed solo, with your first stop for assistance either your instructor or TA, then the web, and then ChatGPT / LLMs.
+
 
 ---
 
 ## Homework and Evaluation
 
 
-* **Regular programming assignments**: eight in total.
+* **Regular programming assignments**: six in total (can complete the seventh to replace your lowest score).
 
-* **Late Work Policy**: you can submit up to two assignments up to 24 hours late without penalty; no questions asked. After 24 hours, we do not accept late work. 
+* **Final assignment**: 
+
+* **Late Work Policy**: you can submit up to two assignments up to 48 hours late without penalty; no questions asked. After 48 hours, we do not accept late work. We need to keep moving and it will negatively impact our timeline. 
 
 * **Extraordinary circumstances** (illness, family emergency, etc.): I may grant additional extensions on a case-by-case basis. Whenever possible, inform me before the deadline. Please, note that having a heavy workload in a given week does not qualify as an extraordinary circumstance. The purpose of the two extensions is precisely to give you some flexibility in weeks when you are busier than usual.
 
-* **[Rubric](https://macs30500.netlify.app/faq/homework-evaluations/)** 
+* **[Rubric](https://cfss-macss.netlify.app/faq/homework-evaluations/)** 
 
 ---
 
 ## Software Set up
 
-Go to our course website under **[Setup](https://macs30500.netlify.app/setup/)**
+Go to our course website under **[Setup](https://cfss-macss.netlify.app/setup/)**
 
 Two options:
 
@@ -482,7 +366,7 @@ A GUI software runs using all the basic programming elements, but the end user i
 
 **TASK**: Write a report analyzing the relationship between ice cream consumption and crime rates in New York City.
 
-**APPROACH**: Read how Jane and Sally approach this task [in our website](https://macs30500.netlify.app/notes/intro-to-course/#benefits-to-programming-vs-gui-software) (5 min readings start from "Benefits to programming vs. GUI software")
+**Consider**: How might two people approach this problem
 
 --
 
@@ -643,12 +527,19 @@ bind_rows(
 ```
 ]
 
+---
+# Troubleshooting and let's give it a go
+
+* Project
+
 
 ---
 
 # To complete by next class 
 
-See today's topic, under [Schedule of Topics](https://macs30500.netlify.app/syllabus/introduction-to-computing-for-the-social-sciences/)
+* See today's topic, on our [homepage](https://cfss-macss.netlify.app)
+* Zoom images
+* [Assignment 1](https://cfss-macss.netlify.app/assignments/edit-readme/)
 
 ---
 

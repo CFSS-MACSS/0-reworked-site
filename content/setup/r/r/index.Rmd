@@ -25,7 +25,7 @@ knitr::opts_chunk$set(cache = TRUE)
 1. Run the installation from the file you just downloaded (`.exe` or `.pkg`).
 1. Open R. You should see a screen similar to this:
 
-```{r, echo = F}
+```{r, echo = F, out.width="50%"}
 knitr::include_graphics("r_console.png")
 ```
 

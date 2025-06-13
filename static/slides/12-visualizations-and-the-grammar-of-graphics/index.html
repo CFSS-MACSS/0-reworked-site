@@ -27,10 +27,45 @@ class: center, middle, inverse, title-slide
 
 
 
+# WELCOME!
+
+Agenda:
+
+* Intro
+* Grammar of Graphics
+* Succeeding in this class and getting started
+
+---
 
 class: inverse, middle
 
-# Why visualize data?
+# Intro 
+
+
+
+---
+# Working with R:
+
+* RStudio makes life nicer
+* Setup: projects and connecting to GitHub
+* Need to download packages you want to be able to use (`install.packages('package_name')`)
+* Need to call the package when you want to use it (each session)
+
+
+---
+
+# R: advantage: plotting
+
+* When working with data, you can visualize and summarize it to get a deeper sense of what's going on. 
+
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="50%" /&gt;
+
+---
+
+class: inverse, middle
+
+
+# Visualizing
 
 ---
 
@@ -177,7 +212,7 @@ class: center, middle
 
 If we estimate linear regression models for each dataset, we obtain virtually identical coefficients, again suggesting the relationships are identical
 
-&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="80%" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-lm-1.png" width="50%" /&gt;
 
 ---
 
@@ -185,7 +220,7 @@ class: center, middle
 
 But what happens if we draw a picture?
 
-&lt;img src="index_files/figure-html/datasaurus-graph-1.gif" width="90%" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-graph-1.gif" width="60%" /&gt;
 
 ---
 
@@ -193,7 +228,7 @@ class: center, middle
 
 These 13 datasets have the same summary statistics, yet they are drastically different in appearance!
 
-&lt;img src="index_files/figure-html/datasaurus-graph-static-1.png" width="90%" /&gt;
+&lt;img src="index_files/figure-html/datasaurus-graph-static-1.png" width="60%" /&gt;
 
 ---
 
@@ -272,7 +307,7 @@ head(mtcars)
 
 # Where we're going: graph somewhat prettiness
 
-![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" /&gt;
 
 ---
   
@@ -286,7 +321,7 @@ head(mtcars)
 ggplot(mtcars, aes(x = mpg, y = wt))
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" /&gt;
 
 ---
 # graph layer
@@ -298,7 +333,7 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_point()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="50%" /&gt;
 
 ---
 # graph layer
@@ -310,7 +345,7 @@ ggplot(mtcars, aes(x = mpg, y = wt)) +
        geom_text(label = rownames(mtcars), check_overlap = TRUE) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" width="50%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" /&gt;
 
 
 ---
@@ -327,7 +362,7 @@ ggplot(mtcars)+
                       size = hp)) 
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="50%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="50%" /&gt;
 
 
 ---
@@ -348,12 +383,13 @@ ggplot(mtcars)+
        caption = "Source: mtcars")
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="50%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="50%" /&gt;
 
 ---
   
 # theme layer
 
+.pull-left[
 
 ``` r
 ggplot(mtcars)+ 
@@ -368,30 +404,10 @@ ggplot(mtcars)+
        caption = "Source: mtcars") +
   theme_bw()
 ```
-
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="40%" /&gt;
-
----
-  
-# others
-
-
-``` r
-ggplot(mtcars)+ 
-       geom_point(aes(x = mpg, y = wt, 
-                      color = factor(cyl),
-                      shape = factor(cyl),
-                      size = hp))+ 
-  labs(title = "Car MPG vs weight", 
-       x = 'Miles per gallon',
-       y = 'Car weight',
-       shape="Cylinders", size="Horsepower", color = "Cylinders",
-       caption = "Source: mtcars") +
-  theme_bw() +
-  scale_color_manual(values = c("black", "gray", "blue") ) 
-```
-
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="40%" /&gt;
+]
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="90%" /&gt;
+]
 
 ---
   
@@ -419,7 +435,7 @@ ggplot(mtcars)+
 
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="90%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="90%" /&gt;
 ]
 ---
   
@@ -455,7 +471,7 @@ data(gapminder) # note: not necessary but this will
 
 --
 
-Now, use yesterday's skills to explore the dataset. What might make a good `x' or 'y'? 
+What might make a good `x' or 'y'? 
 
 --- 
 
