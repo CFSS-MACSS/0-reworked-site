@@ -29,9 +29,7 @@ In RStudio, go to *Tools &gt; Shell*. This should take you to the shell
 simple blinking cursor, waiting for input and looks similar to this
 (white text on black background, or black text on white background):
 
-{{&lt; figure
-src=“<https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bash_screenshot.png/440px-Bash_screenshot.png>”
-caption=“” &gt;}}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bash_screenshot.png/440px-Bash_screenshot.png)
 
 ## Using the shell
 
@@ -78,9 +76,7 @@ The most basic commands are listed below:
 On Windows, the program that runs the shell is called *Command Prompt*
 or `cmd.exe`. It looks like this:
 
-{{&lt; figure
-src=“<https://upload.wikimedia.org/wikipedia/commons/b/b3/Command_Prompt_on_Windows_10_RTM.png>”
-caption=“” &gt;}}
+![](https://upload.wikimedia.org/wikipedia/commons/b/b3/Command_Prompt_on_Windows_10_RTM.png)
 
 Unfortunately, the default Windows shell does not support all the
 commands that other operating systems do. This is where GitBash comes in

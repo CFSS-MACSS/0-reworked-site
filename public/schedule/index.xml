@@ -10,24 +10,129 @@
     <atom:link href="http://localhost:1313/schedule/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to computing for the social sciences</title>
-      <link>http://localhost:1313/schedule/intro/</link>
+      <link>http://localhost:1313/schedule/11-intro/</link>
       <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
-      <guid>http://localhost:1313/schedule/intro/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduction to the course&lt;/li&gt;&#xA;&lt;li&gt;Identify major course objectives&lt;/li&gt;&#xA;&lt;li&gt;Identify course logistics and expectations&lt;/li&gt;&#xA;&lt;li&gt;Familiarize with basic principles of programming and reproducible&#xA;workflow&lt;/li&gt;&#xA;&lt;li&gt;Software setup instructions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the “Welcome” page and chapter 1 “Introduction” in &lt;a href=&#34;https://r4ds.hadley.nz/&#34;&gt;Second&#xA;Edition of R for Data Science&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/intro-to-course/&#34;&gt;Introduction to computing for the social&#xA;sciences&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510&#34;&gt;Good Enough Practices in Scientific&#xA;Computing&lt;/a&gt;.&#xA;Additional resource and good summary of best computing practices&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the &lt;a href=&#34;http://localhost:1313/setup/&#34;&gt;Setup&lt;/a&gt; section and install the required software&lt;/li&gt;&#xA;&lt;li&gt;Explore this website&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <guid>http://localhost:1313/schedule/11-intro/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduction to the course&lt;/li&gt;&#xA;&lt;li&gt;Identify major course objectives&lt;/li&gt;&#xA;&lt;li&gt;Identify course logistics and expectations&lt;/li&gt;&#xA;&lt;li&gt;Familiarize with basic principles of programming and reproducible&#xA;workflow&lt;/li&gt;&#xA;&lt;li&gt;Software setup instructions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the “Welcome” page and chapter 1 “Introduction” in &lt;a href=&#34;https://r4ds.hadley.nz/&#34;&gt;Second&#xA;Edition of R for Data Science&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510&#34;&gt;Good Enough Practices in Scientific&#xA;Computing&lt;/a&gt;.&#xA;Additional resource and good summary of best computing practices&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read the &lt;a href=&#34;http://localhost:1313/setup/&#34;&gt;Setup&lt;/a&gt; section and install the required software&lt;/li&gt;&#xA;&lt;li&gt;Explore this website&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Visualizations and the grammar of graphics</title>
+      <link>http://localhost:1313/schedule/12-grammar-of-graphics/</link>
+      <pubDate>Wed, 03 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/12-grammar-of-graphics/</guid>
+      <description>Introduction to data visualizations, the grammar of graphics, and ggplot2.</description>
+    </item>
+    <item>
+      <title>Data transformation</title>
+      <link>http://localhost:1313/schedule/13-data-transformation/</link>
+      <pubDate>Mon, 08 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/13-data-transformation/</guid>
+      <description>Verbs for data manipulation, practice transforming data frames using dplyr, and intro to pipes.</description>
     </item>
     <item>
       <title>Juneteenth (observed)</title>
-      <link>http://localhost:1313/schedule/juneteenth/</link>
+      <link>http://localhost:1313/schedule/14-juneteenth/</link>
       <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
-      <guid>http://localhost:1313/schedule/juneteenth/</guid>
+      <guid>http://localhost:1313/schedule/14-juneteenth/</guid>
       <description>No class.</description>
     </item>
     <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/application-program-interface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/application-program-interface/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify multiple methods for obtaining data from the internet&lt;/li&gt;&#xA;&lt;li&gt;Define web-scraping&lt;/li&gt;&#xA;&lt;li&gt;Define Application Program Interface (API)&lt;/li&gt;&#xA;&lt;li&gt;Explain APIs authentication keys and demonstrate secure methods for&#xA;storing these keys&lt;/li&gt;&#xA;&lt;li&gt;Interact with APIs&lt;/li&gt;&#xA;&lt;li&gt;Define JSON data structure and how to convert them to data frames&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Practice tidying messy JSON data objects using `tidyr`&#xA;* Demonstrate how to use canned packages in R to access APIs&#xA;* Practice gathering data from Twitter API using the `rtweet` package in R&#xA;--&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chapter 1 and 4 in &lt;a href=&#34;https://steviep42.github.io/webscraping/book/&#34;&gt;Web Scraping with&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Setup:&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Go to &lt;a href=&#34;http://www.geonames.org/login/&#34;&gt;the geonames site&lt;/a&gt; and&#xA;register an account&lt;/li&gt;&#xA;&lt;li&gt;Click &lt;a href=&#34;http://www.geonames.org/enablefreewebservice&#34;&gt;here&lt;/a&gt; to&#xA;enable the free web service&lt;/li&gt;&#xA;&lt;li&gt;Go to the &lt;a href=&#34;https://www.omdbapi.com/&#34;&gt;OMDb website and click on the “API Key” tab to generate&#xA;your API key&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Several packages are needed for this week’s lectures (all installed on R&#xA;workbench). If you are using R from your laptop (VS. R Workbench), I’d&#xA;suggest following the lectures using R Workbench and installing the&#xA;packages after class.&lt;/p&gt;</description>
+      <title>Exploratory data analysis</title>
+      <link>http://localhost:1313/schedule/21-exploratory-data-analysis/</link>
+      <pubDate>Wed, 10 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/21-exploratory-data-analysis/</guid>
+      <description>Define exploratory data analysis, practice exploring data with visualizations, and familiarize with factors.</description>
+    </item>
+    <item>
+      <title>Data wrangling: tidy data</title>
+      <link>http://localhost:1313/schedule/22-tidy-data/</link>
+      <pubDate>Mon, 15 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/22-tidy-data/</guid>
+      <description>Importing data files and tidying data.</description>
+    </item>
+    <item>
+      <title>Data wrangling: relational data</title>
+      <link>http://localhost:1313/schedule/23-relational-data-factors/</link>
+      <pubDate>Wed, 17 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/23-relational-data-factors/</guid>
+      <description>Introduce relational data structures, and practice working with factor columns.</description>
+    </item>
+    <item>
+      <title>Control Structures</title>
+      <link>http://localhost:1313/schedule/24-vectors-iteration/</link>
+      <pubDate>Wed, 24 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/24-vectors-iteration/</guid>
+      <description>Loops and conditionals.</description>
+    </item>
+    <item>
+      <title>Functions</title>
+      <link>http://localhost:1313/schedule/31-pipes-functions/</link>
+      <pubDate>Mon, 22 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/31-pipes-functions/</guid>
+      <description>Review control structures, define a function, and practice writing functions.</description>
+    </item>
+    <item>
+      <title>Debugging and defensive programming</title>
+      <link>http://localhost:1313/schedule/32-debugging/</link>
+      <pubDate>Mon, 29 Apr 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/32-debugging/</guid>
+      <description>Define computer bugs and discuss defensive programming tactics.</description>
+    </item>
+    <item>
+      <title>Data structures</title>
+      <link>http://localhost:1313/schedule/33-data-structures/</link>
+      <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/33-data-structures/</guid>
+      <description>Overview of R Data Structures and practice manipulating them.</description>
+    </item>
+    <item>
+      <title>A deep dive into Git/GitHub</title>
+      <link>http://localhost:1313/schedule/41-reprex-git/</link>
+      <pubDate>Wed, 01 May 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/41-reprex-git/</guid>
+      <description>Review of Git/GitHub basics, more advanced commands, command line, good practices.</description>
+    </item>
+    <item>
+      <title>A deep dive into R Markdown</title>
+      <link>http://localhost:1313/schedule/42-r-markdown/</link>
+      <pubDate>Fri, 01 Mar 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/42-r-markdown/</guid>
+      <description>All things related to R Markdown and the &lt;code&gt;knitr&lt;/code&gt; package.</description>
+    </item>
+    <item>
+      <title>Getting data from the web: API access</title>
+      <link>http://localhost:1313/schedule/43-application-program-interface/</link>
+      <pubDate>Sat, 01 Jun 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/43-application-program-interface/</guid>
+      <description>Define web-scraping, define APIs, and query APIs.</description>
+    </item>
+    <item>
+      <title>Getting data from the web: scraping</title>
+      <link>http://localhost:1313/schedule/44-web-scraping/</link>
+      <pubDate>Wed, 15 May 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/44-web-scraping/</guid>
+      <description>Practice scraping content from web pages using rvest.</description>
+    </item>
+    <item>
+      <title>Text analysis: fundamentals</title>
+      <link>http://localhost:1313/schedule/51-text-data/</link>
+      <pubDate>Mon, 03 Jun 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/51-text-data/</guid>
+      <description>Introduce methods for text data in R.</description>
+    </item>
+    <item>
+      <title>Text analysis: topic modeling and sentiment analysis</title>
+      <link>http://localhost:1313/schedule/52-classification-topic-models/</link>
+      <pubDate>Sat, 01 Jun 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/52-classification-topic-models/</guid>
+      <description>Introduce methods for text data in R.</description>
+    </item>
+    <item>
+      <title>Reproducible Workflow</title>
+      <link>http://localhost:1313/schedule/54-reproducible-workflow/</link>
+      <pubDate>Wed, 01 May 2019 12:25:00 -0500</pubDate>
+      <guid>http://localhost:1313/schedule/54-reproducible-workflow/</guid>
+      <description>Methods for implementing a tidy, reproducible workflow in R.</description>
     </item>
     <item>
       <title></title>
@@ -38,13 +143,6 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/schedule/classification-topic-models/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/classification-topic-models/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduce supervised and unsupervised text classification&lt;/li&gt;&#xA;&lt;li&gt;Define sentiment analysis and demonstrate its use (Chapter 2)&lt;/li&gt;&#xA;&lt;li&gt;Define topic modeling with Latent Dirichlet allocation and demonstrate&#xA;its use (Chapter 6)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 2 and Chapter 6 in &lt;a href=&#34;http://tidytextmining.com/&#34;&gt;Tidy Text Mining with&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;a href=&#34;http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf&#34;&gt;Probabilistic Topic&#xA;Models&lt;/a&gt; by Blei,&#xA;David (2012)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;*[Topic modeling](/notes/topic-modeling/) from the lecture notes demonstrates how to implement this in a (semi)-tidy workflow&#xA;--&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s in-class&#xA;materials:&#xA;&lt;code&gt;usethis::use_course(&amp;quot;CFSS-MACSS/text-analysis-fundamentals-and-sentiment-analysis-and-tm&amp;quot;)&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Predicting song artist from lyrics](/notes/predicting-song-artist/)&#xA;* [Text analysis: topic modeling](/notes/topic-modeling/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;See additional resources for the previous lecture on text analysis and&#xA;regular expressions&lt;/li&gt;&#xA;&lt;li&gt;Original &lt;a href=&#34;https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf?ref=https://githubhelp.com&#34;&gt;Topic Modeling (LDA)&#xA;article&lt;/a&gt;&#xA;by Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent&#xA;Dirichlet Allocation.”&lt;/li&gt;&#xA;&lt;li&gt;For an introduction to supervised classification with text data, read&#xA;&lt;a href=&#34;https://smltar.com/mlclassification.html&#34;&gt;Classification&lt;/a&gt; in&#xA;Supervised Machine Learning for Text Analysis in R&lt;/li&gt;&#xA;&lt;li&gt;Two blog posts by David Robinson (co-author of &lt;code&gt;tidytext&lt;/code&gt;) analyzing&#xA;Donald J. Trump’s twitter account. Regardless of your political&#xA;affiliations, these are excellent examples demonstrating of the key&#xA;principles of reproducible research that we’ve learned in this course&#xA;(e.g., R Markdown documents and knitting code with output; Retrieving&#xA;data from APIs; Textual analysis with &lt;code&gt;tidytext&lt;/code&gt;; Visualizations with&#xA;`ggplot2)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://varianceexplained.org/r/trump-tweets/&#34;&gt;Text analysis of Trump’s tweets confirms he writes only the&#xA;(angrier) Android&#xA;half&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://varianceexplained.org/r/trump-followup/&#34;&gt;Trump’s Android and iPhone tweets, one year&#xA;later&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
       <link>http://localhost:1313/schedule/data-communication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/data-communication/</guid>
@@ -52,38 +150,10 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/schedule/data-structures/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/data-structures/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Recognize and manipulate R Data Structures (especially vectors and&#xA;lists)&lt;/li&gt;&#xA;&lt;li&gt;Review control structures and functions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 20 “Vectors” in &lt;a href=&#34;https://r4ds.had.co.nz/vectors.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Optional: Chapter 14 “Strings” in &lt;a href=&#34;https://r4ds.had.co.nz/strings.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s in-class&#xA;exercises: &lt;code&gt;usethis::use_course(&amp;quot;CFSS-MACSS/data-structures&amp;quot;)&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Work on &lt;a href=&#34;http://localhost:1313/homework/debugging-rmarkdown/&#34;&gt;Homework 5&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/data-transformation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/data-transformation/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify programming as a form of problem solving&lt;/li&gt;&#xA;&lt;li&gt;Practice decomposing a goal into a set of discrete, computational&#xA;tasks&lt;/li&gt;&#xA;&lt;li&gt;Identify the basic verbs for a language of data manipulation&lt;/li&gt;&#xA;&lt;li&gt;Familiarize with Pipes&lt;/li&gt;&#xA;&lt;li&gt;Practice transforming data&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Required: read Chapter 5 “Data Transformation” and Chapter 18 “Pipes”&#xA;from &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/problem-solving/&#34;&gt;Computer programming as a form of problem&#xA;solving&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/dplyr/&#34;&gt;&lt;code&gt;dplyr&lt;/code&gt; in brief&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/transform-college/&#34;&gt;Practice transforming college education&#xA;data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* see also: [Pipes in R](/notes/pipes/) taken from &#34;Functions&#34; lecture of Oct 25&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cheat sheet &lt;a href=&#34;https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf&#34;&gt;Data Wrangling with &lt;code&gt;dplyr&lt;/code&gt; and&#xA;&lt;code&gt;tidyr&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Start Homework 2&lt;/li&gt;&#xA;&lt;li&gt;Review this week’s readings and notes&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Complete your peer evaluations for homework 01. Review the following:&#xA;    * [General Homework Rubric](/faq/homework-evaluations/)&#xA;    * [Performing peer review](/faq/peer-evaluations/)&#xA;    * To find which peers you will evaluate:&#xA;        * Navigate to the [course organization page on GitHub](https://github.coecis.cornell.edu/cis-fa22)&#xA;        * Find the `hw01` repos you can see that are not your own repo&#xA;        * Open the repos and find the pull request. You can then initiate a [code review](https://github.com/features/code-review) to leave detailed feedback.&#xA;--&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/debugging/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/debugging/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Define a bug&lt;/li&gt;&#xA;&lt;li&gt;Review best practices for reading, writing, and styling code&lt;/li&gt;&#xA;&lt;li&gt;Distinguish between errors, warnings, and messages&lt;/li&gt;&#xA;&lt;li&gt;Identify and practice methods for error handling and recovery&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Interpret function documentation&#xA;* Introduce `traceback()` and explain how to read it&#xA;--&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read “Debugging R code” in &lt;a href=&#34;https://rstats.wtf/debugging-r-code.html&#34;&gt;What They Forgot to Teach You About&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Skim &lt;a href=&#34;http://style.tidyverse.org/&#34;&gt;The &lt;code&gt;tidyverse&lt;/code&gt; style guide&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;a href=&#34;http://socviz.co/appendix.html#how-to-read-an-r-help-page&#34;&gt;How to read an R help&#xA;page&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Review &lt;a href=&#34;http://r4ds.had.co.nz/iteration.html#dealing-with-failure&#34;&gt;21.6 Dealing with failure in &lt;em&gt;R for Data&#xA;Science&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;No in-class materials (today we complete in-class materials for “Data&#xA;Structures” lecture)&lt;/li&gt;&#xA;&lt;li&gt;Review the assigned readings for further insights and practice&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/style-guide/&#34;&gt;Bugs and styling code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/condition-handling/&#34;&gt;Debugging and condition handling&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf&#34;&gt;&lt;em&gt;Naming&#xA;things&lt;/em&gt;&lt;/a&gt; -&#xA;by Jenny Bryan. A concise guide to naming files.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;after-class&#34;&gt;After class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/homework/programming/&#34;&gt;Complete Homework 4&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
       <link>http://localhost:1313/schedule/distributed-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/distributed-learning/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Discuss the need for distributed computing&lt;/li&gt;&#xA;&lt;li&gt;Illustrate the split-apply-combine analytical pattern&lt;/li&gt;&#xA;&lt;li&gt;Define parallel processing&lt;/li&gt;&#xA;&lt;li&gt;Define SQL&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate how to access local and remote SQL databases&lt;/li&gt;&#xA;&lt;li&gt;Introduce Hadoop and Spark as distributed computing platforms&lt;/li&gt;&#xA;&lt;li&gt;Introduce the &lt;code&gt;sparklyr&lt;/code&gt; package&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate how to use &lt;code&gt;sparklyr&lt;/code&gt; for machine learning using the&#xA;Titanic data set&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install &lt;code&gt;sparklyr&lt;/code&gt; and H2O on your local computer. Run the code below&#xA;to install all necessary packages and set the correct options.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/exploratory-data-analysis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/exploratory-data-analysis/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Define Exploratory Data Analysis (EDA) and types of pattern&#xA;exploration&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate types of graphs useful for EDA and precautions when&#xA;interpreting them&lt;/li&gt;&#xA;&lt;li&gt;Define factors&lt;/li&gt;&#xA;&lt;li&gt;Practice exploring data&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 7 “Exploratory Data Analysis” and Chapter 15 “Factors”&#xA;from &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/exploratory-data-analysis/&#34;&gt;Exploratory data analysis&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/exploratory-data-analysis-practice/&#34;&gt;Practice exploring college education&#xA;data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Copied from the lecture on data wrangling, notes on factors: [Practice transforming and visualizing factors](/notes/factors-exercise/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Antony Unwin &lt;a href=&#34;https://catalog.lib.uchicago.edu/vufind/Record/11609643&#34;&gt;Graphical Data Analysis with&#xA;R&lt;/a&gt;. It&#xA;covers a range of graphical methods for data exploration and analysis;&#xA;draws on packages beyond &lt;code&gt;ggplot2&lt;/code&gt; for statistical graphics.&lt;/li&gt;&#xA;&lt;li&gt;Cheat Sheet &lt;a href=&#34;https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf&#34;&gt;Data visualization with&#xA;ggplot2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Work on homework 2&lt;/li&gt;&#xA;&lt;li&gt;Review today’s lecture materials, and prepare for next class&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title></title>
@@ -105,13 +175,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/git-and-github/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Familiarize with R syntax, data types, and data structures&lt;/li&gt;&#xA;&lt;li&gt;Distinguish between R scripts (&lt;code&gt;.R&lt;/code&gt;), Markdown documents (&lt;code&gt;.md&lt;/code&gt;), and&#xA;R Markdown documents (&lt;code&gt;.Rmd&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Identify the major components of R Markdown&lt;/li&gt;&#xA;&lt;li&gt;Create repositories&lt;/li&gt;&#xA;&lt;li&gt;Make commits and synchronize repositories from RStudio&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read chapter 4 “Workflow Basics” in &lt;a href=&#34;https://r4ds.had.co.nz/workflow-basics.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read Data Carpentry &lt;a href=&#34;https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html&#34;&gt;Introduction to&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read chapter 27 “R Markdown” in &lt;a href=&#34;https://r4ds.had.co.nz/r-markdown.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s lecture and&#xA;exercises: &lt;code&gt;usethis::use_course(&amp;quot;CFSS-MACSS/intro-r&amp;quot;)&lt;/code&gt;[1]&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/setup/git/git-with-rstudio/&#34;&gt;Using Git within R Studio&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://pjbartlein.github.io/REarthSysSci/markdown.html&#34;&gt;Markdown and R&#xA;Markdown&lt;/a&gt; by&#xA;Pat Bartlein&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;R Markdown from R&#xA;Studio&lt;/a&gt; official&#xA;documentation&lt;/li&gt;&#xA;&lt;li&gt;Practice your R skills with &lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r&#34;&gt;DataCamp free Introduction to R&#xA;course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If you haven’t yet:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/setup/&#34;&gt;Install and setup software&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Start &lt;a href=&#34;http://localhost:1313/homework/edit-readme/&#34;&gt;Homework 1&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- [^bryan]: Meeting title courtesy of Jenny Bryan&#39;s [&#34;Excuse Me, Do You Have a Moment to Talk About Version Control?&#34;](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1399928)&#xA; * Fill out [this survey](https://forms.gle/J8axkKpKZGxYyxYZA) --&gt;&#xA;&lt;p&gt;[1] If you are using R from your local machine: first install the&#xA;library by typing in your console &lt;code&gt;install.packages(&amp;quot;usethis&amp;quot;)&lt;/code&gt;; then&#xA;load it with &lt;code&gt;library(usethis)&lt;/code&gt;; finally run the code&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/grammar-of-graphics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/grammar-of-graphics/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Identify the importance of graphics in communicating information&lt;/li&gt;&#xA;&lt;li&gt;Define the layered grammar of graphics&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate how to use layered grammar of graphics&lt;/li&gt;&#xA;&lt;li&gt;Practice generating layered graphics using&#xA;&lt;a href=&#34;https://github.com/hadley/ggplot2&#34;&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Required: read chapter 3 from &lt;a href=&#34;https://r4ds.had.co.nz/data-visualisation.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;. You need to&#xA;read this chapter and complete some of the exercises before coming to&#xA;class. Exercise solutions can be found&#xA;&lt;a href=&#34;https://jrnold.github.io/r4ds-exercise-solutions/&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Optional: read Hadley Wickham &lt;a href=&#34;https://vita.had.co.nz/papers/layered-grammar.html&#34;&gt;A Layered Grammar of&#xA;Graphics&lt;/a&gt; – the&#xA;“pre-print” version of the article can be downloaded for free. This&#xA;article is optional, but I strongly encourage you to skim through it&#xA;to familiarize with the theory and language of the grammar of&#xA;graphics; read especially section 3 “Components of the Layered&#xA;Grammar” and section 4 “A Hierarchy of Defaults.”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/why-visualize-data/&#34;&gt;Why visualize data?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/grammar-of-graphics/&#34;&gt;The Grammar of Graphics&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/gapminder/&#34;&gt;Practice generating graphics with ggplot2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;Optional:&#xA;* [How to build a complicated, layered graphic](/notes/minard/)&#xA;* [Exploring Minard&#39;s 1812 plot with `ggplot2`](https://github.com/andrewheiss/fancy-minard) - a much fancier (and more complex) version&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;p&gt;Graphical design * &lt;a href=&#34;https://www.edwardtufte.com/tufte/books_vdqi&#34;&gt;Tufte, Edward R. &lt;em&gt;The Visual Display of&#xA;Quantitative&#xA;Information&lt;/em&gt;.&lt;/a&gt; Classic&#xA;book on statistical graphics and visualization design. * &lt;a href=&#34;https://socviz.co/&#34;&gt;Healey,&#xA;Kieran. &lt;em&gt;Data Visualization: A Practical Guide&lt;/em&gt;.&lt;/a&gt; An&#xA;applied introduction to graphical design with lots of applications in&#xA;&lt;code&gt;ggplot2&lt;/code&gt; and many code examples.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
@@ -157,48 +220,6 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/schedule/pipes-functions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/pipes-functions/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review control structures&lt;/li&gt;&#xA;&lt;li&gt;Define functions and their purpose&lt;/li&gt;&#xA;&lt;li&gt;Analyze a user-written function and explain how it works&lt;/li&gt;&#xA;&lt;li&gt;Practice writing functions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 17 “Introduction” and chapter 19 “Functions” in &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for&#xA;Data Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Review Chapter 21 “Iteration” in &lt;a href=&#34;https://r4ds.had.co.nz/iteration.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;See &#34;Data transformation&#34; lecture for further references&#xA;--&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s in-class&#xA;exercises: &lt;code&gt;usethis::use_course(&amp;quot;css-materials/functions&amp;quot;)&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Pipes in R](/notes/pipes/)&#xA;* [Functions in R](/notes/functions/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Homework assignments&lt;/li&gt;&#xA;&lt;li&gt;Review today’s lecture materials, and prepare for next class&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/r-markdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/r-markdown/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review the importance of reproducibility in scientific research&lt;/li&gt;&#xA;&lt;li&gt;Identify the major components of &lt;code&gt;.Rmd&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Define &lt;code&gt;knitr&lt;/code&gt; chunks&lt;/li&gt;&#xA;&lt;li&gt;Implement chunk options to customize output&lt;/li&gt;&#xA;&lt;li&gt;Practice different R Markdown formats&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read chapters 27 “R Markdown”, 28 “Graphics for communication”, and 29&#xA;“R Markdown formats” in &lt;a href=&#34;http://r4ds.had.co.nz&#34;&gt;R for Data Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;p&gt;Consult these resources for further information about R Markdown, it is&#xA;likely they will provide the answer to what you need: * &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/&#34;&gt;R Markdown the&#xA;definitive Guide&lt;/a&gt; * &lt;a href=&#34;https://posit.co/resources/cheatsheets/?_page=2/&#34;&gt;R Markdown&#xA;cheat sheet&lt;/a&gt; *&#xA;&lt;a href=&#34;https://pjbartlein.github.io/REarthSysSci/markdown.html&#34;&gt;Markdown and R&#xA;Markdown&lt;/a&gt; by&#xA;Pat Bartlein * &lt;a href=&#34;https://rmarkdown.rstudio.com/lesson-1.html&#34;&gt;R Markdown from R&#xA;Studio&lt;/a&gt; official&#xA;documentation * Info on the &lt;code&gt;lubridate&lt;/code&gt; package: &lt;a href=&#34;https://r4ds.had.co.nz/dates-and-times.html&#34;&gt;Chapter 16 of R for&#xA;Data Science&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/relational-data-factors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/relational-data-factors/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduce relational data&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate how tables can be linked to one another&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate methods in &lt;code&gt;dplyr&lt;/code&gt; for linking and merging related tables&lt;/li&gt;&#xA;&lt;li&gt;Practice joining tables&lt;/li&gt;&#xA;&lt;li&gt;Review factors&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- &#xA;*Demonstrate how to transform and reorder factors for visualizations&#xA;--&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 13 “Relational Data” in &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data&#xA;Science&lt;/a&gt;. Do not complete exercises 13.4.6.2-3&#xA;– we will be completing these as in-class exercises&lt;/li&gt;&#xA;&lt;li&gt;Review Chapter 15 “Factors” in &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/relational-data-exercise/&#34;&gt;Practice using relational data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Relational data: a quick review](/notes/relational-data/)&#xA;* [Practice using relational data](/notes/relational-data-exercise/)&#xA;* [Practice transforming and visualizing factors](/notes/factors-exercise/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Keep working on homework 3&lt;/li&gt;&#xA;&lt;li&gt;Review lectures and readings&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Complete the wrangling and visualizing data homework](/homework/wrangle-data/)&#xA;--&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/reprex-git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/reprex-git/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review Git/GitHub basic workflow using the R GUI&lt;/li&gt;&#xA;&lt;li&gt;Learn how to use basic Git/GitHub workflow through the command line&lt;/li&gt;&#xA;&lt;li&gt;Good practices&lt;/li&gt;&#xA;&lt;li&gt;Common problems and how to solve them&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://happygitwithr.com/big-picture.html&#34;&gt;Chapter 1 Why Git? Why&#xA;GitHub?&lt;/a&gt; in &lt;em&gt;“Happy Git&#xA;and GitHub for the useR”&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read &lt;a href=&#34;https://peerj.com/preprints/3159v2/&#34;&gt;“Excuse me, do you have a moment to talk about version&#xA;control?”&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Skim chapters 15, 16, and 17 included in the section &lt;a href=&#34;https://happygitwithr.com/usage-intro.html&#34;&gt;Early GitHub&#xA;Wins&lt;/a&gt; in &lt;em&gt;“Happy Git and&#xA;GitHub for the useR”&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;Skim chapters 20 to 23 in the section &lt;a href=&#34;https://happygitwithr.com/git-intro.html&#34;&gt;Git&#xA;fundamentals&lt;/a&gt; in &lt;em&gt;“Happy Git&#xA;and GitHub for the useR”&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;We will be using R Workbench for the lecture and the in-class exercises.&#xA;If you are using R from your laptop (VS. R Workbench), make sure your&#xA;system is correctly configured, see the &lt;a href=&#34;http://localhost:1313/setup/git/&#34;&gt;Git page under&#xA;Setup&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/reproducible-documents/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/reproducible-documents/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/reproducible-workflow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/reproducible-workflow/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review the importance of reproducibility in scientific research&lt;/li&gt;&#xA;&lt;li&gt;Define a project-oriented workflow&lt;/li&gt;&#xA;&lt;li&gt;Practice implementing it in R&lt;/li&gt;&#xA;&lt;li&gt;Identify R startup procedures&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read chapters 1, 2, 3, 7 in &lt;a href=&#34;https://rstats.wtf/&#34;&gt;What They Forgot to Teach You About&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;In-class practice instructions are included in the slides for today&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;&#xA;  &#xA;    note&#xA;  &#xA;&lt;/div&gt;&#xA;&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Book &lt;a href=&#34;https://rstats.wtf/&#34;&gt;What They Forgot to Teach You About R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Article on &lt;a href=&#34;https://www.tidyverse.org/articles/2017/12/workflow-vs-script/&#34;&gt;Project-oriented&#xA;workflow&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;after-class&#34;&gt;After class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete &lt;a href=&#34;homework/homework/programming/&#34;&gt;Hw04&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
       <link>http://localhost:1313/schedule/shiny-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/shiny-server/</guid>
@@ -241,13 +262,6 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/schedule/text-data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/text-data/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduce regular expressions&lt;/li&gt;&#xA;&lt;li&gt;Identify the basic workflow for conducting text analysis&lt;/li&gt;&#xA;&lt;li&gt;Define the tidy text formats (Chapter 1)&lt;/li&gt;&#xA;&lt;li&gt;Word frequencies and tf-idf (Chapter 1 and 3)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- &#xA;* Demonstrate how to conduct sentiment analysis using twitter&#xA;* Explain how to generate and interpret a wordcloud --&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;p&gt;For this and the following lecture we use the book &lt;a href=&#34;http://tidytextmining.com/&#34;&gt;&lt;em&gt;Tidy Text Mining&#xA;with R&lt;/em&gt;&lt;/a&gt;. Before this class: read Chapter 1,&#xA;3, and 4. Before next class: read chapters 2 and 6&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
       <link>http://localhost:1313/schedule/thanksgiving/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/thanksgiving/</guid>
@@ -255,31 +269,10 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/schedule/tidy-data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/tidy-data/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Import data in R&lt;/li&gt;&#xA;&lt;li&gt;Define tidy data and its characteristics&lt;/li&gt;&#xA;&lt;li&gt;Practice tidying data&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Demonstrate how vectors can be read and parsed&#xA;* Define various data file formats and functions for importation&#xA;--&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Required: read Chapter 11 “Data Import” and Chapter 12 “Tidy data”&#xA;from &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Optional: read Chapter 10 “Tibbles” from &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/tidy-data/&#34;&gt;Tidy data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/notes/tidy-exercise/&#34;&gt;Practice tidying data&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Importing data into R](/notes/importing-data/)&#xA;* [Tidy data](/notes/tidy-data/)&#xA;* [Practice tidying data](/notes/tidy-exercise/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lohr. 2014. &lt;a href=&#34;http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0&#34;&gt;For Big-Data Scientists, “Janitor Work” Is Key Hurdle to&#xA;Insights.&lt;/a&gt;&#xA;&lt;em&gt;New York Times&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.mimno.org/articles/carpentry/&#34;&gt;Data Carpentry&lt;/a&gt; a response&#xA;to the NYTimes article&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tidyr.tidyverse.org/articles/pivot.html&#34;&gt;Pivoting in &lt;code&gt;tidyr&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete &lt;a href=&#34;http://localhost:1313/homework/explore-data/&#34;&gt;Homework 2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Review today’s lecture materials, and prepare for next class&lt;/li&gt;&#xA;&lt;li&gt;Start &lt;a href=&#34;http://localhost:1313/homework/wrangle-data/&#34;&gt;Homework 3&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
       <link>http://localhost:1313/schedule/tidyeval/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/schedule/tidyeval/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/homework/programming/&#34;&gt;Complete the programming homework&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/vectors-iteration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/vectors-iteration/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;!--&#xA;* Review the major types of vectors&#xA;* Demonstrate how to subset vectors&#xA;* Demonstrate vector recycling&#xA;* Define lists&#xA;--&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduce if-else statements&lt;/li&gt;&#xA;&lt;li&gt;Introduce iterative operations&lt;/li&gt;&#xA;&lt;li&gt;Practice writing iterative operations using loops, &lt;code&gt;map()&lt;/code&gt; functions,&#xA;and &lt;code&gt;dplyr::across()&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Read Chapter 13 “Control Structures” in &lt;a href=&#34;https://bookdown.org/rdpeng/rprogdatascience/control-structures.html&#34;&gt;R programming for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Read Chapter 21 “Iteration” in &lt;a href=&#34;https://r4ds.had.co.nz/iteration.html&#34;&gt;R for Data&#xA;Science&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* Read chapters 14.1-2, 20-21 from [R for Data Science](http://r4ds.had.co.nz/)&#xA;--&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s in-class&#xA;exercises: &lt;code&gt;usethis::use_course(&amp;quot;css-materials/control-structures&amp;quot;)&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Data storage types](/notes/vectors/)&#xA;* [Iteration](/notes/iteration/)&#xA;* [Column-wise operations](https://dplyr.tidyverse.org/dev/articles/colwise.html)&#xA;--&gt;&#xA;&lt;h2 id=&#34;what-you-need-to-do-after-class&#34;&gt;What you need to do after class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Complete/Start Homework assignments&lt;/li&gt;&#xA;&lt;li&gt;Review today’s lecture materials, and prepare for next class&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/schedule/web-scraping/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/schedule/web-scraping/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Define HTML and CSS selectors&lt;/li&gt;&#xA;&lt;li&gt;Introduce the &lt;code&gt;rvest&lt;/code&gt; package&lt;/li&gt;&#xA;&lt;li&gt;Demonstrate how to extract information from HTML pages&lt;/li&gt;&#xA;&lt;li&gt;Practice scraping data&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;before-class&#34;&gt;Before class&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chapter 1 and 4 in &lt;a href=&#34;https://steviep42.github.io/webscraping/book/&#34;&gt;Web Scraping with&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Several packages are needed for this week’s lectures (all installed on R&#xA;workbench). If you are using R from your laptop (VS. R Workbench), I’d&#xA;suggest following the lectures using R Workbench and installing the&#xA;packages after class.&lt;/p&gt;&#xA;&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rvest.tidyverse.org/articles/harvesting-the-web.html&#34;&gt;&lt;code&gt;rvest&lt;/code&gt;&#xA;documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/httr/&#34;&gt;&lt;code&gt;httr&lt;/code&gt; documentation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/yusuzech/r-web-scraping-cheat-sheet/blob/master/README.md&#34;&gt;Web Scraping using R Cheat&#xA;Sheet&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/ropensci/webservices&#34;&gt;More install-and-play API packages for&#xA;R&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;class-materials&#34;&gt;Class materials&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Run the code below in your console to download today’s in-class&#xA;exercises: &lt;code&gt;usethis::use_course(&amp;quot;CFSS-MACSS/web-scraping&amp;quot;)&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--&#xA;* [Web scraping](/notes/web-scraping/)&#xA;* `rvest`&#xA;    * Load the library (`library(rvest)`)&#xA;    * `demo(&#34;tripadvisor&#34;)` - scraping a Trip Advisor page&#xA;    * `demo(&#34;united&#34;)` - how to scrape a web page which requires a login&#xA;    * [Scraping IMDB](https://blog.rstudio.org/2014/11/24/rvest-easy-web-scraping-with-r/)&#xA;--&gt;</description>
     </item>
     <item>
       <title></title>

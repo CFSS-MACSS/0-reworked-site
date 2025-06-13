@@ -4,7 +4,10 @@ draft: false
 weight: 30
 title: "Setup R"
 toc: true
-type: book
+type: docs
+output:
+  md_document:
+    preserve_yaml: true
 aliases: ["/setup03.html", "/setup/r/"]
 ---
 
@@ -45,7 +48,9 @@ As previously mentioned, the base R distribution is not the best for developing 
 
 To make sure you've done everything correctly, open up RStudio on your computer. You should see something that looks like this:
 
-{{< figure src="rstudio_startup.png" caption="" >}}
+```{r, echo = F}
+knitr::include_graphics("https://docs.posit.co/ide/user/ide/get-started/images/rstudio-panes-labeled.jpeg")
+```
 
 We'll discuss this in more detail later, but the RStudio IDE is divided into 4 separate panes (one of which is hidden for now) which all serve specific functions. For now, to make sure R and RStudio are setup correctly, type `x <- 5 + 2` into the *console* pane (the one on the left side of your screen - this is equivalent to the main window you saw when you opened the base R program, where you can type and run live R code) and execute it by pressing Enter/Return. You just created an object in R called `x`. What does this object contain? Type `print(x)` into the console and press enter again. Your console should now contain the following output:
 
@@ -100,14 +105,16 @@ You should install some essential packages now so that you will need early in th
 install.packages("tidyverse")
 
 # install these packages as well
-install.packages(c("rmarkdown", "knitr", "gapminder",
+install.packages(c("rmarkdown", "knitr", "gapminder", "stevedata",
                    "tidytext", "devtools", "usethis"))
 ```
 
-## Acknowledgments
+<!-- ## Acknowledgments -->
 
-```{r child = here::here("R", "_ack_stat545.Rmd")}
-```
+
+<!-- # ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- # ``` -->
+
 
 [^source]: Advanced users may want to install from source, but most likely if you are an advanced user you don't need to take this course.
 [^pkg]: "Package" and "library" are two terms many programmers use synonymously. While there are technically differences between the two terms, we will use them interchangably in this course.

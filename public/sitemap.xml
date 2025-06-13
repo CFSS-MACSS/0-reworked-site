@@ -38,8 +38,17 @@
     <loc>http://localhost:1313/setup/git/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/schedule/intro/</loc>
+    <loc>http://localhost:1313/schedule/11-intro/</loc>
     <lastmod>2023-06-12T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/12-grammar-of-graphics/</loc>
+    <lastmod>2023-06-14T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/13-data-transformation/</loc>
+    <lastmod>2023-06-15T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/14-juneteenth/</loc>
+    <lastmod>2025-06-19T12:25:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/faq/homework-evaluations/</loc>
     <lastmod>2022-09-25T00:00:00-05:00</lastmod>
@@ -53,6 +62,18 @@
     <loc>http://localhost:1313/setup/r/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/schedule/21-exploratory-data-analysis/</loc>
+    <lastmod>2022-10-11T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/22-tidy-data/</loc>
+    <lastmod>2023-06-21T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/23-relational-data-factors/</loc>
+    <lastmod>2023-06-22T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/24-vectors-iteration/</loc>
+    <lastmod>2022-10-20T12:25:00-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/setup/git/git-clients/</loc>
     <lastmod>2022-09-25T00:00:00-05:00</lastmod>
   </url><url>
@@ -65,17 +86,44 @@
     <loc>http://localhost:1313/setup/shell/</loc>
     <lastmod>2018-09-09T00:00:00-05:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/schedule/31-pipes-functions/</loc>
+    <lastmod>2022-10-25T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/32-debugging/</loc>
+    <lastmod>2023-06-28T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/33-data-structures/</loc>
+    <lastmod>2023-06-28T12:25:00-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/setup/git/git-configure/</loc>
     <lastmod>2022-09-27T00:00:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/setup/r/r-server/</loc>
-    <lastmod>2022-09-26T00:00:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/faq/asking-questions/</loc>
     <lastmod>2022-09-25T00:00:00-05:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/schedule/41-reprex-git/</loc>
+    <lastmod>2023-07-05T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/42-r-markdown/</loc>
+    <lastmod>2023-07-03T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/43-application-program-interface/</loc>
+    <lastmod>2023-07-06T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/44-web-scraping/</loc>
+    <lastmod>2023-07-10T12:25:00-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/setup/git/git-with-rstudio/</loc>
     <lastmod>2018-09-09T00:00:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/51-text-data/</loc>
+    <lastmod>2023-07-11T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/52-classification-topic-models/</loc>
+    <lastmod>2023-07-13T12:25:00-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/schedule/54-reproducible-workflow/</loc>
+    <lastmod>2023-06-29T12:25:00-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/faq/</loc>
     <lastmod>2022-09-25T00:00:00-05:00</lastmod>
@@ -86,37 +134,20 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-10-06T13:30:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/schedule/juneteenth/</loc>
-    <lastmod>2025-06-19T12:25:00-05:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/schedule/</loc>
     <lastmod>2025-06-19T12:25:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/schedule/application-program-interface/</loc>
-  </url><url>
     <loc>http://localhost:1313/schedule/build-better-workflow/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/classification-topic-models/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/data-communication/</loc>
   </url><url>
-    <loc>http://localhost:1313/schedule/data-structures/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/data-transformation/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/debugging/</loc>
-  </url><url>
     <loc>http://localhost:1313/schedule/distributed-learning/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/exploratory-data-analysis/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/extended-git-workflows/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/fall-break/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/git-and-github/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/grammar-of-graphics/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/hyperparameter-tuning/</loc>
   </url><url>
@@ -130,18 +161,6 @@
   </url><url>
     <loc>http://localhost:1313/schedule/no-class-misc/</loc>
   </url><url>
-    <loc>http://localhost:1313/schedule/pipes-functions/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/r-markdown/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/relational-data-factors/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/reprex-git/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/reproducible-documents/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/reproducible-workflow/</loc>
-  </url><url>
     <loc>http://localhost:1313/schedule/shiny-server/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/shiny-ui/</loc>
@@ -154,73 +173,13 @@
   </url><url>
     <loc>http://localhost:1313/schedule/stat-learn/</loc>
   </url><url>
-    <loc>http://localhost:1313/schedule/text-data/</loc>
-  </url><url>
     <loc>http://localhost:1313/schedule/thanksgiving/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/tidy-data/</loc>
   </url><url>
     <loc>http://localhost:1313/schedule/tidyeval/</loc>
   </url><url>
-    <loc>http://localhost:1313/schedule/vectors-iteration/</loc>
-  </url><url>
-    <loc>http://localhost:1313/schedule/web-scraping/</loc>
-  </url><url>
     <loc>http://localhost:1313/schedule/work-with-models/</loc>
   </url><url>
-    <loc>http://localhost:1313/slides/a-deep-dive-into-r-markdown/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/build-a-better-workflow/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/data-structures/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/data-transformation/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/data-wrangling-relational-data-and-factors/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/data-wrangling-tidy-data/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/debugging-and-defensive-programming/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/exploratory-data-analysis/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/getting-data-from-the-web-api-access/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/getting-data-from-the-web-scraping/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/intro/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/machine-learning/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/pipes-and-functions-in-r/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/project-management/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/reproducible-examples-and-git/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/reproducible-workflow/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/shiny/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/statistical-learning-classification-and-cross-validation/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/text-analysis-classification-and-topic-modeling/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/text-analysis-fundamentals-and-sentiment-analysis/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/vectors-and-iteration/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/visualizations-and-the-grammar-of-graphics/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/visualize-spatial-i/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/visualize-spatial-ii/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/working-with-statistical-models/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/slides/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

@@ -4,7 +4,7 @@ draft: false
 weight: 20
 title: "Why R?"
 toc: true
-type: book
+type: docs
 aliases: ["/setup01.html", "/setup/what-is-r/"]
 ---
 

@@ -58,80 +58,344 @@
 </div>
 </nav>
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
-        <h2 id="r">R</h2>
-<p><a href="https://www.r-project.org/">R</a> is an open-source programming language based on the <a href="https://en.wikipedia.org/wiki/S_%28programming_language%29">S</a> from the 1970s. It is very popular in the physical and social sciences due to it&rsquo;s cost (free) and versatility. Thousands of expansion libraries have been published which extend the tasks R can perform, and users can write their own custom functions and/or libraries to perform specific operations.</p>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+  <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setup-li">
+  <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setupgit-li">
+  <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
+  <a href="/setup/git/what-is-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitwhat-is-git"><span class="">What is Git?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-li">
+  <a href="/setup/git/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit"><span class="">Install Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-clients-li">
+  <a href="/setup/git/git-clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-clients"><span class="">Git clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-configure-li">
+  <a href="/setup/git/git-configure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-configure"><span class="">Configure Git</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitgit-with-rstudio-li">
+  <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setupr-li">
+  <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setuprwhat-is-r-li">
+  <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="td-sidebar-nav-active-item">Setup R</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupshell-li">
+  <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-syllabus-li">
+  <a href="/syllabus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-syllabus"><span class="">Syllabus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-faq-li">
+  <a href="/faq/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-faq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqabout-the-course-li">
+  <a href="/faq/about-the-course/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqabout-the-course"><span class="">General Questions &amp; Info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqhomework-evaluations-li">
+  <a href="/faq/homework-evaluations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqhomework-evaluations"><span class="">Homework Rubric</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-faqasking-questions-li">
+  <a href="/faq/asking-questions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-faqasking-questions"><span class="">How to ask for help</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-schedule-li">
+  <a href="/schedule/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-schedule"><span class="">Schedule of Topics</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule11-intro-li">
+  <a href="/schedule/11-intro/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule11-intro"><span class="">Introduction to computing for the social sciences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule12-grammar-of-graphics-li">
+  <a href="/schedule/12-grammar-of-graphics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule12-grammar-of-graphics"><span class="">Visualizations and the grammar of graphics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule13-data-transformation-li">
+  <a href="/schedule/13-data-transformation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule13-data-transformation"><span class="">Data transformation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule14-juneteenth-li">
+  <a href="/schedule/14-juneteenth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule14-juneteenth"><span class="">Juneteenth (observed)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule21-exploratory-data-analysis-li">
+  <a href="/schedule/21-exploratory-data-analysis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule21-exploratory-data-analysis"><span class="">Exploratory data analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule22-tidy-data-li">
+  <a href="/schedule/22-tidy-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule22-tidy-data"><span class="">Data wrangling: tidy data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule23-relational-data-factors-li">
+  <a href="/schedule/23-relational-data-factors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule23-relational-data-factors"><span class="">Data wrangling: relational data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule24-vectors-iteration-li">
+  <a href="/schedule/24-vectors-iteration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule24-vectors-iteration"><span class="">Control Structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule31-pipes-functions-li">
+  <a href="/schedule/31-pipes-functions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule31-pipes-functions"><span class="">Functions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule32-debugging-li">
+  <a href="/schedule/32-debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule32-debugging"><span class="">Debugging and defensive programming</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule33-data-structures-li">
+  <a href="/schedule/33-data-structures/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule33-data-structures"><span class="">Data structures</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule41-reprex-git-li">
+  <a href="/schedule/41-reprex-git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule41-reprex-git"><span class="">A deep dive into Git/GitHub</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule42-r-markdown-li">
+  <a href="/schedule/42-r-markdown/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule42-r-markdown"><span class="">A deep dive into R Markdown</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule43-application-program-interface-li">
+  <a href="/schedule/43-application-program-interface/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule43-application-program-interface"><span class="">Getting data from the web: API access</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule44-web-scraping-li">
+  <a href="/schedule/44-web-scraping/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule44-web-scraping"><span class="">Getting data from the web: scraping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule51-text-data-li">
+  <a href="/schedule/51-text-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule51-text-data"><span class="">Text analysis: fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule52-classification-topic-models-li">
+  <a href="/schedule/52-classification-topic-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule52-classification-topic-models"><span class="">Text analysis: topic modeling and sentiment analysis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedule54-reproducible-workflow-li">
+  <a href="/schedule/54-reproducible-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedule54-reproducible-workflow"><span class="">Reproducible Workflow</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulebuild-better-workflow-li">
+  <a href="/schedule/build-better-workflow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulebuild-better-workflow"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledata-communication-li">
+  <a href="/schedule/data-communication/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledata-communication"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduledistributed-learning-li">
+  <a href="/schedule/distributed-learning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduledistributed-learning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleextended-git-workflows-li">
+  <a href="/schedule/extended-git-workflows/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleextended-git-workflows"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulefall-break-li">
+  <a href="/schedule/fall-break/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulefall-break"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulegit-and-github-li">
+  <a href="/schedule/git-and-github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulegit-and-github"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulehyperparameter-tuning-li">
+  <a href="/schedule/hyperparameter-tuning/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulehyperparameter-tuning"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleindependence-day-li">
+  <a href="/schedule/independence-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleindependence-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulelabor-day-li">
+  <a href="/schedule/labor-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulelabor-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulememorial-day-li">
+  <a href="/schedule/memorial-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulememorial-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulemlk-day-li">
+  <a href="/schedule/mlk-day/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulemlk-day"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleno-class-misc-li">
+  <a href="/schedule/no-class-misc/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleno-class-misc"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-server-li">
+  <a href="/schedule/shiny-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-server"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduleshiny-ui-li">
+  <a href="/schedule/shiny-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduleshiny-ui"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-i-li">
+  <a href="/schedule/spatial-viz-i/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-i"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulespatial-viz-ii-li">
+  <a href="/schedule/spatial-viz-ii/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulespatial-viz-ii"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-classification-li">
+  <a href="/schedule/stat-learn-classification/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn-classification"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulestat-learn-li">
+  <a href="/schedule/stat-learn/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulestat-learn"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulethanksgiving-li">
+  <a href="/schedule/thanksgiving/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulethanksgiving"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-scheduletidyeval-li">
+  <a href="/schedule/tidyeval/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-scheduletidyeval"><span class=""></span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-schedulework-with-models-li">
+  <a href="/schedule/work-with-models/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-schedulework-with-models"><span class=""></span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#r">R</a></li>
+    <li><a href="#installing-r">Installing R</a></li>
+    <li><a href="#rstudio">RStudio</a></li>
+    <li><a href="#installing-rstudio">Installing RStudio</a></li>
+    <li><a href="#test-it">Test it</a></li>
+    <li><a href="#updating-r-and-rstudio">Updating R and RStudio</a></li>
+    <li><a href="#add-on-libraries">Add-on libraries</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/setup/">Start here: Software Options</a></li>
+  <li class="breadcrumb-item">
+    <a href="/setup/r/">R/RStudio</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Setup R</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Setup R</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<h2 id="r">R</h2>
+<p><a href="https://www.r-project.org/">R</a> is an open-source programming language
+based on the <a href="https://en.wikipedia.org/wiki/S_%28programming_language%29">S</a>
+from the 1970s. It is very popular in the physical and social sciences
+due to it’s cost (free) and versatility. Thousands of expansion
+libraries have been published which extend the tasks R can perform, and
+users can write their own custom functions and/or libraries to perform
+specific operations.</p>
 <h2 id="installing-r">Installing R</h2>
 <ol>
-<li>Download the latest binary distribution for your operating system (e.g. Windows, Mac OS X, or Linux) from <a href="https://cran.rstudio.com/">CRAN</a>, a network of servers around the world which store identical copies of the R binaries, source code, and thousands of additional libraries. The binary version has been pre-compiled and is the easiest to install. Windows users should make sure to select the binary for the <em>base distribution</em>.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
-<li>Run the installation from the file you just downloaded (<code>.exe</code> or <code>.pkg</code>).</li>
+<li>Download the latest binary distribution for your operating system
+(e.g. Windows, Mac OS X, or Linux) from
+<a href="https://cran.rstudio.com/">CRAN</a>, a network of servers around the
+world which store identical copies of the R binaries, source code,
+and thousands of additional libraries. The binary version has been
+pre-compiled and is the easiest to install. Windows users should
+make sure to select the binary for the <em>base distribution</em>.[1]</li>
+<li>Run the installation from the file you just downloaded (<code>.exe</code> or
+<code>.pkg</code>).</li>
 <li>Open R. You should see a screen similar to this:</li>
 </ol>
-<figure><img src="r_console.png">
-</figure>
+<p>{{&lt; figure src=“r_console.png” caption=“” &gt;}}</p>
+<p>This is the default R console. You can use this as your development
+environment where you write and execute code. However the default R
+console is very minimalistic and not much more useful than a text
+editor. This is why we will use RStudio for programming in R. However to
+demonstrate that your R installation works, type <code>5 + 2</code> in the console
+and press enter. You should see the following:</p>
+<pre><code>5 + 2
 
-<p>This is the default R console. You can use this as your development environment where you write and execute code. However the default R console is very minimalistic and not much more useful than a text editor. This is why we will use RStudio for programming in R. However to demonstrate that your R installation works, type <code>5 + 2</code> in the console and press enter. You should see the following:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">5</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">2</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>## [1] 7
-</span></span></code></pre></div><p>Congratulations! You just programatically performed basic arithmetic.</p>
+## [1] 7
+</code></pre>
+<p>Congratulations! You just programatically performed basic arithmetic.</p>
 <h2 id="rstudio">RStudio</h2>
-<p>As previously mentioned, the base R distribution is not the best for developing and writing programs. Instead, we want an integrated development environment (IDE) which will allow us to write and execute code, debug programs, and automate certain tasks. In this course we will use <a href="https://www.rstudio.com/products/RStudio/">RStudio</a>, perhaps the most popular IDE available for R. Like R, it is open-source, expandable, and provides many useful tools and enhancements over the base R environment.</p>
+<p>As previously mentioned, the base R distribution is not the best for
+developing and writing programs. Instead, we want an integrated
+development environment (IDE) which will allow us to write and execute
+code, debug programs, and automate certain tasks. In this course we will
+use <a href="https://www.rstudio.com/products/RStudio/">RStudio</a>, perhaps the
+most popular IDE available for R. Like R, it is open-source, expandable,
+and provides many useful tools and enhancements over the base R
+environment.</p>
 <h2 id="installing-rstudio">Installing RStudio</h2>
 <ol>
-<li>Download the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of RStudio</a> appropriate for your operating system. Be sure to select the &ldquo;Installer&rdquo;, not the &ldquo;Zip&rdquo; files or source code. For Windows users, the file should have a <code>.exe</code> extension; Mac users should see a <code>.dmg</code> extension.</li>
+<li>Download the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of
+RStudio</a>
+appropriate for your operating system. Be sure to select the
+“Installer”, not the “Zip” files or source code. For Windows users,
+the file should have a <code>.exe</code> extension; Mac users should see a
+<code>.dmg</code> extension.</li>
 <li>Install it!</li>
 </ol>
 <h2 id="test-it">Test it</h2>
-<p>To make sure you&rsquo;ve done everything correctly, open up RStudio on your computer. You should see something that looks like this:</p>
-<figure><img src="rstudio_startup.png">
-</figure>
+<p>To make sure you’ve done everything correctly, open up RStudio on your
+computer. You should see something that looks like this:</p>
+<p><img src="https://docs.posit.co/ide/user/ide/get-started/images/rstudio-panes-labeled.jpeg" alt=""></p>
+<p>We’ll discuss this in more detail later, but the RStudio IDE is divided
+into 4 separate panes (one of which is hidden for now) which all serve
+specific functions. For now, to make sure R and RStudio are setup
+correctly, type <code>x &lt;- 5 + 2</code> into the <em>console</em> pane (the one on the
+left side of your screen - this is equivalent to the main window you saw
+when you opened the base R program, where you can type and run live R
+code) and execute it by pressing Enter/Return. You just created an
+object in R called <code>x</code>. What does this object contain? Type <code>print(x)</code>
+into the console and press enter again. Your console should now contain
+the following output:</p>
+<pre><code>x &lt;- 5 + 2
+print(x)
 
-<p>We&rsquo;ll discuss this in more detail later, but the RStudio IDE is divided into 4 separate panes (one of which is hidden for now) which all serve specific functions. For now, to make sure R and RStudio are setup correctly, type <code>x &lt;- 5 + 2</code> into the <em>console</em> pane (the one on the left side of your screen - this is equivalent to the main window you saw when you opened the base R program, where you can type and run live R code) and execute it by pressing Enter/Return. You just created an object in R called <code>x</code>. What does this object contain? Type <code>print(x)</code> into the console and press enter again. Your console should now contain the following output:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">&lt;-</span> <span style="color:#0000cf;font-weight:bold">5</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">2</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">x</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>## [1] 7
-</span></span></code></pre></div><h2 id="updating-r-and-rstudio">Updating R and RStudio</h2>
+## [1] 7
+</code></pre>
+<h2 id="updating-r-and-rstudio">Updating R and RStudio</h2>
 <ul>
-<li>If you already installed R or RStudio for a previous course or research, update both to the most current version. Generally this entails downloading and installing the most recent version of both programs. When you update R, you don&rsquo;t actually remove the old version - you simply have both versions on your computer and default to the most recent version. Sometimes this is useful when specific R libraries require an older version of R, however we will generally stick to the most recent versions of R and RStudio.</li>
-<li>When you update R, make sure to update your libraries as well. The following command should perform most of this work (note you may have to manually update certain libraries such as those installed directly via Github).</li>
+<li>If you already installed R or RStudio for a previous course or
+research, update both to the most current version. Generally this
+entails downloading and installing the most recent version of both
+programs. When you update R, you don’t actually remove the old
+version - you simply have both versions on your computer and default
+to the most recent version. Sometimes this is useful when specific R
+libraries require an older version of R, however we will generally
+stick to the most recent versions of R and RStudio.</li>
+<li>When you update R, make sure to update your libraries as well. The
+following command should perform most of this work (note you may have
+to manually update certain libraries such as those installed directly
+via Github).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">update.packages</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ask</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">FALSE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">checkBuilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">TRUE</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><h2 id="add-on-libraries">Add-on libraries</h2>
-<p>We will frequently use libraries in R that are not part of the base distribution. To install additional libraries that have been submitted to the CRAN repository, we use the <code>install.packages</code> function in R.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> For instance, one library we will use extensively in this course is <a href="https://cran.r-project.org/web/packages/dplyr/index.html"><code>dplyr</code></a>, a package for data manipulation. To install <code>dplyr</code>, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">install.packages</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;dplyr&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>If you run into errors later in the course about a function or package not being found, run the <code>install.packages</code> function to make sure the package is actually installed. For example, I might want to use the <a href="https://cran.r-project.org/web/packages/broom/index.html"><code>broom</code></a> package by David Robinson to tidy the results of my statistical analysis. What happens if I try to use the library without installing it?</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">broom</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a40000">##</span> <span style="color:#000">Error</span> <span style="color:#000">in</span> <span style="color:#000">library</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">broom</span><span style="color:#000;font-weight:bold">):</span> <span style="color:#000">there</span> <span style="color:#000">is</span> <span style="color:#000">no</span> <span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">called</span> <span style="color:#a40000">&#39;</span><span style="color:#000">broom</span><span style="color:#a40000">&#39;</span>
-</span></span></code></pre></div><p>Okay then, let&rsquo;s install it (<code>repos</code> tells R from which CRAN server we want to download the package - generally you will not need to specify this when you install packages).</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#000">install.packages</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;broom&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">repos</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;http://cran.rstudio.com&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## </span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## The downloaded binary packages are in</span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">##  /var/folders/vw/l7k7vwhn3qqd990ww0dd101c0000gn/T//Rtmp6AWVP6/downloaded_packages</span>
-</span></span></code></pre></div><p>You should install some essential packages now so that you will need early in the course. Copy and paste the following command into the R console to do this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install the major packages from the tidyverse</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">install.packages</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;tidyverse&#34;</span><span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install these packages as well</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">install.packages</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;rmarkdown&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;knitr&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;gapminder&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>                   <span style="color:#4e9a06">&#34;tidytext&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;devtools&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;usethis&#34;</span><span style="color:#000;font-weight:bold">))</span>
-</span></span></code></pre></div><h2 id="acknowledgments">Acknowledgments</h2>
-<ul>
-<li>This page is derived in part from <a href="http://stat545.com">&ldquo;UBC STAT 545A and 547M&rdquo;</a>, licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0 Creative Commons License</a>.</li>
-</ul>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Advanced users may want to install from source, but most likely if you are an advanced user you don&rsquo;t need to take this course.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p>&ldquo;Package&rdquo; and &ldquo;library&rdquo; are two terms many programmers use synonymously. While there are technically differences between the two terms, we will use them interchangably in this course.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
+<!-- -->
+<pre><code>update.packages(ask = FALSE, checkBuilt = TRUE)
+</code></pre>
+<h2 id="add-on-libraries">Add-on libraries</h2>
+<p>We will frequently use libraries in R that are not part of the base
+distribution. To install additional libraries that have been submitted
+to the CRAN repository, we use the <code>install.packages</code> function in R.[2]
+For instance, one library we will use extensively in this course is
+<a href="https://cran.r-project.org/web/packages/dplyr/index.html"><code>dplyr</code></a>, a
+package for data manipulation. To install <code>dplyr</code>, run the following
+command:</p>
+<pre><code>install.packages(&quot;dplyr&quot;)
+</code></pre>
+<p>If you run into errors later in the course about a function or package
+not being found, run the <code>install.packages</code> function to make sure the
+package is actually installed. For example, I might want to use the
+<a href="https://cran.r-project.org/web/packages/broom/index.html"><code>broom</code></a>
+package by David Robinson to tidy the results of my statistical
+analysis. What happens if I try to use the library without installing
+it?</p>
+<pre><code>library(broom)
+
+## Error in library(broom): there is no package called 'broom'
+</code></pre>
+<p>Okay then, let’s install it (<code>repos</code> tells R from which CRAN server we
+want to download the package - generally you will not need to specify
+this when you install packages).</p>
+<pre><code>install.packages(&quot;broom&quot;, repos = &quot;http://cran.rstudio.com&quot;)
+
+## 
+## The downloaded binary packages are in
+##  /var/folders/vw/l7k7vwhn3qqd990ww0dd101c0000gn/T//Rtmp6AWVP6/downloaded_packages
+</code></pre>
+<p>You should install some essential packages now so that you will need
+early in the course. Copy and paste the following command into the R
+console to do this:</p>
+<pre><code># install the major packages from the tidyverse
+install.packages(&quot;tidyverse&quot;)
+
+# install these packages as well
+install.packages(c(&quot;rmarkdown&quot;, &quot;knitr&quot;, &quot;gapminder&quot;, &quot;stevedata&quot;,
+                   &quot;tidytext&quot;, &quot;devtools&quot;, &quot;usethis&quot;))
+</code></pre>
+<!-- ## Acknowledgments -->
+<!-- # ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<!-- # ``` -->
+<p>[1] Advanced users may want to install from source, but most likely if
+you are an advanced user you don’t need to take this course.</p>
+<p>[2] “Package” and “library” are two terms many programmers use
+synonymously. While there are technically differences between the two
+terms, we will use them interchangably in this course.</p>
+
+	
 </div>
 
-      </main>
+
+          </main>
+        </div>
+      </div>
       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
