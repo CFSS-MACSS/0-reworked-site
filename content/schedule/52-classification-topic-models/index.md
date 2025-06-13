@@ -1,3 +1,50 @@
+---
+title: "Text analysis: topic modeling and sentiment analysis"
+date: 2023-07-13T12:25:00-05:00
+publishDate: 2019-06-01T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 52
+
+
+aliases: ["/cm018.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-11-16T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Introduce methods for text data in R."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/text-analysis-classification-and-topic-modeling/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
 ## Overview
 
 - Introduce supervised and unsupervised text classification

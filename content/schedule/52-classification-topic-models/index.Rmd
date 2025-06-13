@@ -3,9 +3,12 @@ title: "Text analysis: topic modeling and sentiment analysis"
 date: 2023-07-13T12:25:00-05:00
 publishDate: 2019-06-01T12:25:00-05:00
 draft: false
-toc: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
 type: docs
-output: md_document
+weight: 52
 
 
 aliases: ["/cm018.html"]

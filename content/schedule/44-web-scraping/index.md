@@ -1,3 +1,50 @@
+---
+title: "Getting data from the web: scraping"
+date: 2023-07-10T12:25:00-05:00
+publishDate: 2019-05-15T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 44
+
+
+aliases: ["/cm016.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-11-02T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Practice scraping content from web pages using rvest."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/getting-data-from-the-web-scraping/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
 ## Overview
 
 - Define HTML and CSS selectors

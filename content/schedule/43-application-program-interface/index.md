@@ -1,3 +1,49 @@
+---
+title: "Getting data from the web: API access"
+date: 2023-07-06T12:25:00-05:00
+publishDate: 2019-06-01T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 43
+
+aliases: ["/cm015.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-10-31T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Define web-scraping, define APIs, and query APIs."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/getting-data-from-the-web-api-access/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
 ## Overview
 
 - Identify multiple methods for obtaining data from the internet

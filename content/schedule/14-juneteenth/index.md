@@ -3,11 +3,13 @@ title: "Juneteenth (observed)"
 date: 2025-06-19T12:25:00-05:00
 publishDate: 2019-03-01T12:25:00-05:00
 draft: false
-type: docs
 description: no class on Juneteenth
+toc: true
 output:
   md_document:
     preserve_yaml: true
+type: docs
+weight: 14
 
 
 # Talk start and end times.

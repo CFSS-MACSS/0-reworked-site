@@ -1,3 +1,50 @@
+---
+title: "Debugging and defensive programming"
+date: 2023-06-28T12:25:00-05:00
+publishDate: 2019-04-29T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 32
+
+
+aliases: ["/cm009.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-09-26T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Define computer bugs and discuss defensive programming tactics."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/debugging-and-defensive-programming/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
 ## Overview
 
 - Define a bug

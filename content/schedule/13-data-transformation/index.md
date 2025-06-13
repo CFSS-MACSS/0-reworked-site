@@ -1,3 +1,50 @@
+---
+title: "Data transformation"
+date: 2023-06-15T12:25:00-05:00
+publishDate: 2019-04-08T12:25:00-05:00
+draft: false
+toc: true
+output:
+  md_document:
+    preserve_yaml: true
+type: docs
+weight: 13
+
+
+aliases: ["/cm003.html"]
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+#time_end: 2022-08-29T14:20:00-05:00
+all_day: false
+
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors: []
+
+# Abstract and optional shortened version.
+abstract: ""
+summary: "Verbs for data manipulation, practice transforming data frames using dplyr, and intro to pipes."
+
+# Location of event.
+location: ""
+
+# Is this a selected talk? (true/false)
+selected: false
+
+# Tags (optional).
+#   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: []
+
+# Links (optional).
+url_pdf: ""
+url_slides: "/slides/data-transformation/"
+url_video: ""
+url_code: ""
+
+# Does the content use math formatting?
+math: false
+---
+
 ## Overview
 
 - Identify programming as a form of problem solving
