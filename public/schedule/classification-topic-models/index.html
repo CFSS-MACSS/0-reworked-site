@@ -1,25 +1,21 @@
 <!doctype html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-
-
-<link rel="shortcut icon" href="/favicons/favicon.ico" >
-<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
-<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
-<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
-<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
-<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
-<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
-
-<title>CFSS: Computing for the Social Sciences</title>
-<meta name="description" content="Overview Introduce supervised and unsupervised text classification Define sentiment analysis and demonstrate its use (Chapter 2) Define topic modeling with Latent Dirichlet allocation and demonstrate its use (Chapter 6) Before class Read Chapter 2 and Chapter 6 in Tidy Text Mining with R Read Probabilistic Topic Models by Blei, David (2012) Class materials Run the code below in your console to download today’s in-class materials: usethis::use_course(&#34;CFSS-MACSS/text-analysis-fundamentals-and-sentiment-analysis-and-tm&#34;) Additional resources See additional resources for the previous lecture on text analysis and regular expressions Original Topic Modeling (LDA) article by Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent Dirichlet Allocation.” For an introduction to supervised classification with text data, read Classification in Supervised Machine Learning for Text Analysis in R Two blog posts by David Robinson (co-author of tidytext) analyzing Donald J. Trump’s twitter account. Regardless of your political affiliations, these are excellent examples demonstrating of the key principles of reproducible research that we’ve learned in this course (e.g., R Markdown documents and knitting code with output; Retrieving data from APIs; Textual analysis with tidytext; Visualizations with `ggplot2) Text analysis of Trump’s tweets confirms he writes only the (angrier) Android half Trump’s Android and iPhone tweets, one year later">
-<meta property="og:url" content="http://localhost:1313/schedule/classification-topic-models/">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><meta property="og:url" content="http://localhost:1313/schedule/classification-topic-models/">
   <meta property="og:site_name" content="CFSS: Computing for the Social Sciences">
   <meta property="og:title" content="CFSS: Computing for the Social Sciences">
   <meta property="og:description" content="Overview Introduce supervised and unsupervised text classification Define sentiment analysis and demonstrate its use (Chapter 2) Define topic modeling with Latent Dirichlet allocation and demonstrate its use (Chapter 6) Before class Read Chapter 2 and Chapter 6 in Tidy Text Mining with R Read Probabilistic Topic Models by Blei, David (2012) Class materials Run the code below in your console to download today’s in-class materials: usethis::use_course(&#34;CFSS-MACSS/text-analysis-fundamentals-and-sentiment-analysis-and-tm&#34;) Additional resources See additional resources for the previous lecture on text analysis and regular expressions Original Topic Modeling (LDA) article by Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent Dirichlet Allocation.” For an introduction to supervised classification with text data, read Classification in Supervised Machine Learning for Text Analysis in R Two blog posts by David Robinson (co-author of tidytext) analyzing Donald J. Trump’s twitter account. Regardless of your political affiliations, these are excellent examples demonstrating of the key principles of reproducible research that we’ve learned in this course (e.g., R Markdown documents and knitting code with output; Retrieving data from APIs; Textual analysis with tidytext; Visualizations with `ggplot2) Text analysis of Trump’s tweets confirms he writes only the (angrier) Android half Trump’s Android and iPhone tweets, one year later">
@@ -34,10 +30,9 @@
   <meta name="twitter:title" content="CFSS: Computing for the Social Sciences">
   <meta name="twitter:description" content="Overview Introduce supervised and unsupervised text classification Define sentiment analysis and demonstrate its use (Chapter 2) Define topic modeling with Latent Dirichlet allocation and demonstrate its use (Chapter 6) Before class Read Chapter 2 and Chapter 6 in Tidy Text Mining with R Read Probabilistic Topic Models by Blei, David (2012) Class materials Run the code below in your console to download today’s in-class materials: usethis::use_course(&#34;CFSS-MACSS/text-analysis-fundamentals-and-sentiment-analysis-and-tm&#34;) Additional resources See additional resources for the previous lecture on text analysis and regular expressions Original Topic Modeling (LDA) article by Blei, David M., Andrew Y. Ng, and Michael I. Jordan. 2003. “Latent Dirichlet Allocation.” For an introduction to supervised classification with text data, read Classification in Supervised Machine Learning for Text Analysis in R Two blog posts by David Robinson (co-author of tidytext) analyzing Donald J. Trump’s twitter account. Regardless of your political affiliations, these are excellent examples demonstrating of the key principles of reproducible research that we’ve learned in this course (e.g., R Markdown documents and knitting code with output; Retrieving data from APIs; Textual analysis with tidytext; Visualizations with `ggplot2) Text analysis of Trump’s tweets confirms he writes only the (angrier) Android half Trump’s Android and iPhone tweets, one year later">
 <link href="/scss/main.css" rel="stylesheet">
-<script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-  crossorigin="anonymous"></script>
+</span></p>
+</body>
+</html>
 
   </head>
   <body class="td-page">
