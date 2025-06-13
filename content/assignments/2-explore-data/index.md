@@ -35,8 +35,8 @@ exploring data.
 # Cloning your `a2` repository
 
 After you have accessed the `a2` repository (see above), follow the
-[same steps you completed for `a1`](/assignments/edit-readme/) to clone
-the repository.
+[same steps you completed for `a1`](/assignments/1-edit-readme/) to
+clone the repository.
 
 # General workflow
 

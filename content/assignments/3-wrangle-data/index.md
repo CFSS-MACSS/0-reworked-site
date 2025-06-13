@@ -2,7 +2,7 @@
 title: "A3: Wrangling and visualizing data"
 date: 2023-06-27T13:30:00-06:00  # Schedule page publish date
 weight: 3
-description: Assignment 3 due 6/27/25
+description: Assignment 3 due 6/27/25, Wrangle and explore messy datasets in practical research environments.
 output:
   md_document:
     preserve_yaml: true
@@ -10,7 +10,6 @@ type: docs
 #type: post
 aliases: ["/a3-wrangle-data.html"]
 
-summary: "Wrangle and explore messy datasets in practical research environments."
 ---
 
 # Overview
@@ -30,10 +29,10 @@ the `hw03` repository
 - Finally, clone the repository to your computer (or R workbench)
   following the process below.
 
-# Cloning your `hw03` repository
+# Cloning your `A3` repository
 
-After you have accessed the `hw03` repository (see above), follow the
-[same steps you completed for `hw01`](/homework/edit-readme/) to clone
+After you have accessed the `A3` repository (see above), follow the
+[same steps you completed for `A1`](/homework/1-edit-readme/) to clone
 the repository.
 
 # General workflow
