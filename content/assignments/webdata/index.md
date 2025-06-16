@@ -161,7 +161,9 @@ Some suggested APIs you could write your code for in R:
   [Programmable Web](https://www.programmableweb.com/apis/directory),
   which claims to be the largest APIs directory on the web
 
-{{% /callout %}}
+{{% callout note %}}
+ This process can be very helpful but also fraught with challenges!
+ {{% /callout %}}
 
 **Please notice**: I have not tested nor run code for all these
 suggested APIs. These are options for you to consider, but you are free
