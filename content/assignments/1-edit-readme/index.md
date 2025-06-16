@@ -3,7 +3,7 @@ title: "A1: Practice editing .Rmd and generating .md"
 date: 2022-09-29T13:30:00-06:00  # Schedule page publish date
 #publishdate: 2019-03-01
 weight: 1 
-description: Assignment 1 due 6/20/25, Test software installation, GitHub setup, and homework submission process, as well as demonstrate basic competency in Markdown and R Markdown.
+description: Assignment 1 due 6/20/25, Test software installation, GitHub setup, and assignment submission process, as well as demonstrate basic competency in Markdown and R Markdown.
 output:
   md_document:
     preserve_yaml: true
@@ -15,15 +15,15 @@ aliases: ["/a1-edit-README.html"]
 # Overview
 
 The goal is to test your software installation, your GitHub setup, and
-the homework submission process, as well as demonstrate basic competency
-in Markdown and R Markdown.
+the assignment submission process, as well as demonstrate basic
+competency in Markdown and R Markdown.
 
 ## Accessing your `A1` repository
 
 - Go [to this link](https://classroom.github.com/a/B8DreZI2) to accept
   and create your private `a1` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
-  convention `a1-<USERNAME>`  
+  convention `a1-edit-readme-<USERNAME>`  
 - Once the your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer following the process
@@ -93,10 +93,10 @@ single document. GitHub includes a
 [guide](https://guides.github.com/features/mastering-markdown/) for
 writing Markdown documents.
 
-For this assignment, you need to modify and push to your GitHub homework
-repository the following file: `README.rmd` Note that we have set up the
-rmd file so that when you `knit` it, it will create your md file for
-you!
+For this assignment, you need to modify and push to your GitHub
+assignment repository the following file: `README.rmd` Note that we have
+set up the rmd file so that when you `knit` it, it will create your md
+file for you!
 
 #### `README.md`
 
@@ -136,7 +136,7 @@ elements:
   embed it in your README (see example files present)
 - Links
 - A summary and reflection of the Git/GitHub workflow you adopted for
-  this homework, and of your experience with Markdown (e.g., provide a
+  this assignment, and of your experience with Markdown (e.g., provide a
   summary of the workflow you adopted, and add some comments about
   something new you learned, something that surprised you, etc.)
 - AI/resources statement: All assignments need about one paragraph

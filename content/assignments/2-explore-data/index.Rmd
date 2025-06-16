@@ -27,7 +27,7 @@ Now that you've demonstrated knowledge of your software is setup, the goal of th
 # Accessing your `a2` repository
 
 * Go [to this link](https://classroom.github.com/a/JPTh2a_i) to accept and create your private `a2` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `a2-<USERNAME>`  
-* Once the your repository has been created, click on the link you see, which will take you to your repository. 
+* Once your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer following the process below.
 
 
@@ -46,7 +46,7 @@ Your general workflow will be:
 * Stage-Commit-Push: stage and commit your changes to your local Git repo; then push them online to GitHub. You can complete these steps using the Git GUI integrated into RStudio. In general, you do not want to directly modify your online GitHub repo (if you do so, remember to pull first); instead modify your local Git repo, then stage-commit-push your changes up to your online GitHub repo. 
 
 
-Please notice for this assignment we expect you to do some more work in terms of formatting and reproducibility: submit a homework that fully complies with the [Homework Guidelines](/faq/homework-guidelines/#homework-workflow).
+Please notice for this assignment we expect you to do some more work in terms of formatting and reproducibility: submit an assignment that fully complies with the [Homework Guidelines](/faq/homework-guidelines/#homework-workflow).
 
 <!-- NOTE: ADD THE GENERAL WORKFLOW STEPS ABOVE TO THE GENERAL WORKFLOW GUIDELINES AND REVEIW -->
 

@@ -27,7 +27,7 @@ exploring data.
   and create your private `a2` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
   convention `a2-<USERNAME>`  
-- Once the your repository has been created, click on the link you see,
+- Once your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer following the process
   below.
@@ -53,7 +53,7 @@ Your general workflow will be:
   stage-commit-push your changes up to your online GitHub repo.
 
 Please notice for this assignment we expect you to do some more work in
-terms of formatting and reproducibility: submit a homework that fully
+terms of formatting and reproducibility: submit an assignment that fully
 complies with the [Homework
 Guidelines](/faq/homework-guidelines/#homework-workflow).
 

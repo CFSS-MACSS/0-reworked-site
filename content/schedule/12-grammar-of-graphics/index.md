@@ -56,7 +56,7 @@ math: false
 ## Before class
 
 - Required: read [chapters
-  1](https://r4ds.hadley.nz/data-visualize.html) and 2 from [R for Data
+  1](https://r4ds.hadley.nz/data-visualize.html) and [2 from R for Data
   Science](https://r4ds.hadley.nz/workflow-basics.html). You need to
   read this chapter and complete some of the exercises before coming to
   class. Exercise solutions can be found
@@ -115,6 +115,6 @@ Optional:
 
 ## What you need to do after class
 
-- Complete [Assigment 1](/homework/edit-readme/) and submit the link to
-  your repo on Canvas so we can grade it
+- Complete [Assigment 1](/homework/1-edit-readme/) and submit the link
+  to your repo on Canvas so we can grade it
 - Review today’s lecture and prepare for next class
