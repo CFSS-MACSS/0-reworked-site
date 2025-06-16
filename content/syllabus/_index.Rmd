@@ -14,8 +14,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Professor: Jean Clipperton, clipperton\@uchicago.edu, OH: TBA.     
-TA: Sarthak Dhanke, sarthakdhanke\@uchicago.edu, OH: TBA
+Professor: Jean Clipperton, clipperton\@uchicago.edu, OH: [Mon/T/W/Th 1:00-2:00 on zoom](https://uchicago.zoom.us/j/94304081699?pwd=qnBptvi8bgbaqXyxPTVbHuOX6bXpnM.1)     
+TA: Sarthak Dhanke, sarthakdhanke\@uchicago.edu, OH: 
 
 # Course Description
 This is an applied course for social scientists with little-to-no programming experience who wish to harness growing digital and computational resource with interest in data science and/or computational social science. In this course, we will cover the programming language R, the importance of version control (Git and GitHub), and best practices for programming. By the end of the course, students will have worked through most of the basics in R as a programming language, completed assignments on the core components of it, be adept in using the tidyverse package, and have applied practice using data of their choice. 

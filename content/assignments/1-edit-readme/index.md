@@ -33,19 +33,36 @@ competency in Markdown and R Markdown.
 
 After you have accessed the `a1` repository (see above), follow these
 steps to clone it. Whenever possible, this will be the preferred route
-for setting up your R projects:
+for setting up your R assignments:
 
-- In RStudio, start a new Project with *File &gt; New Project &gt;
-  Version Control &gt; Git*. In the “repository URL” paste the URL of
-  your newly created GitHub repository: go back to the repository, click
-  on the green button “Code” and grab the correct link, either SSH or
-  HTTPS (the one you used to set up your cache credentials). The
-  repository name should automatically populate; if not, type your
-  `a1-<USERNAME>` as name.
 - Decide where to store the local directory for the project. Don’t
   scatter everything around your computer - have a central location, or
   some meaningful structure. For example, for repositories you create in
   this course, you can setup a `css` directory and clone all your repos
+  there.
+- To clone:
+  - In your terminal: navigate to where your ‘parent’ repository is
+    (e.g. `css`)
+  - In your github repository
+    (e.g. <https://github.com/cfss-hmwks/a1-edit-readme-jmclip>), click
+    the green `Code` button and copy that url
+  - In your terminal (in your parent directory): type `git clone url` –
+    for example,
+    `git clone https://github.com/cfss-hmwks/a1-edit-readme-jmclip.git`
+
+### Alternative options:
+
+- In RStudio, start a new Project with File &gt; New Project &gt;
+  Version Control &gt; Git. In the “repository URL” paste the URL of
+  your newly created GitHub repository: go back to the repository, click
+  on the green button “Code” and grab the correct link, either SSH or
+  HTTPS (the one you used to set up your cache credentials). The
+  repository name should automatically populate; if not, type your
+  a1-<USERNAME> as name.
+- Decide where to store the local directory for the project. Don’t
+  scatter everything around your computer - have a central location, or
+  some meaningful structure. For example, for repositories you create in
+  this course, you can setup a css directory and clone all your repos
   there.
 - Before proceeding, check the little box “Open in new session”, as
   that’s what you’ll usually do in real life.

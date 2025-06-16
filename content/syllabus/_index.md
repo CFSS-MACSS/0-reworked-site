@@ -10,8 +10,10 @@ output:
     preserve_yaml: true
 ---
 
-Professor: Jean Clipperton, clipperton@uchicago.edu, OH: TBA.  
-TA: Sarthak Dhanke, sarthakdhanke@uchicago.edu, OH: TBA
+Professor: Jean Clipperton, clipperton@uchicago.edu, OH: [Mon/T/W/Th
+1:00-2:00 on
+zoom](https://uchicago.zoom.us/j/94304081699?pwd=qnBptvi8bgbaqXyxPTVbHuOX6bXpnM.1)  
+TA: Sarthak Dhanke, sarthakdhanke@uchicago.edu, OH:
 
 # Course Description
 
