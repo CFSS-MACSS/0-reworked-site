@@ -172,7 +172,7 @@ In this particular class, you should aim to have ~95% of your work completed sol
 
 * **Regular programming assignments**: six in total (can complete the seventh to replace your lowest score).
 
-* **Final assignment**: 
+* **Final assignment**: an opportunity to bring all the skills together
 
 * **Late Work Policy**: you can submit up to two assignments up to 48 hours late without penalty; no questions asked. After 48 hours, we do not accept late work. We need to keep moving and it will negatively impact our timeline. 
 
@@ -186,11 +186,7 @@ In this particular class, you should aim to have ~95% of your work completed sol
 
 Go to our course website under **[Setup](https://cfss-macss.netlify.app/setup/)**
 
-Two options:
-
-* Option 1 use R Studio Workbench -- recommended
-
-* Option 2 install the software locally
+* We will follow the on-your-machine setup
 
 ---
 
@@ -235,18 +231,19 @@ class: inverse, middle
 * Repetition
 
 ---
-
+class: middle
 ## Windows 3.1 GUI 
 
-class: middle
+
 
 ![](../../../../../../../../../../../img/windows_3.1.png)&lt;!-- --&gt;
 
 ---
+class: middle
 
 ## Mac OSX GUI
 
-class: middle
+
 
 ![](../../../../../../../../../../../img/mac_os_x.png)&lt;!-- --&gt;
 
@@ -377,7 +374,7 @@ ts_plot(group_by(bind_rows(select(tml1, created_at), select(tml2, created_at), s
 
 ---
 
-## Good code
+## Good code (hypothetical example)
 
 
 
@@ -425,12 +422,52 @@ bind_rows(
 ```
 ]
 
+---
+# Troubleshooting and let's give it a go
+
+* test out the following code:
+
+
+``` r
+# install.packages("palmerpenguins")
+library(palmerpenguins)
+```
+
+```
+## 
+## Attaching package: 'palmerpenguins'
+```
+
+```
+## The following objects are masked from 'package:datasets':
+## 
+##     penguins, penguins_raw
+```
+
+``` r
+library(tidyverse)
+
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, col = species)) +
+    geom_point() + 
+    labs(title = "Relationship Between Flipper Size and Body Mass for 333 Palmer Penguins",
+       x = "Body Mass (g)", y = "Flipper Length (mm)")
+```
+
+```
+## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+```
+
+![](index_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
 
 ---
 
 # To complete by next class 
 
-See today's topic, under [Schedule of Topics](https://cfss-macss.netlify.app/syllabus)
+* See today's topic, on our [homepage](https://cfss-macss.netlify.app)
+* Zoom images
+* [Assignment 1](https://cfss-macss.netlify.app/assignments/1-edit-readme/)
 
 ---
 
