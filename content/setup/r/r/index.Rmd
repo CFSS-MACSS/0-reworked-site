@@ -40,11 +40,11 @@ Congratulations! You just programatically performed basic arithmetic.
 
 ## RStudio
 
-As previously mentioned, the base R distribution is not the best for developing and writing programs. Instead, we want an integrated development environment (IDE) which will allow us to write and execute code, debug programs, and automate certain tasks. In this course we will use [RStudio](https://www.rstudio.com/products/RStudio/), perhaps the most popular IDE available for R. Like R, it is open-source, expandable, and provides many useful tools and enhancements over the base R environment.
+As previously mentioned, the base R distribution is not the best for developing and writing programs. Instead, we want an integrated development environment (IDE) which will allow us to write and execute code, debug programs, and automate certain tasks. In this course we will use [RStudio](https://posit.co/download/rstudio-desktop/), perhaps the most popular IDE available for R. Like R, it is open-source, expandable, and provides many useful tools and enhancements over the base R environment.
 
 ## Installing RStudio
 
-1. Download the [latest version of RStudio](https://www.rstudio.com/products/rstudio/download/) appropriate for your operating system. Be sure to select the "Installer", not the "Zip" files or source code. For Windows users, the file should have a `.exe` extension; Mac users should see a `.dmg` extension.
+1. Download the [latest version of RStudio](https://posit.co/download/rstudio-desktop/) appropriate for your operating system. Be sure to select the "Installer", not the "Zip" files or source code. For Windows users, the file should have a `.exe` extension; Mac users should see a `.dmg` extension.
 1. Install it!
 
 ## Test it
