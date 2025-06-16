@@ -6,6 +6,10 @@ type: "docs"
 
 You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to [R for Data Science (2e)](https://r4ds.hadley.nz/) except where otherwise noted.  Note! I'm updating the course and pages as we go to keep up with changes and updates in R!
 
+**Professor: Jean Clipperton**, clipperton\@uchicago.edu, OH: [Mon/T/W/Th 1:00-2:00 on zoom](https://uchicago.zoom.us/j/94304081699?pwd=qnBptvi8bgbaqXyxPTVbHuOX6bXpnM.1)     
+**TA: Sarthak Dhanke**, sarthakdhanke\@uchicago.edu, OH:[daily, 4:00pm-5:30pm](https://uchicago.zoom.us/j/91022383604?pwd=3rHsYeIiiaEsJayrXm8n86aJ6Sfkbi.1
+) 
+
 |    Week    | Date   | Topic   | Readings      | Slides | Assignment         |
 |---------------|--------|------------------------------------|---------------|--------|--------------------|
 | **Week 1**    |        |                                    |               |        |                    |
