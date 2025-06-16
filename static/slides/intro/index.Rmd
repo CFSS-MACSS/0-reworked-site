@@ -262,7 +262,7 @@ In this particular class, you should aim to have ~95% of your work completed sol
 
 * **Regular programming assignments**: six in total (can complete the seventh to replace your lowest score).
 
-* **Final assignment**: 
+* **Final assignment**: an opportunity to bring all the skills together
 
 * **Late Work Policy**: you can submit up to two assignments up to 48 hours late without penalty; no questions asked. After 48 hours, we do not accept late work. We need to keep moving and it will negatively impact our timeline. 
 
@@ -276,11 +276,7 @@ In this particular class, you should aim to have ~95% of your work completed sol
 
 Go to our course website under **[Setup](https://cfss-macss.netlify.app/setup/)**
 
-Two options:
-
-* Option 1 use R Studio Workbench -- recommended
-
-* Option 2 install the software locally
+* We will follow the on-your-machine setup
 
 ---
 
@@ -325,20 +321,21 @@ class: inverse, middle
 * Repetition
 
 ---
-
+class: middle
 ## Windows 3.1 GUI 
 
-class: middle
+
 
 ```{r windows}
 include_graphics(path = "/img/windows_3.1.png", error = FALSE)
 ```
 
 ---
+class: middle
 
 ## Mac OSX GUI
 
-class: middle
+
 
 ```{r macos}
 include_graphics(path = "/img/mac_os_x.png", error = FALSE)
@@ -474,7 +471,7 @@ ts_plot(group_by(bind_rows(select(tml1, created_at), select(tml2, created_at), s
 
 ---
 
-## Good code
+## Good code (hypothetical example)
 
 ```{r rtweet-auth, include = FALSE, cache = FALSE, eval = FALSE}
 library(rtweet)
@@ -530,7 +527,20 @@ bind_rows(
 ---
 # Troubleshooting and let's give it a go
 
-* Project
+* test out the following code:
+
+```{r, echo = T}
+# install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm, col = species)) +
+    geom_point() + 
+    labs(title = "Relationship Between Flipper Size and Body Mass for 333 Palmer Penguins",
+       x = "Body Mass (g)", y = "Flipper Length (mm)")
+
+
+```
 
 
 ---
@@ -539,7 +549,7 @@ bind_rows(
 
 * See today's topic, on our [homepage](https://cfss-macss.netlify.app)
 * Zoom images
-* [Assignment 1](https://cfss-macss.netlify.app/assignments/edit-readme/)
+* [Assignment 1](https://cfss-macss.netlify.app/assignments/1-edit-readme/)
 
 ---
 
