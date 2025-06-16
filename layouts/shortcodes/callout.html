@@ -1,7 +1,4 @@
-<div class="alert alert-{{ .Get "type" | default "info" }}" role="alert">
-  {{ if .IsNamedParams }}
-    {{ .Inner | markdownify }}
-  {{ else }}
-    {{ .Get 0 | markdownify }}
-  {{ end }}
+<!-- callout.html -->
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> This is an informational callout block.
 </div>
