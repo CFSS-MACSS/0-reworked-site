@@ -34,7 +34,7 @@ Let's pull back the curtain and demystify how I calculate final grade!
 
 Historically, 90% of students in the class earn a B+ or higher. 
 
-The final grade is calculated assuming you are submitting all homework assignments. Missed assignments or incomplete work will negatively affect your grade. We have a total of 8 assignments in the class; each is worth roughly 12.5% of your final grade. A missed assignment is worth 0%.
+The final grade is calculated assuming you are submitting all homework assignments. Missed assignments or incomplete work will negatively affect your grade. We have six required assignments, a seventh optional assignment and a final project. A missed assignment is worth 0%.
 
 
 
@@ -71,6 +71,3 @@ Examples of further remarks:
 
 ```
 
-## Acknowledgments
-
-```{r child = here::here("R", c("_ack_stat545.Rmd", "_ack_ben.Rmd"))}
