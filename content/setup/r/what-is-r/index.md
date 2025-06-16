@@ -14,11 +14,11 @@ R is open-source software, which means using it is **completely free**. Second, 
 
 ## Popular
 
-R is widely used in the physical and social sciences, [as well as in government, non-profits, and the private sector](http://spectrum.ieee.org/static/interactive-the-top-programming-languages-2016).
+R is widely used in the physical and social sciences, as well as in government, non-profits, and the private sector. [R is still gaining popularity](https://www.tiobe.com/tiobe-index/).
 
 Many developers and social scientists write programs in R. As a result, there is also a large support community available to help troubleshoot problematic code. As seen in the Redmonk programming language rankings (which compare languages' appearances on Github [usage] and StackOverflow [support]), R appears near the top of both rankings.
 
-[![](/img/lang.rank_.618-1-1024x708.png)](https://redmonk.com/sogrady/2018/08/10/language-rankings-6-18/)
+![Redmonk Language rankings (2024)](https://redmonk.com/sogrady/files/2024/09/lang.rank_.0624.wm_.pngl)
 
 ## Lack of point-and-click interface
 
@@ -35,7 +35,7 @@ R, like any computing language, relies on programmatic execution of functions. T
 
 ## Why are we not using Python?
 
-[![](/img/xkcd_python.png)](https://xkcd.com/353/)
+[XKCD comic: Python](/img/xkcd_python.png)](https://xkcd.com/353/)
 
 Python was developed in the 1990s as a general-purpose programming language. It [emphasizes simplicity over complexity](https://en.wikipedia.org/wiki/Zen_of_Python) in both its syntax and core functions. As a result, code written in Python is (relatively) easy to read and follow as compared to more complex languages like Perl or Java. As you can see in the above references, Python is just as, if not more, popular than R. It does many things well, like R, but is perhaps better in some aspects:
 

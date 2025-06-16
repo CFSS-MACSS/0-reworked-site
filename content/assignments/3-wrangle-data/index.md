@@ -18,12 +18,12 @@ The goal of this assignment is to practice wrangling and exploring
 social science data in a research context.
 
 **NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)** \# Accessing
-the `hw03` repository
+the `A3` repository
 
 - Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept
-  and create your private `hw3` repository on GitHub. Once you do so,
+  and create your private `A3` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
-  convention `hw3-<USERNAME>`  
+  convention `A3-<USERNAME>`  
 - Once the your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer (or R workbench)
@@ -51,14 +51,14 @@ Your general workflow will be:
 
 # PART 1: Tidying messy data
 
-In the `rcis` package, there is a data frame called `dadmom`.
+Tidy the following dataset – first, copy this code and load it.
 
-    ## # A tibble: 3 x 5
-    ##   famid named  incd namem  incm
-    ##   <dbl> <chr> <dbl> <chr> <dbl>
-    ## 1     1 Bill  30000 Bess  15000
-    ## 2     2 Art   22000 Amy   18000
-    ## 3     3 Paul  25000 Pat   50000
+    drinks <- data.frame(
+      ID = c(1, 1, 3, 4, 4),
+      FirstName = c("Jean", "Jean", "Taylor", "Travis", "Travis"),
+      Beverage = c("Tea", "Tea", "Coffee", "Tea", "Coffee"),
+      stringsAsFactors = FALSE
+    )
 
 Tidy this data frame so that it adheres to the tidy data principles:
 
@@ -68,19 +68,18 @@ Tidy this data frame so that it adheres to the tidy data principles:
 
 Your final product (tidy data frame) should look like this:
 
-    ##   famid parent name   inc
-    ## 1     1      d Bill 30000
-    ## 2     1      m Bess 15000
-    ## 3     2      d  Art 22000
-    ## 4     2      m  Amy 18000
-    ## 5     3      d Paul 25000
-    ## 6     3      m  Pat 50000
+    ## # A tibble: 3 × 4
+    ##      ID FirstName   Tea Coffee
+    ##   <dbl> <chr>     <int>  <int>
+    ## 1     1 Jean          2      0
+    ## 2     3 Taylor        0      1
+    ## 3     4 Travis        1      1
 
 You can accomplish this task using a single or multiple piped operations
-using only `tidyr` functions. Code that does not use any `tidyr`
-functions is not acceptable. Check the [Data wrangling: tidy
-data](/syllabus/data-wrangling-tidy-data) lecture, readings, and
-in-class exercises before starting this part.
+using only `count` and `tidyr` functions. Code that does not use any
+`tidyr` functions is not acceptable. Check the
+[Transform](https://r4ds.hadley.nz/data-transform.html) chapter,
+readings, and in-class exercises before starting this part.
 
 Once you have tidied the data frame, generate a plot using the exact
 code provided in your repo. If you tidied the data frame correctly, you
@@ -96,7 +95,7 @@ information of every published decision of the U.S. Supreme Court since
 its creation in 1791. It is perhaps the most utilized database in the
 study of judicial politics.
 
-In the `hw03` repository, you will find two data files:
+In the `A3` repository, you will find two data files:
 
 1.  `scdb-case.csv`
 2.  `scdb-vote.csv`

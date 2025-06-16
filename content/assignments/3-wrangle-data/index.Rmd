@@ -18,9 +18,9 @@ aliases: ["/a3-wrangle-data.html"]
 The goal of this assignment is to practice wrangling and exploring social science data in a research context.
 
 **NOTE NOT UPDATED YET FOR 2025 -- PLEASE CHECK BACK :)**
-# Accessing the `hw03` repository
+# Accessing the `A3` repository
 
-* Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept and create your private `hw3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `hw3-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept and create your private `A3` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `A3-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer (or R workbench) following the process below.
 
@@ -42,17 +42,19 @@ Your general workflow will be:
 
 # PART 1: Tidying messy data
 
-In the `rcis` package, there is a data frame called `dadmom`.
-
+Tidy the following dataset -- first, copy this code and load it.
+```{r}
+drinks <- data.frame(
+  ID = c(1, 1, 3, 4, 4),
+  FirstName = c("Jean", "Jean", "Taylor", "Travis", "Travis"),
+  Beverage = c("Tea", "Tea", "Coffee", "Tea", "Coffee"),
+  stringsAsFactors = FALSE
+)
 
 ```
-## # A tibble: 3 x 5
-##   famid named  incd namem  incm
-##   <dbl> <chr> <dbl> <chr> <dbl>
-## 1     1 Bill  30000 Bess  15000
-## 2     2 Art   22000 Amy   18000
-## 3     3 Paul  25000 Pat   50000
-```
+
+
+
 
 Tidy this data frame so that it adheres to the tidy data principles:
 
@@ -62,18 +64,22 @@ Tidy this data frame so that it adheres to the tidy data principles:
 
 Your final product (tidy data frame) should look like this:
 
+```{r, echo = F, message = F}
+library(tidyverse)
+library(kableExtra)
+drinks %>%
+  count(ID, FirstName, Beverage) %>%  # count occurrences
+  pivot_wider(
+    names_from = Beverage,
+    values_from = n,
+    values_fill = list(n = 0)          # fill missing with 0
+  )
 
 ```
-##   famid parent name   inc
-## 1     1      d Bill 30000
-## 2     1      m Bess 15000
-## 3     2      d  Art 22000
-## 4     2      m  Amy 18000
-## 5     3      d Paul 25000
-## 6     3      m  Pat 50000
-```
 
-You can accomplish this task using a single or multiple piped operations using only `tidyr` functions. Code that does not use any `tidyr` functions is not acceptable. Check the [Data wrangling: tidy data](/syllabus/data-wrangling-tidy-data) lecture, readings, and in-class exercises before starting this part.
+
+
+You can accomplish this task using a single or multiple piped operations using only `count` and `tidyr` functions. Code that does not use any `tidyr` functions is not acceptable. Check the [Transform](https://r4ds.hadley.nz/data-transform.html) chapter, readings, and in-class exercises before starting this part.
 
 Once you have tidied the data frame, generate a plot using the exact code provided in your repo. If you tidied the data frame correctly, you will not have to make any changes to that code. If errors arise, it means the data has not been tidied correctly. 
 
@@ -84,7 +90,7 @@ Once you have tidied the data frame, generate a plot using the exact code provid
 
 The [Supreme Court Database](http://scdb.wustl.edu/) contains detailed information of every published decision of the U.S. Supreme Court since its creation in 1791. It is perhaps the most utilized database in the study of judicial politics.
 
-In the `hw03` repository, you will find two data files:
+In the `A3` repository, you will find two data files:
 
 1. `scdb-case.csv`
 1. `scdb-vote.csv`
@@ -145,7 +151,7 @@ Pay careful attention to the unit of analysis required to answer each question. 
 
 To submit the assignment, simply push to your repository the last version of your assignment before the deadline. 
 
-Then copy your repository URL (e.g., `https://github.com/cfss-hmwks/hw3-jmclip`) and submit it to Canvas under HW03 before the deadline.
+Then copy your repository URL (e.g., `https://github.com/cfss-hmwks/A3-jmclip`) and submit it to Canvas under A3 before the deadline.
 
 Make sure to stage-commit-push:
 
