@@ -22,14 +22,26 @@ Here we use the `shell` for a more modest goal: To navigate the file
 system, confirm the present working directory, and cement the `git` to
 `GitHub` connection.
 
-## Starting the shell
+## Starting the shell/Terminal
 
-In RStudio, go to *Tools &gt; Shell*. This should take you to the shell
-(on Mac: Terminal, on Windows: GitBash or equivalent). It should be a
-simple blinking cursor, waiting for input and looks similar to this
+In RStudio, go to `*Tools > Terminal*`. This should take you to the
+shell (on Mac: Terminal, on Windows: GitBash or equivalent). It should
+be a simple blinking cursor, waiting for input and looks similar to this
 (white text on black background, or black text on white background):
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bash_screenshot.png/440px-Bash_screenshot.png)
+
+### Windows:
+
+To setup a shell on windows, you either need windows subsystem for linux
+or gitbash, both of which are out of scope of this course. If you
+already have any of these available go to.
+
+`Tools > Terminal > Terminal Options`.
+
+Here you can see the options available to you (Git Bash or Bash)​
+
+Select one to enable shell.
 
 ## Using the shell
 
@@ -76,7 +88,7 @@ The most basic commands are listed below:
 On Windows, the program that runs the shell is called *Command Prompt*
 or `cmd.exe`. It looks like this:
 
-![](https://upload.wikimedia.org/wikipedia/commons/b/b3/Command_Prompt_on_Windows_10_RTM.png)
+<img src="windows_shell.png" width="1422" />
 
 Unfortunately, the default Windows shell does not support all the
 commands that other operating systems do. This is where GitBash comes in
@@ -85,11 +97,12 @@ above commands. When you access the shell through RStudio, RStudio
 actually tries to open GitBash if it can find it, but it will open the
 default Windows Command Prompt if GitBash is not found.
 
-If you get an error message such as \``pwd` is not recognized as an
-internal or external command, operable program or batch file.\` from any
-of the previous commands, that means that RStudio could not find
-GitBash. The most likely cause of this is that you did not install git
-using the [recommended method](/setup/git/) so try re-installing git.
+<img src="windows_shell_post.png" width="1394" />
+\``If you get an error message such as`pwd`is not recognized as an internal or external command, operable program or batch file.`
+from any of the previous commands, that means that RStudio could not
+find GitBash. The most likely cause of this is that you did not install
+git using the [recommended method](/setup/git/) so try re-installing
+git.
 
 If you followed the installation instructions and still cannot run
 GitBash, you should find it under the Start Menu &gt; Git &gt; Git Bash.
