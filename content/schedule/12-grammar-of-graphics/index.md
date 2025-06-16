@@ -69,12 +69,10 @@ math: false
   graphics; read especially section 3 “Components of the Layered
   Grammar” and section 4 “A Hierarchy of Defaults.”
 
-## Class materials
-
-- [Why visualize data?](/notes/why-visualize-data/)
-- [The Grammar of Graphics](/notes/grammar-of-graphics/)
-- [Practice generating graphics with ggplot2](/notes/gapminder/)
-
+<!-- ## Class materials -->
+<!-- * [Why visualize data?](/notes/why-visualize-data/) -->
+<!-- * [The Grammar of Graphics](/notes/grammar-of-graphics/) -->
+<!-- * [Practice generating graphics with ggplot2](/notes/gapminder/) -->
 <!--
 Optional:
 * [How to build a complicated, layered graphic](/notes/minard/)
