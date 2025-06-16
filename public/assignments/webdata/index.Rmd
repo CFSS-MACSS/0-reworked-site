@@ -88,6 +88,8 @@ Your general workflow will be as follows:
 * Save the data you collect in your repository as a `.csv` file and upload the file in the repository; the end result must be a tidy data frame stored in the repository with some analytical component (exploratory descriptions and visualizations). Submit working and reprodubile code (e.g., no bugs, use relative paths, document your code, etc.)[^repro] [^key]
 
 {{% callout note %}}
+ This process can be very helpful but also fraught with challenges!
+ {{% /callout %}}
 
 Some suggested APIs you could write your code for in R:
 

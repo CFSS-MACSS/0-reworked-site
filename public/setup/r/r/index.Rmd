@@ -25,7 +25,10 @@ knitr::opts_chunk$set(cache = TRUE)
 1. Run the installation from the file you just downloaded (`.exe` or `.pkg`).
 1. Open R. You should see a screen similar to this:
 
-{{< figure src="r_console.png" caption="" >}}
+```{r, echo = F, out.width="50%"}
+knitr::include_graphics("r_console.png")
+```
+
 
 This is the default R console. You can use this as your development environment where you write and execute code. However the default R console is very minimalistic and not much more useful than a text editor. This is why we will use RStudio for programming in R. However to demonstrate that your R installation works, type `5 + 2` in the console and press enter. You should see the following:
 
@@ -37,11 +40,11 @@ Congratulations! You just programatically performed basic arithmetic.
 
 ## RStudio
 
-As previously mentioned, the base R distribution is not the best for developing and writing programs. Instead, we want an integrated development environment (IDE) which will allow us to write and execute code, debug programs, and automate certain tasks. In this course we will use [RStudio](https://www.rstudio.com/products/RStudio/), perhaps the most popular IDE available for R. Like R, it is open-source, expandable, and provides many useful tools and enhancements over the base R environment.
+As previously mentioned, the base R distribution is not the best for developing and writing programs. Instead, we want an integrated development environment (IDE) which will allow us to write and execute code, debug programs, and automate certain tasks. In this course we will use [RStudio](https://posit.co/download/rstudio-desktop/), perhaps the most popular IDE available for R. Like R, it is open-source, expandable, and provides many useful tools and enhancements over the base R environment.
 
 ## Installing RStudio
 
-1. Download the [latest version of RStudio](https://www.rstudio.com/products/rstudio/download/) appropriate for your operating system. Be sure to select the "Installer", not the "Zip" files or source code. For Windows users, the file should have a `.exe` extension; Mac users should see a `.dmg` extension.
+1. Download the [latest version of RStudio](https://posit.co/download/rstudio-desktop/) appropriate for your operating system. Be sure to select the "Installer", not the "Zip" files or source code. For Windows users, the file should have a `.exe` extension; Mac users should see a `.dmg` extension.
 1. Install it!
 
 ## Test it

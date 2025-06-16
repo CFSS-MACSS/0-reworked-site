@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Setup R | CFSS: Computing for the Social Sciences</title>
+  <title>A3: Wrangling and visualizing data | CFSS: Computing for the Social Sciences</title>
 
   
-    <meta name="description" content="Computing for the Social Sciences provides an introduction to R and computational models in the social sciences">
+    <meta name="description" content="Assignment 3 due 6/27/25, Wrangle and explore messy datasets in practical research environments.">
   
 
   
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/site.webmanifest">
 
   
-  <link rel="canonical" href="http://localhost:1313/setup/r/r/">
+  <link rel="canonical" href="http://localhost:1313/assignments/3-wrangle-data/">
 
   
   
@@ -73,10 +73,10 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
   <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setup-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setup-li">
   <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setupgit-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupgit-li">
   <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
@@ -91,16 +91,16 @@
   <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setupr-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupr-li">
   <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setuprwhat-is-r-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
   <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-setuprr-li">
-  <a href="/setup/r/r/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="td-sidebar-nav-active-item">Setup R</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupshell-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupshell-li">
   <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
 </li>
   </ul>
@@ -217,13 +217,12 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#r">R</a></li>
-    <li><a href="#installing-r">Installing R</a></li>
-    <li><a href="#rstudio">RStudio</a></li>
-    <li><a href="#installing-rstudio">Installing RStudio</a></li>
-    <li><a href="#test-it">Test it</a></li>
-    <li><a href="#updating-r-and-rstudio">Updating R and RStudio</a></li>
-    <li><a href="#add-on-libraries">Add-on libraries</a></li>
+    <li><a href="#description-of-the-data-supreme-court-database">Description of the data: Supreme Court Database</a></li>
+    <li><a href="#questions">Questions</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -238,156 +237,208 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="/setup/">Start here: Software Options</a></li>
-  <li class="breadcrumb-item">
-    <a href="/setup/r/">R/RStudio</a></li>
+    <a href="/assignments/">Assignments</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Setup R</li>
+    A3: Wrangling and visualizing data</li>
   </ol>
 </nav>
 <div class="td-content">
-	<h1>Setup R</h1>
-	
+	<h1>A3: Wrangling and visualizing data</h1>
+	<div class="lead">Assignment 3 due 6/27/25, Wrangle and explore messy datasets in practical research environments.</div>
 	<header class="article-meta">
 		
   </header>
-	<h2 id="r">R</h2>
-<p><a href="https://www.r-project.org/">R</a> is an open-source programming language
-based on the <a href="https://en.wikipedia.org/wiki/S_%28programming_language%29">S</a>
-from the 1970s. It is very popular in the physical and social sciences
-due to it’s cost (free) and versatility. Thousands of expansion
-libraries have been published which extend the tasks R can perform, and
-users can write their own custom functions and/or libraries to perform
-specific operations.</p>
-<h2 id="installing-r">Installing R</h2>
-<ol>
-<li>Download the latest binary distribution for your operating system
-(e.g. Windows, Mac OS X, or Linux) from
-<a href="https://cran.rstudio.com/">CRAN</a>, a network of servers around the
-world which store identical copies of the R binaries, source code,
-and thousands of additional libraries. The binary version has been
-pre-compiled and is the easiest to install. Windows users should
-make sure to select the binary for the <em>base distribution</em>.[1]</li>
-<li>Run the installation from the file you just downloaded (<code>.exe</code> or
-<code>.pkg</code>).</li>
-<li>Open R. You should see a screen similar to this:</li>
-</ol>
-<img src="r_console.png" width="50%" />
-<p>This is the default R console. You can use this as your development
-environment where you write and execute code. However the default R
-console is very minimalistic and not much more useful than a text
-editor. This is why we will use RStudio for programming in R. However to
-demonstrate that your R installation works, type <code>5 + 2</code> in the console
-and press enter. You should see the following:</p>
-<pre><code>5 + 2
-
-## [1] 7
-</code></pre>
-<p>Congratulations! You just programatically performed basic arithmetic.</p>
-<h2 id="rstudio">RStudio</h2>
-<p>As previously mentioned, the base R distribution is not the best for
-developing and writing programs. Instead, we want an integrated
-development environment (IDE) which will allow us to write and execute
-code, debug programs, and automate certain tasks. In this course we will
-use <a href="https://www.rstudio.com/products/RStudio/">RStudio</a>, perhaps the
-most popular IDE available for R. Like R, it is open-source, expandable,
-and provides many useful tools and enhancements over the base R
-environment.</p>
-<h2 id="installing-rstudio">Installing RStudio</h2>
-<ol>
-<li>Download the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of
-RStudio</a>
-appropriate for your operating system. Be sure to select the
-“Installer”, not the “Zip” files or source code. For Windows users,
-the file should have a <code>.exe</code> extension; Mac users should see a
-<code>.dmg</code> extension.</li>
-<li>Install it!</li>
-</ol>
-<h2 id="test-it">Test it</h2>
-<p>To make sure you’ve done everything correctly, open up RStudio on your
-computer. You should see something that looks like this:</p>
-<p><img src="https://docs.posit.co/ide/user/ide/get-started/images/rstudio-panes-labeled.jpeg" alt=""></p>
-<p>We’ll discuss this in more detail later, but the RStudio IDE is divided
-into 4 separate panes (one of which is hidden for now) which all serve
-specific functions. For now, to make sure R and RStudio are setup
-correctly, type <code>x &lt;- 5 + 2</code> into the <em>console</em> pane (the one on the
-left side of your screen - this is equivalent to the main window you saw
-when you opened the base R program, where you can type and run live R
-code) and execute it by pressing Enter/Return. You just created an
-object in R called <code>x</code>. What does this object contain? Type <code>print(x)</code>
-into the console and press enter again. Your console should now contain
-the following output:</p>
-<pre><code>x &lt;- 5 + 2
-print(x)
-
-## [1] 7
-</code></pre>
-<h2 id="updating-r-and-rstudio">Updating R and RStudio</h2>
+	<h1 id="overview">Overview</h1>
+<p>The goal of this assignment is to practice wrangling and exploring
+social science data in a research context.</p>
+<p><strong>NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)</strong> # Accessing
+the <code>A3</code> repository</p>
 <ul>
-<li>If you already installed R or RStudio for a previous course or
-research, update both to the most current version. Generally this
-entails downloading and installing the most recent version of both
-programs. When you update R, you don’t actually remove the old
-version - you simply have both versions on your computer and default
-to the most recent version. Sometimes this is useful when specific R
-libraries require an older version of R, however we will generally
-stick to the most recent versions of R and RStudio.</li>
-<li>When you update R, make sure to update your libraries as well. The
-following command should perform most of this work (note you may have
-to manually update certain libraries such as those installed directly
-via Github).</li>
+<li>Go <a href="https://classroom.github.com/a/IPLnbCzi">to this link</a> to accept
+and create your private <code>A3</code> repository on GitHub. Once you do so,
+your repository will be built in a few seconds. It follows the naming
+convention <code>A3-&lt;USERNAME&gt;</code></li>
+<li>Once the your repository has been created, click on the link you see,
+which will take you to your repository.</li>
+<li>Finally, clone the repository to your computer (or R workbench)
+following the process below.</li>
 </ul>
-<!-- -->
-<pre><code>update.packages(ask = FALSE, checkBuilt = TRUE)
+<h1 id="cloning-your-a3-repository">Cloning your <code>A3</code> repository</h1>
+<p>After you have accessed the <code>A3</code> repository (see above), follow the
+<a href="/homework/1-edit-readme/">same steps you completed for <code>A1</code></a> to clone
+the repository.</p>
+<h1 id="general-workflow">General workflow</h1>
+<p>Your general workflow will be:</p>
+<ul>
+<li>Accept the repo and clone it (see above)</li>
+<li>Make changes locally to the files in RStudio</li>
+<li>Save your changes</li>
+<li>Stage-Commit-Push: stage and commit your changes to your local Git
+repo; then push them online to GitHub. You can complete these steps
+using the Git GUI integrated into RStudio. In general, you do not want
+to directly modify your online GitHub repo (if you do so, remember to
+pull first); instead modify your local Git repo, then
+stage-commit-push your changes up to your online GitHub repo.</li>
+</ul>
+<h1 id="part-1-tidying-messy-data">PART 1: Tidying messy data</h1>
+<p>Tidy the following dataset – first, copy this code and load it.</p>
+<pre><code>drinks &lt;- data.frame(
+  ID = c(1, 1, 3, 4, 4),
+  FirstName = c(&quot;Jean&quot;, &quot;Jean&quot;, &quot;Taylor&quot;, &quot;Travis&quot;, &quot;Travis&quot;),
+  Beverage = c(&quot;Tea&quot;, &quot;Tea&quot;, &quot;Coffee&quot;, &quot;Tea&quot;, &quot;Coffee&quot;),
+  stringsAsFactors = FALSE
+)
 </code></pre>
-<h2 id="add-on-libraries">Add-on libraries</h2>
-<p>We will frequently use libraries in R that are not part of the base
-distribution. To install additional libraries that have been submitted
-to the CRAN repository, we use the <code>install.packages</code> function in R.[2]
-For instance, one library we will use extensively in this course is
-<a href="https://cran.r-project.org/web/packages/dplyr/index.html"><code>dplyr</code></a>, a
-package for data manipulation. To install <code>dplyr</code>, run the following
-command:</p>
-<pre><code>install.packages(&quot;dplyr&quot;)
+<p>Tidy this data frame so that it adheres to the tidy data principles:</p>
+<ol>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
+</ol>
+<p>Your final product (tidy data frame) should look like this:</p>
+<pre><code>## # A tibble: 3 × 4
+##      ID FirstName   Tea Coffee
+##   &lt;dbl&gt; &lt;chr&gt;     &lt;int&gt;  &lt;int&gt;
+## 1     1 Jean          2      0
+## 2     3 Taylor        0      1
+## 3     4 Travis        1      1
 </code></pre>
-<p>If you run into errors later in the course about a function or package
-not being found, run the <code>install.packages</code> function to make sure the
-package is actually installed. For example, I might want to use the
-<a href="https://cran.r-project.org/web/packages/broom/index.html"><code>broom</code></a>
-package by David Robinson to tidy the results of my statistical
-analysis. What happens if I try to use the library without installing
-it?</p>
-<pre><code>library(broom)
-
-## Error in library(broom): there is no package called 'broom'
-</code></pre>
-<p>Okay then, let’s install it (<code>repos</code> tells R from which CRAN server we
-want to download the package - generally you will not need to specify
-this when you install packages).</p>
-<pre><code>install.packages(&quot;broom&quot;, repos = &quot;http://cran.rstudio.com&quot;)
-
-## 
-## The downloaded binary packages are in
-##  /var/folders/vw/l7k7vwhn3qqd990ww0dd101c0000gn/T//Rtmp6AWVP6/downloaded_packages
-</code></pre>
-<p>You should install some essential packages now so that you will need
-early in the course. Copy and paste the following command into the R
-console to do this:</p>
-<pre><code># install the major packages from the tidyverse
-install.packages(&quot;tidyverse&quot;)
-
-# install these packages as well
-install.packages(c(&quot;rmarkdown&quot;, &quot;knitr&quot;, &quot;gapminder&quot;, &quot;stevedata&quot;,
-                   &quot;tidytext&quot;, &quot;devtools&quot;, &quot;usethis&quot;))
-</code></pre>
-<!-- ## Acknowledgments -->
-<!-- # ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
-<!-- # ``` -->
-<p>[1] Advanced users may want to install from source, but most likely if
-you are an advanced user you don’t need to take this course.</p>
-<p>[2] “Package” and “library” are two terms many programmers use
-synonymously. While there are technically differences between the two
-terms, we will use them interchangably in this course.</p>
+<p>You can accomplish this task using a single or multiple piped operations
+using only <code>count</code> and <code>tidyr</code> functions. Code that does not use any
+<code>tidyr</code> functions is not acceptable. Check the
+<a href="https://r4ds.hadley.nz/data-transform.html">Transform</a> chapter,
+readings, and in-class exercises before starting this part.</p>
+<p>Once you have tidied the data frame, generate a plot using the exact
+code provided in your repo. If you tidied the data frame correctly, you
+will not have to make any changes to that code. If errors arise, it
+means the data has not been tidied correctly.</p>
+<h1 id="part-2-wrangling-and-visualizing-messyish-data">PART 2: Wrangling and visualizing messy(ish) data</h1>
+<h2 id="description-of-the-data-supreme-court-database">Description of the data: Supreme Court Database</h2>
+<p>The <a href="http://scdb.wustl.edu/">Supreme Court Database</a> contains detailed
+information of every published decision of the U.S. Supreme Court since
+its creation in 1791. It is perhaps the most utilized database in the
+study of judicial politics.</p>
+<p>In the <code>A3</code> repository, you will find two data files:</p>
+<ol>
+<li><code>scdb-case.csv</code></li>
+<li><code>scdb-vote.csv</code></li>
+</ol>
+<p>These contain the exact same data you would obtain if you downloaded the
+files from the original website, but reformatted to be stored as
+relational data files. That is, <code>scdb-case.csv</code> contains all
+<strong>case-level</strong> variables, whereas <code>scdb-vote.csv</code> contains all
+<strong>vote-level</strong> variables.</p>
+<p>The data is structured in a tidy fashion.</p>
+<ul>
+<li><code>scdb-case.csv</code> contains one row for every case and one column for
+every variable</li>
+<li><code>scdb-vote.csv</code> contains one row for every vote by a justice in every
+case and one column for every variable</li>
+</ul>
+<p>The current dataset contains information on every case decided from the
+1791-2020 terms.[1] There are several ID variables which are useful for
+other types of research: for our purposes, the only ID variable you need
+to concern yourself with is <code>caseIssuesId</code>. Variables you will want to
+familiarize yourself with include:</p>
+<ul>
+<li><code>chief</code></li>
+<li><code>dateDecision</code></li>
+<li><code>decisionDirection</code></li>
+<li><code>decisionType</code></li>
+<li><code>declarationUncon</code></li>
+<li><code>direction</code></li>
+<li><code>issueArea</code></li>
+<li><code>justice</code></li>
+<li><code>justiceName</code></li>
+<li><code>majority</code></li>
+<li><code>majVotes</code></li>
+<li><code>minVotes</code></li>
+<li><code>term</code></li>
+</ul>
+<div class="alert alert-info" role="alert">
+  Add commentMore actions
+    note
+</div>
+<h2 id="questions">Questions</h2>
+<p>Once you import the data files, use your data wrangling and
+visualization skills to answer the following questions.</p>
+<p>For each question, also provide 1-2 paragraphs of written interpretation
+of your results. Graphs and/or tables alone will not be sufficient to
+answer these questions. The interpretation should be descriptive (e.g.,
+this graph shows x and y) and substantive (e.g., what do the results
+show substantially, what can we infer or conclude from the graph, etc.).</p>
+<p>Pay careful attention to the unit of analysis required to answer each
+question. Some questions only require case-level variables, others only
+require vote-level variables, and some may require combining the two
+data frames together. Be sure to choose an appropriate relational join
+function as necessary.</p>
+<h4 id="1-what-percentage-of-cases-in-each-term-are-decided-by-a-one-vote-margin-ie5-4-4-3-etc">1. What percentage of cases in each term are decided by a one-vote margin (i.e. 5-4, 4-3, etc.)?</h4>
+<h4 id="2-how-often-the-justices-who-are-currently-serving-on-the-supreme-court-have-voted-in-the-conservative-direction-in-cases-of-criminal-procedure-civil-rights-economic-activity-and-federal-taxation">2. How often the justices who are currently serving on the Supreme Court, have voted in the conservative direction in cases of criminal procedure, civil rights, economic activity, and federal taxation?</h4>
+<ul>
+<li>Select only the justices who are currently serving on the Supreme
+Court <a href="https://www.supremecourt.gov/about/biographies.aspx">see here</a>:
+John G. Roberts, Clarence Thomas, Samuel A. Alito, Sonia Sotomayor,
+Elena Kagan, Neil M. Gorsuch, Brett M. Kavanaugh, Amy Coney Barrett
+(Ketanji Brown Jackson is not in the data as she was only recently
+nominated).</li>
+<li>Calculate how often they have voted in the conservative direction in
+cases involving criminal procedure, civil rights, economic activity,
+and federal taxation.</li>
+<li>Produce two graphs with your results: one faceted by justice, the
+other by issue area.</li>
+</ul>
+<h4 id="3-which-justices-are-most-likely-to-agree-with-the-courts-declaration-that-an-act-of-congress-a-state-or-territorial-law-or-a-municipal-ordinance-is-unconstitutional">3. Which justices are most likely to agree with the Court’s declaration that an act of Congress, a state or territorial law, or a municipal ordinance is unconstitutional?</h4>
+<ul>
+<li>Identify all cases where the Court declared something unconstitutional
+and determine the ten justices who most and least frequently agreed
+with this outcome as a percentage of all votes cast by the justice in
+these cases.</li>
+<li>Filter out any justice with fewer than 30 votes in cases where the
+Court’s outcome declares something unconstitutional.</li>
+</ul>
+<h4 id="4-for-each-term-he-served-on-the-court-in-what-percentage-of-cases-was-justice-antonin-scalia-in-the-majority">4. For each term he served on the Court, in what percentage of cases was Justice Antonin Scalia in the majority?</h4>
+<h4 id="5-in-each-term-what-percentage-of-cases-were-decided-in-the-conservative-direction-and-in-the-liberal-direction">5. In each term, what percentage of cases were decided in the conservative direction? And in the liberal direction?</h4>
+<h1 id="submit-the-assignment">Submit the assignment</h1>
+<p>To submit the assignment, simply push to your repository the last
+version of your assignment before the deadline.</p>
+<p>Then copy your repository URL (e.g.,
+<code>https://github.com/cfss-hmwks/hw3-jmclip</code>) and submit it to Canvas
+under HW03 before the deadline.</p>
+<p>Make sure to stage-commit-push:</p>
+<ul>
+<li><code>dadmom.Rmd</code> (the main file you will add your code to)</li>
+<li><code>dadmom.md</code> (you will generate this file from the .Rmd by simply
+knitting it)</li>
+<li><code>scouts.Rmd</code> (the main file you will add your code to)</li>
+<li><code>scotus.md</code> (you will generate this file from the .Rmd by simply
+knitting it)</li>
+<li>the folders with all the graphs you generated in your .Rmd files</li>
+</ul>
+<h1 id="rubric">Rubric</h1>
+<p>Needs improvement: Doesn’t complete all components. Code contain errors
+and/or is not clearly written and/or not documented. Uses the same type
+of plot for each graph, or doesn’t use plots appropriate for the
+variables being analyzed. No record of commits other than the final push
+to GitHub.</p>
+<p>Satisfactory: Solid effort. Hits all the elements. Finished all
+components of the assignment with only minor deficiencies. Easy to
+follow (both the code and the output).</p>
+<p>Excellent: Finished all components of the assignment correctly and used
+efficient code to complete the exercises. Code is well-documented (both
+self-documented and with additional comments as necessary). Graphs and
+tables are properly choosen and labeled. Use multiple commits to back up
+and show a progression in the work. Analysis and interpretation of
+results are clear and easy to follow.</p>
+<p>For further details, see the <a href="/faq/homework-evaluations/">general
+rubric</a> we adopt for grading.</p>
+<h1 id="acknowledgments">Acknowledgments</h1>
+<ul>
+<li>This page has been developed starting from Sabrina Nardin and Benjamin
+Soltoff’s “Computing for the Social Sciences” course materials,
+licensed under the CC BY-NC 4.0 Creative Commons License.</li>
+</ul>
+<p>[1] Terms run from October through June, so the 2020 term contains cases
+decided from October 2020 - June 2021.</p>
 
 	
 </div>

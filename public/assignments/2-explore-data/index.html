@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Setup R | CFSS: Computing for the Social Sciences</title>
+  <title>A2: Exploring and visualizing data | CFSS: Computing for the Social Sciences</title>
 
   
-    <meta name="description" content="Computing for the Social Sciences provides an introduction to R and computational models in the social sciences">
+    <meta name="description" content="Assingment 2 due 6/23/25">
   
 
   
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/site.webmanifest">
 
   
-  <link rel="canonical" href="http://localhost:1313/setup/r/r/">
+  <link rel="canonical" href="http://localhost:1313/assignments/2-explore-data/">
 
   
   
@@ -73,10 +73,10 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
   <a href="/" title="Welcome to CFSS!" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Home</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setup-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setup-li">
   <a href="/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setup"><span class="">Start here: Software Options</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-setupgit-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupgit-li">
   <a href="/setup/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupgit"><span class="">Git</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupgitwhat-is-git-li">
@@ -91,16 +91,16 @@
   <a href="/setup/git/git-with-rstudio/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setupgitgit-with-rstudio"><span class="">Using Git within RStudio</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-setupr-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-setupr-li">
   <a href="/setup/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupr"><span class="">R/RStudio</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setuprwhat-is-r-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprwhat-is-r-li">
   <a href="/setup/r/what-is-r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprwhat-is-r"><span class="">Why R?</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-setuprr-li">
-  <a href="/setup/r/r/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="td-sidebar-nav-active-item">Setup R</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setuprr-li">
+  <a href="/setup/r/r/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-setuprr"><span class="">Setup R</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-setupshell-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-setupshell-li">
   <a href="/setup/shell/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-setupshell"><span class="">What is the Shell?</span></a>
 </li>
   </ul>
@@ -217,13 +217,21 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#r">R</a></li>
-    <li><a href="#installing-r">Installing R</a></li>
-    <li><a href="#rstudio">RStudio</a></li>
-    <li><a href="#installing-rstudio">Installing RStudio</a></li>
-    <li><a href="#test-it">Test it</a></li>
-    <li><a href="#updating-r-and-rstudio">Updating R and RStudio</a></li>
-    <li><a href="#add-on-libraries">Add-on libraries</a></li>
+    <li><a href="#obtain-the-data">Obtain the data</a></li>
+    <li><a href="#explore-the-data">Explore the data</a>
+      <ul>
+        <li><a href="#very-specific-questions">Very specific questions</a></li>
+        <li><a href="#more-open-ended-questions">More open-ended questions</a></li>
+        <li><a href="#very-open-ended-questions">Very open-ended questions</a></li>
+        <li><a href="#ai--resources-statement">AI / Resources statement.</a></li>
+      </ul>
+    </li>
+    <li><a href="#formatting-guide">Formatting Guide</a>
+      <ul>
+        <li><a href="#formatting-graphs">Formatting graphs</a></li>
+        <li><a href="#formatting-tables">Formatting tables</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -238,156 +246,251 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="/setup/">Start here: Software Options</a></li>
-  <li class="breadcrumb-item">
-    <a href="/setup/r/">R/RStudio</a></li>
+    <a href="/assignments/">Assignments</a></li>
   <li class="breadcrumb-item active" aria-current="page">
-    Setup R</li>
+    A2: Exploring and visualizing data</li>
   </ol>
 </nav>
 <div class="td-content">
-	<h1>Setup R</h1>
-	
+	<h1>A2: Exploring and visualizing data</h1>
+	<div class="lead">Assingment 2 due 6/23/25</div>
 	<header class="article-meta">
 		
   </header>
-	<h2 id="r">R</h2>
-<p><a href="https://www.r-project.org/">R</a> is an open-source programming language
-based on the <a href="https://en.wikipedia.org/wiki/S_%28programming_language%29">S</a>
-from the 1970s. It is very popular in the physical and social sciences
-due to it’s cost (free) and versatility. Thousands of expansion
-libraries have been published which extend the tasks R can perform, and
-users can write their own custom functions and/or libraries to perform
-specific operations.</p>
-<h2 id="installing-r">Installing R</h2>
-<ol>
-<li>Download the latest binary distribution for your operating system
-(e.g. Windows, Mac OS X, or Linux) from
-<a href="https://cran.rstudio.com/">CRAN</a>, a network of servers around the
-world which store identical copies of the R binaries, source code,
-and thousands of additional libraries. The binary version has been
-pre-compiled and is the easiest to install. Windows users should
-make sure to select the binary for the <em>base distribution</em>.[1]</li>
-<li>Run the installation from the file you just downloaded (<code>.exe</code> or
-<code>.pkg</code>).</li>
-<li>Open R. You should see a screen similar to this:</li>
-</ol>
-<img src="r_console.png" width="50%" />
-<p>This is the default R console. You can use this as your development
-environment where you write and execute code. However the default R
-console is very minimalistic and not much more useful than a text
-editor. This is why we will use RStudio for programming in R. However to
-demonstrate that your R installation works, type <code>5 + 2</code> in the console
-and press enter. You should see the following:</p>
-<pre><code>5 + 2
-
-## [1] 7
-</code></pre>
-<p>Congratulations! You just programatically performed basic arithmetic.</p>
-<h2 id="rstudio">RStudio</h2>
-<p>As previously mentioned, the base R distribution is not the best for
-developing and writing programs. Instead, we want an integrated
-development environment (IDE) which will allow us to write and execute
-code, debug programs, and automate certain tasks. In this course we will
-use <a href="https://www.rstudio.com/products/RStudio/">RStudio</a>, perhaps the
-most popular IDE available for R. Like R, it is open-source, expandable,
-and provides many useful tools and enhancements over the base R
-environment.</p>
-<h2 id="installing-rstudio">Installing RStudio</h2>
-<ol>
-<li>Download the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of
-RStudio</a>
-appropriate for your operating system. Be sure to select the
-“Installer”, not the “Zip” files or source code. For Windows users,
-the file should have a <code>.exe</code> extension; Mac users should see a
-<code>.dmg</code> extension.</li>
-<li>Install it!</li>
-</ol>
-<h2 id="test-it">Test it</h2>
-<p>To make sure you’ve done everything correctly, open up RStudio on your
-computer. You should see something that looks like this:</p>
-<p><img src="https://docs.posit.co/ide/user/ide/get-started/images/rstudio-panes-labeled.jpeg" alt=""></p>
-<p>We’ll discuss this in more detail later, but the RStudio IDE is divided
-into 4 separate panes (one of which is hidden for now) which all serve
-specific functions. For now, to make sure R and RStudio are setup
-correctly, type <code>x &lt;- 5 + 2</code> into the <em>console</em> pane (the one on the
-left side of your screen - this is equivalent to the main window you saw
-when you opened the base R program, where you can type and run live R
-code) and execute it by pressing Enter/Return. You just created an
-object in R called <code>x</code>. What does this object contain? Type <code>print(x)</code>
-into the console and press enter again. Your console should now contain
-the following output:</p>
-<pre><code>x &lt;- 5 + 2
-print(x)
-
-## [1] 7
-</code></pre>
-<h2 id="updating-r-and-rstudio">Updating R and RStudio</h2>
+	<h1 id="overview">Overview</h1>
+<p>Now that you’ve demonstrated knowledge of your software is setup, the
+goal of this assignment is to practice transforming and visually
+exploring data.</p>
+<h1 id="accessing-your-a2-repository">Accessing your <code>a2</code> repository</h1>
 <ul>
-<li>If you already installed R or RStudio for a previous course or
-research, update both to the most current version. Generally this
-entails downloading and installing the most recent version of both
-programs. When you update R, you don’t actually remove the old
-version - you simply have both versions on your computer and default
-to the most recent version. Sometimes this is useful when specific R
-libraries require an older version of R, however we will generally
-stick to the most recent versions of R and RStudio.</li>
-<li>When you update R, make sure to update your libraries as well. The
-following command should perform most of this work (note you may have
-to manually update certain libraries such as those installed directly
-via Github).</li>
+<li>Go <a href="https://classroom.github.com/a/JPTh2a_i">to this link</a> to accept
+and create your private <code>a2</code> repository on GitHub. Once you do so,
+your repository will be built in a few seconds. It follows the naming
+convention <code>a2-&lt;USERNAME&gt;</code></li>
+<li>Once your repository has been created, click on the link you see,
+which will take you to your repository.</li>
+<li>Finally, clone the repository to your computer following the process
+below.</li>
 </ul>
-<!-- -->
-<pre><code>update.packages(ask = FALSE, checkBuilt = TRUE)
-</code></pre>
-<h2 id="add-on-libraries">Add-on libraries</h2>
-<p>We will frequently use libraries in R that are not part of the base
-distribution. To install additional libraries that have been submitted
-to the CRAN repository, we use the <code>install.packages</code> function in R.[2]
-For instance, one library we will use extensively in this course is
-<a href="https://cran.r-project.org/web/packages/dplyr/index.html"><code>dplyr</code></a>, a
-package for data manipulation. To install <code>dplyr</code>, run the following
-command:</p>
-<pre><code>install.packages(&quot;dplyr&quot;)
-</code></pre>
-<p>If you run into errors later in the course about a function or package
-not being found, run the <code>install.packages</code> function to make sure the
-package is actually installed. For example, I might want to use the
-<a href="https://cran.r-project.org/web/packages/broom/index.html"><code>broom</code></a>
-package by David Robinson to tidy the results of my statistical
-analysis. What happens if I try to use the library without installing
-it?</p>
-<pre><code>library(broom)
+<h1 id="cloning-your-a2-repository">Cloning your <code>a2</code> repository</h1>
+<p>After you have accessed the <code>a2</code> repository (see above), follow the
+<a href="/assignments/1-edit-readme/">same steps you completed for <code>a1</code></a> to
+clone the repository.</p>
+<h1 id="general-workflow">General workflow</h1>
+<p>Your general workflow will be:</p>
+<ul>
+<li>Accept the repo and clone it (see above)</li>
+<li>Make changes locally to the files in RStudio</li>
+<li>Save your changes</li>
+<li>Stage-Commit-Push: stage and commit your changes to your local Git
+repo; then push them online to GitHub. You can complete these steps
+using the Git GUI integrated into RStudio. In general, you do not want
+to directly modify your online GitHub repo (if you do so, remember to
+pull first); instead modify your local Git repo, then
+stage-commit-push your changes up to your online GitHub repo.</li>
+</ul>
+<p>Please notice for this assignment we expect you to do some more work in
+terms of formatting and reproducibility: submit an assignment that fully
+complies with the <a href="/faq/homework-guidelines/#homework-workflow">Homework
+Guidelines</a>.</p>
+<!-- NOTE: ADD THE GENERAL WORKFLOW STEPS ABOVE TO THE GENERAL WORKFLOW GUIDELINES AND REVEIW -->
+<!-- # Exploring the mass shooting dataset -->
+<!-- Your goal for this assignment is to apply what you have learned about data visualization and data exploration on a cleaned dataset that we provide: the "mass shooting" dataset. -->
+<!-- The United States experiences far more mass shooting events than any other developed country in the world. While policymakers, politicians, the media, activists, and the general public recognize the widespread prevalence of these tragic events, policies intended to stop these events should be grounded in evidence and empirical data.  -->
+<!-- In July 2012, in the aftermath of a mass shooting in a movie theater in Aurora, Colorado, -->
+<!-- [Mother Jones](https://www.motherjones.com/politics/2012/07/mass-shootings-map/) published a report on mass shootings in the United States since 1982. Importantly, they provided the underlying data set as [an open-source database](https://www.motherjones.com/politics/2012/12/mass-shootings-mother-jones-full-data/) for anyone interested in studying and understanding this criminal behavior. -->
+<h2 id="obtain-the-data">Obtain the data</h2>
+<p>We’re going to use a dataset on wages, occupation, and gender,
+<code>gss_wages</code>.</p>
+<!-- I have included this dataset in the [`c3s2`](https://github.com/css-materials/rcis) library on GitHub.  -->
+<!-- * If you are working on R workbench, you should have everything already installed. Simply load the library by typing in your console `library(c3s2)` and then load the dataset by typing `data("mass_shootings")`.  Use the help function in R `?mass_shootings` to get detailed information on the variables and coding information. -->
+<ul>
+<li>If you are using R on your local computer, you first need to install
+the <code>stevedata</code> package. Type in your console
+<code>install.packages(&quot;stevedata&quot;)</code>. Then call <code>library(stevedata)</code> and
+<code>data(gss_wages)</code>.</li>
+</ul>
+<!-- `remotes::install_github("MACS40700/c3s2")`. If you don't already have the `remotes` library installed, you will get an error. Go back and install this first using `install.packages()`, then install `remotes``. Finally, the mass shootings dataset can be loaded using `data("mass_shootings")`. Use the help function in R `?mass_shootings` to get detailed information on the variables and coding information. -->
+<h2 id="explore-the-data">Explore the data</h2>
+<p>We are using a sample of GSS data. To learn more, <a href="https://r-packages.io/datasets/gss_wages">see this dataset
+description here</a>.</p>
+<h3 id="very-specific-questions">Very specific questions</h3>
+<ol>
+<li>Load and describe the dataframe ‘gss_wages’</li>
+<li>Generate a data frame that summarizes the number of women and men
+per education category Print the data frame as a formatted <code>kable()</code>
+table (see below).</li>
+<li>Generate a boxplot visualizing the wages of individuals, by recoded
+occupational category.</li>
+<li>Generate a bar chart that identifies the total number of children by
+each education category. The bars should be sorted from highest to
+lowest.</li>
+</ol>
+<h3 id="more-open-ended-questions">More open-ended questions</h3>
+<p>Answer the following questions. Generate appropriate figures/tables to
+support your conclusions.</p>
+<ol>
+<li>How many women and how many men have a high school education?</li>
+<li>How does the distribution of wages vary across the different
+(recoded) occupations? Reorder your chart from above to sort from
+lowest to highest median.</li>
+</ol>
+<h3 id="very-open-ended-questions">Very open-ended questions</h3>
+<p>Answer the following questions. Generate appropriate figures/tables to
+support your conclusions. Provide 1-2 paragraphs of written
+interpretation of your results for each question. Graphs and/or tables
+alone will not be sufficient to answer these questions. You will be
+graded on your code and your analysis.</p>
+<ol>
+<li>We generated total number of children by category. Is this helpful
+to understand the question of whether people with different
+educational backgrounds have more children? Explain why or why not,
+and include any supplemental visualizations you wish.</li>
+<li>Consider the findings regarding income and occupation. What
+additional variable might you use to help you uncover any additional
+underlying trends? Be specific and provide additional visualizations
+and/or tables as needed.</li>
+</ol>
+<h3 id="ai--resources-statement">AI / Resources statement.</h3>
+<p>All assignments need about one paragraph describing the resources you
+used (including links and prompts, as relevant) in completing the
+assignment. This helps us learn about your process. Include this in your
+final assignment.</p>
+<h2 id="formatting-guide">Formatting Guide</h2>
+<h3 id="formatting-graphs">Formatting graphs</h3>
+<p>While you are practicing exploratory data analysis, your final graphs
+should be appropriate for sharing with outsiders. That means your graphs
+should have:</p>
+<ul>
+<li><a href="http://r4ds.had.co.nz/graphics-for-communication.html#label">A title</a></li>
+<li>Labels on the axes (see <code>?labs</code> for details)</li>
+</ul>
+<p>This is just a starting point. Consider adopting your own color scales,
+<a href="http://www.cookbook-r.com/Graphs/Legends_%28ggplot2%29/">taking control of your legends (if
+any)</a>, playing
+around with
+<a href="https://ggplot2.tidyverse.org/reference/index.html#section-themes">themes</a>,
+etc.</p>
+<h3 id="formatting-tables">Formatting tables</h3>
+<p>When presenting tabular data (aka <code>dplyr::summarize()</code>), make sure you
+format it correctly. Use the <code>kable()</code> function from the <code>knitr</code> package
+to format the table for the final document. For instance, this is a
+poorly presented table:</p>
+<pre><code># calculate total children 
+count(gss_wages, childs)
 
-## Error in library(broom): there is no package called 'broom'
+## # A tibble: 10 × 2
+##    childs     n
+##     &lt;dbl&gt; &lt;int&gt;
+##  1      0 16906
+##  2      1  9864
+##  3      2 15375
+##  4      3  9590
+##  5      4  4905
+##  6      5  2246
+##  7      6  1138
+##  8      7   626
+##  9      8   858
+## 10     NA   189
 </code></pre>
-<p>Okay then, let’s install it (<code>repos</code> tells R from which CRAN server we
-want to download the package - generally you will not need to specify
-this when you install packages).</p>
-<pre><code>install.packages(&quot;broom&quot;, repos = &quot;http://cran.rstudio.com&quot;)
-
-## 
-## The downloaded binary packages are in
-##  /var/folders/vw/l7k7vwhn3qqd990ww0dd101c0000gn/T//Rtmp6AWVP6/downloaded_packages
+<p>Instead, use <code>kable()</code> to format the table, add a caption, and label the
+columns:</p>
+<pre><code>count(gss_wages, childs) %&gt;%
+   kable(
+     caption = &quot;Number of children across respondents&quot;,
+     col.names = c(&quot;Total number of children&quot;, &quot;Number of respondents&quot;)
+  )
 </code></pre>
-<p>You should install some essential packages now so that you will need
-early in the course. Copy and paste the following command into the R
-console to do this:</p>
-<pre><code># install the major packages from the tidyverse
-install.packages(&quot;tidyverse&quot;)
-
-# install these packages as well
-install.packages(c(&quot;rmarkdown&quot;, &quot;knitr&quot;, &quot;gapminder&quot;, &quot;stevedata&quot;,
-                   &quot;tidytext&quot;, &quot;devtools&quot;, &quot;usethis&quot;))
-</code></pre>
-<!-- ## Acknowledgments -->
-<!-- # ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
+<table>
+<caption>Number of children across respondents</caption>
+<thead>
+<tr>
+<th style="text-align: right;">Total number of children</th>
+<th style="text-align: right;">Number of respondents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">16906</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">9864</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">15375</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9590</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4905</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2246</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1138</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">626</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">858</td>
+</tr>
+<tr>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">189</td>
+</tr>
+</tbody>
+</table>
+<p>Run <code>?kable</code> in the console to see how additional options.</p>
+<h1 id="submit-the-assignment">Submit the assignment</h1>
+<p>To submit the assignment, simply push to your repository the last
+version of your assignment before the deadline. Then copy your
+repository URL (e.g., <code>https://github.com/css-fall22/a2-brinasab</code>) and
+submit it to Canvas under A2 before the deadline.</p>
+<p>Your assignment should be submitted as a R Markdown document <code>.Rmd</code>.
+Need a refresher on R Markdown? <a href="http://rmarkdown.rstudio.com/lesson-1.html">Read
+this</a> or
+<a href="http://r4ds.had.co.nz/r-markdown.html">this</a>.</p>
+<p>Make sure to stage-commit-push ALL of your files</p>
+<!--
+Please notice for this assignment we expect you to do some more work in terms of formatting and reproducibility: submit a homework that fully complies with the [Homework Guidelines](/faq/homework-guidelines/#homework-workflow).
+-->
+<h1 id="rubric">Rubric</h1>
+<p>Needs improvement: Displays minimal effort. Doesn’t complete all
+components. Code is poorly written and not documented. Uses the same
+type of plot for each graph, or doesn’t use plots appropriate for the
+variables being analyzed. Shows incomplete understanding of the packages
+needed for the assignment. No record of commits other than the final
+push to GitHub.</p>
+<p>Satisfactory: Solid effort. Hits all the elements. Minor omissions but
+no clear mistakes. Easy to follow (both the code and the output). Shows
+sufficient understanding of the packages needed for the assignment.</p>
+<p>Excellent: Finished all components of the assignment correctly. Code is
+well-documented (both self-documented and with additional comments as
+necessary). Graphs and tables are properly labeled. Uses multiple
+commits to back up and show a progression in the work. Analysis is clear
+and easy to follow, either because graphs are labeled clearly or you’ve
+written additional text to describe how you interpret the output. Shows
+solid understanding of the packages needed for the assignment.</p>
+<p>For further details, see the <a href="/faq/homework-evaluations/">general
+rubric</a> we adopt for grading.</p>
+<!-- # Acknowledgments -->
+<!-- # ```{r child = here::here("R", "_ack_ben.Rmd")} -->
 <!-- # ``` -->
-<p>[1] Advanced users may want to install from source, but most likely if
-you are an advanced user you don’t need to take this course.</p>
-<p>[2] “Package” and “library” are two terms many programmers use
-synonymously. While there are technically differences between the two
-terms, we will use them interchangably in this course.</p>
+<!--
+[^clean]: For the purposes of this assignment, some data cleaning of the underlying raw data have been performed. You can view the data cleaning code [here](https://github.com/cis-ds/rcis/blob/master/data-raw/mass-shootings.R).
+-->
 
 	
 </div>

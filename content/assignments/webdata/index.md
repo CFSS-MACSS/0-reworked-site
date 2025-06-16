@@ -144,7 +144,8 @@ getting data from the web and analyze it.
   reprodubile code (e.g., no bugs, use relative paths, document your
   code, etc.)[1] [2]
 
-{{% callout note %}}
+{{% callout note %}} This process can be very helpful but also fraught
+with challenges! {{% /callout %}}
 
 Some suggested APIs you could write your code for in R:
 
@@ -161,9 +162,7 @@ Some suggested APIs you could write your code for in R:
   [Programmable Web](https://www.programmableweb.com/apis/directory),
   which claims to be the largest APIs directory on the web
 
-{{% callout note %}}
- This process can be very helpful but also fraught with challenges!
- {{% /callout %}}
+{{% callout %}}
 
 **Please notice**: I have not tested nor run code for all these
 suggested APIs. These are options for you to consider, but you are free
@@ -173,6 +172,7 @@ questions on how to use these APIs; this homework’s primary goal is for
 you to commit to one API that you find interesting and learn how to get
 data from it or commit to one webpage you want to get data from and
 learn how to scrape it.
+ {{% /callout %}}
 
 # Submit the assignment
 

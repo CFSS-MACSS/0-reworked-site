@@ -56,15 +56,15 @@ math: false
 
 ## Before class
 
-* Required: read [chapters 1](https://r4ds.hadley.nz/data-visualize.html) and 2 from [R for Data Science](https://r4ds.hadley.nz/workflow-basics.html). You need to read this chapter and complete some of the exercises before coming to class. Exercise solutions can be found [here](https://jrnold.github.io/r4ds-exercise-solutions/).
+* Required: read [chapters 1](https://r4ds.hadley.nz/data-visualize.html) and [2 from R for Data Science](https://r4ds.hadley.nz/workflow-basics.html). You need to read this chapter and complete some of the exercises before coming to class. Exercise solutions can be found [here](https://jrnold.github.io/r4ds-exercise-solutions/).
 * Optional: read Hadley Wickham [A Layered Grammar of Graphics](https://vita.had.co.nz/papers/layered-grammar.html) -- the "pre-print" version of the article can be downloaded for free. This article is optional, but I strongly encourage you to skim through it to familiarize with the theory and language of the grammar of graphics; read especially section 3 "Components of the Layered Grammar" and section 4 "A Hierarchy of Defaults."
-    
 
-## Class materials
 
-* [Why visualize data?](/notes/why-visualize-data/)
-* [The Grammar of Graphics](/notes/grammar-of-graphics/)
-* [Practice generating graphics with ggplot2](/notes/gapminder/)
+<!-- ## Class materials -->
+
+<!-- * [Why visualize data?](/notes/why-visualize-data/) -->
+<!-- * [The Grammar of Graphics](/notes/grammar-of-graphics/) -->
+<!-- * [Practice generating graphics with ggplot2](/notes/gapminder/) -->
 
 <!--
 Optional:
@@ -95,5 +95,5 @@ Optional:
 
 ## What you need to do after class
 
-* Complete [Assigment 1](/homework/edit-readme/) and submit the link to your repo on Canvas so we can grade it
+* Complete [Assigment 1](/homework/1-edit-readme/) and submit the link to your repo on Canvas so we can grade it
 * Review today's lecture and prepare for next class    

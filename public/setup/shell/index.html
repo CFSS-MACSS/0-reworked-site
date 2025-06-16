@@ -217,7 +217,11 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#starting-the-shell">Starting the shell</a></li>
+    <li><a href="#starting-the-shellterminal">Starting the shell/Terminal</a>
+      <ul>
+        <li><a href="#windows">Windows:</a></li>
+      </ul>
+    </li>
     <li><a href="#using-the-shell">Using the shell</a></li>
     <li><a href="#a-note-for-windows-users">A note for Windows users</a></li>
   </ul>
@@ -254,12 +258,19 @@ powerful at automating repetitive tasks.</p>
 <p>Here we use the <code>shell</code> for a more modest goal: To navigate the file
 system, confirm the present working directory, and cement the <code>git</code> to
 <code>GitHub</code> connection.</p>
-<h2 id="starting-the-shell">Starting the shell</h2>
-<p>In RStudio, go to <em>Tools &gt; Shell</em>. This should take you to the shell
-(on Mac: Terminal, on Windows: GitBash or equivalent). It should be a
-simple blinking cursor, waiting for input and looks similar to this
+<h2 id="starting-the-shellterminal">Starting the shell/Terminal</h2>
+<p>In RStudio, go to <code>*Tools &gt; Terminal*</code>. This should take you to the
+shell (on Mac: Terminal, on Windows: GitBash or equivalent). It should
+be a simple blinking cursor, waiting for input and looks similar to this
 (white text on black background, or black text on white background):</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bash_screenshot.png/440px-Bash_screenshot.png" alt=""></p>
+<h3 id="windows">Windows:</h3>
+<p>To setup a shell on windows, you either need windows subsystem for linux
+or gitbash, both of which are out of scope of this course. If you
+already have any of these available go to.</p>
+<p><code>Tools &gt; Terminal &gt; Terminal Options</code>.</p>
+<p>Here you can see the options available to you (Git Bash or Bash)​</p>
+<p>Select one to enable shell.</p>
 <h2 id="using-the-shell">Using the shell</h2>
 <p>The most basic commands are listed below:</p>
 <ul>
@@ -308,18 +319,19 @@ url.</li>
 <h2 id="a-note-for-windows-users">A note for Windows users</h2>
 <p>On Windows, the program that runs the shell is called <em>Command Prompt</em>
 or <code>cmd.exe</code>. It looks like this:</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Command_Prompt_on_Windows_10_RTM.png" alt=""></p>
+<img src="windows_shell.png" width="1422" />
 <p>Unfortunately, the default Windows shell does not support all the
 commands that other operating systems do. This is where GitBash comes in
 handy: it installs a light version of a shell that does support all the
 above commands. When you access the shell through RStudio, RStudio
 actually tries to open GitBash if it can find it, but it will open the
 default Windows Command Prompt if GitBash is not found.</p>
-<p>If you get an error message such as `<code>pwd</code> is not recognized as an
-internal or external command, operable program or batch file.` from any
-of the previous commands, that means that RStudio could not find
-GitBash. The most likely cause of this is that you did not install git
-using the <a href="/setup/git/">recommended method</a> so try re-installing git.</p>
+<img src="windows_shell_post.png" width="1394" />
+\``If you get an error message such as`pwd`is not recognized as an internal or external command, operable program or batch file.`
+from any of the previous commands, that means that RStudio could not
+find GitBash. The most likely cause of this is that you did not install
+git using the [recommended method](/setup/git/) so try re-installing
+git.
 <p>If you followed the installation instructions and still cannot run
 GitBash, you should find it under the Start Menu &gt; Git &gt; Git Bash.
 If you’re still confused, go back and watch the first three minutes of

@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/assignments/edit-readme/</loc>
+    <loc>http://localhost:1313/assignments/1-edit-readme/</loc>
     <lastmod>2022-09-29T13:30:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/assignments/explore-data/</loc>
+    <loc>http://localhost:1313/assignments/2-explore-data/</loc>
     <lastmod>2025-10-06T13:30:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/assignments/wrangle-data/</loc>
+    <loc>http://localhost:1313/assignments/3-wrangle-data/</loc>
     <lastmod>2023-06-27T13:30:00-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/assignments/programming/</loc>
