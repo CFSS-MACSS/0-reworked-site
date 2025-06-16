@@ -18,7 +18,7 @@ R is widely used in the physical and social sciences, as well as in government, 
 
 Many developers and social scientists write programs in R. As a result, there is also a large support community available to help troubleshoot problematic code. As seen in the Redmonk programming language rankings (which compare languages' appearances on Github [usage] and StackOverflow [support]), R appears near the top of both rankings.
 
-![Redmonk Language rankings (2024)](https://redmonk.com/sogrady/files/2024/09/lang.rank_.0624.wm_.pngl)
+![Redmonk Language rankings (2024)](https://redmonk.com/sogrady/files/2024/09/lang.rank_.0624.wm_.png)
 
 ## Lack of point-and-click interface
 
@@ -35,7 +35,8 @@ R, like any computing language, relies on programmatic execution of functions. T
 
 ## Why are we not using Python?
 
-[XKCD comic: Python](/img/xkcd_python.png)](https://xkcd.com/353/)
+![XKCD comic: Python](https://imgs.xkcd.com/comics/python.png)
+
 
 Python was developed in the 1990s as a general-purpose programming language. It [emphasizes simplicity over complexity](https://en.wikipedia.org/wiki/Zen_of_Python) in both its syntax and core functions. As a result, code written in Python is (relatively) easy to read and follow as compared to more complex languages like Perl or Java. As you can see in the above references, Python is just as, if not more, popular than R. It does many things well, like R, but is perhaps better in some aspects:
 
