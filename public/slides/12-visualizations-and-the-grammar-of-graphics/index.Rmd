@@ -15,7 +15,7 @@ output:
 ```{r setup, include = FALSE}
 
 #source(here::here("R", "slide-opts.R"))
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, out.width="50%")
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
@@ -32,7 +32,7 @@ library(here)
 library(gapminder)
 library(scales)
 
-set.seed(1234)
+set.seed(13)
 theme_set(theme_gray(base_size = 16))
 
 # ```{r setup-transparent, include=FALSE}
@@ -52,10 +52,57 @@ theme_set(theme_gray(base_size = 16))
 # ```
 ```
 
+# WELCOME!
+
+Agenda:
+
+* Intro
+* Grammar of Graphics
+* Succeeding in this class and getting started
+
+---
 
 class: inverse, middle
 
-# Why visualize data?
+# Intro 
+
+
+
+---
+# Working with R:
+
+* RStudio makes life nicer
+* Setup: projects and connecting to GitHub
+* Need to download packages you want to be able to use (`install.packages('package_name')`)
+* Need to call the package when you want to use it (each session)
+
+
+---
+
+# R: advantage: plotting
+
+* When working with data, you can visualize and summarize it to get a deeper sense of what's going on. 
+
+```{r echo=F, message=FALSE, warning=FALSE}
+library(palmerpenguins)
+library(tidyverse)
+ggplot(
+  data = penguins,
+  mapping = aes(
+    x = bill_length_mm, y = bill_depth_mm, 
+    color = species, shape = species
+  )
+) +
+  geom_point() +
+  labs(color = "Species")
+```
+
+---
+
+class: inverse, middle
+
+
+# Visualizing
 
 ---
 
@@ -87,13 +134,15 @@ class: center, middle
 
 If we estimate linear regression models for each dataset, we obtain virtually identical coefficients, again suggesting the relationships are identical
 
-```{r datasaurus-lm, echo = FALSE, results = "asis", out.width = "80%"}
+```{r datasaurus-lm, echo = FALSE, results = "asis", out.width = "50%"}
 # estimate linear model
+library(datasauRus)
+library(tidyverse)
 datasaurus_model <- datasaurus_dozen %>%
   group_by(dataset) %>%
   nest() %>%
   mutate(model = map(data, ~ lm(y ~ x, data = .x)),
-         results = map(model, tidy)) %>%
+         results = map(model, broom::tidy)) %>%
   unnest(results)
 
 # plot model estimates
@@ -117,7 +166,7 @@ class: center, middle
 
 But what happens if we draw a picture?
 
-```{r datasaurus-graph, echo = FALSE, warning = FALSE, out.width = "90%"}
+```{r datasaurus-graph, echo = FALSE, warning = FALSE, out.width = "60%"}
 ggplot(datasaurus_dozen, aes(x = x, y = y))+
   geom_point() +
   tune::coord_obs_pred() +
@@ -132,7 +181,7 @@ class: center, middle
 
 These 13 datasets have the same summary statistics, yet they are drastically different in appearance!
 
-```{r datasaurus-graph-static, echo = FALSE, out.width = "90%"}
+```{r datasaurus-graph-static, echo = FALSE, out.width = "60%"}
 ggplot(datasaurus_dozen, aes(x = x, y = y)) +
   facet_wrap(vars(dataset), ncol = 5) +
   geom_point(size = 0.75) +
@@ -292,7 +341,8 @@ ggplot(mtcars)+
   
 # theme layer
 
-```{r, echo = TRUE, out.width = "40%"}
+.pull-left[
+```{r, echo = TRUE, eval = FALSE, out.width = "60%"}
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -304,16 +354,10 @@ ggplot(mtcars)+
        shape="Cylinders", size="Horsepower", color = "Cylinders",
        caption = "Source: mtcars") +
   theme_bw()
-
-  
-
 ```
-
----
-  
-# others
-
-```{r, echo = TRUE, out.width = "40%"}
+]
+.pull-right[
+```{r, echo = FALSE, out.width = "90%"}
 ggplot(mtcars)+ 
        geom_point(aes(x = mpg, y = wt, 
                       color = factor(cyl),
@@ -324,9 +368,9 @@ ggplot(mtcars)+
        y = 'Car weight',
        shape="Cylinders", size="Horsepower", color = "Cylinders",
        caption = "Source: mtcars") +
-  theme_bw() +
-  scale_color_manual(values = c("black", "gray", "blue") ) 
+  theme_bw()
 ```
+]
 
 ---
   
@@ -400,7 +444,7 @@ data(gapminder) # note: not necessary but this will
 
 --
 
-Now, use yesterday's skills to explore the dataset. What might make a good `x' or 'y'? 
+What might make a good `x' or 'y'? 
 
 --- 
 

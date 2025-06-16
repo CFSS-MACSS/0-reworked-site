@@ -27,8 +27,8 @@
   --text-color: #ffffff;                
   --header-color: #ffb3b3;;       /* bright pale pink */
   --background-color: #800000;            /* primary maroon */
-  --link-color: #cc0000;                  /* vivid bright red */
-  --text-bold-color: #660000;             /* bold deep red */
+  --link-color: #1a0000;                  /* vivid bright red */
+  --text-bold-color:#330000;             /* bold deep red */
   --code-highlight-color: rgba(255, 102, 102, 0.7); /* stronger pink highlight */
   --inverse-text-color: #ffffff;          /* pure white for max contrast */
   --inverse-background-color: #330000;   /* very dark maroon */
