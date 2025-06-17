@@ -1,0 +1,47 @@
+---
+title: "Penguins"
+author: "Jean Clipperton"
+date: "`r Sys.Date()`"
+output: 
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F)
+# Note you might have to install prettydoc
+# install.packages("prettydoc")
+```
+
+## R Markdown
+Here we are going to learn a bit about penguins!
+
+## Penguins
+See below for averages on penguins. 
+
+```{r penguins-ex, echo=FALSE}
+library(dplyr)
+library(palmerpenguins)
+
+data("penguins")
+
+penguins_sex <- group_by(.data = penguins, sex)
+penguins_sex_adelie <- filter(.data = penguins_sex, species == "Adelie")
+
+summarize(
+  .data = penguins_sex_adelie,
+  avg_bill = mean(bill_length_mm, na.rm = TRUE), avg_mass = mean(body_mass_g, na.rm = TRUE))
+```
+
+
+## Your work
+Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #12)
+
+```{r}
+
+```
+
+# Final task
+
+You need to make a README.md doc -- practice by outputting a .md file here and renaming it to README.md before pushing to github
