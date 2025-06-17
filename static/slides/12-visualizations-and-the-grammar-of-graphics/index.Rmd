@@ -19,12 +19,12 @@ knitr::opts_chunk$set(echo = FALSE, out.width="50%")
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
+#install.packages("tidyverse")
 library(tidyverse)
 library(knitr)
 library(stringr)
 library(broom)
 library(datasauRus)
-library(ggplot2)
 library(gganimate)
 library(countdown)
 library(colorspace)
