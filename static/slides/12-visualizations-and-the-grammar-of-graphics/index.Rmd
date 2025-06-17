@@ -16,6 +16,7 @@ output:
 
 #source(here::here("R", "slide-opts.R"))
 knitr::opts_chunk$set(echo = FALSE, out.width="50%")
+xaringanExtra::use_panelset()
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
@@ -116,6 +117,17 @@ class: middle
     * cd .. (moves you one level up)
     * cd [tab] can autofill
 
+---
+
+# In RStudio!
+
+* Accept this assignment [https://classroom.github.com/a/A_UexHRZ](https://classroom.github.com/a/A_UexHRZ)
+
+* go to your new repo
+
+* copy the link
+
+* In RStudio: (top left) Go to File > New Project > Version Control > Git > (navigate to where you want, and add the relevant details -- folder name, git url!)
 
 ---
 
@@ -504,14 +516,14 @@ data(gapminder) # note: not necessary but this will
 
 What might make a good `x' or 'y'? 
 
---- 
 
 ---
 
-# Exercise: Gapminder
+# Gapminder: example 
 
-```{r gapminder-over-time, echo = FALSE, out.width = "60%"}
-
+```{r gapminder-over-time}
+#panelset = c(source = "ggplot2", output = "Plot"), out.width = "60%"}
+# install.packages(c("gganimate", "gifski", "scales"))
 # generate animation of income vs. life expectancy over time
 ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
   geom_point(alpha = 0.5) +
@@ -533,16 +545,41 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
   theme_classic() +
   # animation components
   transition_time(year) +
-  ease_aes('linear') #+
-
-# restore defaults
-#theme_xaringan_restore_defaults()
-
- 
+  ease_aes('linear') 
 ```
 
 ---
+# gapminder code
 
+# Required packages
+library(ggplot2)
+library(gganimate)
+library(gapminder)
+library(scales)
+
+# Animated plot code
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
+  geom_point(alpha = 0.5) +
+  scale_color_manual(values = country_colors, guide = "none") +
+  scale_size(range = c(2, 12),
+             breaks = c(1e07, 1e08, 5e08),
+             labels = label_comma(scale_cut = cut_short_scale())) +
+  scale_x_log10(labels = label_dollar(scale_cut = cut_short_scale())) +
+  labs(
+    title = "Quality of life over time",
+    subtitle = 'Year: {frame_time}',
+    x = 'GDP per capita',
+    y = 'Life expectancy',
+    size = "Population",
+    caption = "Source: Gapminder"
+  ) +
+  theme_classic() +
+  theme(legend.position = "bottom") +
+  transition_time(year) +
+  ease_aes('linear')
+
+
+---
 # Acknowledgments 
 
 The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.

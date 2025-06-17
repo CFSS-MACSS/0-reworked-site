@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
     <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="index_files/panelset-0.3.1/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset-0.3.1/panelset.js"></script>
     <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="../cfss.css" type="text/css" />
@@ -91,6 +93,17 @@ class: middle
     * cd .. (moves you one level up)
     * cd [tab] can autofill
 
+---
+
+# In RStudio!
+
+* Accept this assignment [https://classroom.github.com/a/A_UexHRZ](https://classroom.github.com/a/A_UexHRZ)
+
+* go to your new repo
+
+* copy the link
+
+* In RStudio: (top left) Go to File &gt; New Project &gt; Version Control &gt; Git &gt; (navigate to where you want, and add the relevant details -- folder name, git url!)
 
 ---
 
@@ -531,16 +544,45 @@ data(gapminder) # note: not necessary but this will
 
 What might make a good `x' or 'y'? 
 
---- 
 
 ---
 
-# Exercise: Gapminder
+# Gapminder: example 
 
-&lt;img src="index_files/figure-html/gapminder-over-time-1.gif" width="60%" /&gt;
+&lt;img src="index_files/figure-html/gapminder-over-time-1.gif" width="50%" /&gt;
 
 ---
+# gapminder code
 
+# Required packages
+library(ggplot2)
+library(gganimate)
+library(gapminder)
+library(scales)
+
+# Animated plot code
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, color = country)) +
+  geom_point(alpha = 0.5) +
+  scale_color_manual(values = country_colors, guide = "none") +
+  scale_size(range = c(2, 12),
+             breaks = c(1e07, 1e08, 5e08),
+             labels = label_comma(scale_cut = cut_short_scale())) +
+  scale_x_log10(labels = label_dollar(scale_cut = cut_short_scale())) +
+  labs(
+    title = "Quality of life over time",
+    subtitle = 'Year: {frame_time}',
+    x = 'GDP per capita',
+    y = 'Life expectancy',
+    size = "Population",
+    caption = "Source: Gapminder"
+  ) +
+  theme_classic() +
+  theme(legend.position = "bottom") +
+  transition_time(year) +
+  ease_aes('linear')
+
+
+---
 # Acknowledgments 
 
 The content of these slides is derived in part from Sabrina Nardin's and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
