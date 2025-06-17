@@ -62,10 +62,12 @@ Agenda:
 
 ---
 
-class: inverse, middle
+class: middle
 
-# Intro 
+# Intro: recap
+**Professor: Jean Clipperton,** clipperton@uchicago.edu, OH: Mon/T/W/Th 1:00-2:00 on zoom
 
+**TA: Sarthak Dhanke,** sarthakdhanke@uchicago.edu, OH:daily, 4:00pm-5:30pm on zoom
 
 
 ---
@@ -76,9 +78,62 @@ class: inverse, middle
 * Need to download packages you want to be able to use (`install.packages('package_name')`)
 * Need to call the package when you want to use it (each session)
 
+---
+# Tour of RStudio
+
+* Become familiar with RStudio
+* Loading packages vs installing packages
+* Various panes / information
 
 ---
 
+## Markdown: md_document vs html_document
+
+* How the final version is formatted
+* Output: html is 'prettier' (use for reports or making a webpage) but markdown renders nicely on github
+* You can switch back and forth!
+
+---
+
+# Practice with git
+
+* Accept this assignment [https://classroom.github.com/a/A_UexHRZ](https://classroom.github.com/a/A_UexHRZ)
+
+* go to your new repo
+
+* copy the link
+
+* in terminal/shell (go to where you want): git clone (url) 
+
+---
+
+# Terminal/shell
+[see class page here](https://cfss-macss.netlify.app/setup/shell/)
+* key commands:
+  * pwd (print working directory)
+  * ls (I remember as 'list stuff')
+  * cd (change directory)
+    * cd .. (moves you one level up)
+    * cd [tab] can autofill
+
+
+---
+
+# Workflow: what is workflow? 
+
+* 'pattern' of work -- how you go about setting things up
+* every assignment (and future project!) will have a similar pattern:
+  * 'accept' the assignment on github
+  * go to your new repo
+  * copy the repo link
+  * in terminal navigate to where you want, then: git clone (url)
+  
+
+
+---
+class: center, inverse, middle
+
+# Getting started with ggplot2
 
 ---
 
