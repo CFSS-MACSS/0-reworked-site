@@ -3,7 +3,7 @@ title: "Data transformation"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../cfss.css"]
     nature:
       highlightStyle: magula
       highlightLines: true
@@ -13,96 +13,9 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-# generate CSS file
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#011f4b",
-  secondary_color = "#bbd6c7",
-  inverse_header_color = "#222222",
-  black_color = "#222222",
-  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  code_font_google = xaringanthemer::google_font("Source Code Pro"),
-  base_font_size = "24px",
-  code_font_size = "20px",
-  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
-  # title_slide_background_size = "contain",
-  # title_slide_background_position = "top",
-  header_h1_font_size = "2rem",
-  header_h2_font_size = "1.75rem",
-  header_h3_font_size = "1.5rem",
-  extra_css = list(
-    "h1" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h2" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h3" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    ".tiny" = list("font-size" = "70%"),
-    ".small" = list("font-size" = "90%"),
-    ".midi" = list("font-size" = "150%"),
-    ".tiny .remark-code" = list("font-size" = "70%"),
-    ".small .remark-code" = list("font-size" = "90%"),
-    ".midi .remark-code" = list("font-size" = "150%"),
-    ".large" = list("font-size" = "200%"),
-    ".xlarge" = list("font-size" = "600%"),
-    ".huge" = list(
-      "font-size" = "400%",
-      "font-family" = "'Montserrat', sans-serif",
-      "font-weight" = "bold"
-    ),
-    ".hand" = list(
-      "font-family" = "'Gochi Hand', cursive",
-      "font-size" = "125%"
-    ),
-    ".task" = list(
-      "padding-right" = "10px",
-      "padding-left" = "10px",
-      "padding-top" = "3px",
-      "padding-bottom" = "3px",
-      "margin-bottom" = "6px",
-      "margin-top" = "6px",
-      "border-left" = "solid 5px #F1DE67",
-      "background-color" = "#F3D03E"
-    ),
-    ".pull-left" = list(
-      "width" = "49%",
-      "float" = "left"
-    ),
-    ".pull-right" = list(
-      "width" = "49%",
-      "float" = "right"
-    ),
-    ".pull-left-wide" = list(
-      "width" = "70%",
-      "float" = "left"
-    ),
-    ".pull-right-narrow" = list(
-      "width" = "27%",
-      "float" = "right"
-    ),
-    ".pull-left-narrow" = list(
-      "width" = "27%",
-      "float" = "left"
-    ),
-    ".pull-right-wide" = list(
-      "width" = "70%",
-      "float" = "right"
-    ),
-    ".blue" = list(color = "#2A9BB7"),
-    ".purple" = list(color = "#a493ba"),
-    ".yellow" = list(color = "#f1de67"),
-    ".gray" = list(color = "#222222")
-  )
-)
 
-source(here::here("R", "slide-opts.R"))
+
+#source(here::here("R", "slide-opts.R"))
 knitr::opts_chunk$set(echo = FALSE)
 
 # enable panelsets and default theme
@@ -115,7 +28,7 @@ library(tweetrmd)
 library(tidyverse)
 library(palmerpenguins)
 library(nycflights13)
-library(rcis)
+#library(rcis)
 library(knitr)
 library(countdown)
 
@@ -125,17 +38,17 @@ theme_set(theme_gray(base_size = 16))
 
 ## Reminders
 
-- Check in on Homework 1
+- Assignment 1: due soon!
   - submit link to your repo on Canvas
-  - check general rubric and HW specific rubric on our website
+  - check general rubric and assignment-specific rubric on our website
   
   
-- Last lecture: visualization and ggplot2
-  - review assigned readings and class notes (esp. "Defaults" section)
+- Yesterday: github, visualization and ggplot2
+  - review assigned readings
   - practice practice practice
   
   
-- Homework 2 opens today  
+- Assignment 2 up: 
   - covers data visualization, transformation, and exploration
 
 
@@ -158,7 +71,7 @@ class: inverse, middle
 ## `penguins`
 
 ```{r out.width = "80%"}
-include_graphics(path = "../../../static/img/lter_penguins.png")
+include_graphics(path = "https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png")
 ```
 
 ---
@@ -272,7 +185,7 @@ All of the dplyr verbs (all the verbs in the wider tidyverse) work similarly.
 ## Key functions in `dplyr`
 
 
-`function()`  | **Action performed**
+`function()`  | *Action performed*
 --------------|--------------------------------------------------------
 `filter()`    | Picks observations from the data frame based on their values (operates on rows)
 `arrange()`   | Changes the order of observations based on their values
@@ -554,7 +467,9 @@ class: inverse, middle
 > Pipes are a special operator in R. They allow you to write a sequence of multiple operations by   **passing the result of one function to another one, in sequence** 
 
 
-Pipes simplify your code and make your operations more intuitive, BUT they are not the only way to write your R code... in fact for a long time they did not even exist in R!
+Pipes simplify your code and make your operations more intuitive, BUT they are not the only way to write your R code... in fact for a long time they did not even exist in R! [See here to learn more](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)
+
+ > You will see them two ways (%>% and |>): both are correct. The book favors |> and I favor %>%
 
 
 Let' start by looking at ways you can write the same code with and without pipes
@@ -818,19 +733,20 @@ class: inverse, middle
 ---
 ### Exercise: built-in datasets
 (group work)
-
+* Accept assignment (individually): [https://classroom.github.com/a/oX3fYgiL](https://classroom.github.com/a/oX3fYgiL)
+* Summarize penguins in interesting way
 * Call `data()` in R
 * Look over list of data options
 * Choose a dataset
-* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #13)
-* Post on [ed discussion thread for today](https://edstem.org/us/courses/40496/discussion/3207082)
+* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #12)
+* Commit and push! (not graded -- for practice only!)
 
 ---
 
 
 class: inverse, middle
 
-## Homework 2 overview
+## Assignment 2 overview
 
 ---
 
@@ -851,6 +767,17 @@ class: inverse, middle
 - 15-min rule, google/stackoverflow, ask a classmate and/or the instructional staff
 - review our website FAQ on how to ask questions
   
+---
+# NEW IMPROVED CLONING!
+
+I have an additional (non-shell/terminal!) way to clone!
+
+* Accept the assignment
+* go to your new repo
+* copy the link
+* In RStudio: (top left) Go to File > New Project > Version Control > Git > (navigate to where you want, and add the relevant details -- folder name, git url!)
+
+
 ---
 
 ## Acknowledgments 

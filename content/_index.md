@@ -6,16 +6,16 @@ type: "docs"
 
 You can navigate to other pages using the left menu or the top-right options. See all lectures and materials below. All chapters refer to [R for Data Science (2e)](https://r4ds.hadley.nz/) except where otherwise noted.  Note! I'm updating the course and pages as we go to keep up with changes and updates in R!
 
-**Professor: Jean Clipperton**, clipperton\@uchicago.edu, OH: [Mon/T/W/Th 1:00-2:00 on zoom](https://uchicago.zoom.us/j/94304081699?pwd=qnBptvi8bgbaqXyxPTVbHuOX6bXpnM.1)     
-**TA: Sarthak Dhanke**, sarthakdhanke\@uchicago.edu, OH:[daily, 4:00pm-5:30pm](https://uchicago.zoom.us/j/91022383604?pwd=3rHsYeIiiaEsJayrXm8n86aJ6Sfkbi.1
-) 
+**Professor: Jean Clipperton**, clipperton\@uchicago.edu, OH: [Mon/T/W/Th 1:00-2:00 at this zoom link](https://uchicago.zoom.us/j/94304081699?pwd=qnBptvi8bgbaqXyxPTVbHuOX6bXpnM.1)     
+**TA: Sarthak Dhanke**, sarthakdhanke\@uchicago.edu, OH:[daily, 4:00pm-5:30pm at this zoom link](https://uchicago.zoom.us/j/91022383604?pwd=3rHsYeIiiaEsJayrXm8n86aJ6Sfkbi.1)
+ 
 
 |    Week    | Date   | Topic   | Readings      | Slides | Assignment         |
 |---------------|--------|------------------------------------|---------------|--------|--------------------|
 | **Week 1**    |        |                                    |               |        |                    |
-| Day 1         | 16-Jun | [Intro to course / markdown / git](schedule/11-intro/)   | [Ch 1](https://r4ds.hadley.nz/data-visualize.html)          |   [<i class="fa-solid fa-person-chalkboard"></i>](slides/intro)     | [A1 (due 6/20)](/assignments/1-edit-readme/)      |
-| Day 2         | 17-Jun | [Data Visualization](schedule/12-grammar-of-graphics)                 | [Ch 2](https://r4ds.hadley.nz/workflow-basics.html),   |    [<i class="fa-solid fa-person-chalkboard"></i>](slides/12-visualizations-and-the-grammar-of-graphics)      |                    |
-| Day 3         | 18-Jun | [Workflow + transformation](schedule/13-data-transformation)          |  [Ch 3](https://r4ds.hadley.nz/data-transform.html),[Ch 4](https://r4ds.hadley.nz/workflow-style.html)       |     [<i class="fa-solid fa-person-chalkboard"></i>](slides/13-data-transformation)      | [A2 (due 6/23)](/assignments/2-explore-data/)    |
+| Day 1         | 16-Jun | [Intro to course / markdown / git](schedule/11-intro/)   | [Ch 1](https://r4ds.hadley.nz/data-visualize.html), [Ch 2](https://r4ds.hadley.nz/workflow-basics.html)          |   [<i class="fa-solid fa-person-chalkboard"></i>](slides/intro)     | [A1 (due 6/20)](/assignments/1-edit-readme/)      |
+| Day 2         | 17-Jun | [Data Visualization](schedule/12-grammar-of-graphics)                 | [Ch 1](https://r4ds.hadley.nz/data-visualize.html), [Ch 2](https://r4ds.hadley.nz/workflow-basics.html)   |    [<i class="fa-solid fa-person-chalkboard"></i>](slides/12-visualizations-and-the-grammar-of-graphics)      |                    |
+| Day 3         | 18-Jun | [Workflow + transformation](schedule/13-data-transformation)          |  [Ch 3](https://r4ds.hadley.nz/data-transform.html), [Ch 4](https://r4ds.hadley.nz/workflow-style.html)       |     [<i class="fa-solid fa-person-chalkboard"></i>](slides/13-data-transformation)      | [A2 (due 6/23)](/assignments/2-explore-data/)    |
 | Day 4         | 19-Jun | No Class (Juneteenth!)            |      |        |                    |
 | **Week 2**    |        |                                    |               |        |                    |
 | Day 1         | 23-Jun | [Workflow: scripts + Data import](schedule/21-exploratory-data-analysis)     |[Ch 5](https://r4ds.hadley.nz/data-tidy.html), [Ch 6](https://r4ds.hadley.nz/workflow-scripts.html), [Ch 7](https://r4ds.hadley.nz/data-import.html)       |   [<i class="fa-solid fa-person-chalkboard"></i>](slides/21-exploratory-data-analysis)        | [A3 (due 6/27)](/assignments/3-wrangle-data/)     |

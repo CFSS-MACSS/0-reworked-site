@@ -4,12 +4,12 @@
     <title>Data transformation</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
-    <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link href="index_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="index_files/panelset/panelset.js"></script>
-    <link href="index_files/countdown/countdown.css" rel="stylesheet" />
-    <script src="index_files/countdown/countdown.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="index_files/panelset-0.3.1/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset-0.3.1/panelset.js"></script>
+    <link href="index_files/countdown-0.4.0/countdown.css" rel="stylesheet" />
+    <script src="index_files/countdown-0.4.0/countdown.js"></script>
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -31,17 +31,17 @@ class: center, middle, inverse, title-slide
 
 ## Reminders
 
-- Check in on Homework 1
+- Assignment 1: due soon!
   - submit link to your repo on Canvas
-  - check general rubric and HW specific rubric on our website
+  - check general rubric and assignment-specific rubric on our website
   
   
-- Last lecture: visualization and ggplot2
-  - review assigned readings and class notes (esp. "Defaults" section)
+- Yesterday: github, visualization and ggplot2
+  - review assigned readings
   - practice practice practice
   
   
-- Homework 2 opens today  
+- Assignment 2 up: 
   - covers data visualization, transformation, and exploration
 
 
@@ -63,14 +63,14 @@ class: inverse, middle
 
 ## `penguins`
 
-&lt;img src="../../../static/img/lter_penguins.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png" width="80%" /&gt;
 
 ---
 
 ## `penguins`
 
 
-```r
+``` r
 penguins
 ```
 
@@ -106,7 +106,7 @@ penguins
 
 
 
-```r
+``` r
 head(penguins, 5)
 ```
 
@@ -127,7 +127,7 @@ head(penguins, 5)
 .panel[.panel-name[Code]
 
 
-```r
+``` r
 library(palmerpenguins)
 data("penguins")
 penguins_adelie &lt;- filter(.data = penguins, species == "Adelie")
@@ -173,7 +173,7 @@ summarize(.data = penguins_adelie, avg_mass = mean(body_mass_g, na.rm = TRUE))
 .panel[.panel-name[Code]
 
 
-```r
+``` r
 library(palmerpenguins)
 data("penguins")
 penguins_species &lt;- group_by(.data = penguins, species)
@@ -200,7 +200,7 @@ class: inverse, middle
 
 ---
 
-&lt;img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-artwork/dplyr_wrangling.png" alt="Cartoon of a fuzzy monster with a cowboy hat and lasso, riding another fuzzy monster labeled 'dplyr', lassoing a group of angry / unruly looking creatures labeled 'data.'" width="55%" style="display: block; margin: auto;" /&gt;
+&lt;img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-artwork/dplyr_wrangling.png" alt="Cartoon of a fuzzy monster with a cowboy hat and lasso, riding another fuzzy monster labeled 'dplyr', lassoing a group of angry / unruly looking creatures labeled 'data.'" width="55%" /&gt;
 
 Documentation: **https://dplyr.tidyverse.org/**
 
@@ -233,7 +233,7 @@ All of the dplyr verbs (all the verbs in the wider tidyverse) work similarly.
 ## Key functions in `dplyr`
 
 
-`function()`  | **Action performed**
+`function()`  | *Action performed*
 --------------|--------------------------------------------------------
 `filter()`    | Picks observations from the data frame based on their values (operates on rows)
 `arrange()`   | Changes the order of observations based on their values
@@ -253,13 +253,14 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 <blockquote class="twitter-tweet" data-width="550" data-lang="en" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">The holy grail: &quot;For consistency, aim to use British (rather than American) spelling.&quot; <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="http://t.co/7qQSWIowcl">http://t.co/7qQSWIowcl</a>. Colour is right!</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/405707093770244097?ref_src=twsrc%5Etfw">November 27, 2013</a></blockquote>
 
+
 ]
 
 --
 
 .pull-right[
 
-&lt;img src="https://media.giphy.com/media/8KnfG3knLExpu/giphy.gif" width="80%" style="display: block; margin: auto;" /&gt;
+![](https://media.giphy.com/media/8KnfG3knLExpu/giphy.gif)&lt;!-- --&gt;
 
 ]
 
@@ -300,7 +301,7 @@ These are the basic verbs you will commonly use to transform your data. By **com
 
 # dplyr in action: trying out functions:
 
-```r
+``` r
 penguins2&lt;-filter(penguins, sex == "female")
 arrange(penguins, bill_length_mm) # notice: what did this do?
 favorite_penguins &lt;- select(penguins, sex) #how is this different from filter?
@@ -318,7 +319,7 @@ summarize(
 
 ## What is the average bill length and body mass for each Adelie penguin by sex?
 
-<div class="countdown" id="timer_310141c3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_98eead6f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -329,7 +330,7 @@ summarize(
 .panel[.panel-name[Filter, then group by]
 
 
-```r
+``` r
 library(palmerpenguins)
 data("penguins")
 
@@ -356,7 +357,7 @@ summarize(
 .panel[.panel-name[Group by, then filter]
 
 
-```r
+``` r
 library(palmerpenguins)
 data("penguins")
 
@@ -391,7 +392,7 @@ summarize(
 .panel[.panel-name[Printed, but not saved]
 
 
-```r
+``` r
 filter(diamonds, cut == "Ideal")
 ```
 
@@ -417,7 +418,7 @@ filter(diamonds, cut == "Ideal")
 .panel[.panel-name[Saved, but not printed]
 
 
-```r
+``` r
 diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal")
 ```
 
@@ -426,7 +427,7 @@ diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal")
 .panel[.panel-name[Saved and printed]
 
 
-```r
+``` r
 (diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal"))
 ```
 
@@ -457,7 +458,7 @@ diamonds_ideal &lt;- filter(.data = diamonds, cut == "Ideal")
 Normally within tidyverse functions, we can refer to column names directly. For example:
 
 
-```r
+``` r
 count(x = diamonds, color)
 ```
 
@@ -484,7 +485,7 @@ Here `color` is a column of the `diamonds` data frame. It has a syntactic name, 
 ### Syntactic column names
 
 
-```r
+``` r
 count(x = diamonds, color)
 ```
 
@@ -531,7 +532,7 @@ You **do not want to deliberately create non-syntactic names**, BUT you need to 
 ### Use backticks
 
 
-```r
+``` r
 count(x = diamonds, `color`)
 ```
 
@@ -557,7 +558,7 @@ count(x = diamonds, `color`)
 ### Don't use quotation marks
 
 
-```r
+``` r
 count(x = diamonds, "color")
 ```
 
@@ -585,7 +586,7 @@ Error: unexpected symbol in "7-point ideology"
 ```
 Non-syntactic name with backticks
 
-```r
+``` r
 `7-point ideology` &lt;- c("communism", "anarchism", "fascism")
 ```
 
@@ -597,7 +598,7 @@ Error: unexpected assignment in "if &lt;-"
 
 Non-syntactic name with backticks
 
-```r
+``` r
 `if` &lt;- 10
 ```
 
@@ -621,7 +622,9 @@ class: inverse, middle
 &gt; Pipes are a special operator in R. They allow you to write a sequence of multiple operations by   **passing the result of one function to another one, in sequence** 
 
 
-Pipes simplify your code and make your operations more intuitive, BUT they are not the only way to write your R code... in fact for a long time they did not even exist in R!
+Pipes simplify your code and make your operations more intuitive, BUT they are not the only way to write your R code... in fact for a long time they did not even exist in R! [See here to learn more](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)
+
+ &gt; You will see them two ways (%&gt;% and |&gt;): both are correct. The book favors |&gt; and I favor %&gt;%
 
 
 Let' start by looking at ways you can write the same code with and without pipes
@@ -646,7 +649,7 @@ First, we break down the problem into smaller steps:
 ### Option 1: save each step in a new data frame
 
 
-```r
+``` r
 data(penguins)
 
 penguins_1 &lt;- filter(penguins, species == "Adelie")
@@ -670,7 +673,7 @@ This is valid code. The drawback is that we have to name each intermediate objec
 ### Option 2: replace the original data frame
 
 
-```r
+``` r
 data(penguins)
 
 penguins &lt;- filter(penguins, species == "Adelie")
@@ -694,7 +697,7 @@ Instead of creating intermediate objects, we can replace the original data frame
 ### Option 3: function composition
 
 
-```r
+``` r
 data(penguins)
 
 summarize(group_by(filter(penguins, species == "Adelie"), island), 
@@ -717,7 +720,7 @@ This is valid code. The drawback is that this code is hard to read, since we nee
 ### Option 4: pipes!
 
 
-```r
+``` r
 penguins %&gt;%
   filter(species == "Adelie") %&gt;%
   group_by(island) %&gt;%
@@ -745,7 +748,7 @@ Pipes **chains a series of functions together**: they automatically pass the out
 .panel[.panel-name[No pipes]
 
 
-```r
+``` r
 by_dest &lt;- group_by(
   .data = flights,
   dest
@@ -770,7 +773,7 @@ delays &lt;- filter(
 .panel[.panel-name[With pipes]
 
 
-```r
+``` r
 delays &lt;- flights %&gt;%
   group_by(dest) %&gt;%
   summarize(
@@ -820,7 +823,7 @@ delays &lt;- flights %&gt;%
 #### Correct code
 
 
-```r
+``` r
 # all flights departed from NYC in 2013
 library(nycflights13)
 data(flights)
@@ -865,7 +868,7 @@ delays &lt;- flights %&gt;%
 #### Correct code
 
 
-```r
+``` r
 delays &lt;- flights %&gt;%
   group_by(dest) %&gt;%
   summarize(
@@ -907,7 +910,7 @@ delays &lt;- flights %&gt;%
 #### Correct code
 
 
-```r
+``` r
 delays &lt;- flights %&gt;%
   group_by(dest) %&gt;%
   summarize(
@@ -930,19 +933,20 @@ class: inverse, middle
 ---
 ### Exercise: built-in datasets
 (group work)
-
+* Accept assignment (individually): [https://classroom.github.com/a/oX3fYgiL](https://classroom.github.com/a/oX3fYgiL)
+* Summarize penguins in interesting way
 * Call `data()` in R
 * Look over list of data options
 * Choose a dataset
-* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #13)
-* Post on [ed discussion thread for today](https://edstem.org/us/courses/40496/discussion/3207082)
+* Summarize the dataset in a meaningful way (use AT LEAST two of the key functions from slide #12)
+* Commit and push! (not graded -- for practice only!)
 
 ---
 
 
 class: inverse, middle
 
-## Homework 2 overview
+## Assignment 2 overview
 
 ---
 
@@ -964,6 +968,17 @@ class: inverse, middle
 - review our website FAQ on how to ask questions
   
 ---
+# NEW IMPROVED CLONING!
+
+I have an additional (non-shell/terminal!) way to clone!
+
+* Accept the assignment
+* go to your new repo
+* copy the link
+* In RStudio: (top left) Go to File &gt; New Project &gt; Version Control &gt; Git &gt; (navigate to where you want, and add the relevant details -- folder name, git url!)
+
+
+---
 
 ## Acknowledgments 
 
@@ -972,11 +987,11 @@ The content of these slides is derived in part from Sabrina Nardin's and Benjami
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

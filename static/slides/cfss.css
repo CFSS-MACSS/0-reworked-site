@@ -133,7 +133,7 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #ffffff99;
+  color: #ffffff;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
   color: #ffffff;
@@ -175,7 +175,7 @@ th, td {
 .remark-slide table:not(.table-unshaded) thead,
 .remark-slide table:not(.table-unshaded) tfoot,
 .remark-slide table:not(.table-unshaded) tr:nth-child(even) {
-  background: #F1F6F3;
+  background: var(--background-color);
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -185,7 +185,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #F1F6F3;
+  background-color: black;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
