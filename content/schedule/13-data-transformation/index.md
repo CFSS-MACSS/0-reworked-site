@@ -54,11 +54,6 @@ math: false
 - Familiarize with Pipes
 - Practice transforming data
 
-## Before class
-
-- Required: read Chapter 3 “Data Transformation” and Chapter 18 “Pipes”
-  from [R for Data Science](https://r4ds.hadley.nz/)
-
 <!-- ## Class materials -->
 <!-- * [Computer programming as a form of problem solving](/notes/problem-solving/) -->
 <!-- * [`dplyr` in brief](/notes/dplyr/) -->
@@ -73,11 +68,16 @@ math: false
   `dplyr`](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
 - Cheat sheet [Data Tidying with
   `tidyr`](https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf)
+- [Consider how to structure your R
+  scripts](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html)
+- [Rmarkdown
+  (intermediate)](https://posit.co/blog/r-markdown-tips-tricks-2-cleaning-up-your-code/)
+- [Rmarkdown resources](https://bookdown.org/yihui/rmarkdown-cookbook/)
 
 ## What you need to do after class
 
 - Start [Assignment 2](assignments/2-explore-data/)
-- Review this week’s readings
+- Review this week’s readings abvove resources
 
 <!--
 * Complete your peer evaluations for homework 01. Review the following:
