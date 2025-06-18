@@ -113,6 +113,8 @@ summarize(.data = penguins_adelie, avg_mass = mean(body_mass_g, na.rm = TRUE))
 ]
 ]
 
+* For more on `.` vs `.data`, [see this exchange on stack overflow](https://stackoverflow.com/questions/63399011/what-is-the-difference-between-and-data)
+
 ---
 
 ## What is the average body mass of a penguin for each species?
@@ -149,6 +151,7 @@ class: inverse, middle
 # Data transformation with dplyr
 
 ---
+class: center, middle, inverse 
 
 ```{r echo = FALSE, fig.alt = "Cartoon of a fuzzy monster with a cowboy hat and lasso, riding another fuzzy monster labeled 'dplyr', lassoing a group of angry / unruly looking creatures labeled 'data.'", out.width = "55%"}
 include_graphics(path = "https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-artwork/dplyr_wrangling.png")
@@ -179,6 +182,10 @@ These functions can be thought of as **verbs that define actions** to be perform
 the noun is the data, and the verb is acting on the noun. 
 
 All of the dplyr verbs (all the verbs in the wider tidyverse) work similarly.
+
+--
+
+Think of the FLOW as moving through the PIPES (more on this later!)
 
 ---
 
