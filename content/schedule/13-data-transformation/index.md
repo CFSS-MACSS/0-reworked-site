@@ -67,16 +67,16 @@ math: false
 <!-- * see also: [Pipes in R](/notes/pipes/) taken from "Functions" lecture of Oct 25 -->
 <!-- -->
 
-–&gt;
-
 ## Additional resources
 
-- Cheat sheet [Data Wrangling with `dplyr` and
-  `tidyr`](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+- Cheat sheet [Data Transformation with
+  `dplyr`](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
+- Cheat sheet [Data Tidying with
+  `tidyr`](https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf)
 
 ## What you need to do after class
 
-- Start [Assignment 2](assignments/explore-data/)
+- Start [Assignment 2](assignments/2-explore-data/)
 - Review this week’s readings
 
 <!--
