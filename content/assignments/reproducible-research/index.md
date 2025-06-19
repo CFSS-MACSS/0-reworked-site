@@ -18,14 +18,12 @@ The goal of this assignment is to practice and further consolidate what
 we have been learning so far, by applying these skills and tools to a
 social science research context.
 
-**NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)**
+# Accessing the `final` repository
 
-# Accessing the `FINAL` repository
-
-- Go [to this link](https://classroom.github.com/a/ZuGDMiSQ) to accept
+- Go [to this link](https://classroom.github.com/a/dDOLBYJV) to accept
   and create your private `FINAL` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
-  convention `FINAL-<USERNAME>`  
+  convention `final-<USERNAME>`  
 - Once your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer (or R workbench)
@@ -34,10 +32,10 @@ social science research context.
 Notice the repo you clone for this assignment is empty: **you will have
 to fill it with your data and code, and push them to your github repo**.
 
-# Cloning your `FINAL` repository
+# Cloning your `final` repository
 
-After you have accessed the `FINAL` repository (see above), follow the
-[same steps you completed for `hw01`](/homework/edit-readme/) to clone
+After you have accessed the `final` repository (see above), follow the
+[same steps you completed for `a1`](/homework/1-edit-readme/) to clone
 the repository.
 
 # General workflow
@@ -142,8 +140,16 @@ short report on a research question of your own interest.
 - Provides any other relevant information that the user needs to know in
   order to use your repo and replicate your results
 - Provides 1-2 paragraphs of reflections on what was hard/easy about
-  this homework, what was enjoyable, problems you solved and how you
-  solved them, helpful resources, etc.
+  this assignment, what was enjoyable, problems you solved and how you
+  solved them, helpful resources, etc. (can choose to incroporate this
+  into the AI statement, below, or split them)
+
+### AI / Resources statement.
+
+All assignments need about one paragraph describing the resources you
+used (including links and prompts, as relevant) in completing the
+assignment. This helps us learn about your process. Include this in your
+final assignment.
 
 # What data should I use?
 
@@ -157,21 +163,9 @@ your repository on our computers and attempt to reproduce your results.
 You can analyze one of the datasets we have used in the class, as long
 as they contain social science data (e.g., cars, diamonds, or other
 teaching-related datasets won’t be appropriate) and as long as we have
-not used them for past homework assignments. For example you could use:
+not used them for past assignments. For example you could use:
 
 - `gapminder` in `library(gapminder)`
-- `gun_deaths`
-  - In `library(rcis)`
-  - [Raw data for `gun_deaths` from
-    FiveThirtyEight](https://github.com/fivethirtyeight/guns-data)
-- `scorecard`
-  - In `library(rcis)`
-  - Use the [`rscorecard`](https://github.com/btskinner/rscorecard)
-    library to download your own subset of the Department of Education’s
-    College Scorecard data
-- Check out [this archive of
-  datasets](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
-  from the Data Is Plural Newsletter
 - Check out \#TidyTuesday, a weekly data analysis challenge for
   individuals to practice and develop their data analysis skills in R.
   They post a new challenge every Tuesday, and publish [a complete
@@ -182,9 +176,9 @@ not used them for past homework assignments. For example you could use:
 
 There are functions in R and programs for the [shell](/setup/shell/)
 that allow you to do automatically download data. If you are using one
-of the data sets already provided to you in `library(rcis)`, you do not
-need to download them again. But you can. For example, to download
-`gapminder` from the [original GitHub
+of the data sets already provided to you from previous assignments, you
+do not need to download them again. But you can. For example, to
+download `gapminder` from the [original GitHub
 repo](https://github.com/jennybc/gapminder), there are three options:
 
 - Option 1: via an R script using
@@ -222,7 +216,7 @@ File Storage**](https://git-lfs.github.com/). It is a separate program
 you need to install via the shell, but the instructions are
 straight-forward. It integrates smoothly into GitHub, and makes version
 tracking of large files far easier. If you include it in a
-course-related repo (i.e. a fork of the homework repos), then there is
+course-related repo (i.e. a fork of the assignment repos), then there is
 no cost. If you want to use Git LFS for your own work, [there are
 separate fees charged by GitHub for storage and bandwidth
 usage.](https://help.github.com/articles/about-storage-and-bandwidth-usage/)
@@ -236,12 +230,13 @@ usage.](https://help.github.com/articles/about-storage-and-bandwidth-usage/)
   research interests
 - It is hard to provide a precise estimate of the time you should spend
   on this assignment, but you can take the average time you spent on
-  each assignment so far as a reference. The time spent on this homework
-  should be at least equal to that average time
+  each assignment so far as a reference. The time spent on this
+  assignment should be at least equal to that average time you’ve spent
+  on prior assignments but it will likely take longer.
 
-**Please notice**: The goal of this homework is to show and strengthen
+**Please notice**: The goal of this assignment is to show and strengthen
 what you have learned so far in the course. We expect you to complete it
-alone (you can rely on classmates for advice, but the homework itself
+alone (you can rely on classmates for advice, but the assignment itself
 needs to be completed alone). We expect you to adopt coding strategies
 that make sense to you, and code that you fully understand and can debug
 on your own.
@@ -253,6 +248,14 @@ on your own.
         `quarto::quarto_render('input = myAwesomeAnalysis.qmd')`
 -->
 
+# Deliverables
+
+For this assignment we need: \* A nice markdown document that provides
+an overview of your repo. You can also include all your
+graphics/analysis there AND/OR include an html file \* All files needed
+to replicate your results, including data and images \* A statement on
+AI and resources used
+
 # Submit the assignment
 
 Your repo should include everything you have used to produce your
@@ -260,12 +263,12 @@ analyses (R scripts, R Markdown documents, data files, figures, etc.)
 
 Make sure to stage-commit-push your original `.Rmd` file (or files if
 you used more than one Rmd or R script), and the report you generate
-from it as a `github_document` or a `pdf` document
+from it as a `github_document` or an `html` document (or both!)
 
 To submit the assignment, simply push to your repository the last
 version of your assignment before the deadline. Then copy your
-repository URL (e.g., `https://github.com/cfss-hmwks-s23/FINAL-jmclip`)
-and submit it to Canvas under FINAL before the deadline.
+repository URL (e.g., `https://github.com/cfss-hmwks-s25/final-jmclip`)
+and submit it to Canvas under the Final assignment before the deadline.
 
 # Rubric
 
@@ -285,10 +288,3 @@ course materials including data analysis or coding skills. Code is
 complex and went beyond requirements. Graphs and tables are well
 labeled. Excellent implementation of a consistent style guide. Analysis
 is insightful.
-
-## Acknowledgments
-
-<!-- ```{r child = here::here("R", "_ack_stat545.Rmd")} -->
-<!-- ``` -->
-<!-- ```{r child = here::here("R", "_ack_ben.Rmd")} -->
-<!-- ``` -->
