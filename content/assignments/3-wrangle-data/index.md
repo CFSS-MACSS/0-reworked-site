@@ -15,12 +15,12 @@ aliases: ["/a3-wrangle-data.html"]
 # Overview
 
 The goal of this assignment is to practice wrangling and exploring
-social science data in a research context.
+social science data in a research context. NOTE: This will take some
+time!
 
-**NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)** \# Accessing
-the `A3` repository
+# Accessing the `A3` repository
 
-- Go [to this link](https://classroom.github.com/a/IPLnbCzi) to accept
+- Go [to this link](https://classroom.github.com/a/c1SZ2aIf) to accept
   and create your private `A3` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
   convention `A3-<USERNAME>`  
@@ -51,7 +51,8 @@ Your general workflow will be:
 
 # PART 1: Tidying messy data
 
-Tidy the following dataset – first, copy this code and load it.
+Tidy the following dataset – first, copy this code and load it at the
+top of a file you name `tidying.Rmd` set your output to `md_document`
 
     drinks <- data.frame(
       ID = c(1, 1, 3, 4, 4),
@@ -75,113 +76,202 @@ Your final product (tidy data frame) should look like this:
     ## 2     3 Taylor        0      1
     ## 3     4 Travis        1      1
 
-You can accomplish this task using a single or multiple piped operations
-using only `count` and `tidyr` functions. Code that does not use any
-`tidyr` functions is not acceptable. Check the
-[Transform](https://r4ds.hadley.nz/data-transform.html) chapter,
-readings, and in-class exercises before starting this part.
-
-Once you have tidied the data frame, generate a plot using the exact
-code provided in your repo. If you tidied the data frame correctly, you
-will not have to make any changes to that code. If errors arise, it
-means the data has not been tidied correctly.
+Check the [Transform](https://r4ds.hadley.nz/data-transform.html)
+chapter, readings, and in-class exercises before starting this part.
 
 # PART 2: Wrangling and visualizing messy(ish) data
 
-## Description of the data: Supreme Court Database
+## **Context**
 
-The [Supreme Court Database](http://scdb.wustl.edu/) contains detailed
-information of every published decision of the U.S. Supreme Court since
-its creation in 1791. It is perhaps the most utilized database in the
-study of judicial politics.
+[Bihar](https://en.wikipedia.org/wiki/Bihar) is a state in eastern
+India, bordering Nepal to the north and several Indian states including
+Uttar Pradesh, Jharkhand, and West Bengal. It is one of India’s most
+populous states and is historically significant, with sites such as
+[Nalanda](https://en.wikipedia.org/wiki/Nalanda_mahavihara) and [Bodh
+Gaya](https://en.wikipedia.org/wiki/Bodh_Gaya). Bihar has experienced
+notable GDP growth in recent decades, yet it faces persistent challenges
+in socio-economic development, with wide disparities across its
+districts.
 
-In the `A3` repository, you will find two data files:
+In this assignment, you will work with two datasets:
 
-1.  `scdb-case.csv`
-2.  `scdb-vote.csv`
+1.  `gdp_Bihar.csv` – GDP data for Bihar districts over several years.
+    Rows represent year/description combinations (e.g. GDP, growth rate)
+    and columns represent districts.
+2.  `district_category.csv` – A mapping of each district to a category:
+    Urban, Suburban, or Rural.
 
-These contain the exact same data you would obtain if you downloaded the
-files from the original website, but reformatted to be stored as
-relational data files. That is, `scdb-case.csv` contains all
-**case-level** variables, whereas `scdb-vote.csv` contains all
-**vote-level** variables.
+Your task is to tidy, summarize, visualize, and reflect on the data,
+building both technical skills and reasoning abilities.
 
-The data is structured in a tidy fashion.
+For this assignment, we are giving you the baseline repo BUT NOT the rmd
+file. You will need to build that yourself, being sure to provide all
+the sections, etc. You can follow the guides from prior assignments.
 
-- `scdb-case.csv` contains one row for every case and one column for
-  every variable
-- `scdb-vote.csv` contains one row for every vote by a justice in every
-  case and one column for every variable
+## **Part 2.1: Reasoning about the data**
 
-The current dataset contains information on every case decided from the
-1791-2020 terms.[1] There are several ID variables which are useful for
-other types of research: for our purposes, the only ID variable you need
-to concern yourself with is `caseIssuesId`. Variables you will want to
-familiarize yourself with include:
+### Question 1
 
-- `chief`
-- `dateDecision`
-- `decisionDirection`
-- `decisionType`
-- `declarationUncon`
-- `direction`
-- `issueArea`
-- `justice`
-- `justiceName`
-- `majority`
-- `majVotes`
-- `minVotes`
-- `term`
+What are the three characteristics of tidy data?
 
-{{% callout note %}} Please read the
-[documentation](http://scdb.wustl.edu/documentation.php) to see how
-these variables are coded. {{% /callout %}}
+Write a sentence or two explaining each characteristic.
 
-## Questions
+### Question 2
 
-Once you import the data files, use your data wrangling and
-visualization skills to answer the following questions.
+Based on your answer above, is the given dataset tidy?
 
-For each question, also provide 1-2 paragraphs of written interpretation
-of your results. Graphs and/or tables alone will not be sufficient to
-answer these questions. The interpretation should be descriptive (e.g.,
-this graph shows x and y) and substantive (e.g., what do the results
-show substantially, what can we infer or conclude from the graph, etc.).
+Explain briefly. What clues tell you this? Be specific, giving relevant
+details from the dataset.
 
-Pay careful attention to the unit of analysis required to answer each
-question. Some questions only require case-level variables, others only
-require vote-level variables, and some may require combining the two
-data frames together. Be sure to choose an appropriate relational join
-function as necessary.
+### Question 3
 
-#### 1. What percentage of cases in each term are decided by a one-vote margin (i.e. 5-4, 4-3, etc.)?
+Will it help to have the data in tidy format? Why or why not?
 
-#### 2. How often the justices who are currently serving on the Supreme Court, have voted in the conservative direction in cases of criminal procedure, civil rights, economic activity, and federal taxation?
+Think about how tidy data might affect your ability to analyze,
+summarize, or visualize this dataset.
 
-- Select only the justices who are currently serving on the Supreme
-  Court [see here](https://www.supremecourt.gov/about/biographies.aspx):
-  John G. Roberts, Clarence Thomas, Samuel A. Alito, Sonia Sotomayor,
-  Elena Kagan, Neil M. Gorsuch, Brett M. Kavanaugh, Amy Coney Barrett
-  (Ketanji Brown Jackson is not in the data as she was only recently
-  nominated).
-- Calculate how often they have voted in the conservative direction in
-  cases involving criminal procedure, civil rights, economic activity,
-  and federal taxation.
-- Produce two graphs with your results: one faceted by justice, the
-  other by issue area.
+### Question 4
 
-#### 3. Which justices are most likely to agree with the Court’s declaration that an act of Congress, a state or territorial law, or a municipal ordinance is unconstitutional?
+Describe how you would rearrange the columns and rows to make this data
+tidy.
 
-- Identify all cases where the Court declared something unconstitutional
-  and determine the ten justices who most and least frequently agreed
-  with this outcome as a percentage of all votes cast by the justice in
-  these cases.
-- Filter out any justice with fewer than 30 votes in cases where the
-  Court’s outcome declares something unconstitutional.
+- What would you like rows to represent?
+- What would you like columns to represent?
 
-#### 4. For each term he served on the Court, in what percentage of cases was Justice Antonin Scalia in the majority?
+Write your plan clearly, without jumping into code yet.
 
-#### 5. In each term, what percentage of cases were decided in the conservative direction? And in the liberal direction?
+### Question 5
+
+Based on your plan above, what R verbs or functions might help you
+implement this transformation?
+
+List some dplyr/tidyr verbs you think could help. You don’t have to know
+the exact syntax.
+
+## **Part 2.2: Tidying the data**
+
+Transform your dataset into tidy format based on your plan above. Once
+tidied inspect the data using `head()` or `glimpse()`. In your Rmd file,
+include this output as part of the document.
+
+## **Part 2.3: Observing the tidy data**
+
+What patterns or issues do you notice in the `Growth Rate %` values for
+the year `2004-05` across the districts?
+
+Write a brief note:
+
+- What do you observe that you could not easily see in the original CSV
+  file?
+- Why might this pattern have been hidden in the original format?
+
+Hints:
+
+- Focus on rows where `year` is `2004-05` and the variable is
+  `Growth Rate %`
+- Are these values mostly present, mostly missing, or a mix?
+
+Follow-up:
+
+- Can you quantify this pattern? For example, how many rows have missing
+  `Growth Rate %` for `2004-05`?
+- How might this insight affect your analysis or visualization?
+
+## **Part 2.4: Merging district categories**
+
+Load `district_category.csv` into your R session. Perform a left join to
+merge this with your tidy GDP dataset. After joining:
+
+- Check for any rows where `category` is NA. What could this indicate?
+- Make sure every row in your tidy GDP dataset retains its data.
+
+Hints
+
+- Remember: joins match on a column that is common to both datasets.
+  What’s the matching column here? (if you’re not sure, use
+  `names(dataframe)` to get a list of column names.)
+- Check your results after joining: use `summary()`,
+  `count(category, sort = TRUE)`, or filter for `NA` in `category`.
+- If you encounter `NA` categories, think: are the district names
+  spelled/formatted exactly the same in both datasets?
+
+## **Part 2.5: Renaming and enhancing the dataset**
+
+Use pipes to chain your steps:
+
+- Rename your columns to be consistent: lowercase, no spaces (use
+  underscores), meaningful names
+
+- Use `mutate()` to add a new column: GDP in USD million
+
+  Remember:
+
+  - 1 crore (Cr) = 10^7 rupees
+
+  - $1 = Rs 85
+
+    Formula: `(gdp_in_rs_cr * 10^7) / (85 * 10^6)`
+
+### **Questions**
+
+- Why is it helpful to standardize and clean your column names?
+- Why do you think we’re converting GDP to USD million? How might this
+  help in communicating your results to a broader audience?
+
+## **Part 2.6: Grouping, summarizing, filtering**
+
+Create summaries:
+
+1.  Group by district:
+    - Compute the mean growth rate
+    - Arrange the results in descending order of mean growth rate
+2.  Group by year and category:
+    - Compute the mean growth rate (ignore NA values)
+    - Compute total GDP in USD million
+
+Reason about:
+
+- Why do you need to handle NA values carefully in growth rate?
+- How did you handle NA values in the two summaries and why ?
+- What would happen if you filtered out all rows for `2004-05` vs using
+  `na.rm = TRUE` in the mean ? How would that affect total GDP?
+
+Hints
+
+- Think carefully before filtering:
+  - Growth rate has some `NA` values, so including it will distort your
+    mean.
+  - GDP is *complete* — so if you remove any rows/observations
+    completely, you’ll lose valuable GDP data!
+
+------------------------------------------------------------------------
+
+## **AI usage guidelines**
+
+You may use AI tools to help you with:
+
+- Understanding error messages
+- Writing or debugging R code
+- Clarifying concepts
+
+You must document:
+
+- The exact prompt you used
+- The AI’s response
+- How you applied or modified the advice
+
+------------------------------------------------------------------------
+
+## **Deliverables**
+
+Submit:
+
+- Your written responses to reasoning and reflection questions (within
+  the README.Rmd and README.md) files
+- Your AI usage log (save the session with chatGPT/Claude/Gemini etc on
+  internet as html file and add it to your repo)
+- A description of your process and what resources you used (including
+  AI but also things like stack overflow, etc.)
 
 # Submit the assignment
 
@@ -189,18 +279,11 @@ To submit the assignment, simply push to your repository the last
 version of your assignment before the deadline.
 
 Then copy your repository URL (e.g.,
-`https://github.com/cfss-hmwks/hw3-jmclip`) and submit it to Canvas
-under HW03 before the deadline.
+`https://github.com/cfss-hmwks/A3-jmclip`) and submit it to Canvas under
+A3 before the deadline.
 
-Make sure to stage-commit-push:
-
-- `dadmom.Rmd` (the main file you will add your code to)
-- `dadmom.md` (you will generate this file from the .Rmd by simply
-  knitting it)
-- `scouts.Rmd` (the main file you will add your code to)
-- `scotus.md` (you will generate this file from the .Rmd by simply
-  knitting it)
-- the folders with all the graphs you generated in your .Rmd files
+Make sure to stage-commit-push: all of your files (recall that you will
+need to generate the RMD and md files yourself!)
 
 # Rubric
 
@@ -226,9 +309,4 @@ rubric](/faq/homework-evaluations/) we adopt for grading.
 
 # Acknowledgments
 
-- This page has been developed starting from Sabrina Nardin and Benjamin
-  Soltoff’s “Computing for the Social Sciences” course materials,
-  licensed under the CC BY-NC 4.0 Creative Commons License.
-
-[1] Terms run from October through June, so the 2020 term contains cases
-decided from October 2020 - June 2021.
+- This page (and assignment) developed with Sarthak Dhanke
