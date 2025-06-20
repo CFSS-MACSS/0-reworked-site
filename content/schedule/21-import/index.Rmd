@@ -51,7 +51,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Overview
 
-* 
+* Importing and writing data
+* Pivot_longer
+* Pivot_wider
+* When/how to combine commands
+* Understanding tidy data 
 
 
 ## Before class
@@ -61,6 +65,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Additional resources
+* [tidyr package + examples](https://tidyr.tidyverse.org/)
+* [Other tidy guides](https://data.europa.eu/apps/data-visualisation-guide/intro-to-tidy-data)
 
 
 ## What you need to do after class
