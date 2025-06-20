@@ -1,5 +1,5 @@
 ---
-title: "Data wrangling: relational data"
+title: "Data: communication"
 date: 2023-06-22T12:25:00-05:00
 publishDate: 2019-04-17T12:25:00-05:00
 draft: false
@@ -23,7 +23,7 @@ authors: []
 
 # Abstract and optional shortened version.
 abstract: ""
-summary: "Introduce relational data structures, and practice working with factor columns."
+summary: "Focus on communications"
 # Note: might need to revise the summary if I drop factors from here
 
 
@@ -49,27 +49,13 @@ math: false
 
 ## Overview
 
-- Introduce relational data
-- Demonstrate how tables can be linked to one another
-- Demonstrate methods in `dplyr` for linking and merging related tables
-- Practice joining tables
-- Review factors
-
-<!-- 
-*Demonstrate how to transform and reorder factors for visualizations
--->
+- 
 
 ## Before class
 
-- Read Chapter 13 “Relational Data” in [R for Data
-  Science](http://r4ds.had.co.nz/). Do not complete exercises 13.4.6.2-3
-  – we will be completing these as in-class exercises
-- Review Chapter 15 “Factors” in [R for Data
-  Science](http://r4ds.had.co.nz/)
+- Read [Ch 11](https://r4ds.hadley.nz/communication.html)
 
 ## Class materials
-
-- [Practice using relational data](/notes/relational-data-exercise/)
 
 <!--
 * [Relational data: a quick review](/notes/relational-data/)
@@ -79,7 +65,7 @@ math: false
 
 ## What you need to do after class
 
-- Keep working on homework 3
+- Keep working on [assignment 3](/assignments/3-wrangle-data)
 - Review lectures and readings
 
 <!--

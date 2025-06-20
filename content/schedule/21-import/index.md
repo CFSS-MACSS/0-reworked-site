@@ -59,7 +59,7 @@ math: false
 
 ## What you need to do after class
 
-- Work on [assignment 2](assignments/2-explore-data/)
+- Complete [assignment 2](assignments/2-explore-data/)
 - Review today’s [lecture materials
   (slides)](slides/21-data-wrangling-tidy-data), and prepare for next
   class
