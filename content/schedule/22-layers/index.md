@@ -73,5 +73,5 @@ math: false
 ## What you need to do after class
 
 - Begin work on [assignment 3](assignments/3-wrangle-data)
-- Review today’s [lecture materials (slides)](slides/22-layers), and
-  prepare for next class
+- Review today’s [lecture materials
+  (slides)](/../../static/slides/22-layers), and prepare for next class
