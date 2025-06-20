@@ -27,6 +27,16 @@ class: center, middle, inverse, title-slide
 
 class: inverse, middle
 
+# Agenda:
+
+* Importing (Ch 7)
+* Exporting data (writing to file) (Ch 7)
+* Tidy data (intro / beginning of a long, happy relationship)
+
+---
+
+class: inverse, middle
+
 # Importing data in R
 
 ---
@@ -35,7 +45,7 @@ class: inverse, middle
 
 To load data into R we need importing functions. 
 
-There are a number of them depending on the type of file we want to import (see Chapter 11 of R for Data Science for details).
+There are a number of them depending on the type of file we want to import (see Chapter 7 of R for Data Science for details).
 
 The most common importing functions are those that read **comma delimited files**. There are two versions of them:
 
@@ -69,8 +79,6 @@ library(readr)
 # load data into my local R Studio
 test &lt;- read_csv(file = "/Users/jclip/Desktop/testdata.csv")
 
-# load data into my R Workbench 
-test &lt;- read_csv(file = "/home/jclip/lecture/testdata.csv")
 
 # trick if you're not sure where it is / want to select it
 test &lt;- read_csv(file = file.choose())
@@ -91,7 +99,6 @@ Make sure the file is located in the given path and you are typing the path corr
 #                       favorite = c("matcha", "black", "green", "chai", "black", "matcha", ""))
 # write_csv(testfile, "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/slides/data-wrangling-tidy-data/test.csv") --&gt;
 
-1. Open R Workbench: upload the file to the server (skip this step if you are using R locally)
 
 1. Look at your current directory by typing `getwd()` in the console. That's where R looks at files by default
 
@@ -456,7 +463,7 @@ the definition but also why we emphasize it so much here
 * Separating
 * Uniting
 
-We are going to illustrate these tasks with datasets from the readings (Chapter 12 R for Data Science). Each dataset shows the same values of four variables country, year, population, and cases, but each dataset organises the values in a different way.
+We are going to illustrate these tasks with datasets from the readings (chapter 5 R for Data Science). Each dataset shows the same values of four variables country, year, population, and cases, but each dataset organises the values in a different way.
 
 --
 
@@ -915,18 +922,21 @@ unite(
 ]
 
 ---
+class: center
 
 # Let's get messy!
 
 &lt;img src="https://media.giphy.com/media/fCUCbWXe9JONVsJSUd/giphy.gif" width="40%" /&gt;
 
-[https://macs30500.netlify.app/notes/data-wrangle/tidy-exec3s2e/](https://macs30500.netlify.app/notes/data-wrangle/tidy-exec3s2e/)
+[go to our practice repo for today](https://classroom.github.com/a/7WcsKaTn)
 
 ---
 
 ## Acknowledgments 
 
 The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+
+I also used our relevant textbook chapter for ideas to riff on [for our in-class example](https://classroom.github.com/a/7WcsKaTn)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
