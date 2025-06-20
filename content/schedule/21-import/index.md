@@ -47,7 +47,11 @@ math: false
 
 ## Overview
 
-- 
+- Importing and writing data
+- Pivot\_longer
+- Pivot\_wider
+- When/how to combine commands
+- Understanding tidy data
 
 ## Before class
 
@@ -56,6 +60,10 @@ math: false
   7](https://r4ds.hadley.nz/data-import.html)
 
 ## Additional resources
+
+- [tidyr package + examples](https://tidyr.tidyverse.org/)
+- [Other tidy
+  guides](https://data.europa.eu/apps/data-visualisation-guide/intro-to-tidy-data)
 
 ## What you need to do after class
 
