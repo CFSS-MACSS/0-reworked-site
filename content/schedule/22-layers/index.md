@@ -1,5 +1,5 @@
 ---
-title: "Exploratory data analysis"
+title: "Visualizing Data: Layers"
 date: 2022-10-11T12:25:00-05:00
 publishDate: 2019-04-10T12:25:00-05:00
 draft: false
@@ -47,18 +47,12 @@ math: false
 
 ## Overview
 
-- Define Exploratory Data Analysis (EDA) and types of pattern
-  exploration
-- Demonstrate types of graphs useful for EDA and precautions when
-  interpreting them
-- Define factors
-- Practice exploring data
+- 
 
 ## Before class
 
-- Read [Ch 5](https://r4ds.hadley.nz/data-tidy.html), [Ch
-  6](https://r4ds.hadley.nz/workflow-scripts.html), [Ch
-  7](https://r4ds.hadley.nz/data-import.html)
+- Read [Ch 8](https://r4ds.hadley.nz/workflow-help.html), [Ch
+  9](https://r4ds.hadley.nz/layers.html)
 
 <!-- ## Class materials -->
 <!-- * [Exploratory data analysis](/notes/exploratory-data-analysis/)` -->
@@ -78,7 +72,6 @@ math: false
 
 ## What you need to do after class
 
-- Work on [assignment 2](assignments/2-explore-data/)
-- Review today’s [lecture materials
-  (slides)](slides/21-exploratory-data-analysis/#1), and prepare for
-  next class
+- Begin work on [assignment 3](assignments/3-wrangle-data)
+- Review today’s [lecture materials (slides)](slides/22-layers), and
+  prepare for next class

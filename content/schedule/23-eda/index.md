@@ -1,5 +1,5 @@
 ---
-title: "Data wrangling: tidy data"
+title: "EDA: exploratory data analysis"
 date: 2023-06-21T12:25:00-05:00
 publishDate: 2019-04-15T12:25:00-05:00
 draft: false
@@ -47,9 +47,7 @@ math: false
 
 ## Overview
 
-- Import data in R
-- Define tidy data and its characteristics
-- Practice tidying data
+- 
 
 <!--
 * Demonstrate how vectors can be read and parsed
@@ -58,15 +56,8 @@ math: false
 
 ## Before class
 
-- Required: read Chapter 11 “Data Import” and Chapter 12 “Tidy data”
-  from [R for Data Science](http://r4ds.had.co.nz/)
-- Optional: read Chapter 10 “Tibbles” from [R for Data
-  Science](http://r4ds.had.co.nz/)
-
-## Class materials
-
-- [Tidy data](/notes/tidy-data/)
-- [Practice tidying data](/notes/tidy-exercise/)
+- Required: read [Ch 9](https://r4ds.hadley.nz/layers.html), [Ch
+  10](https://r4ds.hadley.nz/EDA.html)
 
 <!--
 * [Importing data into R](/notes/importing-data/)
@@ -85,6 +76,5 @@ math: false
 
 ## What you need to do after class
 
-- Complete [Homework 2](/homework/explore-data/)
 - Review today’s lecture materials, and prepare for next class
-- Start [Homework 3](/homework/wrangle-data/)
+- Continue [Assignment 3](/assignments/3-wrangle-data)
