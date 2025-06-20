@@ -56,15 +56,13 @@ math: false
 
 ## Before class
 
-- Read Chapter 7 “Exploratory Data Analysis” and Chapter 15 “Factors”
-  from [R for Data Science](http://r4ds.had.co.nz/)
+- Read [Ch 5](https://r4ds.hadley.nz/data-tidy.html), [Ch
+  6](https://r4ds.hadley.nz/workflow-scripts.html), [Ch
+  7](https://r4ds.hadley.nz/data-import.html)
 
-## Class materials
-
-- [Exploratory data analysis](/notes/exploratory-data-analysis/)
-- [Practice exploring college education
-  data](/notes/exploratory-data-analysis-practice/)
-
+<!-- ## Class materials -->
+<!-- * [Exploratory data analysis](/notes/exploratory-data-analysis/)` -->
+<!-- * [Practice exploring college education data](/notes/exploratory-data-analysis-practice/) -->
 <!--
 * Copied from the lecture on data wrangling, notes on factors: [Practice transforming and visualizing factors](/notes/factors-exercise/)
 -->
@@ -80,5 +78,7 @@ math: false
 
 ## What you need to do after class
 
-- Work on homework 2
-- Review today’s lecture materials, and prepare for next class
+- Work on [assignment 2](assignments/2-explore-data/)
+- Review today’s [lecture materials
+  (slides)](slides/21-exploratory-data-analysis/#1), and prepare for
+  next class
