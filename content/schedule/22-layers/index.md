@@ -74,4 +74,5 @@ math: false
 
 - Begin work on [assignment 3](assignments/3-wrangle-data)
 - Review today’s [lecture materials
-  (slides)](/../../static/slides/22-layers), and prepare for next class
+  (slides)](https://cfss-macss.netlify.app/slides/21-data-wrangling-tidy-data/#1),
+  and prepare for next class
