@@ -169,19 +169,17 @@ class: inverse, middle
 
 #  Tools for combining tables:  Mutating joins
 
-**inner join**: keeps observations that appear in both tables
-
-outer join: keeps observations that appear in at least one of the tables
-  * **left join**: keeps all observations in left table
-  * **right join**: keeps all observations in right table
-  * **full join**: keeps all observations
-
+* **inner join**: keeps observations that appear in both tables
+* **left join**: keeps all observations in left table
+* **right join**: keeps all observations in right table
+* **full join**: keeps all observations
+  * AKA **outer join** 
 --
 
 Venn diagram of mutating joins:
 
 ```{r out.width="60%"}
-include_graphics(path = "join-venn.png")
+knitr::include_graphics("https://r4ds.hadley.nz/diagrams/join/venn.png") #path = "join-venn.png")
 ```
 
 ---
@@ -250,6 +248,9 @@ left_join(x, y, by = "key")
 
 ] 
 
+
+
+
 ---
 
 ## right_join()
@@ -281,6 +282,8 @@ typically right join is utilized less because by convention we think as the prim
 data for these kind of operations as the left or x table 
 -->
 
+
+
 ---
 
 ## full_join()
@@ -311,9 +314,41 @@ full_join(x, y, by = "key")
 
 ---
 
+### Extended practice: flights
+
+Suppose we want to fully explore how different this might be. First, to maximize the differences, we're going to look at a subest of our original data. 
+
+```{r}
+flights2 <- flights %>% filter(dep_delay > 60)
+airlines2<- airlines %>% filter(carrier %in% c("AA", "US", "VX"))
+dim(flights2)
+```
+
+---
+# Join comparision
+Recall that we are starting with 26581 x 19
+```{r, message = F, echo = T}
+flights2 |> inner_join(airlines2) |> dim()
+
+flights2 |> right_join(airlines2) |> dim()
+
+flights2 |> left_join(airlines2) |> dim()
+
+flights2 |> full_join(airlines2) |> dim()
+```
+---
+# Join comparision, cont'd
+Recall that we are starting with 26581 x 19
+```{r, message = F, echo = T}
+flights2 |>
+    left_join(airlines2) %>% select(name) %>% table(useNA = "always")
+```
+
+---
+
 class: inverse, middle
 
-#  Tools for combining tables: Filtering joins
+#  Moving to more advanced options for combining tables: Filtering joins
 
 ---
 
@@ -377,11 +412,11 @@ anti_join(x, y, by = "key")
 ]
 
 ---
+# SO WHAT???
 
-class: inverse, middle
+You will use the left, inner, right, and anti joins a fair amount (most likely) in your work. For the filtering, you can think of it as using a second/outside dataset to let you know what is/not needed. 
 
-# Practice working with relational data
-
+Example: you have a list of governments and a list of sanctions for many sanctions/countries. You can use a filtering join to see who is in the sanction list that is in your country list and an anti-join to see who on your list does NOT have a sanction.
 
 ---
 class: center

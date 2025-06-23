@@ -178,18 +178,16 @@ class: inverse, middle
 
 #  Tools for combining tables:  Mutating joins
 
-**inner join**: keeps observations that appear in both tables
-
-outer join: keeps observations that appear in at least one of the tables
-  * **left join**: keeps all observations in left table
-  * **right join**: keeps all observations in right table
-  * **full join**: keeps all observations
-
+* **inner join**: keeps observations that appear in both tables
+* **left join**: keeps all observations in left table
+* **right join**: keeps all observations in right table
+* **full join**: keeps all observations
+  * AKA **outer join** 
 --
 
 Venn diagram of mutating joins:
 
-&lt;img src="join-venn.png" width="60%" /&gt;
+&lt;img src="https://r4ds.hadley.nz/diagrams/join/venn.png" width="60%" /&gt;
 
 ---
 
@@ -249,6 +247,9 @@ left_join(x, y, by = "key")
 
 ] 
 
+
+
+
 ---
 
 ## right_join()
@@ -276,6 +277,8 @@ typically right join is utilized less because by convention we think as the prim
 data for these kind of operations as the left or x table 
 --&gt;
 
+
+
 ---
 
 ## full_join()
@@ -302,9 +305,72 @@ full_join(x, y, by = "key")
 
 ---
 
+### Extended practice: flights
+
+Suppose we want to fully explore how different this might be. First, to maximize the differences, we're going to look at a subest of our original data. 
+
+
+```
+## [1] 26581    19
+```
+
+---
+# Join comparision
+Recall that we are starting with 26581 x 19
+
+``` r
+flights2 |&gt; inner_join(airlines2) |&gt; dim()
+```
+
+```
+## [1] 3132   20
+```
+
+``` r
+flights2 |&gt; right_join(airlines2) |&gt; dim()
+```
+
+```
+## [1] 3132   20
+```
+
+``` r
+flights2 |&gt; left_join(airlines2) |&gt; dim()
+```
+
+```
+## [1] 26581    20
+```
+
+``` r
+flights2 |&gt; full_join(airlines2) |&gt; dim()
+```
+
+```
+## [1] 26581    20
+```
+---
+# Join comparision, cont'd
+Recall that we are starting with 26581 x 19
+
+``` r
+flights2 |&gt;
+    left_join(airlines2) %&gt;% select(name) %&gt;% table(useNA = "always")
+```
+
+```
+## name
+## American Airlines Inc.        US Airways Inc.         Virgin America 
+##                   2003                    766                    363 
+##                   &lt;NA&gt; 
+##                  23449
+```
+
+---
+
 class: inverse, middle
 
-#  Tools for combining tables: Filtering joins
+#  Moving to more advanced options for combining tables: Filtering joins
 
 ---
 
@@ -360,11 +426,11 @@ anti_join(x, y, by = "key")
 ]
 
 ---
+# SO WHAT???
 
-class: inverse, middle
+You will use the left, inner, right, and anti joins a fair amount (most likely) in your work. For the filtering, you can think of it as using a second/outside dataset to let you know what is/not needed. 
 
-# Practice working with relational data
-
+Example: you have a list of governments and a list of sanctions for many sanctions/countries. You can use a filtering join to see who is in the sanction list that is in your country list and an anti-join to see who on your list does NOT have a sanction.
 
 ---
 class: center
