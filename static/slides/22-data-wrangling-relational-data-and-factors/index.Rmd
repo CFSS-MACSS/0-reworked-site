@@ -45,8 +45,14 @@ class: inverse, middle
 ---
 ## Recap
 
-* Loading data
-* 
+* Importing data
+* Tidying data
+  - `pivot_longer`
+  - `pivot_wider`
+  - `separate`
+  - `unite`
+* Writing data
+* Other delimiters
 
 ---
 
@@ -69,7 +75,7 @@ but it is split across tables; usually two but potentially more
 
 ## Example 
 
-Example of a relational database: `library(nycflights13)` from R for Data Science, Chapter 13.
+Example of a relational database: `library(nycflights13)` from R for Data Science, Chapter 19.
 
 Five tables: 
 * `flights` flights info
@@ -85,7 +91,7 @@ Five tables:
 Graphical representation of the relations among the tables in `nycflights13`:
 
 ```{r out.width="60%"}
-include_graphics(path = "relational-nycflights.png")
+include_graphics("https://r4ds.hadley.nz/diagrams/relational.png") # path = "relational-nycflights.png")
 ```
 
 To understand diagrams like this, remember that each relation always concerns a **pair of tables**. Even if you have several tables in your relational database, relations are defined between a pair.
@@ -111,22 +117,57 @@ A variable can be both a primary key and a foreign key. For example, origin is p
 A relation is defined between a **pair of tables**: a primary key and the corresponding foreign key in another table form a **relation**.
 
 <!--
+
+-->
+
+---
+## Relations and unique identifiers
+
 Relations can be
 * one-to-one
 * one-to-many: each flight has one plane, but each plane has many flights
 * many-to-many
--->
+
+You want keys to be UNIQUE identifiers: one per item to help with the merge
+--
+
+```{r}
+library(nycflights13)
+planes |> 
+  count(tailnum) |> 
+  filter(n > 1)
+```
+
+--
+```{r}
+planes |> 
+  count(tailnum) |> 
+  filter(n > 1)
+```
+
+---
+# What if I don't have an id?
+
+You can make a key either based on a COMBINATION of variables or assign one to rows. There are a number of reasons why we might be better off with a unique identifier within the dataset, but sometimes you work with what you've got!
+```{r}
+flights2 <- flights |> 
+  mutate(id = row_number(), .before = 1)
+flights2
+```
+
+
+
 
 ---
 
 class: inverse, middle
 
-#  Tools for combining tables: Mutating joins
+# Basic joins
+
 
 ---
-<!--- there are mutating and filtering joins --->
 
-## Mutating joins
+#  Tools for combining tables:  Mutating joins
 
 **inner join**: keeps observations that appear in both tables
 
@@ -343,10 +384,30 @@ class: inverse, middle
 
 
 ---
+class: center
 # Best practices: coding
 
----
 
+```{r, out.width="35%"}
+knitr::include_graphics("http://www.phdcomics.com/comics/archive/phd101212s.gif")
+```
+---
+class: inverse 
+# Takeaways
+
+## Ch 6: Scripts and Projects
+- Use projects when possible
+- Don't save your workspace
+- Use good (informative!) file names
+
+--
+
+## Ch 8: Getting help
+
+- Reproducible examples when you are stuck
+- GOOGLE: stack overflow (plus posting on Ed Discussion!)
+
+---
 ## Acknowledgments 
 
 The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
