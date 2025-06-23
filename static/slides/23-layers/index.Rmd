@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Data Analysis"
+title: "Scripts + Intro to layers/viz"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
