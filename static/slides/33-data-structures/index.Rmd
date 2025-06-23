@@ -3,7 +3,7 @@ title: "Data Structures"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../cfss.css"]
     nature:
       highlightStyle: magula
       highlightLines: true
@@ -13,104 +13,16 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-# generate CSS file
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#011f4b",
-  secondary_color = "#bbd6c7",
-  inverse_header_color = "#222222",
-  black_color = "#222222",
-  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  code_font_google = xaringanthemer::google_font("Source Code Pro"),
-  base_font_size = "24px",
-  code_font_size = "20px",
-  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
-  # title_slide_background_size = "contain",
-  # title_slide_background_position = "top",
-  header_h1_font_size = "2rem",
-  header_h2_font_size = "1.75rem",
-  header_h3_font_size = "1.5rem",
-  extra_css = list(
-    "h1" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h2" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h3" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    ".tiny" = list("font-size" = "70%"),
-    ".small" = list("font-size" = "90%"),
-    ".midi" = list("font-size" = "150%"),
-    ".tiny .remark-code" = list("font-size" = "70%"),
-    ".small .remark-code" = list("font-size" = "90%"),
-    ".midi .remark-code" = list("font-size" = "150%"),
-    ".large" = list("font-size" = "200%"),
-    ".xlarge" = list("font-size" = "600%"),
-    ".huge" = list(
-      "font-size" = "400%",
-      "font-family" = "'Montserrat', sans-serif",
-      "font-weight" = "bold"
-    ),
-    ".hand" = list(
-      "font-family" = "'Gochi Hand', cursive",
-      "font-size" = "125%"
-    ),
-    ".task" = list(
-      "padding-right" = "10px",
-      "padding-left" = "10px",
-      "padding-top" = "3px",
-      "padding-bottom" = "3px",
-      "margin-bottom" = "6px",
-      "margin-top" = "6px",
-      "border-left" = "solid 5px #F1DE67",
-      "background-color" = "#F3D03E"
-    ),
-    ".pull-left" = list(
-      "width" = "49%",
-      "float" = "left"
-    ),
-    ".pull-right" = list(
-      "width" = "49%",
-      "float" = "right"
-    ),
-    ".pull-left-wide" = list(
-      "width" = "70%",
-      "float" = "left"
-    ),
-    ".pull-right-narrow" = list(
-      "width" = "27%",
-      "float" = "right"
-    ),
-    ".pull-left-narrow" = list(
-      "width" = "27%",
-      "float" = "left"
-    ),
-    ".pull-right-wide" = list(
-      "width" = "70%",
-      "float" = "right"
-    ),
-    ".blue" = list(color = "#2A9BB7"),
-    ".purple" = list(color = "#a493ba"),
-    ".yellow" = list(color = "#f1de67"),
-    ".gray" = list(color = "#222222")
-  )
-)
 
-source(here::here("R", "slide-opts.R"))
 xaringanExtra::use_panelset()
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
 library(tidyverse)
-library(rcis)
+library(c3s2)
 library(countdown)
 library(modeldata)
+library(knitr)
 library(here)
 
 set.seed(1234)
@@ -168,7 +80,7 @@ Basically in R either something is a vector, or it's NULL...
 ### R is fundamentally a vector-based program
 
 ```{r echo = FALSE, out.width = "60%"}
-include_graphics(path = "https://r4ds.had.co.nz/diagrams/data-structures-overview.png")
+knitr::include_graphics(path = "https://r4ds.had.co.nz/diagrams/data-structures-overview.png")
 ```
 
 <!-- focus today is on atomic vectors and lists -->
@@ -386,7 +298,7 @@ This is often useful when you interact with API to get data from the web (freque
 
 Notice, we have been using lists extensively in the class. Each column of a data frame is a list: 
 ```{r list-df}
-str(gun_deaths)
+# str(gun_deaths)
 ```
 
 The only difference between data frames and actual lists is that the length of each list object in the data frame has to the same (a data frame is rectangular).
@@ -428,6 +340,122 @@ include_graphics(path = "https://r4ds.had.co.nz/diagrams/lists-subsetting.png")
 class: inverse, middle
 
 # Practice subsetting vectors and lists
+
+---
+
+
+class: inverse, middle
+
+# Factors
+
+---
+
+## Factors
+
+* Used for **categorical (discrete) variables**
+* Factors store categorical variables values as numbers rather than as characters (e.g., Likert scale)
+* Historically used for purposes of efficiency
+* Best used to sort categorical variables other than alphabetically (e.g., 1 to 5 rather than alphabetically)
+* `forcats` in `tidyverse` to manipulate factors
+
+---
+
+## Character vector
+
+Define a character vectors with four months and sort it:
+
+```{r char, echo = TRUE, include = TRUE}
+(x1 <- c("Dec", "Apr", "Jan", "Mar"))
+
+sort(x1)
+```
+
+Notice the default behavior of R is sorting character vectors alphabetically. As humans, we understand that's not the a very meaningful way to sort months. Instead, we might want to sort months chronologically. To tell that to R, we need to convert them to factors.
+
+<!--
+note we use sort() because this is a standalone vector, 
+while we used arrange() when working with dataframes
+-->
+
+---
+
+### Step 1: Levels
+
+To convert a character vector to a factor, the first thing to do is to define all possible values that the variable can take. We do so by creating another character vector:
+
+```{r levels, dependson = "char", echo = TRUE, include = TRUE}
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+```
+
+---
+
+### Step 2: Factor
+
+We then use the `factor()` or the `parse_factor()` function to convert this character vector into a factor, and apply the given order to it:
+
+```{r factor, dependson = "levels", echo = TRUE, include = TRUE}
+(y1 <- factor(x1, levels = month_levels))
+parse_factor(x1, levels = month_levels)
+```
+
+---
+
+### Step 3: Sort
+
+Finally, we sort the new factor vector `y1`, exactly like we did for the original character vector `x1`:
+
+```{r factor-sort, echo = TRUE, include = TRUE}
+
+# sort y1: chronologically correctly
+sort(y1)
+
+# sort x1: alphabetically sorted
+sort(x1)
+```
+
+---
+
+## Different levels/labels
+
+Another situation you might encounter, is that rather than working directly with character vectors, you might find their numerical representation:
+
+```{r months-num, dependson = "levels", echo = TRUE, include = TRUE}
+(x2 <- c(12, 4, 1, 3))
+```
+
+Define levels and labels separately: 
+
+```{r months-num-factor, dependson = "levels", echo = TRUE, include = TRUE}
+y2 <- factor(x2,
+  levels = seq(from = 1, to = 12),
+  labels = month_levels
+)
+y2
+```
+
+---
+
+## `forcats` package
+
+Provides a suite of tools that solve common problems with factors. Some examples include:
+
+- `fct_reorder()`: Reordering a factor by another variable
+- `fct_infreq()`: Reordering a factor by the frequency of values
+- `fct_relevel()`: Changing the order of a factor by hand
+- `fct_lump()`: Collapsing the least/most frequent values of a factor into “other”
+
+Documentation and Cheat Sheet: https://forcats.tidyverse.org/
+
+<!-- show hw3 work with factors -->
+---
+
+class: inverse, middle
+
+# Practice working with factors
+### 
 
 ---
 

@@ -29,23 +29,21 @@ class: center, middle, inverse, title-slide
 
 class: inverse, middle
 
-# Relational data structures
+# Data: working with data
 
 ---
 # Agenda
 
 * Recap
 * Relational data
-* Practice from webpage
-* Factors
+* Joins/merges
 
 
 ---
 ## Recap
 
 * Loading data
-* Plotting
-* PIPES!
+* 
 
 ---
 
@@ -311,170 +309,10 @@ anti_join(x, y, by = "key")
 class: inverse, middle
 
 # Practice working with relational data
-### Download the exec3s2es from the website
+
 
 ---
-
-class: inverse, middle
-
-# Factors
-
----
-
-## Factors
-
-* Used for **categorical (discrete) variables**
-* Factors store categorical variables values as numbers rather than as characters (e.g., Likert scale)
-* Historically used for purposes of efficiency
-* Best used to sort categorical variables other than alphabetically (e.g., 1 to 5 rather than alphabetically)
-* `forcats` in `tidyverse` to manipulate factors
-
----
-
-## Character vector
-
-Define a character vectors with four months and sort it:
-
-
-``` r
-(x1 &lt;- c("Dec", "Apr", "Jan", "Mar"))
-```
-
-```
-## [1] "Dec" "Apr" "Jan" "Mar"
-```
-
-``` r
-sort(x1)
-```
-
-```
-## [1] "Apr" "Dec" "Jan" "Mar"
-```
-
-Notice the default behavior of R is sorting character vectors alphabetically. As humans, we understand that's not the a very meaningful way to sort months. Instead, we might want to sort months chronologically. To tell that to R, we need to convert them to factors.
-
-&lt;!--
-note we use sort() because this is a standalone vector, 
-while we used arrange() when working with dataframes
---&gt;
-
----
-
-### Step 1: Levels
-
-To convert a character vector to a factor, the first thing to do is to define all possible values that the variable can take. We do so by creating another character vector:
-
-
-``` r
-month_levels &lt;- c(
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-)
-```
-
----
-
-### Step 2: Factor
-
-We then use the `factor()` or the `parse_factor()` function to convert this character vector into a factor, and apply the given order to it:
-
-
-``` r
-(y1 &lt;- factor(x1, levels = month_levels))
-```
-
-```
-## [1] Dec Apr Jan Mar
-## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-```
-
-``` r
-parse_factor(x1, levels = month_levels)
-```
-
-```
-## [1] Dec Apr Jan Mar
-## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-```
-
----
-
-### Step 3: Sort
-
-Finally, we sort the new factor vector `y1`, exactly like we did for the original character vector `x1`:
-
-
-``` r
-# sort y1: chronologically correctly
-sort(y1)
-```
-
-```
-## [1] Jan Mar Apr Dec
-## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-```
-
-``` r
-# sort x1: alphabetically sorted
-sort(x1)
-```
-
-```
-## [1] "Apr" "Dec" "Jan" "Mar"
-```
-
----
-
-## Different levels/labels
-
-Another situation you might encounter, is that rather than working directly with character vectors, you might find their numerical representation:
-
-
-``` r
-(x2 &lt;- c(12, 4, 1, 3))
-```
-
-```
-## [1] 12  4  1  3
-```
-
-Define levels and labels separately: 
-
-
-``` r
-y2 &lt;- factor(x2,
-  levels = seq(from = 1, to = 12),
-  labels = month_levels
-)
-y2
-```
-
-```
-## [1] Dec Apr Jan Mar
-## Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-```
-
----
-
-## `forcats` package
-
-Provides a suite of tools that solve common problems with factors. Some examples include:
-
-- `fct_reorder()`: Reordering a factor by another variable
-- `fct_infreq()`: Reordering a factor by the frequency of values
-- `fct_relevel()`: Changing the order of a factor by hand
-- `fct_lump()`: Collapsing the least/most frequent values of a factor into “other”
-
-Documentation and Cheat Sheet: https://forcats.tidyverse.org/
-
-&lt;!-- show hw3 work with factors --&gt;
----
-
-class: inverse, middle
-
-# Practice working with factors
-### Download the exec3s2es from the website
+# Best practices: coding
 
 ---
 
