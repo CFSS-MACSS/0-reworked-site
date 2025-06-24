@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Data: Layers"
+title: "Tidying, Joins, Scripts"
 date: 2022-10-11T12:25:00-05:00
 publishDate: 2019-04-10T12:25:00-05:00
 draft: false
@@ -47,12 +47,20 @@ math: false
 
 ## Overview
 
-- 
+- Importing data
+- Tidying data
+  - `pivot_longer`
+  - `pivot_wider`
+  - `separate`
+  - `unite`
+- Writing data
+- Other delimiters
 
 ## Before class
 
-- Read [Ch 8](https://r4ds.hadley.nz/workflow-help.html), [Ch
-  9](https://r4ds.hadley.nz/layers.html)
+- [Ch 6](https://r4ds.hadley.nz/workflow-scripts.html), [Ch
+  8](https://r4ds.hadley.nz/workflow-help.html), [Ch
+  19](https://r4ds.hadley.nz/joins.html)
 
 <!-- ## Class materials -->
 <!-- * [Exploratory data analysis](/notes/exploratory-data-analysis/)` -->
@@ -61,18 +69,9 @@ math: false
 * Copied from the lecture on data wrangling, notes on factors: [Practice transforming and visualizing factors](/notes/factors-exercise/)
 -->
 
-## Additional resources
-
-- Antony Unwin [Graphical Data Analysis with
-  R](https://catalog.lib.uchicago.edu/vufind/Record/11609643#). It
-  covers a range of graphical methods for data exploration and analysis;
-  draws on packages beyond `ggplot2` for statistical graphics.
-- Cheat Sheet [Data visualization with
-  ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
-
 ## What you need to do after class
 
 - Begin work on [assignment 3](assignments/3-wrangle-data)
 - Review today’s [lecture materials
-  (slides)](https://cfss-macss.netlify.app/slides/21-data-wrangling-tidy-data/#1),
+  (slides)](https://cfss-macss.netlify.app/slides/22-data-wrangling-relational-data-and-factors/#1),
   and prepare for next class

@@ -1,5 +1,5 @@
 ---
-title: "Scripts + Intro to layers/viz"
+title: "Intro to layers/EDA"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
@@ -34,8 +34,60 @@ set.seed(1234)
 theme_set(theme_gray(base_size = 16))
 ```
 
-class: inverse, middle
+class: inverse
 
+# Agenda:
+
+* Layers: understanding ggplot
+  * [revisit prior slides if needed!](https://cfss-macss.netlify.app/slides/12-visualizations-and-the-grammar-of-graphics/#1)
+* Intro to EDA
+  * aesthetics (aes)
+  * geometric objects (geoms)
+  * facets
+  * stats transformations
+  * position adjustments
+  * coordinate systems
+  * layer cake approach!
+
+---
+class: center, middle, inverse
+# Plotting basics: Layering our cake
+
+
+---
+##   aesthetics (aes)
+
+Aesthetic mappings are part of our fundamental layer of our plots! They tell us the THING that is going to be mapped from our DATA. Anything that goes inside `aes()` will vary based on the data. If we put something in our ggplot layer (or geom) that is OUTSIDE the `aes()` argument, it will be constant (NOT vary). 
+
+---
+### aes examples:
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, shape = class)) +
+  geom_point()
+```
+
+
+
+
+---
+##    geometric objects (geoms)
+
+---
+##    facets
+
+---
+##   stats transformations
+
+---
+##  position adjustments
+
+---
+##   coordinate systems
+
+---
+
+class: inverse, center, middle, 
 # Exploratory Data Analysis
 
 ---
@@ -54,11 +106,11 @@ Exploratory Data Analysis (EDA):
 * relies on **visualizations** and frequently goes together with **descriptive statistics**
 * is different from **Explanatory or Confirmatory Data Analysis** 
 
----
 
+---
 ## Exploratory Data Analysis as iterative cycle
 
-Chapter 7 of R for Data Science defines EDA as an iterative process:
+Chapter 10 of R for Data Science defines EDA as an iterative process:
 
 1. Generate questions about your data
 1. Search for answers in the data by transforming, visualizing, and modeling the data
