@@ -50,6 +50,85 @@ class: center, middle, inverse
 ---
 ##   aesthetics (aes)
 
+Aesthetic mappings are part of our fundamental layer of our plots! They tell us the THING that is going to be mapped from our DATA. Anything that goes inside `aes()` will vary based on the data. If we put something in our ggplot layer (or geom) that is OUTSIDE the `aes()` argument, it will be constant (NOT vary). 
+
+---
+### aes examples:
+.panelset[
+  .panel[.panel-name[Opt 1]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = displ, y = hwy, shape = class)) +
+  geom_point()
+```
+
+```
+## Warning: The shape palette can deal with a maximum of 6 discrete values because more
+## than 6 becomes difficult to discriminate
+## ℹ you have requested 7 values. Consider specifying shapes manually if you need
+##   that many of them.
+```
+
+```
+## Warning: Removed 62 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+```
+]
+
+  .pull-right[
+
+![](index_files/figure-html/mpg-1-1.png)
+
+]]
+.panel[.panel-name[Opt 2]
+.pull-left[
+
+``` r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy, shape = class))
+```
+
+```
+## Warning: The shape palette can deal with a maximum of 6 discrete values because more
+## than 6 becomes difficult to discriminate
+## ℹ you have requested 7 values. Consider specifying shapes manually if you need
+##   that many of them.
+```
+
+```
+## Warning: Removed 62 rows containing missing values or values outside the scale range
+## (`geom_point()`).
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-2-1.png)
+  ]
+  ]
+
+
+.panel[.panel-name[Opt 3]
+.pull-left[
+
+``` r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy), shape = 4)
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-3-1.png)
+]
+]
+]
+
+
+
+
+
+
+
 ---
 ##    geometric objects (geoms)
 
@@ -234,10 +313,6 @@ ggplot(
 .panel2-penguins-eda-auto[
 
 ```
-## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
-```
-
-```
 ## Warning: Removed 2 rows containing non-finite outside the scale range
 ## (`stat_smooth()`).
 ```
@@ -362,10 +437,6 @@ ggplot(
 .panel2-penguins-final-auto[
 
 ```
-## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
-```
-
-```
 ## Warning: Removed 2 rows containing non-finite outside the scale range
 ## (`stat_smooth()`).
 ```
@@ -404,10 +475,6 @@ ggplot(
 ]
  
 .panel2-penguins-final-auto[
-
-```
-## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
-```
 
 ```
 ## Warning: Removed 2 rows containing non-finite outside the scale range
@@ -452,10 +519,6 @@ ggplot(
 ]
  
 .panel2-penguins-final-auto[
-
-```
-## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
-```
 
 ```
 ## Warning: Removed 2 rows containing non-finite outside the scale range
@@ -602,10 +665,6 @@ ggplot(
 ]
  
 .panel2-histogram-auto[
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
 
 ```
 ## Warning: Removed 55 rows containing non-finite outside the scale range
@@ -1176,10 +1235,6 @@ count: false
 .panel2-histogram-facet-user[
 
 ```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
-
-```
 ## Warning: Removed 55 rows containing non-finite outside the scale range
 ## (`stat_bin()`).
 ```
@@ -1204,10 +1259,6 @@ ggplot(
 ]
  
 .panel2-histogram-facet-user[
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-```
 
 ```
 ## Warning: Removed 55 rows containing non-finite outside the scale range

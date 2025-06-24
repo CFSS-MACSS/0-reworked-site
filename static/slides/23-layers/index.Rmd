@@ -20,6 +20,7 @@ library(xaringanthemer)
 
 # enable panelsets and default theme
 xaringanExtra::use_panelset()
+knitr::opts_chunk$set(message = F)
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
@@ -31,7 +32,7 @@ library(patchwork)
 library(flipbookr)
 
 set.seed(1234)
-theme_set(theme_gray(base_size = 16))
+theme_set(theme_bw(base_size = 18))
 ```
 
 class: inverse
@@ -61,17 +62,61 @@ Aesthetic mappings are part of our fundamental layer of our plots! They tell us 
 
 ---
 ### aes examples:
-
-```{r}
+.panelset[
+  .panel[.panel-name[Opt 1]
+.pull-left[
+```{r mpg-1, fig.show='hide', echo = T}
 ggplot(mpg, aes(x = displ, y = hwy, shape = class)) +
   geom_point()
 ```
+]
+
+  .pull-right[
+
+![](`r knitr::fig_chunk("mpg-1", ".png")`)
+
+]]
+.panel[.panel-name[Opt 2]
+.pull-left[
+```{r mpg-2, fig.show='hide', echo = T}
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy, shape = class))
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-2", ".png")`)
+  ]
+  ]
 
 
+.panel[.panel-name[Opt 3]
+.pull-left[
+```{r mpg-3, fig.show='hide', echo = T}
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy), shape = 4)
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-3", ".png")`)
+]
+]
+]
+
+---
+### Additional aesthetics:
+
+* Color (by variable or setting)
+* Transparency/opacity (by variable or setting)
+* Size (by variable or setting)
+* Shape (by variable or setting)
 
 
 ---
 ##    geometric objects (geoms)
+Geoms are the way we represent our data -- specifically, how it is that we want to add our data layer
+
 
 ---
 ##    facets
@@ -586,7 +631,7 @@ class: inverse, middle
 
 Categorical variables, also called discrete variables, are variables that have a fixed set of possible values. R uses **factors** to work these variables.
 
-[**Chapter 15 of R for Data Science**](https://r4ds.had.co.nz/factors.html) goes in-depth on creating and modifying factors: 
+[**Chapter 16 of R for Data Science**](https://r4ds.had.co.nz/factors.html) goes in-depth on creating and modifying factors: 
 
 ```{r create-string, eval = FALSE}
 month_string <- c(
