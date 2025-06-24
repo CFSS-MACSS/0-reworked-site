@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Intro to layers/EDA</title>
+    <title>Layers and EDA</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
     <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Intro to layers/EDA
+# Layers and EDA
 ]
 .author[
 ### MACSS 30500 <br /> University of Chicago
@@ -33,7 +33,7 @@ class: inverse
 
 * Layers: understanding ggplot
   * [revisit prior slides if needed!](https://cfss-macss.netlify.app/slides/12-visualizations-and-the-grammar-of-graphics/#1)
-* Intro to EDA
+* Intro to Viz
   * aesthetics (aes)
   * geometric objects (geoms)
   * facets
@@ -41,6 +41,7 @@ class: inverse
   * position adjustments
   * coordinate systems
   * layer cake approach!
+* Intro to EDA!
 
 ---
 class: center, middle, inverse
@@ -123,26 +124,318 @@ ggplot(mpg) +
 ]
 ]
 
+---
+### Additional aesthetics:
 
-
-
-
+* Color (by variable or setting)
+* Transparency/opacity (by variable or setting)
+* Size (by variable or setting)
+* Shape (by variable or setting)
 
 
 ---
 ##    geometric objects (geoms)
+Geoms are the way we represent our data -- specifically, how it is that we want to add/represent our data layer
+
+* Points
+* Lines
+* Density
+* Bar (and column!)
+* Boxplot
+
+---
+
+### geoms: examples
+
+
+.panelset[
+  .panel[.panel-name[Opt 1]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2)
+```
+]
+
+  .pull-right[
+
+![](index_files/figure-html/mpg-4-1.png)
+
+]]
+.panel[.panel-name[Opt 2]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_density()
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-5-1.png)
+  ]
+  ]
+
+
+.panel[.panel-name[Opt 3]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_boxplot()
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-6-1.png)
+]
+]
+]
+
+
 
 ---
 ##    facets
 
+We use facets to separate plots in a meaningful way -- for example, if we want to do some sort of categorical breakout. The main options are
+
+- No facets (default and what we've been working with)
+- `facet_wrap`: think of this as breaking out by one categorical variable and setting how many sub-plots per row
+- `facet_grid`: more sophsiticated and allows breakouts by TWO (or more) variables
+
+
+---
+### facet examples
+
+.panelset[
+  .panel[.panel-name[Base level]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) 
+```
+]
+
+  .pull-right[
+
+![](index_files/figure-html/mpg-7-1.png)
+
+]]
+.panel[.panel-name[Wrap]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_wrap(vars(cyl))
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-8-1.png)
+  ]
+  ]
+
+
+.panel[.panel-name[Grid A]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_grid(~cyl)
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-9-1.png)
+]
+]
+
+
+.panel[.panel-name[Grid B]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_grid(drv~cyl)
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-10-1.png)
+]
+]
+]
+
+
 ---
 ##   stats transformations
+You can conduct additional calculations on data to display summary statistics. You can either calculate this yourself OR you can do calculations on the data during plotting. (it depends on if/whether you need the results)
+
+* `stat = identity` (inside `geom_bar`)
+* `after_stat` [see more here!](https://ggplot2.tidyverse.org/reference/aes_eval.html)
+* `stat_summary` (I use this the most!)
+
+---
+## Transformation examples
+
+.panelset[
+  .panel[.panel-name[Bar count]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy)) +
+  geom_bar(stat = 'count' )
+```
+]
+
+  .pull-right[
+
+![](index_files/figure-html/mpg-11-1.png)
+
+]]
+.panel[.panel-name[Bar identity]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy, y = cty)) +
+  geom_bar(stat = 'identity' )
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-12-1.png)
+  ]
+  ]
+
+
+.panel[.panel-name[After Stat]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = hwy, y = after_stat(prop))) +
+  geom_bar()
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-13-1.png)
+]
+]
+
+.panel[.panel-name[Stat Sum]
+.pull-left[
+
+``` r
+ggplot(mpg) +
+    stat_summary(
+        aes(x = hwy, y = cty),
+        fun.min = min,
+        fun.max = max,
+        fun = median
+    )  
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-14-1.png)
+]
+]
+
+]
 
 ---
 ##  position adjustments
+Position has to do with the placment of bars: next to, stacked, or scaled to fill to a certain height. *Note: there is position = "fill" and fill = `var` that are different!*
+
+* `position = "stack"`
+* `position = "dodge"`
+*  `position = "fill"`
+
+
+---
+### Position examples:
+  
+
+.panelset[
+  .panel[.panel-name[Bar]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar()
+```
+]
+
+  .pull-right[
+
+![](index_files/figure-html/mpg-15-1.png)
+
+]]
+.panel[.panel-name[Stack]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "stack")
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-16-1.png)
+  ]
+  ]
+
+
+.panel[.panel-name[Dodge]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "dodge")
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-17-1.png)
+]
+]
+
+
+.panel[.panel-name[Fill]
+.pull-left[
+
+``` r
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "fill")
+```
+]
+
+.pull-right[
+![](index_files/figure-html/mpg-18-1.png)
+]
+]
+]
 
 ---
 ##   coordinate systems
+
+We're not going to get into this too much for now, know that you can map things and use polar coordinates. If it becomes relevant for your project, we can talk more and/or you can take Data Viz!
+
+---
+
+## Recap:
+
+* Different layers to our cake -- start with ggplot and build from there:
+  * aesthetics (aes)
+  * geometric objects (geoms)
+  * facets
+  * stats transformations
+  * position adjustments
 
 ---
 
@@ -1497,7 +1790,7 @@ class: inverse, middle
 
 Categorical variables, also called discrete variables, are variables that have a fixed set of possible values. R uses **factors** to work these variables.
 
-[**Chapter 15 of R for Data Science**](https://r4ds.had.co.nz/factors.html) goes in-depth on creating and modifying factors: 
+[**Chapter 16 of R for Data Science**](https://r4ds.had.co.nz/factors.html) goes in-depth on creating and modifying factors: 
 
 
 ``` r
@@ -1526,6 +1819,13 @@ class(month_factor)   # factor
 class: inverse, middle
 
 # Practice exploring data
+
+Use `data()` to find a suitable R dataset to explore
+* make a histogram
+* make a bar plot with a fill
+  * stack it
+  * dodge it
+  * position = fill it
 
 ---
 

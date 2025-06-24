@@ -1,5 +1,5 @@
 ---
-title: "Intro to layers/EDA"
+title: "Layers and EDA"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
@@ -41,7 +41,7 @@ class: inverse
 
 * Layers: understanding ggplot
   * [revisit prior slides if needed!](https://cfss-macss.netlify.app/slides/12-visualizations-and-the-grammar-of-graphics/#1)
-* Intro to EDA
+* Intro to Viz
   * aesthetics (aes)
   * geometric objects (geoms)
   * facets
@@ -49,6 +49,7 @@ class: inverse
   * position adjustments
   * coordinate systems
   * layer cake approach!
+* Intro to EDA!
 
 ---
 class: center, middle, inverse
@@ -115,20 +116,292 @@ ggplot(mpg) +
 
 ---
 ##    geometric objects (geoms)
-Geoms are the way we represent our data -- specifically, how it is that we want to add our data layer
+Geoms are the way we represent our data -- specifically, how it is that we want to add/represent our data layer
+
+* Points
+* Lines
+* Density
+* Bar (and column!)
+* Boxplot
+
+---
+
+### geoms: examples
+
+
+.panelset[
+  .panel[.panel-name[Opt 1]
+.pull-left[
+```{r mpg-4, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2)
+```
+]
+
+  .pull-right[
+
+![](`r knitr::fig_chunk("mpg-4", ".png")`)
+
+]]
+.panel[.panel-name[Opt 2]
+.pull-left[
+```{r mpg-5, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_density()
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-5", ".png")`)
+  ]
+  ]
+
+
+.panel[.panel-name[Opt 3]
+.pull-left[
+```{r mpg-6, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_boxplot()
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-6", ".png")`)
+]
+]
+]
+
 
 
 ---
 ##    facets
 
+We use facets to separate plots in a meaningful way -- for example, if we want to do some sort of categorical breakout. The main options are
+
+- No facets (default and what we've been working with)
+- `facet_wrap`: think of this as breaking out by one categorical variable and setting how many sub-plots per row
+- `facet_grid`: more sophsiticated and allows breakouts by TWO (or more) variables
+
+
+---
+### facet examples
+
+.panelset[
+  .panel[.panel-name[Base level]
+.pull-left[
+```{r mpg-7, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) 
+```
+]
+
+  .pull-right[
+
+![](`r knitr::fig_chunk("mpg-7", ".png")`)
+
+]]
+.panel[.panel-name[Wrap]
+.pull-left[
+```{r mpg-8, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_wrap(vars(cyl))
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-8", ".png")`)
+  ]
+  ]
+
+
+.panel[.panel-name[Grid A]
+.pull-left[
+```{r mpg-9, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_grid(~cyl)
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-9", ".png")`)
+]
+]
+
+
+.panel[.panel-name[Grid B]
+.pull-left[
+```{r mpg-10, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_histogram(binwidth = 2) + 
+  facet_grid(drv~cyl)
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-10", ".png")`)
+]
+]
+]
+
+
 ---
 ##   stats transformations
+You can conduct additional calculations on data to display summary statistics. You can either calculate this yourself OR you can do calculations on the data during plotting. (it depends on if/whether you need the results)
+
+* `stat = identity` (inside `geom_bar`)
+* `after_stat` [see more here!](https://ggplot2.tidyverse.org/reference/aes_eval.html)
+* `stat_summary` (I use this the most!)
+
+---
+## Transformation examples
+
+.panelset[
+  .panel[.panel-name[Bar count]
+.pull-left[
+```{r mpg-11, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy)) +
+  geom_bar(stat = 'count' )
+```
+]
+
+  .pull-right[
+
+![](`r knitr::fig_chunk("mpg-11", ".png")`)
+
+]]
+.panel[.panel-name[Bar identity]
+.pull-left[
+```{r mpg-12, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy, y = cty)) +
+  geom_bar(stat = 'identity' )
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-12", ".png")`)
+  ]
+  ]
+
+
+.panel[.panel-name[After Stat]
+.pull-left[
+```{r mpg-13, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = hwy, y = after_stat(prop))) +
+  geom_bar()
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-13", ".png")`)
+]
+]
+
+.panel[.panel-name[Stat Sum]
+.pull-left[
+```{r mpg-14, fig.show='hide', echo = T}
+ggplot(mpg) +
+    stat_summary(
+        aes(x = hwy, y = cty),
+        fun.min = min,
+        fun.max = max,
+        fun = median
+    )  
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-14", ".png")`)
+]
+]
+
+]
 
 ---
 ##  position adjustments
+Position has to do with the placment of bars: next to, stacked, or scaled to fill to a certain height. *Note: there is position = "fill" and fill = `var` that are different!*
+
+* `position = "stack"`
+* `position = "dodge"`
+*  `position = "fill"`
+
+
+---
+### Position examples:
+  
+
+.panelset[
+  .panel[.panel-name[Bar]
+.pull-left[
+```{r mpg-15, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar()
+```
+]
+
+  .pull-right[
+
+![](`r knitr::fig_chunk("mpg-15", ".png")`)
+
+]]
+.panel[.panel-name[Stack]
+.pull-left[
+```{r mpg-16, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "stack")
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-16", ".png")`)
+  ]
+  ]
+
+
+.panel[.panel-name[Dodge]
+.pull-left[
+```{r mpg-17, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "dodge")
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-17", ".png")`)
+]
+]
+
+
+.panel[.panel-name[Fill]
+.pull-left[
+```{r mpg-18, fig.show='hide', echo = T}
+ggplot(mpg, aes(x = drv, fill = class)) + 
+  geom_bar(position = "fill")
+```
+]
+
+.pull-right[
+![](`r knitr::fig_chunk("mpg-18", ".png")`)
+]
+]
+]
 
 ---
 ##   coordinate systems
+
+We're not going to get into this too much for now, know that you can map things and use polar coordinates. If it becomes relevant for your project, we can talk more and/or you can take Data Viz!
+
+---
+
+## Recap:
+
+* Different layers to our cake -- start with ggplot and build from there:
+  * aesthetics (aes)
+  * geometric objects (geoms)
+  * facets
+  * stats transformations
+  * position adjustments
 
 ---
 
@@ -658,6 +931,13 @@ class(month_factor)   # factor
 class: inverse, middle
 
 # Practice exploring data
+
+Use `data()` to find a suitable R dataset to explore
+* make a histogram
+* make a bar plot with a fill
+  * stack it
+  * dodge it
+  * position = fill it
 
 ---
 
