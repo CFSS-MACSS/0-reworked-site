@@ -318,9 +318,9 @@ full_join(x, y, by = "key")
 
 Suppose we want to fully explore how different this might be. First, to maximize the differences, we're going to look at a subest of our original data. 
 
-```{r}
+```{r, echo = T}
 flights2 <- flights %>% filter(dep_delay > 60)
-airlines2<- airlines %>% filter(carrier %in% c("AA", "US", "VX"))
+airlines2<- airlines %>% filter(!(carrier %in% c("AA", "US", "VX")))
 dim(flights2)
 ```
 

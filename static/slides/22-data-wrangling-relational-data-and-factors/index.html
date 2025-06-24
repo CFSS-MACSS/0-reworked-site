@@ -310,6 +310,12 @@ full_join(x, y, by = "key")
 Suppose we want to fully explore how different this might be. First, to maximize the differences, we're going to look at a subest of our original data. 
 
 
+``` r
+flights2 &lt;- flights %&gt;% filter(dep_delay &gt; 60)
+airlines2&lt;- airlines %&gt;% filter(!(carrier %in% c("AA", "US", "VX")))
+dim(flights2)
+```
+
 ```
 ## [1] 26581    19
 ```
@@ -323,7 +329,7 @@ flights2 |&gt; inner_join(airlines2) |&gt; dim()
 ```
 
 ```
-## [1] 3132   20
+## [1] 23449    20
 ```
 
 ``` r
@@ -331,7 +337,7 @@ flights2 |&gt; right_join(airlines2) |&gt; dim()
 ```
 
 ```
-## [1] 3132   20
+## [1] 23449    20
 ```
 
 ``` r
@@ -360,10 +366,20 @@ flights2 |&gt;
 
 ```
 ## name
-## American Airlines Inc.        US Airways Inc.         Virgin America 
-##                   2003                    766                    363 
-##                   &lt;NA&gt; 
-##                  23449
+## AirTran Airways Corporation        Alaska Airlines Inc. 
+##                         314                          39 
+##        Delta Air Lines Inc.           Endeavor Air Inc. 
+##                        2651                        1966 
+##                   Envoy Air    ExpressJet Airlines Inc. 
+##                        1996                        6861 
+##      Frontier Airlines Inc.      Hawaiian Airlines Inc. 
+##                          73                          10 
+##             JetBlue Airways          Mesa Airlines Inc. 
+##                        4571                          79 
+##       SkyWest Airlines Inc.      Southwest Airlines Co. 
+##                           4                        1061 
+##       United Air Lines Inc.                        &lt;NA&gt; 
+##                        3824                        3132
 ```
 
 ---

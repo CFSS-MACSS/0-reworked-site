@@ -105,7 +105,7 @@ Write a sentence or two explaining each characteristic.
 
 ### Question 2
 
-Based on your answer above, is the given dataset tidy?
+Based on your answer above, is the given dataset (`gdp_Bihar.csv`) tidy?
 
 Explain briefly. What clues tell you this? Be specific, giving relevant details from the dataset. 
 
@@ -232,6 +232,7 @@ You must document:
 Submit:
 
 - Your written responses to reasoning and reflection questions (within the README.Rmd and README.md) files
+  - Have `echo = T` for this assignment
 - Your AI usage log (save the session with chatGPT/Claude/Gemini etc on internet as html file and add it to your repo)
 - A description of your process and what resources you used (including AI but also things like stack overflow, etc.)
 

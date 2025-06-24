@@ -23,7 +23,7 @@ time!
 - Go [to this link](https://classroom.github.com/a/c1SZ2aIf) to accept
   and create your private `A3` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
-  convention `A3-<USERNAME>`  
+  convention `a3-wrangling-<USERNAME>`  
 - Once the your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer (or R workbench)
@@ -118,7 +118,7 @@ Write a sentence or two explaining each characteristic.
 
 ### Question 2
 
-Based on your answer above, is the given dataset tidy?
+Based on your answer above, is the given dataset (`gdp_Bihar.csv`) tidy?
 
 Explain briefly. What clues tell you this? Be specific, giving relevant
 details from the dataset.
@@ -268,6 +268,7 @@ Submit:
 
 - Your written responses to reasoning and reflection questions (within
   the README.Rmd and README.md) files
+  - Have `echo = T` for this assignment
 - Your AI usage log (save the session with chatGPT/Claude/Gemini etc on
   internet as html file and add it to your repo)
 - A description of your process and what resources you used (including
@@ -279,8 +280,8 @@ To submit the assignment, simply push to your repository the last
 version of your assignment before the deadline.
 
 Then copy your repository URL (e.g.,
-`https://github.com/cfss-hmwks/A3-jmclip`) and submit it to Canvas under
-A3 before the deadline.
+`https://github.com/cfss-hmwks/a3-wrangling-jmclip`) and submit it to
+Canvas under A3 before the deadline.
 
 Make sure to stage-commit-push: all of your files (recall that you will
 need to generate the RMD and md files yourself!)
@@ -300,7 +301,7 @@ follow (both the code and the output).
 Excellent: Finished all components of the assignment correctly and used
 efficient code to complete the exercises. Code is well-documented (both
 self-documented and with additional comments as necessary). Graphs and
-tables are properly choosen and labeled. Use multiple commits to back up
+tables are properly chosen and labeled. Use multiple commits to back up
 and show a progression in the work. Analysis and interpretation of
 results are clear and easy to follow.
 
