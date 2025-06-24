@@ -37,7 +37,7 @@ tags: []
 
 # Links (optional).
 url_pdf: ""
-url_slides: "/slides/exploratory-data-analysis/"
+#url_slides: "/slides/exploratory-data-analysis/"
 url_video: ""
 url_code: ""
 
@@ -68,6 +68,15 @@ math: false
 <!--
 * Copied from the lecture on data wrangling, notes on factors: [Practice transforming and visualizing factors](/notes/factors-exercise/)
 -->
+
+## Additional resources
+
+- Lohr. 2014. [For Big-Data Scientists, “Janitor Work” Is Key Hurdle to
+  Insights.](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0)
+  *New York Times*
+- [Data Carpentry](http://www.mimno.org/articles/carpentry/) a response
+  to the NYTimes article
+- [Pivoting in `tidyr`](https://tidyr.tidyverse.org/articles/pivot.html)
 
 ## What you need to do after class
 

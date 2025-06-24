@@ -47,7 +47,17 @@ math: false
 
 ## Overview
 
-- 
+- Layers: understanding ggplot
+  - [revisit prior slides if
+    needed!](https://cfss-macss.netlify.app/slides/12-visualizations-and-the-grammar-of-graphics/#1)
+- Intro to EDA
+  - aesthetics (aes)
+  - geometric objects (geoms)
+  - facets
+  - stats transformations
+  - position adjustments
+  - coordinate systems
+  - layer cake approach!
 
 <!--
 * Demonstrate how vectors can be read and parsed
@@ -67,12 +77,13 @@ math: false
 
 ## Additional resources
 
-- Lohr. 2014. [For Big-Data Scientists, “Janitor Work” Is Key Hurdle to
-  Insights.](http://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html?_r=0)
-  *New York Times*
-- [Data Carpentry](http://www.mimno.org/articles/carpentry/) a response
-  to the NYTimes article
-- [Pivoting in `tidyr`](https://tidyr.tidyverse.org/articles/pivot.html)
+- Antony Unwin [Graphical Data Analysis with
+  R](https://catalog.lib.uchicago.edu/vufind/Record/11609643#). It
+  covers a range of graphical methods for data exploration and analysis;
+  draws on packages beyond `ggplot2` for statistical graphics.Add
+  commentMore actions
+- Cheat Sheet [Data visualization with
+  ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 
 ## What you need to do after class
 
