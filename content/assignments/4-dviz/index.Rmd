@@ -1,7 +1,7 @@
 ---
 title: "A4: Visualization"
 date: 2019-05-13T13:30:00-06:00  # Schedule page publish date
-weight: 7
+weight: 4
 type: docs
 draft: false
 description: Assignment 04 due 7/3/25 (note date!)
