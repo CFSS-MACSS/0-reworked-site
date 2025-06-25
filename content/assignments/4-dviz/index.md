@@ -3,7 +3,7 @@ title: "A4: Visualization"
 date: 2019-05-13T13:30:00-06:00  # Schedule page publish date
 weight: 7
 type: docs
-draft: true
+draft: false
 description: Assignment 04 due 7/3/25 (note date!)
 output:
   md_document:
@@ -23,7 +23,8 @@ include it from A3.
 
 # Clone the `A4` repository
 
-Go [here to clone your A4 repo](https://github.com/cfss-su22/hw07).
+Go [here to clone your A4
+repo](https://classroom.github.com/a/6-RjLspw).
 
 ## **Part 1: Selecting data**
 
