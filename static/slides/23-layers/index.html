@@ -1779,7 +1779,20 @@ Additional info: rather than using facets to sort each distribution, we could us
 
 We can also add a fourth variable such as `depth` and render it through the size aesthetic. However, does adding `depth` make the graph more informative? 
 
+---
+## Themes
 
+
+
+``` r
+ggplot(data = scorecard,
+  aes(  x = cost, y = netcost, color = type )) +
+  geom_point() + scale_color_brewer(palette = "Dark2")
+```
+
+![](index_files/figure-html/scatterplot-mult-channels2-1.png)&lt;!-- --&gt;
+
+[ggplot themes](https://ggplot2.tidyverse.org/reference/ggtheme.html) and [color brewer](https://ggplot2.tidyverse.org/reference/scale_brewer.html), and [colorblind friendly](https://jrnold.github.io/ggthemes/reference/colorblind.html)
 ---
 
 class: inverse, middle
