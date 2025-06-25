@@ -99,25 +99,24 @@ labs(
 ## Example: `taylor` package: 
 Add labels to this plot:
 
-```{r, echo = T}
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r taylor-1, echo = T, fig.show = "hide", fig.width = 8, fig.height =4}
 library(taylor)
 data(eras_tour_surprise) 
 ggplot(eras_tour_surprise, aes(x = dress)) + 
   geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
                                       "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" ))
 ```
-## Example: `taylor` package: 
-Add labels to this plot:
+]
 
-```{r, echo = F}
-library(taylor)
-data(eras_tour_surprise) 
-ggplot(eras_tour_surprise, aes(x = dress)) + 
-  geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
-                                      "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" )) +
-  labs( x= "Dress Color", y = "Number of times worn", title = "Distribution of dresses worn during Eras Tour Surprise Songs", caption = "Source: `taylor` package"
-  )
-```
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("taylor-1", ".png")`) 
+]
+]
+
 
 ---
 
@@ -141,6 +140,62 @@ Sometimes you want to add additional elements to your plots!
 
 ---
 ## Annotatations
+
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r trend-line, fig.show = "hide"}
+trend_text <- "Larger engine sizes tend to have lower fuel economy." |>
+  str_wrap(width = 30)
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  annotate(
+    geom = "label", x = 3.5, y = 38,
+    label = trend_text,
+    hjust = "left", color = "red"
+  ) +
+  annotate(
+    geom = "segment",
+    x = 3, y = 35, xend = 5, yend = 25, color = "red",
+    arrow = arrow(type = "closed")
+  )
+```
+]
+
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("trend-line", ".png")`) 
+]
+]
+
+
+---
+
+## Annotations example:
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r taylor-ex, warning = F, message = F, echo = T, fig.show = "hide", fig.width=14,fig.height=6}
+library(taylor)
+data(taylor_albums)
+
+taylor_albums %>% 
+  mutate(album_name = factor(album_name, c(album_levels, "Other"),
+                             labels = c(gsub("POETS DEPARTMENT",
+                                             "POETS\nDEPARTMENT",
+                                             album_levels), "Other"))) %>%
+  ggplot(aes(x = album_name, y = metacritic_score, fill = album_name)) +
+  geom_bar(stat = "identity", color = "black") + geom_text(aes(label = metacritic_score), vjust = -0.5, color = "gray15") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))  + 
+  scale_fill_albums() + theme(legend.position = "none")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("taylor-ex", ".png")`) 
+]
+]
+
 
 
 ---

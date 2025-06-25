@@ -115,6 +115,10 @@ labs(
 Add labels to this plot:
 
 
+.panelset[
+  .panel[.panel-name[Code]
+
+
 ``` r
 library(taylor)
 data(eras_tour_surprise) 
@@ -122,12 +126,13 @@ ggplot(eras_tour_surprise, aes(x = dress)) +
   geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
                                       "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" ))
 ```
+]
 
-![](index_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
-## Example: `taylor` package: 
-Add labels to this plot:
+  .panel[.panel-name[Plot]
+![](index_files/figure-html/taylor-1-1.png) 
+]
+]
 
-![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 
 ---
 
@@ -151,6 +156,64 @@ Sometimes you want to add additional elements to your plots!
 
 ---
 ## Annotatations
+
+
+.panelset[
+  .panel[.panel-name[Code]
+
+
+``` r
+trend_text &lt;- "Larger engine sizes tend to have lower fuel economy." |&gt;
+  str_wrap(width = 30)
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  annotate(
+    geom = "label", x = 3.5, y = 38,
+    label = trend_text,
+    hjust = "left", color = "red"
+  ) +
+  annotate(
+    geom = "segment",
+    x = 3, y = 35, xend = 5, yend = 25, color = "red",
+    arrow = arrow(type = "closed")
+  )
+```
+]
+
+  .panel[.panel-name[Plot]
+![](index_files/figure-html/trend-line-1.png) 
+]
+]
+
+
+---
+
+## Annotations example:
+
+.panelset[
+  .panel[.panel-name[Code]
+
+
+``` r
+library(taylor)
+data(taylor_albums)
+
+taylor_albums %&gt;% 
+  mutate(album_name = factor(album_name, c(album_levels, "Other"),
+                             labels = c(gsub("POETS DEPARTMENT",
+                                             "POETS\nDEPARTMENT",
+                                             album_levels), "Other"))) %&gt;%
+  ggplot(aes(x = album_name, y = metacritic_score, fill = album_name)) +
+  geom_bar(stat = "identity", color = "black") + geom_text(aes(label = metacritic_score), vjust = -0.5, color = "gray15") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))  + 
+  scale_fill_albums() + theme(legend.position = "none")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](index_files/figure-html/taylor-ex-1.png) 
+]
+]
+
 
 
 ---
