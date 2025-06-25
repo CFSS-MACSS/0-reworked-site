@@ -52,5 +52,26 @@ class: inverse, middle
 
 ---
 
+## Labels
 
 ---
+## Annotataions
+
+---
+## Scales
+
+---
+## Themes
+
+---
+## Layout
+
+---
+# Recap:
+
+* Labels
+* Annotations
+* Scales
+* Themes
+* Layout
+  
