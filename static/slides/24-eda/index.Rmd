@@ -62,19 +62,97 @@ library(scales)
 library(ggrepel)
 library(patchwork)
 ```
+
 ---
 
 ## Labels
+There are many ways to label your axes -- two primary ways: 
+
+* `labs()`: can specify x and y [labs example](https://r4ds.hadley.nz/communication.html#labels)
+* `theme()`: can customize with more detail [theme example](https://ggplot2-book.org/themes.html)
+
+
+--
+
+We will mostly use labs in our examples (for now ... theme is particularly helpful for rotating axis text!)
 
 ---
-## Annotataions
+
+### Labels: examples
+
+Here are our baseline options:
+
+```{r, echo = T, eval = F}
+labs(
+  x = "",
+  y = "", 
+  title = waiver(),
+  subtitle = waiver(),
+  caption = waiver(),
+  tag = waiver(),
+  alt = waiver(),
+  alt_insight = waiver()
+)
+```
+
+---
+## Example: `taylor` package: 
+Add labels to this plot:
+
+```{r, echo = T}
+library(taylor)
+data(eras_tour_surprise) 
+ggplot(eras_tour_surprise, aes(x = dress)) + 
+  geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
+                                      "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" ))
+```
+## Example: `taylor` package: 
+Add labels to this plot:
+
+```{r, echo = F}
+library(taylor)
+data(eras_tour_surprise) 
+ggplot(eras_tour_surprise, aes(x = dress)) + 
+  geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
+                                      "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" )) +
+  labs( x= "Dress Color", y = "Number of times worn", title = "Distribution of dresses worn during Eras Tour Surprise Songs", caption = "Source: `taylor` package"
+  )
+```
+
+---
+
+### Info/guidance on titles
+
+* Book suggests only informative titles: re what is occurring
+* I disagree
+* Context and role: what is your goal and who is your audience
+
+---
+## Annotatations
+Sometimes you want to add additional elements to your plots!
+
+* `geom_text()`
+* `geom_label_repel()`
+* `geom_label()`
+*  lines: `geom_hline()` and `geom_vline()`
+*  shapes: `geom_rect()` and `geom_segment()`
+* additional layers: e.g. a second dataset with `geom_point()`
+
+
+---
+## Annotatations
+
 
 ---
 ## Scales
 
 ---
 ## Themes
+PREPARE FOR FUN!!!!
 
+--
+
+This is how you can make your best plot! The possibilities are endless!!
 ---
 ## Layout
 

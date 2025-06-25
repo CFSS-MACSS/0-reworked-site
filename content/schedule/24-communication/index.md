@@ -65,6 +65,7 @@ math: false
 - [Book focused on ggplot](https://ggplot2-book.org/)
 - [Ch 22 from Fundamentals of Data
   Visualization](https://clauswilke.com/dataviz/figure-titles-captions.html)
+- [(more advanced) theme example](https://ggplot2-book.org/themes.html)
 
 ## What you need to do after class
 
