@@ -80,7 +80,6 @@ Alternative:
 ## **Part 3: Open-ended transformation and visualization**
 
 Design and implement **two additional transformations** or summary.
-Examples:
 
 **gdp\_Bihar.csv** - Summarize GDP or growth rate by another variable
 combination - Create a new derived variable - Calculate year-over-year

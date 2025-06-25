@@ -70,7 +70,7 @@ Alternative:
 
 ## **Part 3: Open-ended transformation and visualization**
 
-Design and implement **two additional transformations** or summary. Examples:
+Design and implement **two additional transformations** or summary. 
 
 **gdp_Bihar.csv**
 - Summarize GDP or growth rate by another variable combination
