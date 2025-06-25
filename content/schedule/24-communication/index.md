@@ -8,7 +8,7 @@ output:
   md_document:
     preserve_yaml: true
 type: docs
-weight: 23
+weight: 24
 
 
 aliases: ["/cm006.html"]
@@ -49,19 +49,22 @@ math: false
 
 ## Overview
 
-- 
+- Communicating with Data
+  - Labels
+  - Annotations
+  - Scales
+  - Themes
+  - Layout
 
 ## Before class
 
 - Read [Ch 11](https://r4ds.hadley.nz/communication.html)
 
-## Class materials
+## Additional resources
 
-<!--
-* [Relational data: a quick review](/notes/relational-data/)
-* [Practice using relational data](/notes/relational-data-exercise/)
-* [Practice transforming and visualizing factors](/notes/factors-exercise/)
--->
+- [Book focused on ggplot](https://ggplot2-book.org/)
+- [Ch 22 from Fundamentals of Data
+  Visualization](https://clauswilke.com/dataviz/figure-titles-captions.html)
 
 ## What you need to do after class
 
