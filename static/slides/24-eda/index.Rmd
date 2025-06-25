@@ -50,6 +50,18 @@ class: inverse, middle
 
 # Communicating with data
 
+
+---
+### Setup
+
+For this, we're going to work with these packages -- remember to install them if you haven't yet!
+
+```{r, echo = T}
+library(tidyverse)
+library(scales)
+library(ggrepel)
+library(patchwork)
+```
 ---
 
 ## Labels

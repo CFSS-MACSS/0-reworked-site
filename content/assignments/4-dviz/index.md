@@ -79,15 +79,21 @@ Alternative:
 
 ## **Part 3: Open-ended transformation and visualization**
 
-Design and implement **two additional transformations** or summary.
+Design and implement **two additional transformations** or summary. Here
+are some possible options for each of the two paths. You are welcome to
+try out other ideas as well!
 
-**gdp\_Bihar.csv** - Summarize GDP or growth rate by another variable
-combination - Create a new derived variable - Calculate year-over-year
-changes
+**gdp\_Bihar.csv**
 
-**babynames** - Proportion of most popular names over time - Number of
-male and female names per year - Create a measure of uniqueness and plot
-it
+- Summarize GDP or growth rate by another variable combination
+- Create a new derived variable
+- Calculate year-over-year changes
+
+**babynames**
+
+- Proportion of most popular names over time
+- Number of male and female names per year
+- Create a measure of uniqueness and plot it
 
 Visualize your result:
 
