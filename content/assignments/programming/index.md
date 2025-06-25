@@ -1,3 +1,18 @@
+---
+title: "A4: Programming in R"
+date: 2022-10-21T13:30:00-06:00  # Schedule page publish date
+draft: true
+weight: 4
+type: docs
+description: Assignment 04 due 7/3/25 (note date!)
+output:
+  md_document:
+    preserve_yaml: true
+aliases: ["/hw04-programming.html"]
+
+summary: "Practice programming techniques in R."
+---
+
 **NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)**
 
 # Overview
@@ -72,7 +87,8 @@ squared value of them. Call the function with a couple of examples.
 Write code to calculate the length of sides in a right-triangle using
 the [Pythagorean
 Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem):  
-*a*<sup>2</sup> + *b*<sup>2</sup> = *c*<sup>2</sup> Your tasks:
+*a*<sup>2</sup> + *b*<sup>2</sup> = *c*<sup>2</sup>
+Your tasks:
 
 - set up your triangle sides, call them a, b, c, and give them values 3,
   4, NULL
