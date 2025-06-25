@@ -120,6 +120,7 @@ You must document:
 ## **Deliverables**
 
 Submit:  Your github repo should include:
+
 - README.md and README.Rmd with headings and proper formatting
 - The plots you created with descriptions and proper formatting and echo = T for code
 - Your written responses to reasoning and reflection questions

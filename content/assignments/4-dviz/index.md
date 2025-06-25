@@ -127,12 +127,14 @@ You must document:
 
 ## **Deliverables**
 
-Submit: Your github repo should include: - README.md and README.Rmd with
-headings and proper formatting - The plots you created with descriptions
-and proper formatting and echo = T for code - Your written responses to
-reasoning and reflection questions - Your AI usage log (save the session
-with chatGPT/Claude/Gemini etc on internet as html file and add it to
-your repo)
+Submit: Your github repo should include:
+
+- README.md and README.Rmd with headings and proper formatting
+- The plots you created with descriptions and proper formatting and echo
+  = T for code
+- Your written responses to reasoning and reflection questions
+- Your AI usage log (save the session with chatGPT/Claude/Gemini etc on
+  internet as html file and add it to your repo)
 
 ------------------------------------------------------------------------
 
