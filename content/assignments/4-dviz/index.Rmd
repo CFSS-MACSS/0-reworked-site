@@ -31,13 +31,14 @@ For this portion, you need to use ONE of TWO available datasets: either the data
 
 ## **Part 2: Visualizing summaries**
 
-Getting started: gdp_Bihar.csv
+**Getting started: gdp_Bihar.csv**
 
 - Create a line plot of average growth rate over time by category
 - X: year, Y: mean growth rate (%), color: category
 - Add both `geom_point()` and `geom_line()`
 
-Getting started: babynames
+**Getting started: babynames**
+
 - Create a line plot of prop over time by sex
 - X: year, Y: prop, color: sex
 - Add both `geom_point()` and `geom_line()`
