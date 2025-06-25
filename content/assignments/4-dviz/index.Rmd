@@ -1,0 +1,137 @@
+---
+title: "A4: Visualization"
+date: 2019-05-13T13:30:00-06:00  # Schedule page publish date
+weight: 7
+type: docs
+draft: true
+description: Assignment 04 due 7/3/25 (note date!)
+output:
+  md_document:
+    preserve_yaml: true
+#aliases: ["/hw07-distrib-learn-geospatial.html"]
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Overview
+This assignment should be well-written. You are approaching this as a data scientist writing a report to send to your colleagues. You want it to be clear and well-written. For this assignment, you are ALSO getting a BLANK repository. You need to create the file structure we've previously provided. If you need the data for `gdp_Bihar.csv`, you can include it from A3. 
+
+
+# Clone the `A4` repository
+
+Go [here to clone your A4 repo](https://classroom.github.com/a/6-RjLspw).
+
+## **Part 1: Selecting data**
+
+For this portion, you need to use ONE of TWO available datasets: either the dataset from A3 (gdp_Bihar.csv) or from the `babynames` package (be sure to install `bbabynames`). Both datasets have a temporal component. You need to use the same dataset for the entire assignment. 
+
+## **Part 2: Visualizing summaries**
+
+Getting started: gdp_Bihar.csv
+
+- Create a line plot of average growth rate over time by category
+- X: year, Y: mean growth rate (%), color: category
+- Add both `geom_point()` and `geom_line()`
+
+Getting started: babynames
+- Create a line plot of prop over time by sex
+- X: year, Y: prop, color: sex
+- Add both `geom_point()` and `geom_line()`
+
+Reflect:
+
+- What happens to the plot? Are the lines as expected? Do you need to do any additional modifications or calculations? 
+
+Use an AI assistant (e.g. ChatGPT) to help diagnose and fix the issue:
+
+- Provide your prompt
+
+(eg. *I am trying to create a line plot using ggplot2 in R. My dataset has columns: year, mean_growth_rate_pct, category. I used geom_line() but <describe what happened>. What could be the problem? How do I modify to fix this? )*
+
+- Include the AI’s response
+- Describe how you applied or modified the advice
+
+Update your plot:
+
+- Include the correct grouping aesthetic
+- Apply a theme other than the default (eg. theme_classic())
+- Add a title and subtitle
+- Clearly label your axes
+
+Alternative:
+
+- Create a different style plot (e.g. stacked bar chart, boxplot) that could show this data in another way
+- Reflect on the strengths and limitations of both plot types
+
+## **Part 3: Open-ended transformation and visualization**
+
+Design and implement **two additional transformations** or summary. Examples:
+
+**gdp_Bihar.csv**
+- Summarize GDP or growth rate by another variable combination
+- Create a new derived variable
+- Calculate year-over-year changes
+
+
+**babynames**
+- Proportion of most popular names over time
+- Number of male and female names per year
+- Create a measure of uniqueness and plot it
+
+Visualize your result:
+
+- Use two different plot types than before (some possibilities include histograms, bar plots, line plots, and density plots)
+- Clearly label and style your plots
+
+Write-up:
+
+- What question(s) were you exploring?
+- Why did you choose this transformation/summary?
+- Why did you choose this type of plot?
+- What did you learn from your plot?
+
+If you used AI tools:
+
+- Include the prompt(s), response(s), and how you applied the advice
+
+---
+
+## **AI usage guidelines**
+
+You may use AI tools to help you with:
+
+- Understanding error messages
+- Writing or debugging R code
+- Clarifying concepts
+
+You must document:
+
+- The exact prompt you used
+- The AI’s response
+- How you applied or modified the advice
+
+---
+
+## **Deliverables**
+
+Submit:
+
+- Your github repo should include:
+- README.md and README.Rmd
+- The plots you created
+- Your written responses to reasoning and reflection questions
+- Your AI usage log (save the session with chatGPT/Claude/Gemini etc on internet as html file and add it to your repo)
+
+---
+
+# Rubric
+
+Needs improvement: Cannot get code to run or is poorly documented. No documentation in the `README` file. Severe misinterpretations of the results. Overall a shoddy or incomplete assignment. Plot(s) use defaults or hard to interpret.
+
+Satisfactory: Solid effort. Hits all the elements. No clear mistakes. Easy to follow (both the code and the output). Nothing spectacular, either bad or good.
+
+Excellent: Interpretation is clear and in-depth. Accurately interprets the results, with appropriate caveats for what the technique can and cannot do. Code is reproducible. Writes a user-friendly `README` file. Graph looks crisp, easy-to-read, and communicates information honestly and accurately.
