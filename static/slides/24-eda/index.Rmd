@@ -109,7 +109,7 @@ library(taylor)
 data(eras_tour_surprise) 
 ggplot(eras_tour_surprise, aes(x = dress)) + 
   geom_bar(stat = "count", fill = c("deepskyblue", "blue", "deeppink", "darkgreen", "tomato1", 
-                                      "steelblue1", "tomato4", "hotpink2", "chocolate3", "slateblue4", "gold2" ))
+                                      "steelblue1", "red3", "hotpink2", "chocolate3", "slateblue4", "gold2" )) 
 ```
 ]
 
@@ -117,6 +117,29 @@ ggplot(eras_tour_surprise, aes(x = dress)) +
 ![](`r knitr::fig_chunk("taylor-1", ".png")`) 
 
 (add labs(x = "Suprise Song Dress"))
+]
+]
+
+
+
+---
+## Example: `taylor` package: 
+Add labels to this plot's axes:
+
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r taylor-s, echo = T, fig.show = "hide", fig.width = 13, fig.height =4}
+ggplot(eras_tour_surprise, aes(x = forcats::fct_infreq(dress))) + 
+    geom_bar(stat = "count", fill = c("red3","gold2","darkgreen",  "chocolate3" ,  "deeppink", "blue","slateblue4", "steelblue1", "deepskyblue",   "tomato4", "hotpink2")) + labs(title = "Taylor Swift Surprise Song Dress Colors", subtitle = "Eras Tour", caption = 'source: taylor package', x = "Dress", y = "Number of times worn for performance")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("taylor-s", ".png")`) 
+
+(advanced: map color names to dresses to avoid sort issues!)
 ]
 ]
 
