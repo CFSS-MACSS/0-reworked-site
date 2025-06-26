@@ -200,6 +200,84 @@ taylor_albums %>%
 
 ---
 ## Scales
+This is how your axes appear -- from their limitations to their breaks/ticks! Examples below are for continuous scales, but the same logic applies to discrete!
+
+* `scale_x_continuous()` 
+* `scale_y_continuous()` 
+* `scale_color_*()`
+* `label_*()`
+  * e.g. `label_percent()`
+  * `label_dollar()`
+
+
+---
+### Scales: examples
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r, echo = F}
+label_info <- mpg |>
+  group_by(drv) |>
+  arrange(desc(displ)) |>
+  slice_head(n = 1) |>
+  mutate(
+    drive_type = case_when(
+      drv == "f" ~ "front-wheel drive",
+      drv == "r" ~ "rear-wheel drive",
+      drv == "4" ~ "4-wheel drive"
+    )
+  ) |>
+  select(displ, hwy, drv, drive_type)
+```
+
+```{r mpg-many, warning = F, message = F, echo = T, fig.show = "hide", fig.width=14,fig.height=6}
+
+
+outliers <- mpg %>% filter(hwy > 34 | displ > 6 | hwy < 15)
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point(alpha = 0.5) + geom_label_repel(data = outliers, aes(x = displ, y = hwy, label = model ))+
+  geom_smooth(se = FALSE) +
+  geom_text( data = label_info, 
+    aes(x = displ, y = hwy, label = drive_type),
+    fontface = "bold", size = 5, nudge_y = 2
+  ) + scale_y_continuous(breaks = seq(15, 40, by = 5)) +
+  theme(legend.position = "none")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("mpg-many", ".png")`) 
+]
+]
+
+
+---
+### Scales: examples
+
+.panelset[
+  .panel[.panel-name[Code]
+
+```{r taylor-ex-scales, warning = F, message = F, echo = T, fig.show = "hide", fig.width=14,fig.height=6}
+taylor_album_songs %>% 
+    mutate(album_name = factor(album_name, c(album_levels, "Other"),
+                               labels = c(gsub("POETS DEPARTMENT",
+                                               "POETS\nDEPARTMENT",
+                                               album_levels), "Other"))) %>%
+
+    ggplot(aes(x = key_name, fill = album_name)) +
+    geom_bar(color = "black", position = "fill") + 
+    scale_y_continuous(name = "Percentage", labels = label_percent()) +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))  + 
+    scale_fill_albums() + theme(legend.position = "right") +
+  labs(title = "Keys used in Taylor Swift's Albums", caption = "source: taylor package")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](`r knitr::fig_chunk("taylor-ex-scales", ".png")`) 
+]
+]
 
 ---
 ## Themes
@@ -212,6 +290,9 @@ This is how you can make your best plot! The possibilities are endless!!
 ## Layout
 
 ---
+
+---
+
 # Recap:
 
 * Labels
