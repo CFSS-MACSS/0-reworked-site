@@ -84,6 +84,7 @@ There are many ways to label your axes -- two primary ways:
 
 * `labs()`: can specify x and y [labs example](https://r4ds.hadley.nz/communication.html#labels)
 * `theme()`: can customize with more detail [theme example](https://ggplot2-book.org/themes.html)
+  * note: confusingly, this isn't the same as the color theme!
 
 
 --
@@ -112,7 +113,7 @@ labs(
 
 ---
 ## Example: `taylor` package: 
-Add labels to this plot:
+Add labels to this plot's axes:
 
 
 .panelset[
@@ -130,6 +131,8 @@ ggplot(eras_tour_surprise, aes(x = dress)) +
 
   .panel[.panel-name[Plot]
 ![](index_files/figure-html/taylor-1-1.png) 
+
+(add labs(x = "Suprise Song Dress"))
 ]
 ]
 
@@ -226,6 +229,8 @@ This is how your axes appear -- from their limitations to their breaks/ticks! Ex
 * `label_*()`
   * e.g. `label_percent()`
   * `label_dollar()`
+* [Color Brewer](https://ggplot2.tidyverse.org/reference/scale_brewer.html) (great for pre-set colors)
+  * e.g. `scale_color_brewer()`
 
 
 ---
@@ -290,14 +295,99 @@ PREPARE FOR FUN!!!!
 
 --
 
-This is how you can make your best plot! The possibilities are endless!!
----
-## Layout
+This is how you can make your best plot! The possibilities are endless!! (Source: [ThemePark package](https://github.com/MatthewBJane/ThemePark))
+
+.panelset[
+  .panel[.panel-name[Code]
+
+
+``` r
+library(ThemePark)
+ggplot(barbie_box_office |&gt; dplyr::mutate(daily=daily/1000000), 
+       aes(x = day, y = daily)) +
+    geom_smooth(method = 'loess', 
+                color  = barbie_theme_colors["dark"],
+                fill   = barbie_theme_colors["light"]) +
+    geom_point(color = barbie_theme_colors["medium"]) +
+    labs(title = "Barbie Scatter Plot",
+         subtitle = "Daily box office takings",
+         caption  = "Source: www.boxofficemojo.com",
+         x = "Days since release",
+         y = "Box office takings (million USD)") +
+    theme_barbie()
+```
+]
+
+  .panel[.panel-name[Plot]
+![](index_files/figure-html/theme-barbie-1.png) 
+]
+]
 
 ---
+
+## Other themes
+
+* Built-in options (e.g. `theme_bw()`)
+* Outside-but-still-popular options (`ggthemes` package)
+* Google 'thing you like' + 'ggplot' and chances are there is a theme for you!
+
+---
+## You can really add any theme to anything!
+
+
+``` r
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+    geom_point() +  labs(title = "Displ vs Hwy", x = "Highway mpg", y = "Displacement") + 
+  theme(legend.position = "none") + theme_barbie()
+```
+
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+---
+
+## Layout
+
+
+.panelset[
+  .panel[.panel-name[Code]
+
+
+``` r
+p1 &lt;- ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+    geom_point(show.legend = FALSE) +  labs(title = "Displ vs Hwy", x = "Highway mpg", y = "Displacement") + 
+  scale_color_brewer(palette = "Dark2")
+p2 &lt;- ggplot(mpg, aes(x = drv, y = hwy)) + 
+  geom_boxplot(color = "slateblue", fill = "slateblue4", alpha = 0.4)  + 
+  labs(title = "Drivetrain vs Hwy mpg", y = "Highway mpg", x = "Drivetrain")
+p3 &lt;- ggplot(mpg, aes(x = cty, y = hwy, color = class)) + 
+  geom_point(show.legend = FALSE) + theme(legend.position = "none") + scale_color_brewer(palette = "Dark2") +
+  labs(title = "City vs Highway MPG", x = "City mpg", y = "Highway mpg")
+p4 &lt;- ggplot(mpg, aes(x = class, y = cty, fill = class)) + 
+  geom_bar(stat = "summary", fun = "mean") + theme(legend.position = "bottom") + scale_fill_brewer(palette = "Dark2")
+
+(guide_area() / (p1 | p3) / (p2 | p4)) +
+  plot_annotation(
+    title = "City and highway mileage for cars with different drive trains",
+    caption = "Source: https://fueleconomy.gov.") +
+  plot_layout(  guides = "collect",
+    heights = c(1, 3, 2, 4) ) &amp;
+  theme(legend.position = "top")
+```
+]
+
+  .panel[.panel-name[Plot]
+![](index_files/figure-html/layout-1.png) 
+]
+]
+
+---
+class: center, inverse, middle
 # PRACTICE!
 
 [go to today's repo](https://classroom.github.com/a/Abgb4rln)
+
+practice of concepts and prep for A4!
+
 ---
 
 # Recap:
