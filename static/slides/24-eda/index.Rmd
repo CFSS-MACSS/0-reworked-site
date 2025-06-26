@@ -258,7 +258,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 .panelset[
   .panel[.panel-name[Code]
 
-```{r taylor-ex-scales, warning = F, message = F, echo = T, fig.show = "hide", fig.width=14,fig.height=6}
+```{r taylor-ex-scales, warning = F, message = F, echo = T, fig.show = "hide",fig.width=14,fig.height=6}
 taylor_album_songs %>% 
     mutate(album_name = factor(album_name, c(album_levels, "Other"),
                                labels = c(gsub("POETS DEPARTMENT",
