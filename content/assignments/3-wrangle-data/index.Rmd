@@ -1,5 +1,5 @@
 ---
-title: "A3: Wrangling and visualizing data"
+title: "A3: Wrangling and tidying data"
 date: 2023-06-27T13:30:00-06:00  # Schedule page publish date
 weight: 3
 description: Assignment 3 due 6/27/25, Wrangle and explore messy datasets in practical research environments.
