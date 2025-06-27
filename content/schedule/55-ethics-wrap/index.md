@@ -46,15 +46,12 @@ math: false
 ## Overview
 
 - Ethics: representing your work and visuals
-- Other import options (resources)
 - Review course content and learning goals
 - Review final assignment
 
 ## Before class
 
 - [Ch 8, MDSR](https://mdsr-book.github.io/mdsr3e/08-ethics.html)
-- [Ch 20](https://r4ds.hadley.nz/spreadsheets.html)
-- [Ch 21](https://r4ds.hadley.nz/databases.html)
 
 <!-- ## Class materials -->
 <!-- * Run the code below in your console to download today’s lecture and exercises: `usethis::use_course("CFSS-MACSS/intro-r")`[^local] -->

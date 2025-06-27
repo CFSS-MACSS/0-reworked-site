@@ -46,7 +46,14 @@ math: false
 
 ## Overview
 
+- We’re going to talk about fine-tuning your workflow for class
+
 ## Before class
+
+- Read [Appendix D,
+  MDSR](https://mdsr-book.github.io/mdsr3e/D-reproducible.html), [Ch
+  20](https://r4ds.hadley.nz/spreadsheets.html), [Ch
+  21](https://r4ds.hadley.nz/databases.html)
 
 ## Class materials
 
