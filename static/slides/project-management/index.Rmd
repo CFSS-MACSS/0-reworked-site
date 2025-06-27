@@ -244,7 +244,7 @@ fem <- yob2023 %>%
 We have data about `r nrow(yob2023)` names for Females born in 2023 . We find that `r nrow(yob2023) - nrow(fem)` are males. 
 
 ```{r youth-dist, echo = FALSE}
-youth %>% 
+fem %>% mutate(nrow = sort(desc(Num_Birth)))
   ggplot(aes(age)) + 
   geom_freqpoly(binwidth = 1)
 ```

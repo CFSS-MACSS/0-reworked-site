@@ -8,7 +8,7 @@ output:
   md_document:
     preserve_yaml: true
 type: docs
-weight: 34
+weight: 32
 
 
 aliases: ["/cm010.html"]
