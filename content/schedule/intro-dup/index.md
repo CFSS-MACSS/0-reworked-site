@@ -45,20 +45,27 @@ math: false
 
 ## Overview
 
-- Ethics: representing your work and visuals
-- Other import options (resources)
-- Review course content and learning goals
-- Review final assignment
+- Familiarize with R syntax, data types, and data structures
+- Distinguish between R scripts (`.R`), Markdown documents (`.md`), and
+  R Markdown documents (`.Rmd`)
+- Identify the major components of R Markdown
+- Create repositories
+- Make commits and synchronize repositories from RStudio
 
 ## Before class
 
-- [Ch 8, MDSR](https://mdsr-book.github.io/mdsr3e/08-ethics.html)
-- [Ch 20](https://r4ds.hadley.nz/spreadsheets.html)
-- [Ch 21](https://r4ds.hadley.nz/databases.html)
+- Read chapter 4 “Workflow Basics” in [R for Data
+  Science](https://r4ds.had.co.nz/workflow-basics.html)
+- Read Data Carpentry [Introduction to
+  R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
+- Read chapter 27 “R Markdown” in [R for Data
+  Science](https://r4ds.had.co.nz/r-markdown.html)
 
-<!-- ## Class materials -->
-<!-- * Run the code below in your console to download today’s lecture and exercises: `usethis::use_course("CFSS-MACSS/intro-r")`[^local] -->
-<!-- * [Using Git within R Studio](/setup/git/git-with-rstudio) -->
+## Class materials
+
+- Run the code below in your console to download today’s lecture and
+  exercises: `usethis::use_course("CFSS-MACSS/intro-r")`\[^local\]
+- [Using Git within R Studio](/setup/git/git-with-rstudio)
 
 ## Additional resources
 
@@ -72,5 +79,3 @@ math: false
   course](https://www.datacamp.com/courses/free-introduction-to-r)
 
 ## What you need to do after class
-
-- [submit FINAL assignment!](assignments/reproducible-research/)
