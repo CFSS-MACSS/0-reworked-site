@@ -4,10 +4,10 @@
     <title>A deep dive into R Markdown</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
-    <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link href="index_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="index_files/panelset/panelset.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="index_files/panelset-0.3.1/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset-0.3.1/panelset.js"></script>
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -81,7 +81,7 @@ To create such documents, you “Knit” or “render” them in three ways:
 
 ## R Markdown: Knitting process
 
-&lt;img src="rmarkdownflow.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="rmarkdownflow.png" width="945" /&gt;
 
 When you knit the document:
 
@@ -298,287 +298,6 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 
 
 
---
-
-&lt;table&gt;
-&lt;caption&gt;Table 1. etc.&lt;/caption&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; Id &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Year &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Month &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Intent &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Police &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Sex &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Age &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Race &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Place &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Education &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 34 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Asian/Pacific Islander &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Street &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 60 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 64 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; BA+ &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 17 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Less than HS &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 7 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Undetermined &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 48 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 8 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 41 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Accidental &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 50 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Other specified &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 11 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Feb &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Some college &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Jan &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 13 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 43 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Less than HS &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 14 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 34 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 15 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Homicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 16 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 2012 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Mar &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; Suicide &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; M &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 27 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Native American/Native Alaskan &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; Home &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; HS/GED &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-
----
-
-## R Markdown: Inline code
-
-.small[
-
-````default
----
-title: "Gun deaths"
-output: html_document
----
-
-```{r setup, include = FALSE}
-library(tidyverse)
-library(rcis)
-```
-
-## Gun deaths by age
-
-Data for this plot come from the `gun_deaths` dataset.We have data about `r nrow(gun_deaths)` individuals killed by guns.
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown in the figure below.
-
-```{r youth-dist, fig.cap = "Gun Death Victims Over 65",  echo = FALSE}
-youth &lt;- gun_deaths %&gt;% filter(age &lt;= 65)
-youth %&gt;% 
-  ggplot(aes(age)) + 
-  geom_freqpoly(binwidth = 1)
-```
-````
-
-]
-
----
-
-## R Markdown: Inline code
-
-
-
-
-```markdown
-Data for this plot come from the `gun_deaths` dataset.
-We have data about `r nrow(gun_deaths)` individuals killed by guns.
-
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown in the previous figure.
-```
-
---
-
-Data for this plot come from the `gun_deaths` dataset.
-We have data about 100798 individuals killed by guns.
-
-Only 15687 are older than 65.
-The distribution of the remainder is shown in the previous figure.
-
-
----
-
-class: inverse, middle
-
-# Practice 1 (~10 min)
-
-Complete this tutorial: &lt;https://commonmark.org/help/tutorial/&gt;
-
-
----
-
-## R Markdown: Naming code chunks 
-
-A named code chunk:
-
-````markdown
-```{r youth-dist2}
-# code goes here
-```
-````
-
 Advantages:
 
 1. More easily navigate to specific chunks (using the drop-down code navigator in the bottom-left of the script editor). Notice: Two code chunks should not have the same name.
@@ -609,7 +328,7 @@ Advantages:
 
 ## R Markdown: Code chunks options
 
-&lt;img src="chunk_options.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="chunk_options.jpg" width="1585" /&gt;
 
 Source: https://r4ds.had.co.nz/r-markdown.html#chunk-options
 
@@ -649,7 +368,7 @@ Open **`gun-deaths.Rmd`**
 ## YAML header specifications
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 author: "Jean Clipperton"
@@ -668,7 +387,7 @@ See Chapter 27 of R for Data Science for more on YAML header (e.g., parameters, 
 ## YAML header specifications
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 author: "Jean Clipperton"
@@ -681,7 +400,7 @@ output: html_document
 ## YAML header specifications: Table of contents
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 author: "Jean Clipperton"
@@ -697,7 +416,7 @@ output:
 ## YAML header specifications: Apparence and Style
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 author: "Jean Clipperton"
@@ -717,7 +436,7 @@ output:
 We can add a date and modify it every time we modify our file. We can add a date as a simple string:
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 output: html_document
@@ -736,7 +455,7 @@ But adding the date manually is not scalable. We can add it automatically instea
 Add the date automatically using `lubridate`:
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 output: html_document
@@ -753,7 +472,7 @@ For more on the `lubridate` package: [Chapter 16 of R for Data Science](https://
 Add the date automatically using `Sys.Date`:
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 output: html_document
@@ -770,7 +489,7 @@ date: "`r Sys.Date()`"
 Add the date automatically using `Sys.time`:
 
 
-```default
+``` default
 ---
 title: "Gun deaths"
 output: html_document
@@ -823,35 +542,8 @@ class: tiny
 
 ## R scripts
 
-
-```r
-# gun-deaths.R
-# 2017-02-01
-# Examine the distribution of age of victims in gun_deaths
-
-# load packages
-library(tidyverse)
-library(rcis)
-
-# filter data for under 65
-youth &lt;- gun_deaths %&gt;%
-  filter(age &lt;= 65)
-
-# number of individuals under 65 killed
-nrow(gun_deaths) - nrow(youth)
-
-# graph the distribution of youth
-youth %&gt;% 
-  ggplot(aes(age)) + 
-  geom_freqpoly(binwidth = 1)
-
-# graph the distribution of youth, by race
-youth %&gt;%
-  ggplot(aes(fct_infreq(race) %&gt;% fct_rev())) +
-  geom_bar() +
-  coord_flip() +
-  labs(x = "Victim race")
-```
+# ```{embed, file = here("static", "extras", "gun-deaths.R"), echo = TRUE}
+# ```
 
 ---
 
@@ -871,11 +563,11 @@ The content of these slides is derived in part from Sabrina Nardin and Benjamin 
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

@@ -1,9 +1,9 @@
 ---
-title: "Functions in R"
+title: "Logic and Functions in R"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../cfss.css"]
     nature:
       highlightStyle: magula
       highlightLines: true
@@ -102,7 +102,6 @@ style_duo_accent(
   )
 )
 
-source(here::here("R", "slide-opts.R"))
 ```
 
 ```{r pkgs, include = FALSE, cache = FALSE}
@@ -112,13 +111,13 @@ library(palmerpenguins)
 #library(countdown)
 
 set.seed(1234)
-theme_set(theme_minimal(base_size = rcis::base_size))
+# theme_set(theme_minimal(base_size = rcis::base_size))
 ```
 
 class: inverse, middle
 
 # Agenda
-* Homeworks: HW 3 due today and HW 4 due Thurs!
+* Assignments
 * Explanation of functions
 * Creating your own function
 * Practice

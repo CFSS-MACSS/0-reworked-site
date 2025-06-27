@@ -3,7 +3,7 @@ title: "A deep dive into R Markdown"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["../cfss.css"]
     nature:
       highlightStyle: magula
       highlightLines: true
@@ -13,96 +13,7 @@ output:
 ---
 
 ```{r setup, include = FALSE}
-# generate CSS file
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#011f4b",
-  secondary_color = "#bbd6c7",
-  inverse_header_color = "#222222",
-  black_color = "#222222",
-  header_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  text_font_google = xaringanthemer::google_font("Atkinson Hyperlegible"),
-  code_font_google = xaringanthemer::google_font("Source Code Pro"),
-  base_font_size = "24px",
-  code_font_size = "20px",
-  # title_slide_background_image = "https://github.com/uc-dataviz/course-notes/raw/main/images/hexsticker.svg",
-  # title_slide_background_size = "contain",
-  # title_slide_background_position = "top",
-  header_h1_font_size = "2rem",
-  header_h2_font_size = "1.75rem",
-  header_h3_font_size = "1.5rem",
-  extra_css = list(
-    "h1" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h2" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    "h3" = list(
-      "margin-block-start" = "0.4rem",
-      "margin-block-end" = "0.4rem"
-    ),
-    ".tiny" = list("font-size" = "70%"),
-    ".small" = list("font-size" = "90%"),
-    ".midi" = list("font-size" = "150%"),
-    ".tiny .remark-code" = list("font-size" = "70%"),
-    ".small .remark-code" = list("font-size" = "90%"),
-    ".midi .remark-code" = list("font-size" = "150%"),
-    ".large" = list("font-size" = "200%"),
-    ".xlarge" = list("font-size" = "600%"),
-    ".huge" = list(
-      "font-size" = "400%",
-      "font-family" = "'Montserrat', sans-serif",
-      "font-weight" = "bold"
-    ),
-    ".hand" = list(
-      "font-family" = "'Gochi Hand', cursive",
-      "font-size" = "125%"
-    ),
-    ".task" = list(
-      "padding-right" = "10px",
-      "padding-left" = "10px",
-      "padding-top" = "3px",
-      "padding-bottom" = "3px",
-      "margin-bottom" = "6px",
-      "margin-top" = "6px",
-      "border-left" = "solid 5px #F1DE67",
-      "background-color" = "#F3D03E"
-    ),
-    ".pull-left" = list(
-      "width" = "49%",
-      "float" = "left"
-    ),
-    ".pull-right" = list(
-      "width" = "49%",
-      "float" = "right"
-    ),
-    ".pull-left-wide" = list(
-      "width" = "70%",
-      "float" = "left"
-    ),
-    ".pull-right-narrow" = list(
-      "width" = "27%",
-      "float" = "right"
-    ),
-    ".pull-left-narrow" = list(
-      "width" = "27%",
-      "float" = "left"
-    ),
-    ".pull-right-wide" = list(
-      "width" = "70%",
-      "float" = "right"
-    ),
-    ".blue" = list(color = "#2A9BB7"),
-    ".purple" = list(color = "#a493ba"),
-    ".yellow" = list(color = "#f1de67"),
-    ".gray" = list(color = "#222222")
-  )
-)
 
-source(here::here("R", "slide-opts.R"))
 xaringanExtra::use_panelset()
 knitr::opts_chunk$set(
   echo = FALSE
@@ -111,7 +22,7 @@ knitr::opts_chunk$set(
 
 ```{r pkgs, include = FALSE, cache = FALSE}
 library(tidyverse)
-library(rcis)
+library(c3s2)
 library(knitr)
 library(kableExtra)
 library(here)
@@ -119,7 +30,7 @@ library(ymlthis)
 library(countdown)
 
 set.seed(1234)
-theme_set(theme_minimal(base_size = rcis::base_size))
+#theme_set(theme_minimal(base_size = rcis::base_size))
 ```
 
 ## R Markdown: resources 
@@ -393,23 +304,23 @@ NB: in R scripts or in `.Rmd` code chunks, `#` are used for comments, the number
 
 ## R Markdown: tables
 
-```{r}
-data(gun_deaths)
-youth <- gun_deaths %>% filter(age <= 65)
-#knitr::kable(gun_deaths)
-```
+<!-- # ```{r} -->
+<!-- # # data(gun_deaths) -->
+<!-- # # youth <- gun_deaths %>% filter(age <= 65) -->
+<!-- # # #knitr::kable(gun_deaths) -->
+<!-- # ``` -->
 
 --
 
-```{r}
-youth <- gun_deaths %>% filter(age <= 65)
-colsrename <- str_to_title(names(youth))
-
-# note: excerpting table for speed / rendering
-kable(youth[1:15,], col.names = colsrename, 
-                         align = c(rep("c", 7), "l", "r", "l"), 
-                         caption = "Table 1. etc.")
-```
+<!-- ```{r} -->
+<!-- # youth <- gun_deaths %>% filter(age <= 65) -->
+<!-- # colsrename <- str_to_title(names(youth)) -->
+<!-- #  -->
+<!-- # # note: excerpting table for speed / rendering -->
+<!-- # kable(youth[1:15,], col.names = colsrename,  -->
+<!-- #                          align = c(rep("c", 7), "l", "r", "l"),  -->
+<!-- #                          caption = "Table 1. etc.") -->
+<!-- ``` -->
 
 
 
@@ -417,77 +328,77 @@ kable(youth[1:15,], col.names = colsrename,
 
 ## R Markdown: Inline code
 
-.small[
-````{verbatim, echo = TRUE}
----
-title: "Gun deaths"
-output: html_document
----
+<!-- .small[ -->
+<!-- ````{verbatim, echo = TRUE} -->
+<!-- --- -->
+<!-- title: "Gun deaths" -->
+<!-- output: html_document -->
+<!-- --- -->
 
-```{r setup, include = FALSE}
-library(tidyverse)
-library(rcis)
-```
+<!-- ```{r setup, include = FALSE} -->
+<!-- library(tidyverse) -->
+<!-- library(rcis) -->
+<!-- ``` -->
 
-## Gun deaths by age
+<!-- ## Gun deaths by age -->
 
-Data for this plot come from the `gun_deaths` dataset.We have data about `r nrow(gun_deaths)` individuals killed by guns.
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown in the figure below.
+<!-- Data for this plot come from the `gun_deaths` dataset.We have data about `r nrow(gun_deaths)` individuals killed by guns. -->
+<!-- Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown in the figure below. -->
 
-```{r youth-dist, fig.cap = "Gun Death Victims Over 65",  echo = FALSE}
-youth <- gun_deaths %>% filter(age <= 65)
-youth %>% 
-  ggplot(aes(age)) + 
-  geom_freqpoly(binwidth = 1)
-```
-````
+<!-- ```{r youth-dist, fig.cap = "Gun Death Victims Over 65",  echo = FALSE} -->
+<!-- youth <- gun_deaths %>% filter(age <= 65) -->
+<!-- youth %>%  -->
+<!--   ggplot(aes(age)) +  -->
+<!--   geom_freqpoly(binwidth = 1) -->
+<!-- ``` -->
+<!-- ```` -->
 
-]
+<!-- ] -->
 
----
+<!-- --- -->
 
-## R Markdown: Inline code
+<!-- ## R Markdown: Inline code -->
 
-```{r youth, include = FALSE}
-youth <- gun_deaths %>% filter(age <= 65)
-```
+<!-- ```{r youth, include = FALSE} -->
+<!-- youth <- gun_deaths %>% filter(age <= 65) -->
+<!-- ``` -->
 
-````{verbatim, lang = "markdown", echo = TRUE}
-Data for this plot come from the `gun_deaths` dataset.
-We have data about `r nrow(gun_deaths)` individuals killed by guns.
+<!-- ````{verbatim, lang = "markdown", echo = TRUE} -->
+<!-- Data for this plot come from the `gun_deaths` dataset. -->
+<!-- We have data about `r nrow(gun_deaths)` individuals killed by guns. -->
 
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown in the previous figure.
-````
+<!-- Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. -->
+<!-- The distribution of the remainder is shown in the previous figure. -->
+<!-- ```` -->
 
---
+<!-- -- -->
 
-Data for this plot come from the `gun_deaths` dataset.
-We have data about `r nrow(gun_deaths)` individuals killed by guns.
+<!-- Data for this plot come from the `gun_deaths` dataset. -->
+<!-- We have data about `r nrow(gun_deaths)` individuals killed by guns. -->
 
-Only `r nrow(gun_deaths) - nrow(youth)` are older than 65.
-The distribution of the remainder is shown in the previous figure.
+<!-- Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. -->
+<!-- The distribution of the remainder is shown in the previous figure. -->
 
 
----
+<!-- --- -->
 
-class: inverse, middle
+<!-- class: inverse, middle -->
 
-# Practice 1 (~10 min)
+<!-- # Practice 1 (~10 min) -->
 
-Complete this tutorial: <https://commonmark.org/help/tutorial/>
+<!-- Complete this tutorial: <https://commonmark.org/help/tutorial/> -->
 
 
 ---
 
 ## R Markdown: Naming code chunks 
 
-A named code chunk:
-````{verbatim, lang = 'markdown', echo = TRUE}
-```{r youth-dist2}
-# code goes here
-```
-````
+<!-- A named code chunk: -->
+<!-- ````{verbatim, lang = 'markdown', echo = TRUE} -->
+<!-- ```{r youth-dist2} -->
+<!-- # code goes here -->
+<!-- ``` -->
+<!-- ```` -->
 
 Advantages:
 

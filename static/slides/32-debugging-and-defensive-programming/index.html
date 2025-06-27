@@ -4,10 +4,10 @@
     <title>Debugging and defensive programming</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
-    <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link href="index_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="index_files/panelset/panelset.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="index_files/panelset-0.3.1/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset-0.3.1/panelset.js"></script>
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -245,7 +245,7 @@ Try it out!
 * option 3: `install.packages("styler")` (should be abel to find it under addins at top right)
 
 
-```r
+``` r
   y&lt;-10
 if (y &lt; 20) {
   x &lt;- "Too low" 
@@ -281,7 +281,7 @@ Three types of conditions:
 For example, this `addition()` function takes two arguments and adds them together. Notice the condition checks if either `x` or `y` is not a number. If that's TRUE, the `stop()` function triggers a error and notifies the user:
 
 
-```r
+``` r
 addition &lt;- function(x, y) {
   if (!is_numeric(c(x, y))) {
     stop("One of your inputs is not a number")
@@ -319,7 +319,7 @@ For example, this code defines a function that takes as input `x` a probability 
 R will execute this code, but when the function is called with values outside the probability range, it gives a warning that says the result produces a “NaN” value ("Not a Number", impossible to calculate):
 
 
-```r
+``` r
 logit &lt;- function(x) {
   return(log(x / (1 - x)))
 }
@@ -344,7 +344,7 @@ To fix the warning, we can add a condition that signals and triggers an error in
 For example, if `x` is not between 0 and 1, then stop the code:
 
 
-```r
+``` r
 logit &lt;- function(x) {
   if (x &lt; 0 | x &gt; 1) {
     stop('x not between 0 and 1')
@@ -368,7 +368,7 @@ logit(-1)
 Same code of the previous slide, written more compactly:
 
 
-```r
+``` r
 logit &lt;- function(x) {
   if (x &lt; 0 | x &gt; 1) stop('x not between 0 and 1')
   log(x / (1 - x))
@@ -390,7 +390,7 @@ Notice here we can write `if` and the condition one the same line without the `{
 If we do not want to stop the code from running, we can also fix the warning in other ways, without triggering an error. For example: (1) we can check if `x` is outside the range, if so, replace it with a missing value; (2) trigger a warning if `x` is a missing value (whose log is a missing value)
 
 
-```r
+``` r
 logit &lt;- function(x) {
   x &lt;- if_else(x &lt; 0 | x &gt; 1,
                NA_real_,
@@ -421,7 +421,7 @@ logit(-1)
 For example, here we are plotting with `geom_point()` and `geom_smooth()`, which automatically decides which smoothing algorithm to use to create the line (default is `gam` based on sample size):
 
 
-```r
+``` r
 ggplot(diamonds, aes(carat, price)) +
   geom_point() + geom_smooth()
 ```
@@ -430,7 +430,7 @@ ggplot(diamonds, aes(carat, price)) +
 ## `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 ```
 
-&lt;img src="index_files/figure-html/message_ggplot-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/message_ggplot-1.png" width="35%" /&gt;
 
 ---
 
@@ -439,7 +439,7 @@ ggplot(diamonds, aes(carat, price)) +
 To write a message in your code, use the `message()` function.
 
 
-```r
+``` r
 demo_message &lt;- function() message("This is a message")
 demo_message()
 ```
@@ -450,7 +450,7 @@ demo_message()
 
 You can also suppress a message, if you want, with `suppressMessages()`:
 
-```r
+``` r
 suppressMessages(demo_message())  # no output
 ```
 
@@ -484,7 +484,7 @@ For example, here we have several functions that call other functions: `f` is a 
 The problem is in function `i`, but let's say in our code we call function `f`:
 
 
-```r
+``` r
 f &lt;- function(a) g(a)
 g &lt;- function(b) h(b)
 h &lt;- function(c) i(c)
@@ -506,7 +506,7 @@ We cannot fix function `f`, because the problem does not occur there. We need to
 Use `traceback()`, which is often shown automatically in RStudio, and read it from bottom to top. The line at the top is where the error occurred:
 
 
-```r
+``` r
 traceback()
 ```
 
@@ -526,11 +526,11 @@ The content of these slides is derived in part from Sabrina Nardin and Benjamin 
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

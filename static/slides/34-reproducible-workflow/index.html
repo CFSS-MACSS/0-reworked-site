@@ -4,10 +4,10 @@
     <title>Reproducible workflow</title>
     <meta charset="utf-8" />
     <meta name="author" content="MACSS 30500   University of Chicago" />
-    <script src="index_files/header-attrs/header-attrs.js"></script>
-    <link href="index_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="index_files/panelset/panelset.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link href="index_files/panelset-0.3.1/panelset.css" rel="stylesheet" />
+    <script src="index_files/panelset-0.3.1/panelset.js"></script>
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -281,13 +281,13 @@ In addition:
 ## How to use the `here()` function from the `here` package
 
 
-```r
+``` r
 library(here)
 here()
 ```
 
 ```
-## [1] "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site"
+## [1] "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/0-reworked-site"
 ```
 
 This prints out what it identifies as current project folder (relative to where these slides have been created) 
@@ -297,14 +297,12 @@ This prints out what it identifies as current project folder (relative to where 
 If I want to build a file path, based on this directory, I can use the `here()` function to build that path. For example, if I want to access a file `awesome.txt` located in a specific folder and sub-folder of `course-site`, I pass each folder and the name of the file as a different argument to the `here()` function:
 
 
-```r
+``` r
 # use here to build the path
 here("static", "extras", "awesome.txt")
-## [1] "/Users/jeanclipperton/Library/CloudStorage/Box-Box/Teaching/CFSS/course-site/static/extras/awesome.txt"
 
 # test to see if it works
 cat(readLines(here("static", "extras", "awesome.txt")))
-## OMG this is so awesome!
 ```
     
 ---
@@ -314,15 +312,13 @@ cat(readLines(here("static", "extras", "awesome.txt")))
 What happens if we change the working directory?
 
 
-```r
+``` r
 # change the working directory
 setwd("/Users/jeanclipperton/Library")
 getwd()
-## [1] "/Users/jeanclipperton/Library"
 
 # test to see if this still works
 cat(readLines(here("static", "extras", "awesome.txt")))
-## OMG this is so awesome!
 ```
 
 Since I changed the working directory, there is no "static" folder anymore, but the `here()` function still works!
@@ -382,11 +378,11 @@ The content of these slides is derived in part from Sabrina Nardin and Benjamin 
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
