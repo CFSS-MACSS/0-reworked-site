@@ -50,7 +50,10 @@ math: false
 
 ## Before class
 
-- Read [Ch 16](https://r4ds.hadley.nz/factors.html)
+- Read [Ch 16](https://r4ds.hadley.nz/factors.html), [Ch
+  17](https://r4ds.hadley.nz/datetimes.html), [Ch
+  18](https://r4ds.hadley.nz/missing-values.html), and [Ch
+  19](https://r4ds.hadley.nz/joins.html)
 
 <!-- ## Class materials -->
 <!-- *  -->
