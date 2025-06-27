@@ -1,5 +1,5 @@
 ---
-title: "Functions"
+title: "Strings and Regex"
 date: 2022-10-25T12:25:00-05:00
 publishDate: 2019-04-22T12:25:00-05:00
 draft: false
@@ -8,10 +8,8 @@ output:
   md_document:
     preserve_yaml: true
 type: docs
-weight: 31
+weight: 32
 
-
-aliases: ["/cm007.html"]
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -35,11 +33,7 @@ selected: false
 #   Set `tags: []` for no tags, or use the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
 tags: []
 
-# Links (optional).
-url_pdf: ""
-url_slides: "/slides/pipes-and-functions-in-r/"
-url_video: ""
-url_code: ""
+
 
 # Does the content use math formatting?
 math: false
@@ -47,27 +41,19 @@ math: false
 
 ## Overview
 
-- Review control structures
-- Define functions and their purpose
-- Analyze a user-written function and explain how it works
-- Practice writing functions
+- Define Strings, Regular Expressions, and their uses
+- Introduce the `stringr()` package
+- Practice using Regular Expressions in R to extract info from strings
 
 ## Before class
 
-- Read Chapter 17 “Introduction” and chapter 19 “Functions” in [R for
-  Data Science](http://r4ds.had.co.nz/)
-- Review Chapter 21 “Iteration” in [R for Data
-  Science](https://r4ds.had.co.nz/iteration.html)
+- Read [Ch 14](https://r4ds.hadley.nz/strings.html)
 
 <!--
 See "Data transformation" lecture for further references
 -->
-
-## Class materials
-
-- Run the code below in your console to download today’s in-class
-  exercises: `usethis::use_course("css-materials/functions")`
-
+<!-- ## Class materials -->
+<!-- * Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/functions")` -->
 <!--
 * [Pipes in R](/notes/pipes/)
 * [Functions in R](/notes/functions/)
