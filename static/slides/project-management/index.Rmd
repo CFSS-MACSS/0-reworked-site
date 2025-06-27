@@ -1,7 +1,9 @@
 ---
 title: "Project management"
-author: "[MACS 30500](https://info5940.infosci.cornell.edu) <br /> University of Chicago"
-output: rcis::xaringan
+author: "[MACS 30500](https://cfss-macss.netlify.app) <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: ["../cfss.css"]
 ---
 
 ```{r setup, include=FALSE}
@@ -10,14 +12,14 @@ knitr::opts_chunk$set(cache = TRUE,
                       fig.retina = 2, fig.width = 12)
 
 library(tidyverse)
-library(rcis)
+library(c3s2)
 library(here)
 
 chunk <- "```"
 inline <- function(x = "") paste0("`` `r ", x, "` ``")
 
 set.seed(1234)
-theme_set(theme_minimal(base_size = rcis::base_size))
+
 ```
 
 
@@ -119,24 +121,16 @@ library(here)
 here()
 ```
 
---
-
-* Build a file path
-
-```{r, collapse = TRUE}
-here("static", "extras", "awesome.txt")
-cat(readLines(here("static", "extras", "awesome.txt")))
-```
     
 --
 
 * What if we change the working directory?
 
-```{r, collapse = TRUE}
-setwd(here("static"))
-getwd()
-cat(readLines(here("static", "extras", "awesome.txt")))
-```
+<!-- ```{r, collapse = TRUE} -->
+<!-- setwd(here("static")) -->
+<!-- getwd() -->
+<!-- cat(readLines(here("static", "extras", "awesome.txt"))) -->
+<!-- ``` -->
 
 ---
 
@@ -232,40 +226,28 @@ R_LIBS_USER=~/R/%p/%v
 ````{verbatim, echo = TRUE}
 
 ---
-title: "Gun deaths"
+title: "Baby Names"
 date: "`r lubridate::today()`"
 output: html_document
 ---
 
 ```{r setup, include = FALSE}
 library(tidyverse)
-library(rcis)
+library(c3s2)
 
-youth <- gun_deaths %>%
-  filter(age <= 65)
+fem <- yob2023 %>%
+  filter(Gender == "F")
 ```
 
-# Gun deaths by age
+# Baby Names by age
 
-We have data about `r nrow(gun_deaths)` individuals killed by guns. Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown below:
+We have data about `r nrow(yob2023)` names for Females born in 2023 . We find that `r nrow(yob2023) - nrow(fem)` are males. 
 
 ```{r youth-dist, echo = FALSE}
 youth %>% 
   ggplot(aes(age)) + 
   geom_freqpoly(binwidth = 1)
 ```
-
-# Gun deaths by race
-
-```{r race-dist}
-youth %>%
-  ggplot(aes(fct_infreq(race) %>% fct_rev())) +
-  geom_bar() +
-  coord_flip() +
-  labs(x = "Victim race")
-```
-
-````
 
 ---
 
@@ -313,11 +295,11 @@ knitr::opts_chunk$set(
 # Inline code
 
 ```{r youth, include = FALSE}
-youth <- gun_deaths %>%
-  filter(age <= 65)
+fem <- yob2023 %>%
+  filter(Gender == "F")
 ```
 
-> We have data about `r nrow(gun_deaths)` individuals killed by guns. Only `r nrow(gun_deaths) - nrow(youth)` are older than 65. The distribution of the remainder is shown below:
+> We have data about `r nrow(yob2023)` names for Females born in 2023 . We find that `r nrow(yob2023) - nrow(fem)` are males. 
 
 ---
 
@@ -325,9 +307,9 @@ youth <- gun_deaths %>%
 
 ```
 --
-title: "Gun deaths"
-author: "Benjamin Soltoff"
-date: 2017-02-01
+title: "Cool Project"
+author: "Jean Clipperton"
+date: 2025-07-01
 output: html_document
 ---
 ```
@@ -343,8 +325,8 @@ output: html_document
 ```
 ---
 title: "Untitled"
-author: "Benjamin Soltoff"
-date: "February 1, 2017"
+author: "Jean Clipperton"
+date: "July 1, 2025"
 output: html_document
 ---
 ```
@@ -356,8 +338,8 @@ output: html_document
 ```
 ---
 title: "Untitled"
-author: "Benjamin Soltoff"
-date: "February 1, 2017"
+author: "Jean Clipperton"
+date: "July 1, 2025"
 output:
   html_document:
     toc: true
@@ -372,8 +354,8 @@ output:
 ```
 ---
 title: "Untitled"
-author: "Benjamin Soltoff"
-date: "February 1, 2017"
+author: "Jean Clipperton"
+date: "July 1, 2025"
 output:
   html_document:
     theme: readable
@@ -387,8 +369,8 @@ output:
 
 ```
 ---
-title: "Gun deaths"
-date: 2017-02-01
+title: "Baby Names"
+date: 2025-07-01
 output: pdf_document
 ---
 ```
@@ -502,7 +484,7 @@ cat(demo_code, sep = "\n")
 # Accidentally cloned from the main
 
 ```bash
-remote: Permission to hadley/ggplot2.git denied to bensoltoff.
+remote: Permission to hadley/ggplot2.git denied to jmclip.
 fatal: unable to access 'https://github.com/hadley/ggplot2.git/': The requested URL returned error: 403
 ```
 

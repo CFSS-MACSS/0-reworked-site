@@ -62,23 +62,10 @@ This is not a math/stats class. In class we will **briefly** summarize how these
 * Chapters 2-3 in [*Hands-On Machine Learning with R*](https://bradleyboehmke.github.io/HOML/)
 * [*Feature Engineering and Selection: A Practical Approach for Predictive Models*](http://www.feat.engineering/)
 
-## Class materials
 
-{{% callout note %}}
-
-Run the code below in your console to download the exercises for today.
-
-```r
-usethis::use_course("cis-ds/machine-learning")
-```
-
-{{% /callout %}}
-
-{{% callout note %}}
 
 Materials derived from [Tidymodels, Virtually: An Introduction to Machine Learning with Tidymodels](https://tmv.netlify.app/site/) by [Allison Hill](https://alison.rbind.io/).
 
-{{% /callout %}}
 
 ### Additional readings
 
