@@ -1,5 +1,5 @@
 ---
-title: "Control Structures"
+title: "Vectors and Numbers"
 date: 2022-10-20T12:25:00-05:00
 publishDate: 2019-04-24T12:25:00-05:00
 draft: false
@@ -55,27 +55,29 @@ math: false
 * Define lists
 -->
 
-- Introduce if-else statements
-- Introduce iterative operations
-- Practice writing iterative operations using loops, `map()` functions,
-  and `dplyr::across()`
+Vectors:
+
+- Comparisons
+- Boolean algebra
+- Summaries
+- Conditional transformations
+
+Numbers:
+
+- Numbers and transformations
+- Counts
+- Summaries
 
 ## Before class
 
-- Read Chapter 13 “Control Structures” in [R programming for Data
-  Science](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html)
-- Read Chapter 21 “Iteration” in [R for Data
-  Science](https://r4ds.had.co.nz/iteration.html)
+- Read [Ch 12](https://r4ds.hadley.nz/logicals.html) and [Ch
+  13](https://r4ds.hadley.nz/numbers.html)
 
 <!--
 * Read chapters 14.1-2, 20-21 from [R for Data Science](http://r4ds.had.co.nz/)
 -->
-
-## Class materials
-
-- Run the code below in your console to download today’s in-class
-  exercises: `usethis::use_course("css-materials/control-structures")`
-
+<!-- ## Class materials -->
+<!-- * Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/control-structures")` -->
 <!--
 * [Data storage types](/notes/vectors/)
 * [Iteration](/notes/iteration/)
@@ -84,5 +86,5 @@ math: false
 
 ## What you need to do after class
 
-- Complete/Start Homework assignments
+- [Continue working on A4](assignments/4-dviz/)
 - Review today’s lecture materials, and prepare for next class
