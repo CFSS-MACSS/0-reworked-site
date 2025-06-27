@@ -76,7 +76,12 @@ Numbers:
 <!--
 * Read chapters 14.1-2, 20-21 from [R for Data Science](http://r4ds.had.co.nz/)
 -->
-<!-- ## Class materials -->
+
+## Class materials
+
+- Run the code below in your console to download today’s in-class
+  exercises: `usethis::use_course("CFSS-MACSS/data-structures")`
+
 <!-- * Run the code below in your console to download today’s in-class exercises: `usethis::use_course("css-materials/control-structures")` -->
 <!--
 * [Data storage types](/notes/vectors/)
