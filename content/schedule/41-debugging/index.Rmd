@@ -63,8 +63,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Before class
 
-* Read "Debugging R code" in [What They Forgot to Teach You About R](https://rstats.wtf/debugging-r-code.html)
-* [21.6 Dealing with failure in *R for Data Science*](http://r4ds.had.co.nz/iteration.html#dealing-with-failure)
+* [Ch 22 Adv R](https://adv-r.hadley.nz/debugging.html) 
+* [21.6 r4ds (old version)](http://r4ds.had.co.nz/iteration.html#dealing-with-failure) 
 
 ## Class materials
 
@@ -77,5 +77,5 @@ knitr::opts_chunk$set(echo = FALSE)
 * [How to read an R help page](http://socviz.co/appendix.html#how-to-read-an-r-help-page)
 
 
-## After class
-* [Complete Homework 4](/homework/programming/)
+<!-- ## After class -->
+<!-- *  -->
