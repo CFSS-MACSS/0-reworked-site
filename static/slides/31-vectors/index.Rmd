@@ -204,13 +204,12 @@ flights |>
 --
 
 ```{r}
-flights |> 
-  group_by(day) |> 
-  mutate(
-    long_delay = ifelse(arr_delay >= 750, 0, 1),
-    .groups = "drop"
-  ) %>%
-  filter(long_delay == T) %>% knitr::kable()
+ flights |> 
+   group_by(day) |> 
+   mutate(
+     long_delay = if_else(arr_delay >= 750, 0, 1),
+     .groups = "drop"
+   ) |> select(day,carrier, arr_delay,  long_delay)
 ```
 
 ---
