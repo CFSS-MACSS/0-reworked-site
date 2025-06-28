@@ -1,5 +1,5 @@
 ---
-title: "Transform: Vectors"
+title: "Transform: Logic and Booleans"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
@@ -146,5 +146,80 @@ chile88 %>% filter(region %in% c("C","M","N") & vote == "N")
 
 ## Logical Summaries
 
-* `any()`
-* `all()`
+* `any()`: can return true if ANY item in the group returns true
+* `all()`: can return true if ALL items in the group returns true
+
+---
+### Application: task
+
+* Using the flights dataset: group by days, find days that have delays over 750 minutes and make a table. 
+
+--
+```{r}
+flights %>% group_by(day) %>% filter(any(arr_delay > 750)) %>% select(day) %>% table()
+```
+
+---
+
+# Summaries!
+
+* These can be a great way to distill your dataframe based on some criteria
+* You'll leverage your prior 'verbs' from before and (likely) your logical and boolean elements
+
+---
+
+## Summaries: Example
+
+```{r}
+flights |> 
+  group_by(year, month, day) |> 
+  summarize(
+    proportion_delayed = mean(dep_delay <= 60, na.rm = TRUE),
+    count_long_delay = sum(arr_delay >= 300, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+---
+
+### Summaries: cont'd
+
+```{r}
+flights |> 
+  group_by(day) |> 
+  summarize(
+    long_delay = any(arr_delay >= 750, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  filter(long_delay == T) %>% knitr::kable()
+```
+
+---
+
+### Summaries: Other tools:
+
+* `if_else()`
+* `case_when()`
+
+--
+
+```{r}
+flights |> 
+  group_by(day) |> 
+  mutate(
+    long_delay = ifelse(arr_delay >= 750, 0, 1),
+    .groups = "drop"
+  ) %>%
+  filter(long_delay == T) %>% knitr::kable()
+```
+
+---
+## Logic recap: 
+
+THINK IT THROUGH: what are you trying to get? What are your pieces? How can you break it down? 
+
+---
+class: center, middle, inverse
+
+# Numbers 
+
