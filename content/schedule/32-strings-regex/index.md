@@ -63,7 +63,8 @@ See "Data transformation" lecture for further references
 
 `usethis::use_course("CFSS-MACSS/str-regex")` \* by typing this into
 your CONSOLE (and answering R’s version of ‘yes’ twice) and it will
-AUTOMATICALLY DOWNLOAD to your machine!
+AUTOMATICALLY DOWNLOAD to your machine! \* tutorial developed from
+Sabrina Nardin (thanks!)
 
 ### Additional Resources:
 
