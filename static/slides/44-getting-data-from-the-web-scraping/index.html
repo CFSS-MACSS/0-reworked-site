@@ -7,7 +7,7 @@
     <script src="index_files/header-attrs/header-attrs.js"></script>
     <link href="index_files/panelset/panelset.css" rel="stylesheet" />
     <script src="index_files/panelset/panelset.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -299,7 +299,7 @@ class: inverse, middle
 ## Get the page with `read_html`
 
 
-```r
+``` r
 library(tidyverse)
 library(rvest)
 
@@ -324,13 +324,13 @@ For example, if we want to find **all `a` elements** in the HTML of our webpage 
 .panelset[
 .panel[.panel-name[R Code]
 
-```r
+``` r
 html_elements(x = dwight, css = "a") 
 ```
 ]
 .panel[.panel-name[R output]
 
-```r
+``` r
 out
 ```
 ]
@@ -371,7 +371,7 @@ I generally rely on method 1 or start with the SelectorGadget and confirm with m
 Finally, we are ready to find **only the element that contains the document's speaker: "Dwight D. Eisenhower".** We modify the previous code accordingly:
 
 
-```r
+``` r
 html_elements(x = dwight, css = ".diet-title a")
 ```
 
@@ -386,7 +386,7 @@ Once we have identified the element(s) of interest, usually we want to **access 
 ### Get text of elements with `html_text2()`
 
 
-```r
+``` r
 speaker_name &lt;- html_elements(dwight, ".diet-title a") %&gt;% 
   html_text2() 
 
@@ -397,7 +397,7 @@ speaker_name
 ### Get attributes of elements with `html_attr()`
 
 
-```r
+``` r
 speaker_link &lt;- html_elements(dwight, ".diet-title a") %&gt;% 
   html_attr("href") # note a is the tag, href is its attribute
 
@@ -412,7 +412,7 @@ speaker_link
 
 As a string (character):
 
-```r
+``` r
 date &lt;- html_elements(x = dwight, css = ".date-display-single") %&gt;%
   html_text2()
 
@@ -421,7 +421,7 @@ date
 
 As a date (double of class "Date"):
 
-```r
+``` r
 library(lubridate)
 
 date &lt;- html_elements(x = dwight, css = ".date-display-single") %&gt;%
@@ -437,7 +437,7 @@ class(date)
 ### Title
 
 
-```r
+``` r
 title &lt;- html_elements(x = dwight, css = "h1") %&gt;%
   html_text2()
 title
@@ -448,7 +448,7 @@ title
 ### Text
 
 
-```r
+``` r
 text &lt;- html_elements(x = dwight, css = "div.field-docs-content") %&gt;%
   html_text2()
 
@@ -479,7 +479,7 @@ Make a function called `scrape_docs` that:
 
 .small[
 
-```r
+``` r
 scrape_doc &lt;- function(url) {
   
   # get HTML page
@@ -515,13 +515,13 @@ scrape_doc &lt;- function(url) {
 ### Call the function to scrape documents from the UCSB website:
 
 
-```r
+``` r
 url_1 &lt;- "https://www.presidency.ucsb.edu/documents/letter-t-keith-glennan-administrator-national-aeronautics-and-space-administration"
 scrape_doc(url_1)
 ```
 
 
-```r
+``` r
 url_2 &lt;- "https://www.presidency.ucsb.edu/documents/letter-the-president-the-senate-and-the-speaker-the-house-representatives-proposing"
 scrape_doc(url_2)
 ```
@@ -632,11 +632,11 @@ The content of these slides is derived in part from Sabrina Nardin and Benjamin 
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "magula",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9",
-"countIncrementalSlides": false
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

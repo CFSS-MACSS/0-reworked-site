@@ -222,3 +222,16 @@ class: center, middle, inverse
 
 # Numbers 
 
+---
+
+## Important functions: 
+* `parse_number()`
+* `counts()`: 
+  * can layer with other commands, such as wt (weighted counts)
+* min/max: both `min()`/`max()` and `pmin()`/`pmax()`
+* transformations: logs and rounding 
+* cuts: `cut()` (note from ggplot: also `cut_interval()`, `cut_number()`, and `cut_width()`)
+* rolling aggregates: `cumsum()`, `cumprod()`, `cummin()`, `cummax()`, and `cummean()`
+* `rank`
+* offsets: `lead()` and `lag()`
+* central tendency and description: `mean()`, `median()`, `IQR()`, `sd()`, and `quantile()`
