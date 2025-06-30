@@ -235,3 +235,38 @@ class: center, middle, inverse
 * `rank`
 * offsets: `lead()` and `lag()`
 * central tendency and description: `mean()`, `median()`, `IQR()`, `sd()`, and `quantile()`
+
+---
+
+### Applications
+
+`cut()`: 
+
+```{r}
+y <- c(NA, -10, 5, 10, 30, 1, 2, 5, 10, 15, 20)
+cut(y, breaks = c(0, 5, 10, 15, 20), labels = c("sm", "md", "lg", "xl"))
+```
+
+---
+### Applications: Rank 
+
+`rank()`: how to calculate places / order 
+
+```{r}
+library(nycflights13)
+
+flights %>% group_by(carrier) %>% 
+  summarize(delays_d = sum(dep_delay, na.rm = T),
+         delays_a = sum(arr_delay, na.rm = T)) %>% 
+  mutate(best_d = rank(delays_d),
+         best_a = rank(delays_a),
+         worst_d = rank(desc(delays_d)),
+         worst_a = rank(desc(delays_a))) %>%
+  filter(best_a < 5 & best_d < 5 )
+```
+
+## Recap: SO MUCH WE CAN DO!!
+
+* Goal is for you to understand what is possible
+* Approach with a curious mind!
+
