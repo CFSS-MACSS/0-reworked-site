@@ -207,7 +207,7 @@ flights |>
  flights |> 
    group_by(day) |> 
    mutate(
-     long_delay = if_else(arr_delay >= 750, 0, 1),
+     long_delay = if_else(arr_delay >= 750, 1,0),
      .groups = "drop"
    ) |> select(day,carrier, arr_delay,  long_delay)
 ```
@@ -264,7 +264,7 @@ flights %>% group_by(carrier) %>%
          worst_a = rank(desc(delays_a))) %>%
   filter(best_a < 5 & best_d < 5 )
 ```
-
+---
 ## Recap: SO MUCH WE CAN DO!!
 
 * Goal is for you to understand what is possible

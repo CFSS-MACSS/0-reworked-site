@@ -1,5 +1,5 @@
 ---
-title: "Data Structures"
+title: "Transforming: Factors and Dates"
 author: "MACSS 30500 <br /> University of Chicago"
 output:
   xaringan::moon_reader:
@@ -24,6 +24,7 @@ library(countdown)
 library(modeldata)
 library(knitr)
 library(here)
+library(nycflights13)
 
 set.seed(1234)
 theme_set(theme_minimal(base_size = 16))
@@ -110,7 +111,7 @@ double_vector <- c("4.2", "4", "6", "53.2")
 
 **Character**: note you can use single or double quotations, you just need to be consistent
 ```{r parse-character, collapse = TRUE}
-character_vector <- c("Scary", "'1,2,3 ready!'", "Halloween", '10/31/2022')
+character_vector <- c("WOOHOO", "'1,2,3 ready!'", "R", '7/2/2025')
 ```
 
 ---
@@ -298,7 +299,9 @@ This is often useful when you interact with API to get data from the web (freque
 
 Notice, we have been using lists extensively in the class. Each column of a data frame is a list: 
 ```{r list-df}
-# str(gun_deaths)
+library(stevedata)
+str(chile88)
+ 
 ```
 
 The only difference between data frames and actual lists is that the length of each list object in the data frame has to the same (a data frame is rectangular).
@@ -336,13 +339,6 @@ include_graphics(path = "https://r4ds.had.co.nz/diagrams/lists-subsetting.png")
 ```
 
 ---
-
-class: inverse, middle
-
-# Practice subsetting vectors and lists
-
----
-
 
 class: inverse, middle
 
@@ -452,13 +448,225 @@ Documentation and Cheat Sheet: https://forcats.tidyverse.org/
 <!-- show hw3 work with factors -->
 ---
 
-class: inverse, middle
+## Forcats::gss()
 
-# Practice working with factors
-### 
+```{r}
+forcats::gss_cat
+```
+
+---
+### Ordering bars:
+
+```{r}
+
+gss_cat |>
+  mutate(marital = marital |> fct_infreq() |> fct_rev()) |>
+  ggplot(aes(x = marital)) +
+  geom_bar()
+```
+
 
 ---
 
+### Recoding factors:
+
+.panelset[
+.panel[.panel-name[recode]
+```{r}
+gss_cat |>
+  mutate(
+    partyid = fct_recode(partyid,
+      "Republican, strong"    = "Strong republican",
+      "Republican, weak"      = "Not str republican",
+      "Independent, near rep" = "Ind,near rep",
+      "Independent, near dem" = "Ind,near dem",
+      "Democrat, weak"        = "Not str democrat",
+      "Democrat, strong"      = "Strong democrat",
+      "Other"                 = "No answer",
+      "Other"                 = "Don't know",
+      "Other"                 = "Other party"
+    )
+  )
+```
+]
+
+.panel[.panel-name[collapse]
+```{r}
+gss_cat |>
+  mutate(
+    partyid = fct_collapse(partyid,
+      "other" = c("No answer", "Don't know", "Other party"),
+      "rep" = c("Strong republican", "Not str republican"),
+      "ind" = c("Ind,near rep", "Independent", "Ind,near dem"),
+      "dem" = c("Not str democrat", "Strong democrat")
+    )
+  ) |>
+  count(partyid)
+```
+]
+]
+
+
+---
+
+## Summarizing factors: `fct_lump_*`
+.panelset[.panel[.panel-name[`lump_n`]
+```{r}
+gss_cat |>
+  mutate(relig = fct_lump_n(relig, n = 5)) |>
+  count(relig, sort = TRUE)
+```
+]
+.panel[.panel-name[`lump_min`]
+```{r}
+gss_cat |>
+  mutate(relig = fct_lump_min(relig, min = 800, other_level = "Other")) |>
+  count(relig, sort = TRUE)
+```
+]
+.panel[.panel-name[`lump_prop`]
+```{r}
+gss_cat |>
+  mutate(relig = fct_lump_prop(relig, prop = 0.4, )) |>
+  count(relig, sort = TRUE)
+```
+]
+]
+
+---
+### Factors and missingness
+
+.panelset[.panel[.panel-name[health]
+```{r}
+health <- tibble(
+  name   = c("Ikaia", "Oletta", "Leriah", "Dashay", "Tresaun"),
+  smoker = factor(c("no", "no", "no", "no", "no"), levels = c("yes", "no")),
+  age    = c(34, 88, 75, 47, 56),
+)
+
+health |> 
+  group_by(smoker, .drop = FALSE) |> 
+  summarize(
+    n = n(),
+    mean_age = mean(age),
+    min_age = min(age),
+    max_age = max(age),
+    sd_age = sd(age)
+  )
+```
+
+]
+.panel[.panel-name[h2]
+```{r}
+health |> 
+  group_by(smoker, .drop = TRUE) |> 
+  summarize(
+    n = n(),
+    mean_age = mean(age),
+    min_age = min(age),
+    max_age = max(age),
+    sd_age = sd(age)
+  )
+```
+
+]
+.panel[.panel-name[flights]
+```{r}
+flights |> filter(day %% 5 == 0) %>%
+  group_by(day ) |> 
+  summarize(
+    proportion_delayed = mean(dep_delay <= 60, na.rm = TRUE),
+    count_long_delay = sum(arr_delay >= 300, na.rm = TRUE),
+    .groups = "drop"
+  )  
+```
+
+
+]
+]
+---
+class: center, inverse, middle
+ 
+
+# Dates
+### BRING YOUR PATIENCE
+
+---
+## `lubridate` package
+
+* commands to produce today's date (e.g. `today()` or `now()`)
+* reformatting options (see table on next page and [linked here](https://r4ds.hadley.nz/datetimes.html#tbl-date-formats))
+
+---
+|  [Type](https://r4ds.hadley.nz/datetimes.html#tbl-date-formats) | Code |             Meaning            |     Example     |   |
+|:-----:|:----:|:------------------------------:|:---------------:|---|
+|  Year | %Y   |          4 digit year          |       2021      |   |
+|       | %y   |          2 digit year          |        21       |   |
+| Month | %m   |             Number             |        2        |   |
+|       | %b   |        Abbreviated name        |       Feb       |   |
+|       | %B   |            Full name           |     February    |   |
+|  Day  | %d   |        One or two digits       |        2        |   |
+|       | %e   |           Two digits           |        02       |   |
+|  Time | %H   |          24-hour hour          |        13       |   |
+|       | %I   |          12-hour hour          |        1        |   |
+|       | %p   |              AM/PM             |        pm       |   |
+|       | %M   |             Minutes            |        35       |   |
+|       | %S   |             Seconds            |        45       |   |
+|       | %OS  | Seconds with decimal component |      45.35      |   |
+|       | %Z   |         Time zone name         | America/Chicago |   |
+|       | %z   |         Offset from UTC        |      +0800      |   |
+| Other | %.   |       Skip one non-digit       |        :        |   |
+|       | %*   |  Skip any number of non-digits |                 |   |
+
+---
+## Formatting dates: bringing together information in tables
+
+```{r}
+library(nycflights13)
+flights |> 
+  select(year, month, day, hour, minute) |> 
+  mutate(departure = make_datetime(year, month, day, hour, minute))
+```
+
+---
+
+### Flights: using time
+
+```{r}
+make_datetime_100 <- function(year, month, day, time) {
+  make_datetime(year, month, day, time %/% 100, time %% 100)
+}
+flights_dt <- flights |> 
+  filter(!is.na(dep_time), !is.na(arr_time)) |> 
+  mutate(
+    dep_time = make_datetime_100(year, month, day, dep_time),
+    arr_time = make_datetime_100(year, month, day, arr_time),
+    sched_dep_time = make_datetime_100(year, month, day, sched_dep_time),
+    sched_arr_time = make_datetime_100(year, month, day, sched_arr_time)
+  ) |> 
+  select(origin, dest, ends_with("delay"), ends_with("time"))
+
+
+flights_dt |> 
+  filter(dep_time < ymd(20130102)) |> 
+  ggplot(aes(x = dep_time)) + 
+  geom_freqpoly(binwidth = 600) # 600 s = 10 minutes
+```
+
+---
+### Commands: `make_datetime()` components
+
+* `year()`
+* `month()`
+* `mday()` (day of the month) 
+* `yday()` (day of the year)
+* `wday()` (day of the week)
+* `hour()`
+* `minute()`
+* `second()` 
+
+
+---
 ## Acknowledgments 
 
 The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
