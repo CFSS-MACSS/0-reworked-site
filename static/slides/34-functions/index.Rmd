@@ -20,6 +20,7 @@ output:
 ```{r pkgs, include = FALSE, cache = FALSE}
 library(tidyverse)
 library(palmerpenguins)
+library(nycflights13)
 #library(here)
 #library(countdown)
 
@@ -33,15 +34,33 @@ class: inverse, middle
 * Assignments
 * Explanation of functions
 * Creating your own function
-* Practice
 * Functions + for loops = party
 * Anonymous functions
+* Iterations
+* Mapping 
 
 ---
+class: center, middle
+
 # Functions
 
 ---
+## Motivating example:
+```{r}
+count_missing <- function(df, group_vars, x_var) {
+  df |> 
+    group_by(pick({{ group_vars }})) |> 
+    summarize(
+      n_miss = sum(is.na({{ x_var }})),
+      .groups = "drop"
+  )
+}
 
+flights |> 
+  count_missing(c(year, month, day), dep_time)
+```
+
+---
 ### Using existing functions
 
 Functions are all over R! We have been **using functions** from day 1 of this class. For example:
@@ -1031,80 +1050,72 @@ For loops include three components:
 
 ---
 
-### Preallocation
+<!-- ### Preallocation -->
 
-<!-- This explains why we are pre-allocating in the first place, why we do so with a vector, and it also might answer Diana question last time about storing results in a tibble or data frame
-having an object that is already of the same length of the output, where we are just plugging in 
-individual values (this increases speed) rather the more naive approach in which we store with an 
-empty vector or an empty other object (e.g. a dataframe) of length zero, and then append or add on
-each of the values as we calculate them
+<!-- <!-- This explains why we are pre-allocating in the first place, why we do so with a vector, and it also might answer Diana question last time about storing results in a tibble or data frame -->
+<!-- having an object that is already of the same length of the output, where we are just plugging in  -->
+<!-- individual values (this increases speed) rather the more naive approach in which we store with an  -->
+<!-- empty vector or an empty other object (e.g. a dataframe) of length zero, and then append or add on -->
+<!-- each of the values as we calculate them -->
 
-For example, let's take this mpg data (built in dataframe in R about auto, we do not really care about the content of the data here); here what we are doing is creating duplicates of that dataframe 100 times and we are then putting them together into a single data frame. 
+<!-- For example, let's take this mpg data (built in dataframe in R about auto, we do not really care about the content of the data here); here what we are doing is creating duplicates of that dataframe 100 times and we are then putting them together into a single data frame.  -->
 
-Without preallocation: we can create an empty dataframe (here with the tibble function), iterate over 100 times, take this empty dataframe and combine the rows of it with the rows of the original dataframe, and replace the original object with the new copy and save in output (so we are appending 100 rows every time we iterate!) 
+<!-- Without preallocation: we can create an empty dataframe (here with the tibble function), iterate over 100 times, take this empty dataframe and combine the rows of it with the rows of the original dataframe, and replace the original object with the new copy and save in output (so we are appending 100 rows every time we iterate!)  -->
 
-If we do proper preallocation: we create a list of 100 empty elements, every time we store the results in the list, then we use the bind_rows() functions at the end
+<!-- If we do proper preallocation: we create a list of 100 empty elements, every time we store the results in the list, then we use the bind_rows() functions at the end -->
 
-The first approach does not preallocate by creating an empty space to store the output, the second does. See the difference in time of execution. From 80 milliseconds to less than 3. So you can see how inefficient is not to allocate since most of our data will have more than 100 rows!
+<!-- The first approach does not preallocate by creating an empty space to store the output, the second does. See the difference in time of execution. From 80 milliseconds to less than 3. So you can see how inefficient is not to allocate since most of our data will have more than 100 rows! -->
 
--->
+<!-- --> -->
 
-.panelset[
-.panel[.panel-name[Code]
-```r
-# no preallocation
-mpg_no_preall <- tibble()
-for(i in 1:100){
-  mpg_no_preall <- bind_rows(mpg_no_preall, mpg)
-}
+<!-- .panelset[ -->
+<!-- .panel[.panel-name[Code] -->
+<!-- ```r -->
+<!-- # no preallocation -->
+<!-- mpg_no_preall <- tibble() -->
+<!-- for(i in 1:100){ -->
+<!--   mpg_no_preall <- bind_rows(mpg_no_preall, mpg) -->
+<!-- } -->
 
-# with preallocation using a list
-mpg_preall <- vector(mode = "list", length = 100)
-for(i in 1:100){
-  mpg_preall[[i]] <- mpg
-}
-mpg_preall <- bind_rows(mpg_preall)
-```
-]
+<!-- # with preallocation using a list -->
+<!-- mpg_preall <- vector(mode = "list", length = 100) -->
+<!-- for(i in 1:100){ -->
+<!--   mpg_preall[[i]] <- mpg -->
+<!-- } -->
+<!-- mpg_preall <- bind_rows(mpg_preall) -->
+<!-- ``` -->
+<!-- ] -->
 
-.panel[.panel-name[Plot]
-```{r}
-#| out.width = "70%",
-#| echo = FALSE
-# load microbenchmark library to time code
-library(microbenchmark)
-# bind together 100 copies of mpg
-times <- microbenchmark(
-  `No preallocation` = {
-    mpg_no_preall <- tibble()
-    
-    for(i in 1:100){
-      mpg_no_preall <- bind_rows(mpg_no_preall, mpg)
-    }
-  },
-  `Preallocation` = {
-    mpg_preall <- vector(mode = "list", length = 100)
-    
-    for(i in 1:100){
-      mpg_preall[[i]] <- mpg
-    }
-    
-    mpg_preall <- bind_rows(mpg_preall)
-  }
-)
-autoplot(times)
-```
-]
-]
+<!-- .panel[.panel-name[Plot] -->
+<!-- ```{r} -->
+<!-- #| out.width = "70%", -->
+<!-- #| echo = FALSE -->
+<!-- # load microbenchmark library to time code -->
+<!-- library(microbenchmark) -->
+<!-- # bind together 100 copies of mpg -->
+<!-- times <- microbenchmark( -->
+<!--   `No preallocation` = { -->
+<!--     mpg_no_preall <- tibble() -->
 
+<!--     for(i in 1:100){ -->
+<!--       mpg_no_preall <- bind_rows(mpg_no_preall, mpg) -->
+<!--     } -->
+<!--   }, -->
+<!--   `Preallocation` = { -->
+<!--     mpg_preall <- vector(mode = "list", length = 100) -->
 
----
+<!--     for(i in 1:100){ -->
+<!--       mpg_preall[[i]] <- mpg -->
+<!--     } -->
 
-class: inverse, middle
+<!--     mpg_preall <- bind_rows(mpg_preall) -->
+<!--   } -->
+<!-- ) -->
+<!-- autoplot(times) -->
+<!-- ``` -->
+<!-- ] -->
+<!-- ] -->
 
-# Practice writing for loops
-
----
 
 class: inverse, middle
 
@@ -1207,6 +1218,7 @@ While loops are best used **when you do not know how long the input sequence sho
 While loops usually require a **"count variable"** to be set outside the loop.
 
 While are **less common than for loops**, that's why we do not go in-depth.
+
 
 ---
 
@@ -1426,13 +1438,13 @@ worldbank %>%
   filter(if_all(everything(), ~ !is.na(.x)))
 ```
 
-
 ---
 
-class: inverse, middle
-
-# Practice writing `map_*()` functions and `across()` iteration
-
+## Recap:
+* Functions + for loops = party
+* Anonymous functions
+* Iterations
+* Mapping 
 
 ---
 ## Acknowledgments 
