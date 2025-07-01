@@ -84,7 +84,7 @@ So formally a string is... -->
 A **string** is a sequence of characters (a piece of text) enclosed in either double `"` or single quotes `'`. Strings can include letters, numbers, symbols, and whitespace characters.
 
 ```{r}
-string <- "Ciao, my name is Sabrina and I am 99 years old!!"
+string <- "Hi this is MACS 30500!! Welcome!"
 class(string)
 length(string)
 ```
@@ -96,7 +96,7 @@ length(string)
 A **character vector** is a collection of strings: each element of the vector is a string! 
 
 ```{r}
-char_vect <- c("Ciao come stai?", "Ciao", "Hello", "etc.") 
+char_vect <- c("Greetings!", "Ciao", "Hello", "etc.") 
 class(char_vect)
 length(char_vect)
 ```
