@@ -47,7 +47,7 @@ You need to use the same dataset for the entire assignment.
 - X: year, Y: prop, color: sex
 - Add both `geom_point()` and `geom_line()`
 
-Reflect:
+### 2.1 Reflect:
 
 - What happens to the plot? Are the lines as expected? Do you need to do
   any additional modifications or calculations?
@@ -64,14 +64,14 @@ How do I modify to fix this? )*
 - Include the AI’s response
 - Describe how you applied or modified the advice
 
-Update your plot:
+### 2.2 Update your plot:
 
 - Include the correct grouping aesthetic
 - Apply a theme other than the default (eg. theme\_classic())
 - Add a title and subtitle
 - Clearly label your axes
 
-Alternative:
+### 2.3 Create an additional plot in an alternative style:
 
 - Create a different style plot (e.g. stacked bar chart, boxplot) that
   could show this data in another way
@@ -79,9 +79,9 @@ Alternative:
 
 ## **Part 3: Open-ended transformation and visualization**
 
-Design and implement **two additional transformations** or summary. Here
-are some possible options for each of the two paths. You are welcome to
-try out other ideas as well!
+Design and implement **two additional transformations** or summaries.
+Here are some possible options for each of the two paths. You are
+welcome to try out other ideas as well!
 
 **gdp\_Bihar.csv**
 
@@ -95,13 +95,13 @@ try out other ideas as well!
 - Number of male and female names per year
 - Create a measure of uniqueness and plot it
 
-Visualize your result:
+### 3.1 Visualize your result:
 
 - Use two different plot types than before (some possibilities include
   histograms, bar plots, line plots, and density plots)
 - Clearly label and style your plots
 
-Write-up:
+### 3.2 Write-up:
 
 - What question(s) were you exploring?
 - Why did you choose this transformation/summary?
