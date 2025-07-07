@@ -101,11 +101,19 @@ You can use **any source of textual data.** If you are not sure, here are some s
 * Examples provided in the readings and lectures. The [data from the book are stored in this GitHub repository](https://github.com/dgrtwo/tidy-text-mining) 
 
 
-# Submit the assignment
+## What to submit
 
 Your GitHub repo should include everything you have used to produce your analyses, such as R scripts and/or R Markdown documents, original textual data (unless they are too large to be uploaded on GitHub – see A6 for details), etc. Make sure to stage-commit-push your original `.Rmd` file and its `.md` 
 
-In your `README.md`:
+```
+data/
+  - textsource.csv (or other format)
+analysis.rmd
+README.md (knitted from analysis.rmd)
+analysis.html (knitted from analysis.rmd)
+```
+
+In `README.md` you must:
 * explain the purpose of the repository
 * include an explanation of what your code does and how to use it, and list all libraries required to reproduce your analyses 
 * include a description of the textual data

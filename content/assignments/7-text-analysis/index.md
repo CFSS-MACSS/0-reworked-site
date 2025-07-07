@@ -158,7 +158,7 @@ are some suggested texts you could use:
   book are stored in this GitHub
   repository](https://github.com/dgrtwo/tidy-text-mining)
 
-# Submit the assignment
+## What to submit
 
 Your GitHub repo should include everything you have used to produce your
 analyses, such as R scripts and/or R Markdown documents, original
@@ -166,15 +166,22 @@ textual data (unless they are too large to be uploaded on GitHub – see
 A6 for details), etc. Make sure to stage-commit-push your original
 `.Rmd` file and its `.md`
 
-In your `README.md`: \* explain the purpose of the repository \* include
-an explanation of what your code does and how to use it, and list all
-libraries required to reproduce your analyses \* include a description
-of the textual data \* provide any other relevant information that the
-user needs to know in order to use your repo and replicate your results
-\* quote all resources you consulted to complete the assignment \*
-provide 1-2 paragraphs of reflections on what was hard/easy about this
-homework, what was enjoyable, problems you solved and how you solved
-them, helpful resources, etc. + list any collaborators and their role
+    data/
+      - textsource.csv (or other format)
+    analysis.rmd
+    README.md (knitted from analysis.rmd)
+    analysis.html (knitted from analysis.rmd)
+
+In `README.md` you must: \* explain the purpose of the repository \*
+include an explanation of what your code does and how to use it, and
+list all libraries required to reproduce your analyses \* include a
+description of the textual data \* provide any other relevant
+information that the user needs to know in order to use your repo and
+replicate your results \* quote all resources you consulted to complete
+the assignment \* provide 1-2 paragraphs of reflections on what was
+hard/easy about this homework, what was enjoyable, problems you solved
+and how you solved them, helpful resources, etc. + list any
+collaborators and their role
 
 To submit the assignment, push to your repository the last version of
 your assignment before the deadline. Then copy your repository URL
