@@ -1,7 +1,7 @@
 ---
 title: "Final: Generating reproducible social science research"
 date: 2023-07-10T13:30:00-06:00  # Schedule page publish date
-weight: 6
+weight: 8
 type: docs
 description: Final project due 7/18/25
 output:

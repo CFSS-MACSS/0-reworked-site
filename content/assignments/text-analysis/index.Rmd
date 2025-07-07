@@ -1,7 +1,7 @@
 ---
 title: "A7: Analyzing textual data"
 date: 2023-07-16T13:30:00-06:00  # Schedule page publish date
-weight: 8
+weight: 7
 description: Assignment 7 (optional) due 7/18
 publishdate: 2019-04-01
 output:
