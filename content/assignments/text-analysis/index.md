@@ -2,7 +2,7 @@
 title: "A7: Analyzing textual data"
 date: 2023-07-16T13:30:00-06:00  # Schedule page publish date
 weight: 8
-description: Assignment 8 (optional) due 7/18
+description: Assignment 7 (optional) due 7/18
 publishdate: 2019-04-01
 output:
   md_document:
@@ -18,12 +18,12 @@ summary: "Collect text data and analyze it."
 The goal of this assignment is to practice the fundamentals of text
 analysis in R tidyverse.
 
-# Accessing the `hw08` repository
+# Accessing the `A7` repository
 
 - Go [to this link](https://classroom.github.com/a/eey4atfa) to accept
-  and create your private `hw08` repository on GitHub. Your repository
+  and create your private `A7` repository on GitHub. Your repository
   will be built in a few seconds. It follows the naming convention
-  `hw08-<USERNAME>`  
+  `a7-<USERNAME>`  
 - Once your repository has been created, click on the link you see,
   which will take you to your repository.
 - Finally, clone the repository to your computer (or R workbench)
@@ -32,7 +32,7 @@ analysis in R tidyverse.
 Notice the repo you clone for this assignment is empty: **add your data
 and code, and push them to your GitHub repo**.
 
-# Cloning your `hw08` repository
+# Cloning your `a7` repository
 
 After you have accessed the `hw8` repository (see above), follow the
 [same steps you completed for `hw1`](/homework/edit-readme/) to clone
