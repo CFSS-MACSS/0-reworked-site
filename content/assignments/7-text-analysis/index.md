@@ -20,7 +20,7 @@ analysis in R tidyverse.
 
 # Accessing the `A7` repository
 
-- Go [to this link](https://classroom.github.com/a/eey4atfa) to accept
+- Go [to this link](https://classroom.github.com/a/4K8N2enT) to accept
   and create your private `A7` repository on GitHub. Your repository
   will be built in a few seconds. It follows the naming convention
   `a7-<USERNAME>`  
@@ -34,9 +34,9 @@ and code, and push them to your GitHub repo**.
 
 # Cloning your `a7` repository
 
-After you have accessed the `hw8` repository (see above), follow the
-[same steps you completed for `hw1`](/homework/edit-readme/) to clone
-the repository.
+After you have accessed the `a7` repository (see above), follow the
+[same steps you completed for `a1`](/homework/edit-readme/) to clone the
+repository.
 
 # General workflow
 
@@ -163,7 +163,7 @@ are some suggested texts you could use:
 Your GitHub repo should include everything you have used to produce your
 analyses, such as R scripts and/or R Markdown documents, original
 textual data (unless they are too large to be uploaded on GitHub – see
-HW6 for details), etc. Make sure to stage-commit-push your original
+A6 for details), etc. Make sure to stage-commit-push your original
 `.Rmd` file and its `.md`
 
 In your `README.md`: \* explain the purpose of the repository \* include
@@ -178,8 +178,8 @@ them, helpful resources, etc. + list any collaborators and their role
 
 To submit the assignment, push to your repository the last version of
 your assignment before the deadline. Then copy your repository URL
-(e.g., `https://github.com/cfss-hmwks-s23/hw08-jmclip`) and submit it to
-Canvas under HW08 before the deadline.
+(e.g., `https://github.com/cfss-hmwks-s25/a7-jmclip`) and submit it to
+Canvas under A7 before the deadline.
 
 # Rubric
 
