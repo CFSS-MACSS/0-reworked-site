@@ -41,7 +41,7 @@ Notice the repo you clone for this assignment is empty: **you will have to fill 
 
 # Cloning your `a6` repository
 
-After you have accessed the `a6` repository (see above), follow the [same steps you completed for `a1`](/homework/1-edit-readme/) to clone the repository.
+After you have accessed the `a6` repository (see above), follow the [same steps you completed for `a1`](/assignments/1-edit-readme/) to clone the repository.
 
 
 # General workflow

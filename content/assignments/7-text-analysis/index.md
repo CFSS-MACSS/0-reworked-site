@@ -35,7 +35,7 @@ and code, and push them to your GitHub repo**.
 # Cloning your `a7` repository
 
 After you have accessed the `a7` repository (see above), follow the
-[same steps you completed for `a1`](/homework/1-edit-readme/) to clone
+[same steps you completed for `a1`](/assignments/1-edit-readme/)to clone
 the repository.
 
 # General workflow

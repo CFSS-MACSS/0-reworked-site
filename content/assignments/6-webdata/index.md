@@ -43,8 +43,8 @@ to fill it with your data and code, and push them to your github repo**.
 # Cloning your `a6` repository
 
 After you have accessed the `a6` repository (see above), follow the
-[same steps you completed for `a1`](/homework/1-edit-readme/) to clone
-the repository.
+[same steps you completed for `a1`](/assignments/1-edit-readme/) to
+clone the repository.
 
 # General workflow
 
