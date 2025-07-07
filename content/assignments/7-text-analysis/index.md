@@ -35,8 +35,8 @@ and code, and push them to your GitHub repo**.
 # Cloning your `a7` repository
 
 After you have accessed the `a7` repository (see above), follow the
-[same steps you completed for `a1`](/homework/edit-readme/) to clone the
-repository.
+[same steps you completed for `a1`](/homework/1-edit-readme/) to clone
+the repository.
 
 # General workflow
 
@@ -175,16 +175,18 @@ A6 for details), etc. Make sure to stage-commit-push your original
     README.md (knitted from analysis.rmd)
     analysis.html (knitted from analysis.rmd)
 
-In `README.md` you must: \* explain the purpose of the repository \*
-include an explanation of what your code does and how to use it, and
-list all libraries required to reproduce your analyses \* include a
-description of the textual data \* provide any other relevant
-information that the user needs to know in order to use your repo and
-replicate your results \* quote all resources you consulted to complete
-the assignment \* provide 1-2 paragraphs of reflections on what was
-hard/easy about this homework, what was enjoyable, problems you solved
-and how you solved them, helpful resources, etc. + list any
-collaborators and their role
+In `README.md` you must:
+
+- explain the purpose of the repository
+- include an explanation of what your code does and how to use it, and
+  list all libraries required to reproduce your analyses
+- include a description of the textual data
+- provide any other relevant information that the user needs to know in
+  order to use your repo and replicate your results
+- quote all resources you consulted to complete the assignment
+- provide 1-2 paragraphs of reflections on what was hard/easy about this
+  homework, what was enjoyable, problems you solved and how you solved
+  them, helpful resources, etc. + list any collaborators and their role
 
 To submit the assignment, push to your repository the last version of
 your assignment before the deadline. Then copy your repository URL
