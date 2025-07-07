@@ -20,7 +20,7 @@ code, and writing/using functions with social science data.
 
 # Accessing the `A5` repository
 
-- Go [to this link](https://classroom.github.com/a/Z5eDh0wX) to accept
+- Go [to this link](https://classroom.github.com/a/JxeskxUa) to accept
   and create your private `A5` repository on GitHub. Once you do so,
   your repository will be built in a few seconds. It follows the naming
   convention `A5-<USERNAME>`  

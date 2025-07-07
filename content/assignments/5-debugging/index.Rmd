@@ -24,7 +24,7 @@ The goal of this assignment is to practice debugging common errors in code, and 
 
 # Accessing the `A5` repository
 
-* Go [to this link](https://classroom.github.com/a/Z5eDh0wX) to accept and create your private `A5` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `A5-<USERNAME>`  
+* Go [to this link](https://classroom.github.com/a/JxeskxUa) to accept and create your private `A5` repository on GitHub. Once you do so, your repository will be built in a few seconds. It follows the naming convention `A5-<USERNAME>`  
 * Once the your repository has been created, click on the link you see, which will take you to your repository. 
 * Finally, clone the repository to your computer following the process below.
 
