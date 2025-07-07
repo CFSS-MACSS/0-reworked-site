@@ -26,8 +26,11 @@ The goal of this assignment is to practice the fundamentals of text analysis in 
 # Accessing the `A7` repository
 
 * Go [to this link](https://classroom.github.com/a/4K8N2enT) to accept and create your private `A7` repository on GitHub. Your repository will be built in a few seconds. It follows the naming convention `a7-<USERNAME>`   
+
 * Once your repository has been created, click on the link you see, which will take you to your repository. 
+
 * Finally, clone the repository to your computer (or R workbench) following the process below.
+
 
 Notice the repo you clone for this assignment is empty: **add your data and code, and push them to your GitHub repo**.
 

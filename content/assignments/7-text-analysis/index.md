@@ -23,9 +23,11 @@ analysis in R tidyverse.
 - Go [to this link](https://classroom.github.com/a/4K8N2enT) to accept
   and create your private `A7` repository on GitHub. Your repository
   will be built in a few seconds. It follows the naming convention
-  `a7-<USERNAME>`  
+  `a7-<USERNAME>`
+
 - Once your repository has been created, click on the link you see,
   which will take you to your repository.
+
 - Finally, clone the repository to your computer (or R workbench)
   following the process below.
 
