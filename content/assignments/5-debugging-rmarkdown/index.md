@@ -1,0 +1,92 @@
+---
+title: "A5: Debugging and practice working with functions"
+date: 2023-07-05T13:30:00-06:00  # Schedule page publish date
+publishDate: 2019-03-01T12:25:00-05:00
+draft: false
+weight: 5
+type: docs
+description: Assignment 5 due 7/11/25
+output:
+  md_document:
+    preserve_yaml: true
+
+summary: "Resolve code errors and practice writing and using functions with social science data."
+---
+
+# Overview
+
+The goal of this assignment is to practice debugging common errors in
+code, and writing/using functions with social science data.
+
+# Accessing the `A5` repository
+
+- Go [to this link](https://classroom.github.com/a/Z5eDh0wX) to accept
+  and create your private `A5` repository on GitHub. Once you do so,
+  your repository will be built in a few seconds. It follows the naming
+  convention `A5-<USERNAME>`  
+- Once the your repository has been created, click on the link you see,
+  which will take you to your repository.
+- Finally, clone the repository to your computer following the process
+  below.
+
+# Cloning your `A5` repository
+
+After you have accessed the `A5` repository (see above), follow the
+[same steps you completed for `hw1`](/homework/edit-readme/) to clone
+the repository.
+
+# General workflow
+
+Your general workflow will be:
+
+- Accept the repo and clone it (see above)
+- Make changes locally to the files in RStudio
+- Save your changes
+- Stage-Commit-Push: stage and commit your changes to your local Git
+  repo; then push them online to GitHub. You can complete these steps
+  using the Git GUI integrated into RStudio. In general, you do not want
+  to directly modify your online GitHub repo (if you do so, remember to
+  pull first); instead modify your local Git repo, then
+  stage-commit-push your changes up to your online GitHub repo.
+
+## Assignment: Debugging code
+
+The repository contains a file called `fix-errors-wv.Rmd`. This script
+includes code to conduct analysis of baby name popularity in the United
+States using the [`babynames`](http://hadley.github.io/babynames/)
+package.
+
+Its author made some mistakes and the script currently does not work.
+Fix the errors/warnings in the script to generate the desired output.
+
+# Submit the assignment
+
+To submit the assignment, simply push to your repository the last
+version of your assignment before the deadline. Then copy your
+repository URL (e.g., `https://github.com/cfss-hmwks/a5-jclip`) and
+submit it to Canvas under a5 before the deadline.
+
+Make sure to stage-commit-push:
+
+- the revised `fix-errors-wv.Rmd` (from this file, generate and submit
+  also a `README.md` file to REPLACE WHAT IS THERE)  
+
+# Rubric
+
+Needs improvement: The errors script has not been successfully fixed.
+The code does not run and/or partially runs. Partial or insufficient
+attention to standards of reproducible research.
+
+Satisfactory: Solid effort. Hits all the elements. Finished all
+components of the assignment with only minor deficiencies. Easy to
+follow (both the code and the output).
+
+Excellent: Finished all assignment components correctly and used
+efficient code to complete the exercises. The solutions adopted went
+beyond what strictly required. The code is well-documented (both
+self-documented and with additional comments as necessary). The function
+is written succinctly/comprehensibly and used correctly. Use multiple
+commits to back up and show a progression in work.
+
+For further details, see the [general
+rubric](/faq/homework-evaluations/) we adopt for grading.
