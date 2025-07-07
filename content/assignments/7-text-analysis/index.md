@@ -106,10 +106,13 @@ analysis OR topic modeling).
       documents for this assignment; the bigger the data, the more
       difficult it is to analyze it and make sense of
 
-**Examples to follow:** \* Book [Text Mining with
-R](https://www.tidytextmining.com/index.html), especially the assigned
-Chapters; among the case studies, I recommend Chapter 9 but the other
-case studies also provide excellent insights \* In-class materials
+**Examples to follow:**
+
+- Book [Text Mining with R](https://www.tidytextmining.com/index.html),
+  especially the assigned Chapters; among the case studies, I recommend
+  Chapter 9 but the other case studies also provide excellent insights
+
+- In-class materials / slides
 
 **How much do you need to do?**
 
