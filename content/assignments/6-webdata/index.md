@@ -19,8 +19,10 @@ summary: "Collect data from the web and analyze it."
 We learned two main ways of collecting data from the web:
 
 - Using APIs, with two options:
+
   - Accessing data using ad-hoc packages that wrap APIs
   - Running API queries by interacting directly with APIs
+
 - Web scraping
 
 For the homework, you will create a new dataset using an API or web
@@ -41,8 +43,8 @@ to fill it with your data and code, and push them to your github repo**.
 # Cloning your `a6` repository
 
 After you have accessed the `a6` repository (see above), follow the
-[same steps you completed for `a1`](/homework/edit-readme/) to clone the
-repository.
+[same steps you completed for `a1`](/homework/1-edit-readme/) to clone
+the repository.
 
 # General workflow
 

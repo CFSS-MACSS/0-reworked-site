@@ -22,9 +22,10 @@ knitr::opts_chunk$set(echo = FALSE)
 We learned two main ways of collecting data from the web:
 
 * Using APIs, with two options:
+
   * Accessing data using ad-hoc packages that wrap APIs
   * Running API queries by interacting directly with APIs
-
+  
 * Web scraping
 
 For the homework, you will create a new dataset using an API or web scraping and analyze it.
@@ -40,7 +41,7 @@ Notice the repo you clone for this assignment is empty: **you will have to fill 
 
 # Cloning your `a6` repository
 
-After you have accessed the `a6` repository (see above), follow the [same steps you completed for `a1`](/homework/edit-readme/) to clone the repository.
+After you have accessed the `a6` repository (see above), follow the [same steps you completed for `a1`](/homework/1-edit-readme/) to clone the repository.
 
 
 # General workflow
