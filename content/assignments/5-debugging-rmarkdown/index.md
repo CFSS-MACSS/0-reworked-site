@@ -52,9 +52,7 @@ Your general workflow will be:
 ## Assignment: Debugging code
 
 The repository contains a file called `fix-errors-wv.Rmd`. This script
-includes code to conduct analysis of baby name popularity in the United
-States using the [`babynames`](http://hadley.github.io/babynames/)
-package.
+includes code to conduct analysis using the world values survey.
 
 Its author made some mistakes and the script currently does not work.
 Fix the errors/warnings in the script to generate the desired output.
