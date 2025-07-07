@@ -32,10 +32,13 @@ scraping and analyze it.
 
 Go [to this link](https://classroom.github.com/a/0BfcFFqg) and find your
 copy of the `a6` repository. It follows the naming convention
-`a6-<USERNAME>`. Clone the repository to your computer. \* Once your
-repository has been created, click on the link you see, which will take
-you to your repository. \* Finally, clone the repository to your
-computer (or R workbench) following the process below.
+`a6-<USERNAME>`. Clone the repository to your computer.
+
+- Once your repository has been created, click on the link you see,
+  which will take you to your repository.
+
+- Finally, clone the repository to your computer (or R workbench)
+  following the process below.
 
 Notice the repo you clone for this assignment is empty: **you will have
 to fill it with your data and code, and push them to your github repo**.
