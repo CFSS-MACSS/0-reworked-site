@@ -484,6 +484,12 @@ traceback()
 # 1: f(10)
 ```
 ---
+class: center, inverse, middle
+
+## YOUR TURN!!
+
+`usethis::use_course("CFSS-MACSS/debugging")`
+---
 
 ## Acknowledgments 
 
