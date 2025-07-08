@@ -489,6 +489,16 @@ class: center, inverse, middle
 ## YOUR TURN!!
 
 `usethis::use_course("CFSS-MACSS/debugging")`
+
+
+---
+
+## Before our next class:
+
+* Install `rvest`
+* [GET AN API KEY](https://www.omdbapi.com/apikey.aspx)
+* [(optional) Register on geonames](https://www.geonames.org/export/web-services.html)
+
 ---
 
 ## Acknowledgments 

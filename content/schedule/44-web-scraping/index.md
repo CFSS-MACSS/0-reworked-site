@@ -54,13 +54,15 @@ math: false
 
 ## Before class
 
+- Install `rvest`
+- [GET AN API KEY](https://www.omdbapi.com/apikey.aspx)
+- [(optional) Register on
+  geonames](https://www.geonames.org/export/web-services.html)
 - Chapter 1 and 4 in [Web Scraping with
   R](https://steviep42.github.io/webscraping/book/)
 
-Several packages are needed for this week’s lectures (all installed on R
-workbench). If you are using R from your laptop (VS. R Workbench), I’d
-suggest following the lectures using R Workbench and installing the
-packages after class.
+Several packages are needed for this week’s lectures–you will need to
+install packages and get API keys
 
 ## Additional Resources
 
