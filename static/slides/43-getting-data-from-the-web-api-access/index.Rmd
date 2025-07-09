@@ -224,7 +224,7 @@ Image Source [at this link](https://www.linkedin.com/pulse/what-happens-when-you
 
 Navigating the web basically means **sending a bunch of requests to different servers and receiving different files written in HTML.**
 
-For example, if you type `https://macss.uchicago.edu/content/current-student-resources` into your web browser and hit enter, these steps occur under the hood:
+For example, if you type `https://macss.uchicago.edu/current-student-resources` into your web browser and hit enter, these steps occur under the hood:
 
 --
 1. your web browser translates what you typed into a HTTP request to tell the `macss` web server that you would like to access the info stored at `/content/current-student-resources` and that the protocol to use is the `https`
@@ -289,14 +289,16 @@ The process described in the `macss` example is very similar to how APIs work, w
 
 The class materials for today (download it from the website: `usethis::use_course("CFSS-MACSS/web-api-access")`) include five examples of APIs that have a wrapper package:
 
-* Omdb database
+* Wordbank
 * GeoNames
+* Omdb database
 * Census
 * Manifesto Project
-* Wordbank
 
-We will review the first two in class. Please, work through the other two examples on your own.
 
+We will review the first two in class. Please, work through the other examples on your own.
+
+`usethis::use_course("CFSS-MACSS/web-api-access")`
 ---
 
 ## Using APIs with a wrapper package: examples
@@ -381,6 +383,8 @@ For the remainder of class, we'll walk through these resources: `usethis::use_co
 1. **world bank**: this has a wrapper and does not require any user names / prior registration
 1. **geonames**: this has ai wrapper and requires a user name with prior registration (free)
 1. **OMDB**: this does not have a wrapper and requires an api key with prior registration (free)
+
+`usethis::use_course("CFSS-MACSS/web-api-access")`
 
 ---
 
