@@ -333,7 +333,7 @@ For example, if we want to find **all `a` elements** in the HTML of our webpage 
 ```{r nodes, dependson = "get-statement", results='hide', cache = T}
 dwight <- read_html(x = url)
 # Extract anchor tags
-#out <- html_elements(x = dwight, css = "a") 
+out <- html_elements(x = dwight, css = "a") 
 
 
 ```
@@ -341,8 +341,9 @@ dwight <- read_html(x = url)
 
 .panel[.panel-name[R output]
 ```{r nodes-out, dependson = "nodes", cache= TRUE}
-#out
+out
 ```
+
 ]
 ]
 

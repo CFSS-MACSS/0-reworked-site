@@ -334,15 +334,41 @@ For example, if we want to find **all `a` elements** in the HTML of our webpage 
 ``` r
 dwight &lt;- read_html(x = url)
 # Extract anchor tags
-#out &lt;- html_elements(x = dwight, css = "a") 
+out &lt;- html_elements(x = dwight, css = "a") 
 ```
 ]
 
 .panel[.panel-name[R output]
 
 ``` r
-#out
+out
 ```
+
+```
+## {xml_nodeset (63)}
+##  [1] &lt;a href="#main-content" class="element-invisible element-focusable"&gt;Skip ...
+##  [2] &lt;a href="https://www.presidency.ucsb.edu/"&gt;The American Presidency Proje ...
+##  [3] &lt;a class="btn btn-default" href="https://www.presidency.ucsb.edu/about"&gt; ...
+##  [4] &lt;a class="btn btn-default" href="/advanced-search"&gt;&lt;span class="glyphico ...
+##  [5] &lt;a href="https://www.ucsb.edu/" target="_blank"&gt;&lt;img alt="ucsb wordmark  ...
+##  [6] &lt;a href="/documents" class="active-trail dropdown-toggle" data-toggle="d ...
+##  [7] &lt;a href="/documents/presidential-documents-archive-guidebook"&gt;Guidebook&lt;/a&gt;
+##  [8] &lt;a href="/documents/category-attributes"&gt;Category Attributes&lt;/a&gt;
+##  [9] &lt;a href="/statistics"&gt;Statistics&lt;/a&gt;
+## [10] &lt;a href="/media" title=""&gt;Media Archive&lt;/a&gt;
+## [11] &lt;a href="/presidents" title=""&gt;Presidents&lt;/a&gt;
+## [12] &lt;a href="/analyses" title=""&gt;Analyses&lt;/a&gt;
+## [13] &lt;a href="https://giving.ucsb.edu/Funds/Give?id=185" title=""&gt;GIVE&lt;/a&gt;
+## [14] &lt;a href="/documents/presidential-documents-archive-guidebook" title=""&gt;A ...
+## [15] &lt;a href="/documents" title="" class="active-trail"&gt;Categories&lt;/a&gt;
+## [16] &lt;a href="/documents/category-attributes" title=""&gt;Attributes&lt;/a&gt;
+## [17] &lt;a href="/documents/app-categories/presidential" title="Presidential (73 ...
+## [18] &lt;a href="/documents/app-categories/spoken-addresses-and-remarks/presiden ...
+## [19] &lt;a href="/documents/app-categories/written-presidential-orders/president ...
+## [20] &lt;a href="/documents/app-categories/spoken-addresses-and-remarks/presiden ...
+## ...
+```
+
 ]
 ]
 
