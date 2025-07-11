@@ -13,7 +13,7 @@ aliases: ["/a7-text_analysis.html"]
 summary: "Collect text data and analyze it."
 ---
 
-**NOTE NOT UPDATED YET FOR 2025 – PLEASE CHECK BACK :)** \# Overview
+# Overview
 
 The goal of this assignment is to practice the fundamentals of text
 analysis in R tidyverse.
@@ -56,112 +56,124 @@ Your general workflow will be as follows:
 
 # Assignment description
 
-**Goal:** practice the fundamentals of text analysis in R (import and
-pre-process data, perform exploratory analyses, and perform sentiment
-analysis OR topic modeling).
+## Overview & Context
 
-**Instructions:**
+This assignment gives you a chance to work with messy, real-world **text
+data** using tools from the tidyverse and `tidytext`. Your goal is to:
 
-- **Select a corpus and import it.** See below for suggestions.
+- Choose a text source from a short list of **vetted, functional
+  sources**
+- Clean and structure the data
+- Explore it visually or descriptively
+- Then apply **either sentiment analysis or topic modeling**
+- Reflect meaningfully on your process
 
-- **Clean and pre-process your corpus.** Apply the following as
-  necessary for your project (e.g., you do not have to apply all of
-  them): tokenize the text, convert it to lower case, remove or replace
-  unwanted tokens, remove stop words (standard and/or domain-specific),
-  apply stemming or lemmatization. Use regular expressions as necessary.
+The challenge here is not just technical but **analytical as well** :
+you need to make choices, defend them, and explain what your analysis
+shows (and what it doesn’t).
 
-- **Perform basic exploratory analyses.** This can include a count and
-  plot of standard word frequencies, tf-idf, and/or other topics covered
-  in class or the assigned readings (e.g., use the tidy text approach).
-  To complete these tasks: see **“Text Mining with R” Chapters 1, 3, 4
-  and lectures**. Specifically:
+------------------------------------------------------------------------
 
-  - Explain the analyses you perform and what constitutes your unit of
-    analysis (e.g., what makes a document in your corpus). Briefly
-    explain the techniques you use
-  - Produce at least two visualizations, or one visualization and one
-    descriptive table
-  - Interpret the results
+## Learning Objectives
 
-- **Perform sentiment analysis OR topic modeling**. To complete this
-  part: see **“Text Mining with R” Chapters 2 and 6 and lectures**.
-  Specifically:
+By completing this assignment, you will:
 
-  - Include an explanation of the method you choose, including its pros
-    and cons. This does not have to be an in-depth theoretical or
-    mathematical explanation, think about it as an overview of the
-    method that you would provide to someone that knows nothing about
-    it; use your own words, but make sure to refer to the assigned
-    readings (for instance Blei et al. article for topic modeling) and,
-    if you use additional references, cite them as well
-  - Explain step-by-step what you do (for example, for topic modeling:
-    data preparation, document-term-matrix, criteria used to select the
-    number of topics, etc.)
-  - Produce at least one visualization
-  - Interpret the results
-  - Suggestions:
-    - if you use topic modeling and your data are formatted as tidy text
-      (one-term-per-row data frame), you first have to convert them into
-      a matrix, specifically a document-term-matrix. “Text Mining with
-      R” Chapter 5 explains how to do so
-    - if your corpus is big, feel free to select only a subset of
-      documents for this assignment; the bigger the data, the more
-      difficult it is to analyze it and make sense of
+- Practice importing and wrangling real-world text data
+- Use tidy workflows to clean, filter, and structure text
+- Visualize patterns using meaningful plots or tables
+- Perform **either** sentiment analysis *or* topic modeling
+- Reflect on your process and communicate your results clearly
 
-**Examples to follow:**
+------------------------------------------------------------------------
 
-- Book [Text Mining with R](https://www.tidytextmining.com/index.html),
-  especially the assigned Chapters; among the case studies, I recommend
-  Chapter 9 but the other case studies also provide excellent insights
+## Step 1: Choose a Text Source
 
-- In-class materials / slides
+Pick **one** from the following:
 
-**How much do you need to do?**
+### Suggested Data Sources
 
-Your main tasks are: import and pre-process the data, analyze them for
-general exploratory analysis, and then apply sentiment analysis OR topic
-modeling (do not do both, just pick one).
+You can use any full-text source, but here are several curated options:
 
-I expect you to use the class materials and the book [Tidy Text Mining
-with R](http://tidytextmining.com/) as templates to perform this type of
-analysis (do not reinvent the wheel). You can apply the templates to a
-novel corpus. You are also welcome to use one of the provided examples
-as your data source, as long as you expand on the provided code (e.g.,
-if the readings perform sentiment analysis on a specific textual corpus,
-you can use the same corpus to perform topic modeling instead).
+- **Gutenberg Books** (via `gutenbergr` R package): Full-text novels and
+  historical documents in the public domain.
+- **Jane Austen Novels** (via `janeaustenr` R package): Texts of six
+  novels by Jane Austen.
+- **State of the Union Speeches** (via `sotu` R package): US
+  presidential addresses through 2016.
+- **US Economic News Articles**
+  ([Kaggle](https://www.kaggle.com/datasets/heeraldedhia/us-economic-news-articles/code)):
+  News articles related to US economic policy and events.
+- **2020 US Presidential Campaign Speeches**
+  ([Github](https://github.com/ichalkiad/datadescriptor_uselections2020/tree/main/us2020data)):
+  A collection of speeches from the 2020 campaign.
+- **Agora Election Speeches**
+  ([Github](https://github.com/Datalab-AUTH/AgoraSpeech-EDA/blob/main/AgoraSpeech.csv)):
+  Annotated Greek election speeches from 2012–2023.
+- **UN General Debate Corpus** ([Harvard
+  Dataverse](https://dataverse.harvard.edu/file.xhtml?fileId=11095259&version=13.0)):
+  Speeches by heads of state at the UN General Assembly.
 
-In all circumstances, *make sure to quote your resources* (assigned
-readings and additional online tutorials or resources you might rely
-on).
+Ensure that the text source is rich enough for tokenization and further
+analysis. Avoid fragmented or overly short entries.
 
-# Suggested data sources
+> You may use another source if it is stable and accessible within the
+> assignment time. Avoid data hunting.
 
-You can use **any source of textual data.** If you are not sure, here
-are some suggested texts you could use:
+------------------------------------------------------------------------
 
-- `gutenbergr` (see also Chapter 1 of the assigned readings on this)
-- [Congressional Record for the 43rd-114th Congresses: Parsed Speeches
-  and Phrase Counts](https://data.stanford.edu/congress_text)
-- [Data for Everyone](https://www.figure-eight.com/data-for-everyone/) -
-  a bunch of open-source data sets. Some contain text data, such as *New
-  England Patriots Deflategate sentiment*
-- [Hate speech
-  samples](https://github.com/t-davidson/hate-speech-and-offensive-language)
-- [Last statements by Texas death row
-  inmates](https://www.kaggle.com/mykhe1097/last-words-of-death-row-inmates)
-- [Movie Review
-  Data](http://www.cs.cornell.edu/people/pabo/movie-review-data/) - good
-  for sentiment analysis
-- [The musiXmatch Dataset](http://millionsongdataset.com/musixmatch/)
-- [State of the Union speeches](http://www.presidency.ucsb.edu/sou.php)
-  - [`sotu`](https://github.com/statsmaths/sotu) - R package with all
-    State of the Union speeches through 2016. Easier starting point.
-- [Something from
-  here](https://docs.google.com/spreadsheets/d/1I7cvuCBQxosQK2evTcdL3qtglaEPc0WFEs6rZMx-xiE/edit#gid=0)
-  (by Chris Bail)
-- Examples provided in the readings and lectures. The [data from the
-  book are stored in this GitHub
-  repository](https://github.com/dgrtwo/tidy-text-mining)
+## Step 2: Clean & Preprocess the Text
+
+- Tokenize the text
+- Convert to lowercase
+- Remove punctuation, symbols, stop words
+- Consider regex filters for custom cleaning
+- Decide on your **unit of analysis**: chapter, paragraph, speaker, etc.
+- Optionally use stemming or lemmatization
+
+------------------------------------------------------------------------
+
+## Step 3: Exploratory Analysis
+
+Produce at least **two visualizations** or one plot + one summary table.
+These might include:
+
+- Word frequency bar plots
+- tf-idf comparison across documents
+- Most common bigrams or trigrams
+
+Include **short written commentary** explaining what your analysis
+shows.
+
+------------------------------------------------------------------------
+
+## Step 4: Choose One of the following: Sentiment or Topic Modeling
+
+### Option A: Sentiment Analysis
+
+- Analyze sentiment across time, sections, or characters
+- Include at least **one sentiment-based plot**
+- Interpret what your result shows and what it leaves out
+
+### Option B: Topic Modeling
+
+- Convert tidy data into a Document-Term Matrix
+- Briefly justify your choice of **number of topics**
+- Plot topic-word or document-topic output
+- Interpret topics meaningfully (what they represent, how reliable they
+  are)
+
+------------------------------------------------------------------------
+
+## Step 5: Reflect on the Process
+
+In your write-up, answer:
+
+- What was hard? What worked well?
+- What problems did you face? How did you fix them?
+- What might you do differently next time?
+- Any insights about the data itself?
+
+------------------------------------------------------------------------
 
 ## What to submit
 
@@ -176,6 +188,7 @@ A6 for details), etc. Make sure to stage-commit-push your original
     analysis.rmd
     README.md (knitted from analysis.rmd)
     analysis.html (knitted from analysis.rmd)
+    ai_log.html
 
 In `README.md` you must:
 
@@ -183,6 +196,7 @@ In `README.md` you must:
 - include an explanation of what your code does and how to use it, and
   list all libraries required to reproduce your analyses
 - include a description of the textual data
+- include all code, graphs, etc.
 - provide any other relevant information that the user needs to know in
   order to use your repo and replicate your results
 - quote all resources you consulted to complete the assignment
@@ -219,3 +233,45 @@ Interpretation of the results is clear and in-depth and shows engagement
 with the content of the textual data. Code is reproducible. Uses a
 sentiment analysis or topic model example not directly covered in class
 or considerably expands on the provided examples.
+
+## Grading Criteria
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completeness</td>
+<td>All required steps completed (cleaning, EDA, analysis,
+reflection)</td>
+</tr>
+<tr>
+<td>Code Quality</td>
+<td>Clear, reproducible, well-commented code</td>
+</tr>
+<tr>
+<td>Insight &amp; Analysis</td>
+<td>Good use of methods, thoughtful interpretation of results</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>Clear visualizations and logical structure in writeup</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>Honest discussion of challenges, what worked/didn’t, what was
+learned</td>
+</tr>
+</tbody>
+</table>
+
+Missing pieces or unclear documentation will reduce your score. We’re
+looking for thoughtfulness, not just code.
