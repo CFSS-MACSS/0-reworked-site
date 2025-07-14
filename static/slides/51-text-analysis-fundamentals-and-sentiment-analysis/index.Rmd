@@ -34,7 +34,7 @@ theme_set(theme_minimal(base_size = 16))
 
 # Agenda
 
-* Regular Expressions
+* Reminder: Regular Expressions
     * basic understanding of how it workds
     * intro to stringr package 
 * Workflow for text analysis  
@@ -46,7 +46,9 @@ theme_set(theme_minimal(base_size = 16))
 ---
 class: inverse, middle
 
-# Regular Expressions
+# Blast from the past!
+## Regular Expressions
+[refreser: revisit old slides if needed](https://cfss-macss.netlify.app/slides/32-strings/#1)
 
 
 ---
@@ -99,6 +101,7 @@ Resources:
 * [Chapter 14 "Strings" of R for Data Science](https://r4ds.had.co.nz/strings.html#strings), especially section 14.4 "Tools" for examples of each of these functions
 * [Regular expressions cheat sheet](https://www.datacamp.com/cheat-sheet/regular-expresso)
 * [Excellent (but a bit complex) tutorial](https://github.com/ziishaned/learn-regex/blob/master/README.md)
+* [Transform Strings slides](https://cfss-macss.netlify.app/slides/32-strings/#1)
 
 ---
 
@@ -196,7 +199,7 @@ class: inverse, middle
 
 Most tokenizers split on white spaces, but they need also consider exceptions such as contractions (I'll, dog's), hyphens in or between words (e-mail, co-operate, take-it-or-leave, 30-year-old).
 
-**N-gram:** a contiguous sequence of n items from a given text (items can be syllables, letters, words, etc.). We usually keep unigrams (the single word), but there instances in which bigrams are helpful: for example "Joe Biden" is a bi-gram.  
+**N-gram:** a contiguous sequence of n items from a given text (items can be syllables, letters, words, etc.). We usually keep unigrams (the single word), but there instances in which bigrams are helpful: for example "Taylor Swift" is a bi-gram.  
 ---
 
 ## 2. Data cleaning and pre-processing
@@ -263,7 +266,7 @@ We will learn the following:
 
 We can think at the basic workflow as a 4-step process:
 
-1. Obtain your textual data: *Emily Dickinson's could not stop for Death*
+1. Obtain your textual data: *This is just to say*
 
 1. Data cleaning and pre-processing  *(simple)*
 
@@ -278,10 +281,33 @@ class: inverse, middle
 *do as I say, not as I do!*
 
 ---
+## Poem: This is just to say
+
+```
+This Is Just To Say
+
+By William Carlos Williams
+I have eaten
+the plums
+that were in
+the icebox
+
+and which
+you were probably
+saving
+for breakfast
+
+Forgive me
+they were delicious
+so sweet
+and so cold
+
+```
+---
 ## Analysis: what does this mean?
 
 ```{r echo=FALSE, fig.cap="Histogram of text from exercise 1", out.width = '60%', dpi = 300}
-#knitr::include_graphics(here("static", "img", "ex_plums.png"))
+knitr::include_graphics("ex_plums.png")
 
 ```
 
@@ -332,15 +358,13 @@ Recall the following graphic:
 Now, if we were to follow and replicate what we did in example one, we'd end up with this:
 
 --
-```{r echo=FALSE, fig.cap="Histogram of text containing stop words", out.width = '40%', dpi = 300}
+```{r echo=FALSE, fig.cap="Histogram of text without stop words", out.width = '50%', dpi = 500}
 knitr::include_graphics("https://www.tidytextmining.com/01-tidy-text_files/figure-html/plotcount-1.png")
 
 ```
 
 ---
 ## Tidy text: Stop words
-
-Whoops! Without further cleaning, the elimination of "stop words," we aren't going to have much insightful to say.    
 
 ## **HOW TO ELIMINATE STOP WORDS?**    
 --
@@ -370,6 +394,7 @@ tidy_books <- tidy_books %>%
 <!-- # knitr::include_graphics(here("static", "img", "austen.png")) -->
 <!-- #  -->
 <!-- # ``` -->
+
 ---
 # COOL!! NOW WHAT?!!!
 
@@ -382,7 +407,10 @@ Once you have your data, you can start looking at the text to get a sense of wha
 * The overall feelings (**SENTIMENT**) in the text
 
 ---
+
 ## Example: building on this (next steps)
+
+
 
 .panelset[
 .panel[.panel-name[Plot of books]
@@ -393,14 +421,15 @@ knitr::include_graphics("https://www.tidytextmining.com/02-sentiment-analysis_fi
 .panel[.panel-name[Table of Books]
 ```{r echo=FALSE, fig.cap="By book analysis from Austen", out.width = '60%', dpi = 300}
 library(tidyverse)
-library(here)
-read_csv(here("../text-analysis-fundamentals/austen_bybooks")) %>%
-  knitr::kable()
+library(knitr)
+
+read.csv("austen_bybooks.csv") %>% kable()
 ```
 ]
 ]
 
 ---
+
 # TIME TO FLY FREE! Example 3
 In groups: work through the example below and see what you learn.    
 
@@ -430,4 +459,4 @@ These examples all in your in-class materials for today and might be useful for 
 ---
 ## Acknowledgments 
 
-The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s “Computing for the Social Sciences” course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
+The content of these slides is derived in part from Sabrina Nardin and Benjamin Soltoff’s "Computing for the Social Sciences" course materials, licensed under the CC BY NC 4.0 Creative Commons License. Any errors or oversights are mine alone.
