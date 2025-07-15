@@ -127,6 +127,8 @@ Your `README.md` must include:
  2. Why you wrangled and visualized the data as you did: Explain your reasoning for data transformations (e.g., why you summarized, used mutate, etc.) and why you chose specific plots (e.g., bar plot instead of line chart).
  3. Whether you answered your question: Share whether the data allowed you to answer your original question. It’s perfectly fine if it didn’t. What matters is that you understand why the data fell short and what additional data you’d need.
  4. Further details (optional): Add any other insights if you wish. Keep your answers concise but informative; striking this balance takes practice and patience.  
+ 
+ - AI / Resources statement: what you used, your GPT transcript, links to resources
 
 
 ## Expectations

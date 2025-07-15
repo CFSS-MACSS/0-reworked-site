@@ -152,6 +152,9 @@ Your `README.md` must include:
     your answers concise but informative; striking this balance takes
     practice and patience.
 
+- AI / Resources statement: what you used, your GPT transcript, links to
+  resources
+
 ## Expectations
 
 ### API part
