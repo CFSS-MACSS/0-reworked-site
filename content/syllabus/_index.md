@@ -115,7 +115,10 @@ instructor or TA, then the web, and then ChatGPT / LLMs.
 can use it to complete your assignment for you. If you are suspected of
 using AI in some form to complete your assignment on your behalf, that
 will not be tolerated and you will be immediately reported for a
-violation of academic integrity.
+violation of academic integrity. **To be perfectly clear: any non-cited
+use of AI or external tools is an academic violation. GPT (and other AI
+tools) can be used but only as tools and not in place of reducing your
+effort or learning. **
 
 ## Access & Inclusion
 
