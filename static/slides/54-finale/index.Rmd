@@ -1,0 +1,250 @@
+---
+title: "Introduction to Computing for the Social Sciences"
+author: "MACSS 30500 <br /> University of Chicago"
+output:
+  xaringan::moon_reader:
+    css: ["../cfss.css"]
+    nature:
+      highlightStyle: magula
+      highlightLines: true
+      highlightLanguage: r
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r pkgs, include = FALSE, cache = FALSE}
+library(tidyverse)
+library(broom)
+library(knitr)
+
+set.seed(13)
+theme_set(theme_minimal(base_size = 16))
+```
+
+class: inverse, middle
+
+# Recap of the course
+
+---
+
+## Instructor
+
+- Jean Clipperton
+```{r out.height = "50%", out.width = "50%", include = FALSE}
+#include_graphics(path = "/img/add-image-name.jpg", error = FALSE)
+```
+
+
+## TA
+
+- Sarthak Dhanke: sarthakdhanke@uchicago.edu
+
+
+## You
+---
+
+```{r bruce, include = FALSE}
+getwd()
+include_graphics(path = "/img/bruce_computer.gif", error = FALSE)
+```
+
+## Course Objectives
+
+The goal of this course is to acquire and practice **basic computational skills**. We focus on: learning R and learning practices for reproducible research. 
+
+* Programming as a means to an end: analyzing social science data
+
+* You will learn fundamental computational skills and techniques, and gain the confidence necessary to learn new techniques as you encounter them in your own research
+
+
+
+---
+
+## Major Topics
+
+Major topics:
+
+* Basic R, Git/GitHub, R Markdown
+* Data Visualization and Data Transformation 
+* Exploratory Data Analysis
+* Data Wrangling
+* R Programming: Control Structures, Functions, Data Structures
+* Debugging and defensive Programming
+* Reproducible research
+* Scraping
+* Text-Analysis
+
+
+---
+
+## How we did this
+
+We started small and progressively built more complex code
+
+
+```{r hello-world, echo = TRUE}
+print("Hello world!")
+```
+
+---
+
+class: inverse, middle
+
+# Succeeding in the class
+
+---
+
+## General Expectations/Suggestions
+
+
+* Attend classes and be engaged
+
+* Have RStudio up
+
+* Complete the readings before coming to class
+
+* Please no abuse of emails, texts, social media, etc. during lectures 
+
+* Collaborate and ask for help
+
+* Start early to work on the homework assignments 
+
+* Understand our [Academic Integrity Policy](https://cfss-macss.netlify.app/syllabus/#chatgptcopilotllmsgenerative-ai)
+
+
+---
+class: center, middle, inverse
+
+# Greatest hits: recap of our topics!
+
+---
+## Basic R, Git/GitHub, R Markdown
+
+* Cloning and committing in repos
+* add - commit - push
+* Markdown documents vs RMD
+
+---
+## Data Visualization and Data Transformation 
+
+* Merging: joins (left, right, inner)
+* Mutate: new variables
+* Summarize: distilling down to summaries
+* Graphs: bars/columns, scatter (point), line, histogram, (and more!) ...
+
+---
+## Exploratory Data Analysis
+
+* Highlight interesting components
+* Reader can't HELP but see the pattern/obviousness
+
+
+---
+## Data Wrangling and Transformations
+
+* Factors
+* Dates
+* Strings
+
+
+---
+## R Programming: Control Structures, Functions, Data Structures
+
+* Command is function(x){code}: reduce constantly retyping
+* Loops: another way to reuse/move through (especially functions!!)
+* Multiple options for data structures (e.g. json)
+
+---
+## Debugging and defensive Programming
+
+* CLEAR COMMENTS
+* TEST REGULARLY
+* USE MESSAGES
+
+---
+## Reproducible research
+
+> ANYONE (with some R knowledge) should be able to rerun your code and get EXACTLY what you get! Everything should be SELF CONTAINED. 
+
+---
+## Scraping
+
+* Using an API: pull data via an interface
+  * Can have wrapper or not
+  * Resulting data may be in different format
+* Scraping websites 
+  * Difficulty varies widely (!!!!)
+  * Note that 'dynamic' pages (with clicking on them) are more difficult than 'static' (we covered dynamic only!)
+
+---
+## Sentiment Analysis and Topic Models
+
+* (pre-work): cleaning, tidying, etc. 
+* Sentiment: Positive/negative valence
+* Emotion: specific emotions (e.g. anger, joy, disgust, surprise, trust, ..)
+* Topic models: looking for collections of words from our documents
+
+
+---
+class: center, inverse, middle
+
+# ETHICS
+
+
+---
+
+## Be good, do good:
+
+* Truthful falsehoods
+* Role of data science in society
+* Some settings for professional ethics
+* Some principles to guide ethical action
+* Algorithmic bias
+* Data and disclosure
+* Reproducibility
+* Ethics, collectively
+* Professional guidelines for ethical conduct
+
+---
+class: center, inverse, middle
+
+# Final Project
+
+
+---
+
+# Final Project 
+
+* Showcase different skills from the course
+* BE EXPLICIT in which skills, weeks, topics you are incorporating 
+  * This is more about showcasing your skills than a checklist BUT you do need an appropriate degree of challenge and multiple skills can help you level up
+* POLISH: nice project, good repo, clear comments 
+* This is your SHOWCASE: how can you demonstrate your skills you learned? 
+
+---
+class: center, inverse, middle
+
+# WHAT IS NEXT?!
+
+---
+
+## Computational Social Scientist!
+
+* Networks!
+* Machine Learning!
+* Data Viz!
+* NLP!
+* AND MORE! 
+
+---
+# Conclusions and wrapping up!!
+
+* THANK YOU SARTHAK!
+
+--
+
+* THANK **YOU** VERY MUCH: this has been a great class and it's been so fulfilling to see you all progress in your skills!

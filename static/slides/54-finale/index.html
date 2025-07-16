@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Computing for the Social Sciences</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="MACSS 30500   University of Chicago" />
+    <script src="index_files/header-attrs-2.29/header-attrs.js"></script>
+    <link rel="stylesheet" href="../cfss.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Introduction to Computing for the Social Sciences
+]
+.author[
+### MACSS 30500 <br /> University of Chicago
+]
+
+---
+
+
+
+
+
+
+class: inverse, middle
+
+# Recap of the course
+
+---
+
+## Instructor
+
+- Jean Clipperton
+
+
+
+## TA
+
+- Sarthak Dhanke: sarthakdhanke@uchicago.edu
+
+
+## You
+---
+
+
+
+## Course Objectives
+
+The goal of this course is to acquire and practice **basic computational skills**. We focus on: learning R and learning practices for reproducible research. 
+
+* Programming as a means to an end: analyzing social science data
+
+* You will learn fundamental computational skills and techniques, and gain the confidence necessary to learn new techniques as you encounter them in your own research
+
+
+
+---
+
+## Major Topics
+
+Major topics:
+
+* Basic R, Git/GitHub, R Markdown
+* Data Visualization and Data Transformation 
+* Exploratory Data Analysis
+* Data Wrangling
+* R Programming: Control Structures, Functions, Data Structures
+* Debugging and defensive Programming
+* Reproducible research
+* Scraping
+* Text-Analysis
+
+
+---
+
+## How we did this
+
+We started small and progressively built more complex code
+
+
+
+``` r
+print("Hello world!")
+```
+
+```
+## [1] "Hello world!"
+```
+
+---
+
+class: inverse, middle
+
+# Succeeding in the class
+
+---
+
+## General Expectations/Suggestions
+
+
+* Attend classes and be engaged
+
+* Have RStudio up
+
+* Complete the readings before coming to class
+
+* Please no abuse of emails, texts, social media, etc. during lectures 
+
+* Collaborate and ask for help
+
+* Start early to work on the homework assignments 
+
+* Understand our [Academic Integrity Policy](https://cfss-macss.netlify.app/syllabus/#chatgptcopilotllmsgenerative-ai)
+
+
+---
+class: center, middle, inverse
+
+# Greatest hits: recap of our topics!
+
+---
+## Basic R, Git/GitHub, R Markdown
+
+* Cloning and committing in repos
+* add - commit - push
+* Markdown documents vs RMD
+
+---
+## Data Visualization and Data Transformation 
+
+* Merging: joins (left, right, inner)
+* Mutate: new variables
+* Summarize: distilling down to summaries
+* Graphs: bars/columns, scatter (point), line, histogram, (and more!) ...
+
+---
+## Exploratory Data Analysis
+
+* Highlight interesting components
+* Reader can't HELP but see the pattern/obviousness
+
+
+---
+## Data Wrangling and Transformations
+
+* Factors
+* Dates
+* Strings
+
+
+---
+## R Programming: Control Structures, Functions, Data Structures
+
+* Command is function(x){code}: reduce constantly retyping
+* Loops: another way to reuse/move through (especially functions!!)
+* Multiple options for data structures (e.g. json)
+
+---
+## Debugging and defensive Programming
+
+* CLEAR COMMENTS
+* TEST REGULARLY
+* USE MESSAGES
+
+---
+## Reproducible research
+
+&gt; ANYONE (with some R knowledge) should be able to rerun your code and get EXACTLY what you get! Everything should be SELF CONTAINED. 
+
+---
+## Scraping
+
+* Using an API: pull data via an interface
+  * Can have wrapper or not
+  * Resulting data may be in different format
+* Scraping websites 
+  * Difficulty varies widely (!!!!)
+  * Note that 'dynamic' pages (with clicking on them) are more difficult than 'static' (we covered dynamic only!)
+
+---
+## Sentiment Analysis and Topic Models
+
+* (pre-work): cleaning, tidying, etc. 
+* Sentiment: Positive/negative valence
+* Emotion: specific emotions (e.g. anger, joy, disgust, surprise, trust, ..)
+* Topic models: looking for collections of words from our documents
+
+
+---
+class: center, inverse, middle
+
+# ETHICS
+
+
+---
+
+## Be good, do good:
+
+* Truthful falsehoods
+* Role of data science in society
+* Some settings for professional ethics
+* Some principles to guide ethical action
+* Algorithmic bias
+* Data and disclosure
+* Reproducibility
+* Ethics, collectively
+* Professional guidelines for ethical conduct
+
+---
+class: center, inverse, middle
+
+# Final Project
+
+
+---
+
+# Final Project 
+
+* Showcase different skills from the course
+* BE EXPLICIT in which skills, weeks, topics you are incorporating 
+  * This is more about showcasing your skills than a checklist BUT you do need an appropriate degree of challenge and multiple skills can help you level up
+* POLISH: nice project, good repo, clear comments 
+* This is your SHOWCASE: how can you demonstrate your skills you learned? 
+
+---
+class: center, inverse, middle
+
+# WHAT IS NEXT?!
+
+---
+
+## Computational Social Scientist!
+
+* Networks!
+* Machine Learning!
+* Data Viz!
+* NLP!
+* AND MORE! 
+
+---
+# Conclusions and wrapping up!!
+
+* THANK YOU SARTHAK!
+
+--
+
+* THANK **YOU** VERY MUCH: this has been a great class and it's been so fulfilling to see you all progress in your skills!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "magula",
+  "highlightLines": true,
+  "highlightLanguage": "r",
+  "ratio": "16:9",
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
