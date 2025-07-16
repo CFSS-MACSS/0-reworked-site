@@ -103,7 +103,7 @@ Imagine working through an article with a set of highlighters. As you read throu
 
 # Topic Modeling
 
-```{r fig.align = "center", echo = FALSE, out.width = "90%"}
+```{r fig.align = "center", echo = FALSE, out.width = "90%", dpi= 400}
 knitr::include_graphics(path = "tm.png", error = FALSE)
 ```
 
@@ -472,7 +472,7 @@ Notice: "This isn’t the only way to approach sentiment analysis, but it is an 
 
 # The `sentiments` datasets 
 
-The tidytext package provides access to several sentiment lexicons:
+The `syzuhet` package provides access to several sentiment/emotion lexicons:
 
 + **AFINN** from Finn Årup Nielsen (words classified with on a scale from -5 to +5)
 + **bing** from Bing Liu and collaborators (words classified into binary categories: negative and positive)
@@ -494,7 +494,7 @@ Dictionary-based methods like these find the total sentiment of a piece of text 
 
 **Examples from the book**: Chapter 2, and the three case-study chapters
 
-**Another example (in today's class-materials)**: sentiment analysis of Harry Potter textual data. 
+**Another example (in today's class-materials)**: sentiment analysis of text from The Office
 
 **Another example (in today's class-materials)**: sentiment analysis of Taylor Swift albums
 

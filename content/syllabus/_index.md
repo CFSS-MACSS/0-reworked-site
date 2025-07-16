@@ -118,7 +118,7 @@ will not be tolerated and you will be immediately reported for a
 violation of academic integrity. **To be perfectly clear: any non-cited
 use of AI or external tools is an academic violation. GPT (and other AI
 tools) can be used but only as tools and not in place of reducing your
-effort or learning. **
+effort or learning.**
 
 ## Access & Inclusion
 
