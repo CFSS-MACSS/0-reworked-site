@@ -146,6 +146,7 @@ The goal of this assignment is to show and strengthen what you have learned so f
 
 # Deliverables
 For this assignment we need:
+
 * A nice markdown document that provides an overview of your repo. You can also include all your graphics/analysis there AND/OR include an html file
 * All files needed to replicate your results, including data and images
 * A statement on AI and resources used

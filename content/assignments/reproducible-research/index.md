@@ -250,11 +250,13 @@ on your own.
 
 # Deliverables
 
-For this assignment we need: \* A nice markdown document that provides
-an overview of your repo. You can also include all your
-graphics/analysis there AND/OR include an html file \* All files needed
-to replicate your results, including data and images \* A statement on
-AI and resources used
+For this assignment we need:
+
+- A nice markdown document that provides an overview of your repo. You
+  can also include all your graphics/analysis there AND/OR include an
+  html file
+- All files needed to replicate your results, including data and images
+- A statement on AI and resources used
 
 # Submit the assignment
 
